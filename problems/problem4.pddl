@@ -1,4 +1,4 @@
-(define (problem problem4) (:domain domain1)
+(define (problem problem4) (:domain domain2)
 (:objects
    train1 train2  - slt
    train3 - sng
