@@ -2,7 +2,7 @@ import objects as o
 
 def create_problem_file(name: str, trains: list[o.TrainUnit], segments: list[o.Segment],
                         schedule: list[o.Schedule], tree: o.Node, tracks: list[o.Track]) -> str:
-    res = f"(define (problem {name}) (:domain domain2)\n"
+    res = f"(define (problem {name}) (:domain domain)\n"
     res += define_objects(trains, segments, tracks)
     res += "(:init\n\t(= (timestep) 0)\n"
     res += construct_layout(tree) + track_properties(segments) + set_tracks(tracks) + place_trains(trains) + print_schedule(schedule) + ")\n"
