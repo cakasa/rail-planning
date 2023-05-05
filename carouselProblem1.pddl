@@ -54,6 +54,6 @@
    (forall (?t - slt) (or (at ?t v1)))
    (forall (?t - sng) (or (at ?t v4)))
    (forall (?t - virm) (or (at ?t v3)))
-   (forall (?t - icm) (or (at ?t v1)))
+   (forall (?t - icm) (or (at ?t v2)))
    (forall (?t - trainunit) (hasBeenParked ?t))
 )))
