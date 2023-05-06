@@ -33,7 +33,7 @@ class Segment:
     
 class Trackpart(Segment):
     
-    next = 0
+    next = 1
 
     def __init__(self, c=4) -> None:
         super().__init__(Trackpart.next, c)
@@ -45,7 +45,7 @@ class Trackpart(Segment):
 
 class Switch(Segment):
 
-    next = 0
+    next = 1
 
     def __init__(self) -> None:
         super().__init__(Switch.next, 0)
@@ -61,7 +61,7 @@ class Switch(Segment):
 
 class Entrance(Segment):
 
-    next = 0
+    next = 1
 
     def __init__(self) -> None:
         super().__init__(Entrance.next, sys.maxsize)
@@ -72,7 +72,7 @@ class Entrance(Segment):
     
 
 class Track:
-    next = 0
+    next = 1
     __id: int
     __tracks: list[Trackpart]
 
@@ -104,7 +104,7 @@ class Track:
 
 class TrainUnit:
     occupied = set()
-    next = 0
+    next = 1
     __id: int
     __at: Segment
     __length: int

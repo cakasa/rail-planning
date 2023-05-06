@@ -3,7 +3,7 @@
 	train0  - slt
 	train1  - slt
 	train2  - sng
-	v0 t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 s0 s1 s2 s3  - trackpart
+	v0  t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 s0 s1 s2 s3  - trackpart
 	track0 track1 track2 track3 track4 track5  - track
 )
 (:init
@@ -76,12 +76,9 @@
 	(= (length train2) 4)
 	(= (arrive train0) 1)
 	(= (arrive train1) 3)
-	(= (arrive train2) 8)
-	(= (arrive train1) 9)
-	(= (depart train0) 14)
-	(= (depart train1) 5)
-	(= (depart train2) 12)
-	(= (depart train1) 17)
+	(= (depart train0) 0)
+	(= (depart train1) 0)
+	(= (depart train2) 0)
 )
 (:goal (and
 	(exists (?t - slt) (and (at ?t v0) (<= (depart ?t) 25) (= (length ?t) 3)))

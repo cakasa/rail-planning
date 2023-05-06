@@ -2,10 +2,18 @@ import objects as o
 
 def create_problem_file(name: str, trains: list[o.TrainUnit], segments: list[o.Segment],
                         schedule: list[o.Schedule], tree: o.Node, tracks: list[o.Track]) -> str:
-    res = f"(define (problem {name}) (:domain domain)\n"
+    res = f"(define (problem {name}) (:domain domain3)\n"
     res += define_objects(trains, segments, tracks)
-    res += "(:init\n\t(= (timestep) 0)\n"
-    res += construct_layout(tree) + track_properties(segments) + set_tracks(tracks) + place_trains(trains) + print_schedule(schedule) + ")\n"
+    res += "(:init\n"
+    res += construct_layout(tree)
+    res += track_properties(segments)
+    res += set_tracks(tracks)
+    res += place_trains(trains)
+    res += "\t(= (timestep) 0)\n"
+    res += print_schedule(schedule)
+    res += train_unit_length(trains)
+    res += define_capacity(tracks) 
+    res += ")\n"
     res += define_goal(trains)
     res += ")"
     return res
@@ -51,7 +59,7 @@ def track_properties(segments: list[o.Segment]) -> str:
 def place_trains(trains: list[o.TrainUnit]) -> str:
     res = ""
     for t in trains:
-        res += t.locate + t.length
+        res += t.locate
     
     return res
 
@@ -62,11 +70,30 @@ def print_schedule(schedule: list[o.Schedule]) -> str:
    
     return res
 
+def define_capacity(tracks: list[o.Track]) -> str:
+    res = ""
+    for t in tracks:
+        c = 0
+        for tp in t.tracks():
+            c += tp.capacity
+        
+        res += f"\t(= (capacity {t}) {c})\n"
+    return res
+
+def train_unit_length(trains: list[o.TrainUnit]) -> str:
+    res = ""
+    for t in trains:
+        res += t.length
+    
+    return res
+
 def construct_layout(tree: o.Node) -> str:
     if isinstance(tree, o.SN):
         return tree.locate() + construct_layout(tree.l) + construct_layout(tree.r)
     
     if isinstance(tree, o.TN):
+        if isinstance(tree.component, o.Entrance):
+            return f"\t(onPath {tree.component})\n" + tree.locate() + construct_layout(tree.next)
         return tree.locate() + construct_layout(tree.next)
     
     return ""
