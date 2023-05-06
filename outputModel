@@ -1,0 +1,13 @@
+
+
+=== Predictions on test data ===
+
+ inst#     actual  predicted error prediction (planner)
+     1     1:True     1:True       0.769 (fdss-2)
+     2     1:True     1:True       0.866 (probe)
+     3     1:True    2:False   +   0.701 (yahsp2-mt)
+     4     1:True    2:False   +   0.899 (mercury)
+     5     1:True    2:False   +   0.807 (jasper)
+     6     1:True     1:True       0.864 (siw)
+     7     1:True     1:True       0.964 (bfs-f)
+
