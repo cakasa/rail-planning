@@ -201,34 +201,7 @@ class Node:
     def show(self) -> str:
         return ""
     
-    # def extract_tracks(self, ts: list[Track]):
-    #     if isinstance(self, TN):
-    #         if isinstance(self.component, Trackpart):
-    #             if ts:
-    #                 ts[0].add_track(self)
-    #             else:
-    #                 ts.append(Track(self))
-
-    #             self.next.extract_tracks(ts)
-
-    #         else:
-    #             self.next.extract_tracks(ts)
-
-    #     if isinstance(self, EN):
-    #         if ts:
-    #             ts[0].add_track(self)
-    #         else:
-    #             ts.append(Track(self))
-
-    #     if isinstance(self, SN):
-    #         t1 = []
-    #         t2 = []
-    #         self.l.extract_tracks(t1)
-    #         self.r.extract_tracks(t2)
-    #         ts.extend(t1)
-    #         ts.extend(t2)
-
-    
+   
 class SN(Node):
 
     __l: Node
@@ -323,3 +296,13 @@ class Departure(Schedule):
 
     def __str__(self) -> str:
         return f"\t(= (depart {super().unit}) {super().time})\n"
+    
+
+class Departure_Time(Schedule):
+
+    def __init__(self, unit: TrainUnit) -> None:
+        super().__init__(0, unit)
+
+    def __str__(self) -> str:
+        return f"\t(= (departed {super().unit}) {super().time})\n"
+    

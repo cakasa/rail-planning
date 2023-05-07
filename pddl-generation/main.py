@@ -21,22 +21,31 @@ def printlist(list:list):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Not enough arguments. Example usage: 'python main.py \"name\"'")
+        print("Not enough arguments. Example usage: 'python main.py \"name\" <tree_options: int>'")
         exit(-1)
     name = sys.argv[1]
     l = len(name)
     if '.' in name:
         name = name[0:name.index('.')]
 
+    tree_option = 0
+    if len(sys.argv) >= 3:
+        try:
+            tree_option = int(sys.argv[2])
+        except:
+            print(f"Error occured while converting second argument ('{sys.argv[2]}') to integer.\nUsing default tree settings.")
+
     # printlist(t.filter(lambda x : isinstance(x, o.Switch), s.segments))
     with open(f"../problems/{name}.pddl", 'w+') as f:
+        tree = s.tree(tree_option)
+        tracks = s.tracks(tree)
         f.write(g.create_problem_file(
             name,
             s.trains,
             s.segments,
             s.schedule,
-            s.tree,
-            s.tracks
+            tree,
+            tracks
         ))
         f.close()
 

@@ -21,6 +21,7 @@
     (timestep) ; this keeps track of the global time (in timesteps)
     (arrive ?x - trainunit) ;this is the arrival time (a certain time step) of train unit x
     (depart ?x - trainunit) ;this is the departure arrival time (a certain time step) of train unit x
+    (departed ?x - trainunit) ; this is the time the train unit x actually departed
     (length ?x - trainunit) ;this is the length of a train unit (in relative sense)
     (capacity ?t - track) ;this is the capacity of a track, the combined lenght of the train units parked on this track cannot exceed the capacity of that track.
 )
@@ -103,7 +104,7 @@
                     (not (at ?train ?from)) 
                     (free ?from) 
                     ;(not (free ?to))
-                    (assign (depart ?train) (timestep))
+                    (assign (departed ?train) (timestep))
                     (increase (timestep) 1)
                 )
 )
