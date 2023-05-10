@@ -3,7 +3,7 @@
 (:requirements :adl :fluents)
 
 (:types
-    trackpart track trainunit - object
+    trackpart track trainunit service - object
     icm virm sng slt - trainunit  ; these are the different types of train units
 )
 
@@ -17,19 +17,63 @@
     (hasBeenParked ?x - trainunit) ; train unit x has been parked at some point
     (beginsAt ?x - trainunit ?y - trackpart) ; train unit x begins at trackpart y
     (endsAt ?x - trainunit ?y - trackpart) ; train unit x ends at trackpart y
+    (isServiceTrack ?x - track ?y - service) ; track x is a track for service y
+    (isBeingServiced ?x - trainunit) ;train unit x is currently being serviced
+    (isServicedFor ?x - trainunit ?y - service); train unit x is currently being serviced for y
 )
 
 (:functions
-    (timestep) ; this keeps track of the global time (in timesteps)
+    (timestep) ; this keeps trsack of the global time (in timesteps)
     (arrive ?x - trainunit) ;this is the arrival time (a certain time step) of train unit x
     (depart ?x - trainunit) ;this is the departure arrival time (a certain time step) of train unit x
+    (serviceDuration ?x - trainunit ?y - service) ;this is the duration of service y for train x 
+)
+
+(:action start-train-servicing
+    :parameters (?train - trainunit ?front ?back - trackpart ?track - track ?service - service)
+    :precondition (and 
+        (isServiceTrack ?track ?service)
+        (beginsAt ?train ?front)
+        (endsAt ?train ?back)
+        (onTrack ?front ?track)
+        (onTrack ?back ?track)
+        (not (isBeingServiced ?train))
+        (> (serviceDuration ?train ?service) 0)
+    )
+    :effect (and 
+        (isBeingServiced ?train)
+        (isServicedFor ?train ?service)
+    )
+)
+
+(:action service-train
+    :parameters (?train - trainunit ?service - service)
+    :precondition (and 
+        (isServicedFor ?train ?service)
+        (> (serviceDuration ?train ?service) 0)
+    )
+    :effect (and
+        (decrease (serviceDuration ?train ?service) 1)
+        (increase (timestep) 1)
+    )
+)
+
+(:action end-train-servicing
+    :parameters (?train - trainunit ?service - service)
+    :precondition (and 
+        (isServicedFor ?train ?service)
+        (= (serviceDuration ?train ?service) 0)
+    )
+    :effect (and 
+        (not (isBeingServiced ?train))
+        (not (isServicedFor ?train ?service))
+    )
 )
 
 ; move a train unit from a switch node to a track 
 (:action move-from-switch-to-track
     :parameters (?train - trainunit ?front ?back ?frontTo ?backTo ?switch - trackpart ?t - track)
-    :precondition (and 
-
+    :precondition (and
                     (beginsAt ?train ?front)
                     (endsAt ?train ?back) 
                     (nextTo ?front ?frontTo)
@@ -39,8 +83,8 @@
                     (not (at ?train ?frontTo))
                     (free ?frontTo)
                     (imply (not (= ?front ?back)) (at ?train ?backTo))
+                    (not (isBeingServiced ?train))
                     
-                    (>= (timestep) (arrive ?train))
                     (switch ?switch)
                     (at ?train ?switch)
                     (onTrack ?switch ?t)
@@ -69,8 +113,8 @@
                     (not (at ?train ?frontTo))
                     (free ?frontTo)
                     (imply (not (= ?front ?back)) (at ?train ?backTo))
+                    (not (isBeingServiced ?train))
 
-                    (>= (timestep) (arrive ?train))
                     (onTrack ?frontTo ?t)
                     (onTrack ?front ?t)
                     (onTrack ?back ?t)
@@ -97,8 +141,8 @@
                     (not (at ?train ?frontTo))
                     (free ?frontTo)
                     (imply (not (= ?front ?back)) (at ?train ?backTo))
+                    (not (isBeingServiced ?train))
                     
-                    (>= (timestep) (arrive ?train))
                     (onPath ?frontTo)
                     (forall (?unit - trainunit) (hasBeenParked ?unit))
     )
@@ -124,6 +168,7 @@
                     (not (at ?train ?frontTo))
                     (free ?frontTo)
                     (imply (not (= ?front ?back)) (at ?train ?backTo))
+                    (not (isBeingServiced ?train))
 
                     (not (hasBeenParked ?train))
                     (onPath ?front)
@@ -142,6 +187,7 @@
     :precondition (and 
         (beginsAt ?train ?front)
         (endsAt ?train ?back)
+        (not (isBeingServiced ?train))
         (>= (timestep) (arrive ?train))
     )
     :effect (and
