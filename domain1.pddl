@@ -29,12 +29,13 @@
                     (hasBeenParked ?train) (parkedOn ?train ?t))
 )
 
-; action to move a trainunit to out of a track, and reset the parkedOn predicate
+; action to move a trainunit to out of a track, and reset the parkedOn predicate, used for shuffling trains to different tracks
 (:action move-from-track
     :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
     :precondition (and (at ?train ?from) (free ?to) 
                     (nextTo ?from ?to) (onTrack ?from ?t)
-                    (switch ?to))
+                    (switch ?to)
+                    (not (forall (?unit - trainunit) (hasBeenParked ?unit))))
     :effect (and (at ?train ?to) (not (at ?train ?from))
                     (free ?from) (not (free ?to))
                     (not (parkedOn ?train ?t)))
@@ -68,5 +69,17 @@
                     (onPath ?from))
     :effect (and (at ?train ?to) (not (at ?train ?from)) 
                     (free ?from) (not (free ?to)))
+)
+
+; Can only move to track if all trains have been parked to distingiush from other move-from-track
+(:action move-from-track-to-departure
+    :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
+    :precondition (and (at ?train ?from) (free ?to) 
+                    (nextTo ?from ?to) (onTrack ?from ?t)
+                    (switch ?to)
+                    (forall (?unit - trainunit) (hasBeenParked ?unit)))
+    :effect (and (at ?train ?to) (not (at ?train ?from))
+                    (free ?from) (not (free ?to))
+                    (not (parkedOn ?train ?t)))
 )
 )
