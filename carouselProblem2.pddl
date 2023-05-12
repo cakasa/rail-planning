@@ -1,11 +1,11 @@
 (define (problem carouselProblem2) (:domain domain1)
 (:objects
     train1 - sng
-    train2 - ism
+    train2 - icm
     train3 - slt
     train4 - virm
-    train5 - virm2
-    train6 - sng2
+    train5 - virm
+    train6 - sng
     v1 v2 v3 v4 v5 v6 t0 t1 t2 t3 t4 t5 t6 t7 t8  - trackpart
     track1 track2  - track
 )
