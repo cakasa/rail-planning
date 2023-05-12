@@ -38,7 +38,6 @@
    (nextTo t4 t5)
    (nextTo t5 t4)
    (free t5)
-   (onTrack t0 track1)
    (onTrack t1 track1)
    (onTrack t2 track1)
    (onTrack t3 track1)
