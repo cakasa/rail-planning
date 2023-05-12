@@ -60,7 +60,7 @@
 
 (:action move-on-arrival
     :parameters (?train - trainunit ?from ?to - trackpart)
-    :precondition (and (at ?train ?from)
+    :precondition (and (at ?train ?from) (not (hasBeenParked ?train))
         (reachable-on-arrival ?from ?to)
     ) 
     :effect (and (at ?train ?to) (not (at ?train ?from)) 
