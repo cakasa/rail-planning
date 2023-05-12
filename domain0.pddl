@@ -22,6 +22,7 @@
 
 (:derived (reachable-on-arrival ?x - trackpart ?y - trackpart)
     (or
+        (free ?y)
         (and (prev ?x ?y) (free ?y))
         (exists (?next - trackpart) (and (prev ?x ?next) (free ?next) (reachable-on-arrival ?next ?y)))
     )
