@@ -1,1 +1,1 @@
-  1, /home/timtian/github/rail-planning/carouselProblem1.pddl, 62, 120, 8, 17, 2.125000, -4, 0.064516, 0.858937, -1, 0.375000, 0.856957, 6.166667, 0.950000, 37
+  1, /home/timtian/github/rail-planning/carouselProblem1.pddl, 62, 136, 8, 17, 2.125000, -4, 0.064516, 0.858937, -1, 0.375000, 0.856957, 6.102941, 0.926471, 37

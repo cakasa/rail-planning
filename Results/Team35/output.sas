@@ -404,34 +404,7 @@ begin_goal
 22 1
 23 1
 end_goal
-120
-begin_operator
-move-along-track train1 t0 t1 track1
-0
-3
-0 0 0 1
-0 4 -1 0
-0 5 0 1
-0
-end_operator
-begin_operator
-move-along-track train1 t0 t5 track1
-0
-3
-0 0 0 5
-0 4 -1 0
-0 9 0 1
-0
-end_operator
-begin_operator
-move-along-track train1 t1 t0 track1
-0
-3
-0 0 1 0
-0 4 0 1
-0 5 -1 0
-0
-end_operator
+136
 begin_operator
 move-along-track train1 t1 t2 track1
 0
@@ -496,48 +469,12 @@ move-along-track train1 t4 t5 track1
 0
 end_operator
 begin_operator
-move-along-track train1 t5 t0 track1
-0
-3
-0 0 5 0
-0 4 0 1
-0 9 -1 0
-0
-end_operator
-begin_operator
 move-along-track train1 t5 t4 track1
 0
 3
 0 0 5 4
 0 8 0 1
 0 9 -1 0
-0
-end_operator
-begin_operator
-move-along-track train2 t0 t1 track1
-0
-3
-0 1 0 1
-0 4 -1 0
-0 5 0 1
-0
-end_operator
-begin_operator
-move-along-track train2 t0 t5 track1
-0
-3
-0 1 0 5
-0 4 -1 0
-0 9 0 1
-0
-end_operator
-begin_operator
-move-along-track train2 t1 t0 track1
-0
-3
-0 1 1 0
-0 4 0 1
-0 5 -1 0
 0
 end_operator
 begin_operator
@@ -604,48 +541,12 @@ move-along-track train2 t4 t5 track1
 0
 end_operator
 begin_operator
-move-along-track train2 t5 t0 track1
-0
-3
-0 1 5 0
-0 4 0 1
-0 9 -1 0
-0
-end_operator
-begin_operator
 move-along-track train2 t5 t4 track1
 0
 3
 0 1 5 4
 0 8 0 1
 0 9 -1 0
-0
-end_operator
-begin_operator
-move-along-track train3 t0 t1 track1
-0
-3
-0 2 0 1
-0 4 -1 0
-0 5 0 1
-0
-end_operator
-begin_operator
-move-along-track train3 t0 t5 track1
-0
-3
-0 2 0 5
-0 4 -1 0
-0 9 0 1
-0
-end_operator
-begin_operator
-move-along-track train3 t1 t0 track1
-0
-3
-0 2 1 0
-0 4 0 1
-0 5 -1 0
 0
 end_operator
 begin_operator
@@ -712,48 +613,12 @@ move-along-track train3 t4 t5 track1
 0
 end_operator
 begin_operator
-move-along-track train3 t5 t0 track1
-0
-3
-0 2 5 0
-0 4 0 1
-0 9 -1 0
-0
-end_operator
-begin_operator
 move-along-track train3 t5 t4 track1
 0
 3
 0 2 5 4
 0 8 0 1
 0 9 -1 0
-0
-end_operator
-begin_operator
-move-along-track train4 t0 t1 track1
-0
-3
-0 3 0 1
-0 4 -1 0
-0 5 0 1
-0
-end_operator
-begin_operator
-move-along-track train4 t0 t5 track1
-0
-3
-0 3 0 5
-0 4 -1 0
-0 9 0 1
-0
-end_operator
-begin_operator
-move-along-track train4 t1 t0 track1
-0
-3
-0 3 1 0
-0 4 0 1
-0 5 -1 0
 0
 end_operator
 begin_operator
@@ -820,15 +685,6 @@ move-along-track train4 t4 t5 track1
 0
 end_operator
 begin_operator
-move-along-track train4 t5 t0 track1
-0
-3
-0 3 5 0
-0 4 0 1
-0 9 -1 0
-0
-end_operator
-begin_operator
 move-along-track train4 t5 t4 track1
 0
 3
@@ -839,7 +695,41 @@ move-along-track train4 t5 t4 track1
 end_operator
 begin_operator
 move-from-track train1 t1 t0 track1
+1
+14 1
+4
+0 0 1 0
+0 4 0 1
+0 5 -1 0
+0 24 -1 1
 0
+end_operator
+begin_operator
+move-from-track train1 t1 t0 track1
+1
+15 1
+4
+0 0 1 0
+0 4 0 1
+0 5 -1 0
+0 24 -1 1
+0
+end_operator
+begin_operator
+move-from-track train1 t1 t0 track1
+1
+16 1
+4
+0 0 1 0
+0 4 0 1
+0 5 -1 0
+0 24 -1 1
+0
+end_operator
+begin_operator
+move-from-track train1 t1 t0 track1
+1
+17 1
 4
 0 0 1 0
 0 4 0 1
@@ -849,7 +739,41 @@ move-from-track train1 t1 t0 track1
 end_operator
 begin_operator
 move-from-track train1 t5 t0 track1
+1
+14 1
+4
+0 0 5 0
+0 4 0 1
+0 9 -1 0
+0 24 -1 1
 0
+end_operator
+begin_operator
+move-from-track train1 t5 t0 track1
+1
+15 1
+4
+0 0 5 0
+0 4 0 1
+0 9 -1 0
+0 24 -1 1
+0
+end_operator
+begin_operator
+move-from-track train1 t5 t0 track1
+1
+16 1
+4
+0 0 5 0
+0 4 0 1
+0 9 -1 0
+0 24 -1 1
+0
+end_operator
+begin_operator
+move-from-track train1 t5 t0 track1
+1
+17 1
 4
 0 0 5 0
 0 4 0 1
@@ -859,7 +783,41 @@ move-from-track train1 t5 t0 track1
 end_operator
 begin_operator
 move-from-track train2 t1 t0 track1
+1
+14 1
+4
+0 1 1 0
+0 4 0 1
+0 5 -1 0
+0 25 -1 1
 0
+end_operator
+begin_operator
+move-from-track train2 t1 t0 track1
+1
+15 1
+4
+0 1 1 0
+0 4 0 1
+0 5 -1 0
+0 25 -1 1
+0
+end_operator
+begin_operator
+move-from-track train2 t1 t0 track1
+1
+16 1
+4
+0 1 1 0
+0 4 0 1
+0 5 -1 0
+0 25 -1 1
+0
+end_operator
+begin_operator
+move-from-track train2 t1 t0 track1
+1
+17 1
 4
 0 1 1 0
 0 4 0 1
@@ -869,7 +827,41 @@ move-from-track train2 t1 t0 track1
 end_operator
 begin_operator
 move-from-track train2 t5 t0 track1
+1
+14 1
+4
+0 1 5 0
+0 4 0 1
+0 9 -1 0
+0 25 -1 1
 0
+end_operator
+begin_operator
+move-from-track train2 t5 t0 track1
+1
+15 1
+4
+0 1 5 0
+0 4 0 1
+0 9 -1 0
+0 25 -1 1
+0
+end_operator
+begin_operator
+move-from-track train2 t5 t0 track1
+1
+16 1
+4
+0 1 5 0
+0 4 0 1
+0 9 -1 0
+0 25 -1 1
+0
+end_operator
+begin_operator
+move-from-track train2 t5 t0 track1
+1
+17 1
 4
 0 1 5 0
 0 4 0 1
@@ -879,7 +871,41 @@ move-from-track train2 t5 t0 track1
 end_operator
 begin_operator
 move-from-track train3 t1 t0 track1
+1
+14 1
+4
+0 2 1 0
+0 4 0 1
+0 5 -1 0
+0 26 -1 1
 0
+end_operator
+begin_operator
+move-from-track train3 t1 t0 track1
+1
+15 1
+4
+0 2 1 0
+0 4 0 1
+0 5 -1 0
+0 26 -1 1
+0
+end_operator
+begin_operator
+move-from-track train3 t1 t0 track1
+1
+16 1
+4
+0 2 1 0
+0 4 0 1
+0 5 -1 0
+0 26 -1 1
+0
+end_operator
+begin_operator
+move-from-track train3 t1 t0 track1
+1
+17 1
 4
 0 2 1 0
 0 4 0 1
@@ -889,7 +915,41 @@ move-from-track train3 t1 t0 track1
 end_operator
 begin_operator
 move-from-track train3 t5 t0 track1
+1
+14 1
+4
+0 2 5 0
+0 4 0 1
+0 9 -1 0
+0 26 -1 1
 0
+end_operator
+begin_operator
+move-from-track train3 t5 t0 track1
+1
+15 1
+4
+0 2 5 0
+0 4 0 1
+0 9 -1 0
+0 26 -1 1
+0
+end_operator
+begin_operator
+move-from-track train3 t5 t0 track1
+1
+16 1
+4
+0 2 5 0
+0 4 0 1
+0 9 -1 0
+0 26 -1 1
+0
+end_operator
+begin_operator
+move-from-track train3 t5 t0 track1
+1
+17 1
 4
 0 2 5 0
 0 4 0 1
@@ -899,7 +959,41 @@ move-from-track train3 t5 t0 track1
 end_operator
 begin_operator
 move-from-track train4 t1 t0 track1
+1
+14 1
+4
+0 3 1 0
+0 4 0 1
+0 5 -1 0
+0 27 -1 1
 0
+end_operator
+begin_operator
+move-from-track train4 t1 t0 track1
+1
+15 1
+4
+0 3 1 0
+0 4 0 1
+0 5 -1 0
+0 27 -1 1
+0
+end_operator
+begin_operator
+move-from-track train4 t1 t0 track1
+1
+16 1
+4
+0 3 1 0
+0 4 0 1
+0 5 -1 0
+0 27 -1 1
+0
+end_operator
+begin_operator
+move-from-track train4 t1 t0 track1
+1
+17 1
 4
 0 3 1 0
 0 4 0 1
@@ -909,7 +1003,129 @@ move-from-track train4 t1 t0 track1
 end_operator
 begin_operator
 move-from-track train4 t5 t0 track1
+1
+14 1
+4
+0 3 5 0
+0 4 0 1
+0 9 -1 0
+0 27 -1 1
 0
+end_operator
+begin_operator
+move-from-track train4 t5 t0 track1
+1
+15 1
+4
+0 3 5 0
+0 4 0 1
+0 9 -1 0
+0 27 -1 1
+0
+end_operator
+begin_operator
+move-from-track train4 t5 t0 track1
+1
+16 1
+4
+0 3 5 0
+0 4 0 1
+0 9 -1 0
+0 27 -1 1
+0
+end_operator
+begin_operator
+move-from-track train4 t5 t0 track1
+1
+17 1
+4
+0 3 5 0
+0 4 0 1
+0 9 -1 0
+0 27 -1 1
+0
+end_operator
+begin_operator
+move-from-track-to-departure train1 t1 t0 track1
+1
+18 1
+4
+0 0 1 0
+0 4 0 1
+0 5 -1 0
+0 24 -1 1
+0
+end_operator
+begin_operator
+move-from-track-to-departure train1 t5 t0 track1
+1
+18 1
+4
+0 0 5 0
+0 4 0 1
+0 9 -1 0
+0 24 -1 1
+0
+end_operator
+begin_operator
+move-from-track-to-departure train2 t1 t0 track1
+1
+18 1
+4
+0 1 1 0
+0 4 0 1
+0 5 -1 0
+0 25 -1 1
+0
+end_operator
+begin_operator
+move-from-track-to-departure train2 t5 t0 track1
+1
+18 1
+4
+0 1 5 0
+0 4 0 1
+0 9 -1 0
+0 25 -1 1
+0
+end_operator
+begin_operator
+move-from-track-to-departure train3 t1 t0 track1
+1
+18 1
+4
+0 2 1 0
+0 4 0 1
+0 5 -1 0
+0 26 -1 1
+0
+end_operator
+begin_operator
+move-from-track-to-departure train3 t5 t0 track1
+1
+18 1
+4
+0 2 5 0
+0 4 0 1
+0 9 -1 0
+0 26 -1 1
+0
+end_operator
+begin_operator
+move-from-track-to-departure train4 t1 t0 track1
+1
+18 1
+4
+0 3 1 0
+0 4 0 1
+0 5 -1 0
+0 27 -1 1
+0
+end_operator
+begin_operator
+move-from-track-to-departure train4 t5 t0 track1
+1
+18 1
 4
 0 3 5 0
 0 4 0 1

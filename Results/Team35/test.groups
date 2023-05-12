@@ -58,55 +58,55 @@ var8:
   0: Atom hasbeenparked(train1)
   1: <none of those>
 var9:
-  0: Atom new-axiom@5()
-  1: <none of those>
-var10:
   0: Atom parkedon(train2, track1)
   1: <none of those>
-var11:
+var10:
   0: Atom parkedon(train1, track1)
   1: <none of those>
-var12:
+var11:
   0: Atom new-axiom@4()
   1: <none of those>
-var13:
+var12:
   0: Atom free(v4)
   1: <none of those>
-var14:
-  0: Atom new-axiom@3()
-  1: <none of those>
-var15:
+var13:
   0: Atom free(t4)
   1: <none of those>
-var16:
+var14:
   0: Atom hasbeenparked(train3)
   1: <none of those>
-var17:
+var15:
   0: Atom free(t1)
   1: <none of those>
-var18:
+var16:
   0: Atom free(t0)
   1: <none of those>
-var19:
+var17:
   0: Atom parkedon(train3, track1)
   1: <none of those>
-var20:
+var18:
   0: Atom free(v3)
   1: <none of those>
-var21:
+var19:
   0: Atom parkedon(train4, track1)
   1: <none of those>
-var22:
+var20:
+  0: Atom new-axiom@5()
+  1: <none of those>
+var21:
   0: Atom free(v2)
   1: <none of those>
-var23:
+var22:
   0: Atom new-axiom@0()
   1: <none of those>
-var24:
+var23:
   0: Atom hasbeenparked(train2)
   1: <none of those>
-var25:
+var24:
   0: Atom new-axiom@2()
+  1: <none of those>
+var25:
+  0: Atom new-axiom@3()
   1: <none of those>
 var26:
   0: Atom free(t2)
