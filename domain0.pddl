@@ -60,7 +60,7 @@
 
 (:action move-on-arrival
     :parameters (?train - trainunit ?from ?to - trackpart)
-    :precondition (and
+    :precondition (and (at ?train ?from)
         (reachable-on-arrival ?from ?to)
     ) 
     :effect (and (at ?train ?to) (not (at ?train ?from)) 
