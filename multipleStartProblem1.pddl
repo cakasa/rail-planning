@@ -111,8 +111,6 @@
     (onPath v6)
     (onPath v7)
     (onPath v8)
-    (onPath v9)
-    (onPath v10)
 )
 (:goal (and
     (at train1 v8)   
