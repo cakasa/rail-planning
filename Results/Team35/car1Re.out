@@ -37,12 +37,12 @@ Plan found with cost: 38
 36. (MOVE-ALONG-TRACK TRAIN4 T4 T5 TRACK1)
 37. (MOVE-FROM-TRACK-TO-DEPARTURE TRAIN4 T5 T0 TRACK1)
 38. (MOVE-TO-DEPARTURE TRAIN4 T0 V1)
-Time: 0.034954
-Generated: 1809
-Expanded: 1490
-Total time: 0.034966
-Nodes generated during search: 1810
-Nodes expanded during search: 1490
-Nodes pruned by bound: 1685
+Time: 0.03492
+Generated: 1748
+Expanded: 1440
+Total time: 0.03493
+Nodes generated during search: 1749
+Nodes expanded during search: 1440
+Nodes pruned by bound: 1574
 Average ef. width: 1.5
 Max ef. width: 3
