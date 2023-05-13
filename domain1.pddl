@@ -30,15 +30,17 @@
 )
 
 ; action to move a trainunit to out of a track, and reset the parkedOn predicate, used for shuffling trains to different tracks
-(:action move-from-track
-    :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
-    :precondition (and (at ?train ?from) (free ?to) 
-                    (nextTo ?from ?to) (onTrack ?from ?t)
-                    (switch ?to)
+(:action switch-track
+    :parameters (?train - trainunit ?from ?switch ?to - trackpart ?t1 ?t2 - track )
+    :precondition (and (at ?train ?from) (free ?to) (free ?switch) 
+                    (nextTo ?from ?switch) (onTrack ?from ?t1)
+                    (switch ?switch)
+                    (nextTo ?switch ?to) (onTrack ?to ?t2)
                     (not (forall (?unit - trainunit) (hasBeenParked ?unit))))
     :effect (and (at ?train ?to) (not (at ?train ?from))
                     (free ?from) (not (free ?to))
-                    (not (parkedOn ?train ?t)))
+                    (not (parkedOn ?train ?t1))
+                    (parkedOn ?train ?t2))
 )
 
 ; action to move a trainunit along a track
