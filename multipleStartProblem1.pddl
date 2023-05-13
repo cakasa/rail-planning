@@ -8,9 +8,7 @@
     train6 - sng
     train7 - icm
     train8 - slt
-    train9 - sng
-    train10 - icm
-    v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16  - trackpart
+    v1 v2 v3 v4 v5 v6 v7 v8 t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16  - trackpart
     track1 track2 track3 track4  - track
 )
 (:init
@@ -24,11 +22,12 @@
     (nextTo v3 v4)
     (nextTo v4 v3)
     (at train4 v4)
-    (nextTo v4 v5)
-    (nextTo v5 v4)
+
     (at train5 v5)
-    (nextTo t0 v6)
-    (nextTo v6 t0)
+    (nextTo t0 v5)
+    (nextTo v5 t0)
+    (nextTo v6 v5)
+    (nextTo v5 v6)
     (at train6 v6)
     (nextTo v6 v7)
     (nextTo v7 v6)
@@ -36,12 +35,6 @@
     (nextTo v7 v8)
     (nextTo v8 v7)
     (at train8 v8)
-    (nextTo v8 v9)
-    (nextTo v9 v8)
-    (at train9 v9)
-    (nextTo v9 v10)
-    (nextTo v10 v9)
-    (at train10 v10)
     (nextTo v1 t0)
     (nextTo t0 v1)
     (switch t0)
@@ -122,16 +115,14 @@
     (onPath v10)
 )
 (:goal (and
-    (at train1 v10)   
-    (at train2 v9)
-    (at train3 v8)
-    (at train4 v7)
-    (at train5 v6)
-    (at train6 v1)
-    (at train7 v2)   
-    (at train8 v3)
-    (at train9 v4)
-    (at train10 v5)
+    (at train1 v8)   
+    (at train2 v7)
+    (at train3 v6)
+    (at train4 v5)
+    (at train5 v1)
+    (at train6 v2)
+    (at train7 v3)   
+    (at train8 v4)
     (hasBeenParked train1)
     (hasBeenParked train2)
     (hasBeenParked train3)
@@ -140,6 +131,4 @@
     (hasBeenParked train6)
     (hasBeenParked train7)
     (hasBeenParked train8)
-    (hasBeenParked train9)
-    (hasBeenParked train10)
 )))
