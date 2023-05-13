@@ -73,7 +73,7 @@
                     (free ?from) (not (free ?to)))
 )
 
-; Can only move to track if all trains have been parked to distingiush from other move-from-track
+; Can only move to track if all trains have been parked to distinguish from switch-track
 (:action move-from-track-to-departure
     :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
     :precondition (and (at ?train ?from) (free ?to) 
