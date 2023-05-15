@@ -9,7 +9,7 @@ $ ssh-add ~/.ssh/<keyname>
 
 #### Run planner on domain and problem
 ```
-/data/ipc2018/solvers/sat/team1/planner.img domain0.pddl problem1.pddl re.out
+$ /data/ipc2018/solvers/sat/team1/planner.img domain0.pddl problem1.pddl re.out
 ```
 
 ## IPC2018 - Classical Tracks
