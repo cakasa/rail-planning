@@ -1,4 +1,4 @@
-(define (domain domain0)
+(define (domain domain0-derived-free)
 
 (:requirements :adl :derived-predicates)
 
