@@ -10,11 +10,36 @@ trains = {
 arrival_order = ['train1', 'train2']
 departure_order = ['train2', 'train1']
 tracks = {
-   'track0': (1, []),
-   'track1': (2, ['cleaning']),
-   'track2': (2, []) # this has to be here, as t0 is always connected with v1
+   'track0': (3, []),
+   'track1': (2, []),
+   'track2': (2, []),
+   'track3': (2, []),
+   'track4': (10, []),
+   'track5': (6, []),
+   'track6': (6, []),
+   'track7': (6, []),
+   'track8': (6, []),
+   'track10': (5, ['inspection']),
+   'track11': (7, ['cleaning']),
+   'track12': (4, []),
+   'track13': (4, []),
 }
-next_to = [('track0', 'track1'), ('track1', 'track2')]
+next_to = [
+    ('track0', 'track1'), 
+    ('track0', 'track5'),
+    ('track1', 'track6'),
+    ('track1', 'track2'),
+    ('track2', 'track3'),
+    ('track2', 'track7'),
+    ('track3', 'track4'),
+    ('track3', 'track8'),
+    ('track5', 'track10'),
+    ('track6', 'track10'),
+    ('track7', 'track11'),
+    ('track8', 'track11'),
+    ('track10', 'track12'),
+    ('track11', 'track13')
+]
 
 create_problem_file(filename, problem_name, trains, arrival_order, departure_order, tracks, next_to)
 ''' Creating PDDL problem files
