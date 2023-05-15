@@ -4,11 +4,14 @@ from problem_generator import create_problem_file
 problem_name = os.path.basename(__file__)[:-3]
 filename = '../' + problem_name + '.pddl'
 trains = {
-    'train1': ('slt', 2, ['cleaning']),
-    'train2': ('sng', 2, ['cleaning']),
+    'train1': ('slt', 4, ['cleaning']),
+    'train2': ('sng', 2, ['inspection']),
+    'train3': ('slt', 5, []),
+    'train4': ('slt', 3, []),
+    'train5': ('sng', 3, ['cleaning'])
 }
-arrival_order = ['train1', 'train2']
-departure_order = ['train2', 'train1']
+arrival_order = ['train1', 'train2', 'train3', 'train4', 'train5']
+departure_order = ['train2', 'train5', 'train1', 'train3', 'train4']
 tracks = {
    'track0': (3, []),
    'track1': (2, []),
