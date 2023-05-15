@@ -1,6 +1,6 @@
 # rail-planning
 
-## ssh to `student-linux.tudelft.nl`->`mapfw.ewi.tudelft.nl`
+## ssh to `student-linux.tudelft.nl` -> `mapfw.ewi.tudelft.nl`
 ```
 $ ssh student-linux.tudelft.nl
 $ ssh mapfw.ewi.tudelft.nl
