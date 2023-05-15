@@ -64,10 +64,8 @@
    (onTrack t2 track1)
    (onTrack t3 track2)
    (onTrack t4 track2)
+   (onTra)
    (onTrack t6 track3)
-
-   (switch t0)
-   (switch t5)
 
    (isServiceTrack track2 cleaning)
    (isServiceTrack track2 maintenance)

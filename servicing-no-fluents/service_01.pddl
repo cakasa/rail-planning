@@ -3,7 +3,7 @@
    train1 - slt
    train2 - sng
    v1 v2 v3 t0 t1 t2 t3 t4 - trackpart
-   track1 track2 - track
+   track0 track1 track2 - track
    cleaning - service
 )
 (:init
@@ -45,16 +45,17 @@
    (onTrack t2 track1)
    (onTrack t3 track2)
    (onTrack t4 track2)
-
-   (switch t0)
+   
+   (onTrack t0 track0)
 
    (isServiceTrack track2 cleaning)
    (needsService train1 cleaning)
 )
 (:goal (and
-   (at train1 v3)
+   (forall (?trainunit - trainunit) (hasDeparted ?trainunit))
+   (at train1 v1)
    (at train1 v2)
-   (at train2 v1)
+   (at train2 v3)
    (forall (?t - trainunit) (hasBeenParked ?t))
    (forall (?t - trainunit ?s - service) (not (needsService ?t ?s)))
 ))
