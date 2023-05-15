@@ -1,6 +1,6 @@
 (define (domain domain0)
 
-(:requirements :adl)
+(:requirements :adl :derived-predicates)
 
 (:types
     trackpart
@@ -18,6 +18,11 @@
     (parkedOn ?x - trainunit ?y - track) ; indicates x parked on track y
 )
 
+; derived predicate that checks that no trainunit is at a trackpart.
+(:derived (free ?x - trackpart)
+    (forall (?t - trainunit) (not (at ?t ?x)))
+)
+
 
 ; action to move a trainunit to a neighbouring trackpart, that must be connected
 (:action move-to-tree
@@ -25,7 +30,7 @@
     :precondition (and (at ?train ?from) (free ?to) 
                     (nextTo ?from ?to) (onTrack ?to ?t)) 
     :effect (and (at ?train ?to) (not (at ?train ?from)) 
-                    (free ?from) (not (free ?to)) 
+                    ; (free ?from) (not (free ?to)) 
                     (hasBeenParked ?train) (parkedOn ?train ?t))
 )
 
@@ -35,7 +40,7 @@
     :precondition (and (at ?train ?from) (free ?to) 
                     (nextTo ?from ?to) (onTrack ?to ?t) (hasBeenParked ?train)) 
     :effect (and (at ?train ?to) (not (at ?train ?from)) 
-                    (free ?from) (not (free ?to)) 
+                    ; (free ?from) (not (free ?to)) 
                     (parkedOn ?train ?t))
 )
 
@@ -47,7 +52,8 @@
                     (forall (?unit - trainunit) (hasBeenParked ?unit))
                     (not (exists (?track - track) (onTrack ?to ?track))))
     :effect (and (at ?train ?to) (not (at ?train ?from)) 
-                    (free ?from) (not (free ?to)))
+                    ; (free ?from) (not (free ?to))
+                    )
 )
 
 (:action move-on-arrival
@@ -55,6 +61,7 @@
     :precondition (and (at ?train ?from) (free ?to) 
                     (nextTo ?from ?to) (not (hasBeenParked ?train))) 
     :effect (and (at ?train ?to) (not (at ?train ?from)) 
-                    (free ?from) (not (free ?to)))
+                    ; (free ?from) (not (free ?to))
+                    )
 )
 )
