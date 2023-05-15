@@ -1,4 +1,4 @@
-(define (problem problem1) (:domain domain0)
+(define (problem problem1) (:domain domain0-derived-free)
 (:objects
   train1 train2 train3 train4 train5  - trainunit
   v1 v2 v3 v4 v5 t0 t1 t3 t2 t4 t5  - trackpart
@@ -22,20 +22,14 @@
    (nextTo t0 v1)
    (nextTo t0 t1)
    (nextTo t1 t0)
-   (free t0)
-   (free t1)
    (nextTo t1 t3)
    (nextTo t3 t1)
-   (free t3)
    (nextTo t0 t2)
    (nextTo t2 t0)
-   (free t2)
    (nextTo t2 t4)
    (nextTo t4 t2)
-   (free t4)
    (nextTo t0 t5)
    (nextTo t5 t0)
-   (free t5)
    (onTrack t1 track1)
    (onTrack t3 track1)
    (onTrack t2 track2)
