@@ -11,7 +11,7 @@ trains = {
     'train5': ('sng', 3, []),
 }
 arrival_order = ['train1', 'train2', 'train3', 'train4', 'train5']
-departure_order = ['train2', 'train1', 'train3', 'train4', 'train6']
+departure_order = ['train2', 'train1', 'train3', 'train4', 'train5']
 tracks = {
    'track0': (4, []),
    'track1': (4, ['cleaning']),
