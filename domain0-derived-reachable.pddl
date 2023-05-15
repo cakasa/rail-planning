@@ -20,6 +20,7 @@
     (parkedOn ?x - trainunit ?y - track) ; indicates x parked on track y
 )
 
+; derived predicate to check if trackpart y is reachable from trackpart x on arrival
 (:derived (reachable-on-arrival ?x ?y - trackpart)
     (or
         (and (prev ?x ?y) (free ?y))
