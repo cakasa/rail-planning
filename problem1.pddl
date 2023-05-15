@@ -1,4 +1,4 @@
-(define (problem problem1) (:domain domain0)
+(define (problem problem1) (:domain domain0-derived-free)
 (:objects
   train1 train2 train3 train4 train5  - trainunit
   v1 v2 v3 v4 v5 t0 t1 t3 t2 t4 t5  - trackpart
