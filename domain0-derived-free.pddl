@@ -11,7 +11,7 @@
 ;INFO (:constants) are available accross all problems
 (:predicates 
     (nextTo ?x ?y - trackpart) ; trackpart x next to other trackpart y
-    (onTrack ?x - trackPart ?y - track) ; trackpart x on track y
+    (onTrack ?x - trackpart ?y - track) ; trackpart x on track y
     (at ?x - trainunit ?y - trackpart) ; trainunit x on trackpart y
     (hasBeenParked ?x - trainunit) ; true if x is parked on some track 
     (free ?x - trackpart) ; trackpart x has nothing parked there
