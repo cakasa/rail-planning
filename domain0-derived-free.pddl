@@ -20,7 +20,8 @@
 
 ; derived predicate to checks if no trainunit t is at a trackpart x
 (:derived (free ?x - trackpart)
-    (forall (?t - trainunit) (not (at ?t ?x)))
+    ; (forall (?t - trainunit) (not (at ?t ?x)))
+    (not (exists (?t - trainunit) (at ?t ?x)))
 )
 
 ; action to move a trainunit to a neighbouring trackpart, that must be connected
