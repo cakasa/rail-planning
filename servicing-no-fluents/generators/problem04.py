@@ -4,26 +4,26 @@ from problem_generator import create_problem_file
 problem_name = os.path.basename(__file__)[:-3]
 filename = '../' + problem_name + '.pddl'
 trains = {
-    'train1': ('slt', 3, ['cleaning']),
-    'train2': ('sng', 2, ['inspection']),
-    'train3': ('sng', 3, []),
-    'train4': ('slt', 2, []),
+    'train1': ('slt', 1, ['cleaning']),
+    'train2': ('sng', 1, ['inspection']),
+    'train3': ('sng', 1, []),
+    'train4': ('slt', 1, []),
     'train5': ('sng', 1, []),
 }
 arrival_order = ['train1', 'train2', 'train3', 'train4']
 departure_order = ['train2', 'train1', 'train3', 'train4']
 tracks = {
    'track0': (1, []),
-   'track1': (4, ['cleaning']),
-   'track2': (4, []),
-   'track3': (4, []),
-   'track4': (4, []),
-   'track5': (4, []),
-   'track6': (4, []),
-   'track7': (4, []),
-   'track8': (4, ['inspection']),
-   'track9': (4, []),
-   'track10': (4, []),
+   'track1': (2, ['cleaning']),
+   'track2': (2, []),
+   'track3': (2, []),
+   'track4': (2, []),
+   'track5': (2, []),
+   'track6': (2, []),
+   'track7': (2, []),
+   'track8': (2, ['inspection']),
+   'track9': (2, []),
+   'track10': (2, []),
 }
 next_to = [
     ('track0', 'track1'), 
