@@ -6,8 +6,8 @@
    train4 - virm
    train5 - slt
    train6 - slt
-   v1 v2 v3 v4 v5 v6 t0 t1 t2 t3 t4 t5 t6  - trackpart
-   track1 track2  - track
+   v1 v2 v3 v4 v5 v6 t0 t1 t2 t3 t4 t5 t6 - trackpart
+   track1 track2 - track
 )
 (:init
    (at train1 v1)
@@ -49,7 +49,7 @@
    (onPath v4)
    (onPath v5)
    (onPath v6)
-   (switch t0)  
+   (switch t0)
 )
 (:goal (and
    (forall (?t - slt) (or (at ?t v1) (at ?t v4)))
