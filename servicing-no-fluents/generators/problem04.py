@@ -9,9 +9,11 @@ trains = {
     'train3': ('sng', 1, []),
     'train4': ('slt', 1, []),
     'train5': ('sng', 1, []),
+    'train6': ('sng', 1, []),
+    'train7': ('sng', 1, []),
 }
-arrival_order = ['train1', 'train2', 'train3', 'train4', 'train5',] # 'train6', 'train7', 'train8', 'train9', 'train10']
-departure_order = ['train1', 'train2', 'train3', 'train4', 'train5',] # 'train6', 'train7', 'train8', 'train9', 'train10']
+arrival_order = ['train1', 'train2', 'train3', 'train4', 'train5', 'train6', 'train7',] # 'train8', 'train9', 'train10']
+departure_order = ['train1', 'train2', 'train3', 'train4', 'train5', 'train6', 'train7',] # 'train8', 'train9', 'train10']
 tracks = {
    'track0': (1, []),
    'track1': (1, ['cleaning']),
