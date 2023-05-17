@@ -3,7 +3,6 @@
     train1 - slt
     train2 - sng
     train3 - sng
-    train4 - slt
     v1 v2 v3 v4 v5 v6 v7 v8 t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 t21 t22 t23 t24 t25 t26 t27 t28 t29 t30 t31 t32 t33 t34 t35 t36 t37 t38 t39 t40 t41 t42 t43 - trackpart
     track0 track1 track2 track3 track4 track5 track6 track7 track8 track9 track10 - track
     cleaning inspection - service
@@ -24,13 +23,10 @@
     (needsService train2 inspection)
 
     (at train3 v6)
+    (at train3 v7)
+    (at train3 v8)
     (beginsAt train3 v6)
-    (endsAt train3 v6)
-
-    (at train4 v7)
-    (at train4 v8)
-    (beginsAt train4 v7)
-    (endsAt train4 v8)
+    (endsAt train3 v8)
 
     ; Set adjacency of path nodes
     (nextTo v1 v2)
@@ -258,10 +254,8 @@
     (beginsAt train1 v5)
     (endsAt train1 v3)
     (at train3 v6)
-    (beginsAt train3 v6)
+    (at train3 v7)
+    (at train3 v8)
+    (beginsAt train3 v8)
     (endsAt train3 v6)
-    (at train4 v7)
-    (at train4 v8)
-    (beginsAt train4 v8)
-    (endsAt train4 v7)
 )))
