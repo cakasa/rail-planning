@@ -19,14 +19,14 @@
     (lastfree ?x - trackpart ?y - track) ; last free trackpart x of track y
 )
 
-; action to move a trainunit to a neighbouring trackpart on a track, to park it 
+; move from swiitch to last free node of track
 (:action move-to-end-of-track
     :parameters (?train - trainunit ?from ?toprev ?to - trackpart ?t - track)
     :precondition (and (at ?train ?from) (free ?to) 
                     (lastfree ?to ?t)
                     (nextTo ?toprev ?to) (onTrack ?to ?t)
                     (switch ?from)
-                    (or (and (switch ?toprev) ) (and (not (switch ?toprev)) (free ?toprev) (onTrack ?toprev ?t)))
+                    (or (switch ?toprev) (and (not (switch ?toprev)) (free ?toprev) (onTrack ?toprev ?t)))
                 )
     :effect (and (at ?train ?to) (not (at ?train ?from))
                     (free ?from) (not (free ?to))
@@ -35,18 +35,18 @@
                     (hasBeenParked ?train) (parkedOn ?train ?t))
 )
 
-; action to move a trainunit to out of a track, and reset the parkedOn predicate
+; move from start node of track to switch
 (:action move-from-track
     :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
     :precondition (and (at ?train ?from) (free ?to) 
-                    (nextTo ?from ?to) (onTrack ?from ?t)
+                    (nextTo ?to ?from) (onTrack ?from ?t)
                     (switch ?to))
     :effect (and (at ?train ?to) (not (at ?train ?from))
                     (free ?from) (not (free ?to))
                     (not (parkedOn ?train ?t)))
 )
 
-; action to move a trainunit along a track
+; move from track node closer to switch
 (:action move-along-track
     :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
     :precondition (and (at ?train ?from) (free ?to) 
@@ -60,7 +60,7 @@
 (:action move-to-departure
     :parameters (?train - trainunit ?from ?to - trackpart)
     :precondition (and (at ?train ?from) (free ?to) 
-                    (nextTo ?from ?to) (onPath ?to)
+                    (nextTo ?to ?from) (onPath ?to)
                     (forall (?unit - trainunit) (hasBeenParked ?unit)))
     :effect (and (at ?train ?to) (not (at ?train ?from)) 
                     (free ?from) (not (free ?to)))
