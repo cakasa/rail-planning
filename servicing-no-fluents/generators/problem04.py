@@ -4,9 +4,9 @@ from problem_generator import create_problem_file
 problem_name = os.path.basename(__file__)[:-3]
 filename = '../' + problem_name + '.pddl'
 trains = {
-    'train1': ('slt', 2, ['cleaning']),
-    'train2': ('sng', 2, ['inspection']),
-    'train3': ('sng', 2, []),
+    'train1': ('slt', 1, ['cleaning']),
+    'train2': ('sng', 1, ['inspection']),
+    'train3': ('sng', 1, []),
     'train4': ('slt', 1, []),
     'train5': ('sng', 1, []),
 }
