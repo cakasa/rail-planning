@@ -126,8 +126,18 @@
     (nextTo t9 t8)
     (nextTo t8 t13)
     (nextTo t13 t8)
+    (nextTo t16 t17)
+    (nextTo t17 t16)
+    (nextTo t16 t21)
+    (nextTo t21 t16)
+    (nextTo t16 t25)
+    (nextTo t25 t16)
     (nextTo t16 t29)
     (nextTo t29 t16)
+    (nextTo t16 t33)
+    (nextTo t33 t16)
+    (nextTo t16 t37)
+    (nextTo t37 t16)
 
     ; Set all non-path nodes as free
     (free t0)
