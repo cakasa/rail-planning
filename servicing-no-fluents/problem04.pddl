@@ -29,6 +29,10 @@
     (beginsAt train4 v4)
     (endsAt train4 v4)
 
+    (at train5 v5)
+    (beginsAt train5 v5)
+    (endsAt train5 v5)
+
     ; Set adjacency of path nodes
     (nextTo v1 v2)
     (nextTo v2 v1)
@@ -156,4 +160,7 @@
     (at train4 v4)
     (beginsAt train4 v4)
     (endsAt train4 v4)
+    (at train5 v5)
+    (beginsAt train5 v5)
+    (endsAt train5 v5)
 )))
