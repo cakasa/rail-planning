@@ -9,21 +9,26 @@ trains = {
     'train3': ('sng', 1, []),
     'train4': ('slt', 1, []),
     'train5': ('sng', 1, []),
+    'train6': ('sng', 1, []),
+    'train7': ('sng', 1, []),
+    'train8': ('sng', 1, []),
+    'train9': ('sng', 1, []),
+    'train10': ('sng', 1, []),
 }
-arrival_order = ['train1', 'train2', 'train3', 'train4', 'train5']
-departure_order = ['train2', 'train1', 'train3', 'train4', 'train5']
+arrival_order = ['train1', 'train2', 'train3', 'train4', 'train5', 'train6', 'train7', 'train8', 'train9', 'train10']
+departure_order = ['train1', 'train2', 'train3', 'train4', 'train5', 'train6', 'train7', 'train8', 'train9', 'train10']
 tracks = {
    'track0': (1, []),
-   'track1': (4, ['cleaning']),
-   'track2': (4, []),
-   'track3': (4, []),
-   'track4': (4, []),
-   'track5': (4, []),
-   'track6': (4, []),
-   'track7': (4, []),
-   'track8': (4, ['inspection']),
-   'track9': (4, []),
-   'track10': (4, []),
+   'track1': (1, ['cleaning']),
+   'track2': (1, []),
+   'track3': (1, []),
+   'track4': (1, []),
+   'track5': (1, []),
+   'track6': (1, []),
+   'track7': (1, []),
+   'track8': (1, ['inspection']),
+   'track9': (1, []),
+   'track10': (1, []),
 }
 next_to = [
     ('track0', 'track1'), 
