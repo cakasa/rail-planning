@@ -15,10 +15,10 @@ trains = {
 arrival_order = ['train1', 'train2', 'train3', 'train4', 'train5', 'train6', 'train7',] # 'train8', 'train9', 'train10']
 departure_order = ['train1', 'train2', 'train3', 'train4', 'train5', 'train6', 'train7',] # 'train8', 'train9', 'train10']
 tracks = {
-   'track0': (1, []),
-   'track1': (1, ['cleaning']),
-   'track2': (1, []),
-   'track3': (1, []),
+   'track0': (2, []),
+   'track1': (2, ['cleaning']),
+   'track2': (2, []),
+   'track3': (2, []),
    'track4': (1, []),
    'track5': (1, []),
    'track6': (1, []),

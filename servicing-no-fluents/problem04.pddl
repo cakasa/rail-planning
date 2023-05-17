@@ -7,9 +7,9 @@
     train5 - sng
     train6 - sng
     train7 - sng
-    v1 v2 v3 v4 v5 v6 v7 t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 - trackpart
+    v1 v2 v3 v4 v5 v6 v7 t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 - trackpart
     track0 track1 track2 track3 track4 track5 track6 track7 track8 track9 track10 - track
-    inspection cleaning - service
+    cleaning inspection - service
 )
 (:init
     ; Initialize trains
@@ -60,27 +60,35 @@
     (nextTo v1 t0)
     (nextTo t0 v1)
     ; Set adjacency of nodes on the same track
-    ; Connect adjacent tracks
     (nextTo t0 t1)
     (nextTo t1 t0)
-    (nextTo t0 t2)
-    (nextTo t2 t0)
     (nextTo t2 t3)
     (nextTo t3 t2)
-    (nextTo t2 t4)
-    (nextTo t4 t2)
     (nextTo t4 t5)
     (nextTo t5 t4)
-    (nextTo t4 t6)
-    (nextTo t6 t4)
-    (nextTo t4 t7)
-    (nextTo t7 t4)
-    (nextTo t4 t8)
-    (nextTo t8 t4)
-    (nextTo t4 t9)
-    (nextTo t9 t4)
-    (nextTo t4 t10)
-    (nextTo t10 t4)
+    (nextTo t6 t7)
+    (nextTo t7 t6)
+    ; Connect adjacent tracks
+    (nextTo t1 t2)
+    (nextTo t2 t1)
+    (nextTo t1 t4)
+    (nextTo t4 t1)
+    (nextTo t5 t6)
+    (nextTo t6 t5)
+    (nextTo t5 t8)
+    (nextTo t8 t5)
+    (nextTo t8 t9)
+    (nextTo t9 t8)
+    (nextTo t8 t10)
+    (nextTo t10 t8)
+    (nextTo t8 t11)
+    (nextTo t11 t8)
+    (nextTo t8 t12)
+    (nextTo t12 t8)
+    (nextTo t8 t13)
+    (nextTo t13 t8)
+    (nextTo t8 t14)
+    (nextTo t14 t8)
 
     ; Set all non-path nodes as free
     (free t0)
@@ -94,6 +102,10 @@
     (free t8)
     (free t9)
     (free t10)
+    (free t11)
+    (free t12)
+    (free t13)
+    (free t14)
 
     ; Add path nodes to path
     (onPath v1)
@@ -106,16 +118,20 @@
 
     ; Assign nodes to tracks
     (onTrack t0 track0)
-    (onTrack t1 track1)
-    (onTrack t2 track2)
-    (onTrack t3 track3)
-    (onTrack t4 track4)
-    (onTrack t5 track5)
-    (onTrack t6 track6)
-    (onTrack t7 track7)
-    (onTrack t8 track8)
-    (onTrack t9 track9)
-    (onTrack t10 track10)
+    (onTrack t1 track0)
+    (onTrack t2 track1)
+    (onTrack t3 track1)
+    (onTrack t4 track2)
+    (onTrack t5 track2)
+    (onTrack t6 track3)
+    (onTrack t7 track3)
+    (onTrack t8 track4)
+    (onTrack t9 track5)
+    (onTrack t10 track6)
+    (onTrack t11 track7)
+    (onTrack t12 track8)
+    (onTrack t13 track9)
+    (onTrack t14 track10)
 
     ; Set tracks as service ones
     (isServiceTrack track1 cleaning)
