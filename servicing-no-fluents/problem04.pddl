@@ -4,7 +4,8 @@
     train2 - sng
     train3 - sng
     train4 - slt
-    v1 v2 v3 v4 v5 v6 v7 v8 t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 t21 t22 t23 t24 t25 t26 t27 t28 t29 t30 t31 t32 t33 t34 t35 t36 t37 - trackpart
+    train5 - sng
+    v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 t21 t22 t23 t24 t25 t26 t27 t28 t29 t30 t31 t32 t33 t34 t35 t36 t37 - trackpart
     track0 track1 track2 track3 track4 track5 track6 track7 track8 track9 track10 - track
     inspection cleaning - service
 )
@@ -32,6 +33,12 @@
     (beginsAt train4 v7)
     (endsAt train4 v8)
 
+    (at train5 v9)
+    (at train5 v10)
+    (at train5 v11)
+    (beginsAt train5 v9)
+    (endsAt train5 v11)
+
     ; Set adjacency of path nodes
     (nextTo v1 v2)
     (nextTo v2 v1)
@@ -47,6 +54,12 @@
     (nextTo v7 v6)
     (nextTo v7 v8)
     (nextTo v8 v7)
+    (nextTo v8 v9)
+    (nextTo v9 v8)
+    (nextTo v9 v10)
+    (nextTo v10 v9)
+    (nextTo v10 v11)
+    (nextTo v11 v10)
     ; Connect path to first non-path node
     (nextTo v1 t0)
     (nextTo t0 v1)
@@ -176,6 +189,9 @@
     (onPath v6)
     (onPath v7)
     (onPath v8)
+    (onPath v9)
+    (onPath v10)
+    (onPath v11)
 
     ; Assign nodes to tracks
     (onTrack t0 track0)
@@ -240,4 +256,9 @@
     (at train4 v8)
     (beginsAt train4 v8)
     (endsAt train4 v7)
+    (at train5 v9)
+    (at train5 v10)
+    (at train5 v11)
+    (beginsAt train5 v11)
+    (endsAt train5 v9)
 )))
