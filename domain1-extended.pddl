@@ -17,6 +17,7 @@
     (onPath ?x) ;trackpart x is on the arrival/departure path L
     (switch ?x) ;trackpart x is a switch
     (lastfree ?x - trackpart ?y - track) ; last free trackpart x of track y
+    (lastfreePath ?x - trackpart) ; last free trackpart x of track y
 )
 
 ; action to move a trainunit to a neighbouring trackpart on a track, to park it
@@ -47,7 +48,6 @@
     :precondition (and (at ?train ?from) (free ?to) (lastfree ?to ?t)
                     (nextTo ?toprev ?to) (onTrack ?from ?t) (onTrack ?toprev ?t) (onTrack ?to ?t)
                     (hasBeenParked ?train) (parkedOn ?train ?t)
-                    ; (switch ?from)
                 )
     :effect (and (at ?train ?to) (not (at ?train ?from))
                     (free ?from) (not (free ?to))
@@ -65,12 +65,13 @@
 
 ; Can only move back to departure if all trains have been parked.
 (:action move-to-departure
-    :parameters (?train - trainunit ?from ?to - trackpart)
-    :precondition (and (at ?train ?from) (free ?to)
-                    (nextTo ?to ?from) (onPath ?to)
+    :parameters (?train - trainunit ?from ?toprev ?to - trackpart)
+    :precondition (and (at ?train ?from) (free ?to) (lastfreePath ?to)
+                    (nextTo ?to ?toprev) (onPath ?from) (onPath ?toprev) (onPath ?to)
                     (forall (?unit - trainunit) (hasBeenParked ?unit)))
     :effect (and (at ?train ?to) (not (at ?train ?from))
-                    (free ?from) (not (free ?to)))
+                    (free ?from) (not (free ?to))
+                    (not (lastfreePath ?to)) (lastfreePath ?toprev))
 )
 
 ; Action to move train unit over the arrival path towards the shunting yard
