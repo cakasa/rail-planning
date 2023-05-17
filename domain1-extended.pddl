@@ -19,22 +19,19 @@
     (lastfree ?x - trackpart ?y - track) ; last free trackpart x of track y
 )
 
-; move from swiitch to last free node of track
-(:action move-to-end-of-track
-    :parameters (?train - trainunit ?from ?toprev ?to - trackpart ?t - track)
+; action to move a trainunit to a neighbouring trackpart on a track, to park it 
+(:action move-from-switch-to-track
+    :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
     :precondition (and (at ?train ?from) (free ?to) 
-                    (lastfree ?to ?t)
-                    (nextTo ?toprev ?to) (onTrack ?to ?t)
-                    (switch ?from)
-                )
-    :effect (and (at ?train ?to) (not (at ?train ?from))
-                    (free ?from) (not (free ?to))
-                    (not (lastfree ?to ?t)) (lastfree ?toprev ?t)
+                    (nextTo ?from ?to) (onTrack ?to ?t)
+                    (switch ?from))
+    :effect (and (at ?train ?to) (not (at ?train ?from)) 
+                    (free ?from) (not (free ?to)) 
                     (hasBeenParked ?train) (parkedOn ?train ?t))
 )
 
-; move from start node of track to switch
-(:action move-from-track
+; action to move a trainunit to out of a track, and reset the parkedOn predicate
+(:action move-from-track-to-switch
     :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
     :precondition (and (at ?train ?from) (free ?to) 
                     (nextTo ?to ?from) (onTrack ?from ?t)
@@ -44,8 +41,20 @@
                     (not (parkedOn ?train ?t)))
 )
 
-; move from track node closer to switch
-(:action move-along-track
+; move to last free node of track
+(:action move-to-end-of-track
+    :parameters (?train - trainunit ?from ?toprev ?to - trackpart ?t - track)
+    :precondition (and (at ?train ?from) (free ?to) (lastfree ?to ?t)
+                    (nextTo ?toprev ?to) (onTrack ?from ?t) (onTrack ?toprev ?t) (onTrack ?to ?t)
+                    (hasBeenParked ?train) (parkedOn ?train ?t)
+                    ; (switch ?from)
+                )
+    :effect (and (at ?train ?to) (not (at ?train ?from))
+                    (free ?from) (not (free ?to))
+                    (not (lastfree ?to ?t)) (lastfree ?toprev ?t))
+)
+
+(:action move-along-track-backwards
     :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
     :precondition (and (at ?train ?from) (free ?to) 
                     (nextTo ?to ?from) (onTrack ?from ?t)
