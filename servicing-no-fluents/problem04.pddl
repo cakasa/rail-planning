@@ -211,7 +211,7 @@
 
     ; Set tracks as service ones
     (isServiceTrack track1 cleaning)
-    (isServiceTrack track3 inspection)
+    (isServiceTrack track8 inspection)
 )
 (:goal (and
     (forall (?t - trainunit) (and (hasDeparted ?t) (hasBeenParked ?t)))
