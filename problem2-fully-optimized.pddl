@@ -1,4 +1,4 @@
-(define (problem problem2-extended) (:domain domain1-extended)
+(define (problem problem2-fully-optimized) (:domain domain1-fully-optimized)
 (:objects
    train1 - sng
    train2 - sng
