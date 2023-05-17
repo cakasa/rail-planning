@@ -8,7 +8,7 @@
 )
 (:init
     ; Initialize trains
-    (at train1 v2)
+    (at train1 v1)
     (needsService train1 cleaning)
 
     (at train2 v2)
@@ -54,6 +54,6 @@
 (:goal (and
     (forall (?t - trainunit) (and (hasDeparted ?t) (hasBeenParked ?t)))
     (forall (?t - trainunit ?s - service) (not (needsService ?t ?s)))
-    (at train2 v0)
+    (at train1 v1)
     (at train2 v2)
 )))

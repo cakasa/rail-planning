@@ -56,7 +56,8 @@
                     (onPath ?to)
                     (forall (?unit - trainunit) (hasBeenParked ?unit)))
     :effect (and (at ?train ?to) (not (at ?train ?from)) 
-                    (free ?from) (not (free ?to)))
+                    (free ?from) (not (free ?to))
+                    (hasDeparted ?train))
 )
 
 ; Action to move train unit over the arrival path towards the shunting yard

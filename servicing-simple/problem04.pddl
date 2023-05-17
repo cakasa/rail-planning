@@ -18,22 +18,22 @@
     (at train1 v1)
     (needsService train1 cleaning)
 
-    (at train2 v1)
+    (at train2 v2)
     (needsService train2 inspection)
 
-    (at train3 v1)
+    (at train3 v3)
 
-    (at train4 v1)
+    (at train4 v4)
 
-    (at train5 v1)
+    (at train5 v5)
 
-    (at train6 v1)
+    (at train6 v6)
 
-    (at train7 v1)
+    (at train7 v7)
 
-    (at train8 v1)
+    (at train8 v8)
 
-    (at train9 v1)
+    (at train9 v9)
 
     ; Set adjacency of path nodes
     (nextTo v1 v2)
@@ -146,13 +146,13 @@
 (:goal (and
     (forall (?t - trainunit) (and (hasDeparted ?t) (hasBeenParked ?t)))
     (forall (?t - trainunit ?s - service) (not (needsService ?t ?s)))
-    (at train9 v0)
-    (at train9 v2)
-    (at train9 v4)
-    (at train9 v6)
-    (at train9 v8)
-    (at train9 v10)
-    (at train9 v12)
-    (at train9 v14)
-    (at train9 v16)
+    (at train9 v1)
+    (at train8 v2)
+    (at train7 v3)
+    (at train6 v4)
+    (at train5 v5)
+    (at train4 v6)
+    (at train3 v7)
+    (at train2 v8)
+    (at train1 v9)
 )))

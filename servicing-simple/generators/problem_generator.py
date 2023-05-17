@@ -58,13 +58,15 @@ def create_problem_file(filename, problem_name, trains, arrival_order, departure
         # Initialize trains
         f.write("    ; Initialize trains\n")
         
+        i = 1
         for train in arrival_order:
             _, needed_services = trains[train]
-            f.write("    (at {} v{})\n".format(train, i + 1))
+            f.write("    (at {} v{})\n".format(train, i))
             
             for service in needed_services:
                 f.write("    (needsService {} {})\n".format(train, service))
             
+            i += 1
             f.write("\n")
 
     
@@ -131,7 +133,8 @@ def create_problem_file(filename, problem_name, trains, arrival_order, departure
         f.write("    (forall (?t - trainunit) (and (hasDeparted ?t) (hasBeenParked ?t)))\n")
         f.write("    (forall (?t - trainunit ?s - service) (not (needsService ?t ?s)))\n")
         
-        for i in range(len(departure_order)):
-            f.write("    (at {} v{})\n".format(train, i + i))
-
+        i = 1
+        for train in departure_order:
+            f.write("    (at {} v{})\n".format(train, i))
+            i += 1
         f.write(")))\n")
