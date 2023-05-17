@@ -22,13 +22,16 @@
 ; action to move a trainunit to a neighbouring trackpart on a track, to park it 
 (:action move-to-end-of-track
     :parameters (?train - trainunit ?from ?toprev ?to - trackpart ?t - track)
-    :precondition (and (at ?train ?from) (free ?toprev) (free ?to) 
+    :precondition (and (at ?train ?from) (free ?to) 
                     (lastfree ?to ?t)
-                    (nextTo ?toprev ?to) (onTrack ?toprev ?t) (onTrack ?to ?t)
-                    (switch ?from))
-    :effect (and (at ?train ?to) (not (at ?train ?from)) 
+                    (nextTo ?toprev ?to) (onTrack ?to ?t)
+                    (switch ?from)
+                    (or (and (switch ?toprev) ) (and (not (switch ?toprev)) (free ?toprev) (onTrack ?toprev ?t)))
+                )
+    :effect (and (at ?train ?to) (not (at ?train ?from))
                     (free ?from) (not (free ?to))
-                    (not (lastfree ?to ?t)) (lastfree ?toprev ?t)
+                    (not (lastfree ?to ?t))
+                    (when (not (switch ?toprev)) (lastfree ?toprev ?t))
                     (hasBeenParked ?train) (parkedOn ?train ?t))
 )
 
