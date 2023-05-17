@@ -15,7 +15,8 @@ trains = {
     'train9': ('sng', 1, []),
 }
 arrival_order = ['train1', 'train2', 'train3', 'train4', 'train5', 'train6', 'train7', 'train8', 'train9',] # 'train10']
-departure_order = ['train1', 'train2', 'train3', 'train4', 'train5', 'train6', 'train7', 'train8', 'train9',] # 'train10']
+departure_order = arrival_order.copy()
+departure_order.reverse()
 tracks = {
    'track0': (1, []),
    'track1': (2, ['cleaning']),
