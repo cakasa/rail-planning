@@ -43,6 +43,16 @@
                     (not (parkedOn ?train ?t)))
 )
 
+; action to move a trainunit along a track
+(:action move-along-track
+    :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
+    :precondition (and (at ?train ?from) (free ?to) 
+                    (nextTo ?from ?to) (onTrack ?from ?t)
+                    (onTrack ?to ?t))
+    :effect (and (at ?train ?to) (not (at ?train ?from))
+                    (free ?from) (not (free ?to)))
+)
+
 ; Can only move back to departure if all trains have been parked. 
 (:action move-to-departure
     :parameters (?train - trainunit ?from ?to - trackpart)
