@@ -6,7 +6,7 @@
     train4 - slt
     v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 t21 t22 t23 t24 t25 t26 t27 t28 t29 t30 t31 t32 t33 t34 t35 t36 t37 t38 t39 t40 - trackpart
     track0 track1 track2 track3 track4 track5 track6 track7 track8 track9 track10 - track
-    cleaning inspection - service
+    inspection cleaning - service
 )
 (:init
     ; Initialize trains
@@ -126,18 +126,8 @@
     (nextTo t9 t8)
     (nextTo t8 t13)
     (nextTo t13 t8)
-    (nextTo t16 t17)
-    (nextTo t17 t16)
-    (nextTo t16 t21)
-    (nextTo t21 t16)
-    (nextTo t16 t25)
-    (nextTo t25 t16)
     (nextTo t16 t29)
     (nextTo t29 t16)
-    (nextTo t16 t33)
-    (nextTo t33 t16)
-    (nextTo t16 t37)
-    (nextTo t37 t16)
 
     ; Set all non-path nodes as free
     (free t0)

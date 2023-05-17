@@ -30,12 +30,12 @@ next_to = [
     ('track0', 'track2'),
     ('track2', 'track3'),
     ('track2', 'track4'),
-    ('track4', 'track5'),
-    ('track4', 'track6'),
-    ('track4', 'track7'),
+    # ('track4', 'track5'),
+    # ('track4', 'track6'),
+    # ('track4', 'track7'),
     ('track4', 'track8'),
-    ('track4', 'track9'),
-    ('track4', 'track10'),
+    # ('track4', 'track9'),
+    # ('track4', 'track10'),
 ]
 
 create_problem_file(filename, problem_name, trains, arrival_order, departure_order, tracks, next_to)
