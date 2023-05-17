@@ -7,7 +7,7 @@ trains = {
     'train1': ('slt', 1, ['cleaning']),
     'train2': ('sng', 1, ['inspection']),
     'train3': ('sng', 1, []),
-    'train4': ('slt', 1, []),
+    'train4': ('slt', 2, []),
     'train5': ('sng', 2, []),
 }
 arrival_order = ['train1', 'train2', 'train3', 'train4', 'train5']
