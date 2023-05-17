@@ -26,12 +26,10 @@
                     (lastfree ?to ?t)
                     (nextTo ?toprev ?to) (onTrack ?to ?t)
                     (switch ?from)
-                    ; (or (= ?from ?toprev) (and (not (= ?from ?toprev)) (free ?toprev) (onTrack ?toprev ?t)))
                 )
     :effect (and (at ?train ?to) (not (at ?train ?from))
                     (free ?from) (not (free ?to))
-                    (not (lastfree ?to ?t))
-                    (when (not (switch ?toprev)) (lastfree ?toprev ?t))
+                    (not (lastfree ?to ?t)) (lastfree ?toprev ?t)
                     (hasBeenParked ?train) (parkedOn ?train ?t))
 )
 
