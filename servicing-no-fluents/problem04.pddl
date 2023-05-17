@@ -5,38 +5,34 @@
     train3 - sng
     train4 - slt
     train5 - sng
-    v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 - trackpart
+    v1 v2 v3 v4 v5 v6 t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 - trackpart
     track0 track1 track2 track3 track4 track5 track6 track7 track8 track9 track10 - track
-    cleaning inspection - service
+    inspection cleaning - service
 )
 (:init
     ; Initialize trains
     (at train1 v1)
-    (at train1 v2)
     (beginsAt train1 v1)
-    (endsAt train1 v2)
+    (endsAt train1 v1)
     (needsService train1 cleaning)
 
-    (at train2 v3)
-    (at train2 v4)
-    (beginsAt train2 v3)
-    (endsAt train2 v4)
+    (at train2 v2)
+    (beginsAt train2 v2)
+    (endsAt train2 v2)
     (needsService train2 inspection)
 
-    (at train3 v5)
-    (at train3 v6)
-    (beginsAt train3 v5)
-    (endsAt train3 v6)
+    (at train3 v3)
+    (beginsAt train3 v3)
+    (endsAt train3 v3)
 
-    (at train4 v7)
-    (at train4 v8)
-    (beginsAt train4 v7)
-    (endsAt train4 v8)
+    (at train4 v4)
+    (beginsAt train4 v4)
+    (endsAt train4 v4)
 
-    (at train5 v9)
-    (at train5 v10)
-    (beginsAt train5 v9)
-    (endsAt train5 v10)
+    (at train5 v5)
+    (at train5 v6)
+    (beginsAt train5 v5)
+    (endsAt train5 v6)
 
     ; Set adjacency of path nodes
     (nextTo v1 v2)
@@ -49,14 +45,6 @@
     (nextTo v5 v4)
     (nextTo v5 v6)
     (nextTo v6 v5)
-    (nextTo v6 v7)
-    (nextTo v7 v6)
-    (nextTo v7 v8)
-    (nextTo v8 v7)
-    (nextTo v8 v9)
-    (nextTo v9 v8)
-    (nextTo v9 v10)
-    (nextTo v10 v9)
     ; Connect path to first non-path node
     (nextTo v1 t0)
     (nextTo t0 v1)
@@ -133,10 +121,6 @@
     (onPath v4)
     (onPath v5)
     (onPath v6)
-    (onPath v7)
-    (onPath v8)
-    (onPath v9)
-    (onPath v10)
 
     ; Assign nodes to tracks
     (onTrack t0 track0)
@@ -169,23 +153,19 @@
     (forall (?t - trainunit) (and (hasDeparted ?t) (hasBeenParked ?t)))
     (forall (?t - trainunit ?s - service) (not (needsService ?t ?s)))
     (at train2 v1)
-    (at train2 v2)
-    (beginsAt train2 v2)
+    (beginsAt train2 v1)
     (endsAt train2 v1)
-    (at train1 v3)
-    (at train1 v4)
-    (beginsAt train1 v4)
-    (endsAt train1 v3)
-    (at train3 v5)
-    (at train3 v6)
-    (beginsAt train3 v6)
-    (endsAt train3 v5)
-    (at train4 v7)
-    (at train4 v8)
-    (beginsAt train4 v8)
-    (endsAt train4 v7)
-    (at train5 v9)
-    (at train5 v10)
-    (beginsAt train5 v10)
-    (endsAt train5 v9)
+    (at train1 v2)
+    (beginsAt train1 v2)
+    (endsAt train1 v2)
+    (at train3 v3)
+    (beginsAt train3 v3)
+    (endsAt train3 v3)
+    (at train4 v4)
+    (beginsAt train4 v4)
+    (endsAt train4 v4)
+    (at train5 v5)
+    (at train5 v6)
+    (beginsAt train5 v6)
+    (endsAt train5 v5)
 )))
