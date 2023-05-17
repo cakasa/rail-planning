@@ -19,7 +19,7 @@
 )
 
 ; action to move a trainunit to a neighbouring trackpart on a track, to park it 
-(:action move-to-track
+(:action move-from-switch-to-track
     :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
     :precondition (and (at ?train ?from) (free ?to) 
                     (nextTo ?from ?to) (onTrack ?to ?t)
@@ -30,7 +30,7 @@
 )
 
 ; action to move a trainunit to out of a track, and reset the parkedOn predicate
-(:action move-from-track
+(:action move-from-track-to-switch
     :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
     :precondition (and (at ?train ?from) (free ?to) 
                     (nextTo ?to ?from) (onTrack ?from ?t)
