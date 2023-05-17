@@ -15,9 +15,9 @@ departure_order = ['train2', 'train1', 'train3', 'train4', 'train5']
 tracks = {
    'track0': (4, []),
    'track1': (4, ['cleaning']),
-   'track2': (1, []),
+   'track2': (4, []),
    'track3': (4, ['inspection']),
-   'track4': (1, []),
+   'track4': (4, []),
    'track5': (4, []),
    'track6': (4, []),
    'track7': (4, []),
