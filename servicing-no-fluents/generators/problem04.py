@@ -6,7 +6,7 @@ filename = '../' + problem_name + '.pddl'
 trains = {
     'train1': ('slt', 1, ['cleaning']),
     'train2': ('sng', 1, ['inspection']),
-    'train3': ('sng', 1, []),
+    'train3': ('sng', 2, []),
     'train4': ('slt', 2, []),
     'train5': ('sng', 2, []),
 }
