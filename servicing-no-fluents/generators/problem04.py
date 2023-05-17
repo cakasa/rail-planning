@@ -6,12 +6,12 @@ filename = '../' + problem_name + '.pddl'
 trains = {
     'train1': ('slt', 3, ['cleaning']),
     'train2': ('sng', 2, ['inspection']),
-    'train3': ('sng', 1, []),
-    'train4': ('slt', 2, []),
-    'train5': ('sng', 3, []),
+    # 'train3': ('sng', 1, []),
+    # 'train4': ('slt', 2, []),
+    # 'train5': ('sng', 3, []),
 }
-arrival_order = ['train1', 'train2', 'train3', 'train4', 'train5']
-departure_order = ['train2', 'train1', 'train3', 'train4', 'train5']
+arrival_order = ['train1', 'train2']
+departure_order = ['train2', 'train1']
 tracks = {
    'track0': (4, []),
    'track1': (4, ['cleaning']),
