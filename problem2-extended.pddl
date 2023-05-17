@@ -49,6 +49,7 @@
    (onPath v4)
    (onPath v5)
    (onPath v6)
+   (onPath t0)
    (lastfreePath v6)
    (switch t0)
 )
