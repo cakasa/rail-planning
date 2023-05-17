@@ -14,16 +14,16 @@ arrival_order = ['train1', 'train2', 'train3', 'train4', 'train5']
 departure_order = ['train2', 'train1', 'train3', 'train4', 'train5']
 tracks = {
    'track0': (1, []),
-   'track1': (2, ['cleaning']),
-   'track2': (2, []),
-   'track3': (2, []),
-   'track4': (2, []),
-   'track5': (2, []),
-   'track6': (2, []),
-   'track7': (2, []),
-   'track8': (2, ['inspection']),
-   'track9': (2, []),
-   'track10': (2, []),
+   'track1': (4, ['cleaning']),
+   'track2': (4, []),
+   'track3': (4, []),
+   'track4': (4, []),
+   'track5': (4, []),
+   'track6': (4, []),
+   'track7': (4, []),
+   'track8': (4, ['inspection']),
+   'track9': (4, []),
+   'track10': (4, []),
 }
 next_to = [
     ('track0', 'track1'), 
