@@ -2,19 +2,19 @@
 
 ## ssh to `student-linux.tudelft.nl` -> `mapfw.ewi.tudelft.nl`
 ```
-$ ssh student-linux.tudelft.nl
-$ ssh mapfw.ewi.tudelft.nl
+ssh student-linux.tudelft.nl
+ssh mapfw.ewi.tudelft.nl
 ```
 
 #### Assign ssh key `<keyname>` to ssh agent
 ```
-$ eval "ssh-agent -s"
-$ ssh-add ~/.ssh/<keyname>
+eval "ssh-agent" -s
+ssh-add ~/.ssh/<keyname>
 ```
 
 #### Run planner on domain and problem
 ```
-$ /data/ipc2018/solvers/sat/team1/planner.img domain0.pddl problem1.pddl re.out
+/data/ipc2018/solvers/sat/team/planner.img domain.pddl problem.pddl re.out
 ```
 
 ## IPC2018 - Classical Tracks
