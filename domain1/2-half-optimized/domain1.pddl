@@ -20,7 +20,6 @@
     (lastfreePath ?x - trackpart) ; last free trackpart x of path L
 )
 
-; Action to move train unit over the arrival path towards the shunting yard
 (:action move-on-arrival-to-switch
     :parameters (?train - trainunit ?from ?next ?to - trackpart)
     :precondition (and
@@ -40,6 +39,7 @@
 (:action move-from-switch-to-track
     :parameters (?train - trainunit ?from ?toprev ?to - trackpart ?t - track)
     :precondition (and
+        (not (parkedOn ?train ?t))
         (at ?train ?from)
         (free ?to)
         (lastfree ?to ?t)
