@@ -41,7 +41,7 @@
         (parkedOn ?train ?t))
 )
 
-(:action move-from-track-to-switch
+(:action move-from-track-to-departure
     :parameters (?train - trainunit ?from ?next ?toprev ?to - trackpart ?t - track)
     :precondition (and
         (parkedOn ?train ?t)
@@ -49,8 +49,8 @@
         (onTrack ?from ?t)
         (nextTo ?next ?from)
         (free ?next)
-        (nextTo ?to ?toprev)
         (free ?to)
+        (nextTo ?to ?toprev)
         (onPath ?to)
         (lastfreePath ?to)
         (forall (?unit - trainunit) (hasBeenParked ?unit)))
