@@ -1,4 +1,4 @@
-(define (problem problem2-single-edges) (:domain domain1-single-edges)
+(define (problem problem2-no-reallocation) (:domain domain1)
 (:objects
    train1 - sng
    train2 - sng
@@ -50,9 +50,9 @@
    (switch t0)  
 )
 (:goal (and
-   (forall (?t - slt) (or (at ?t v1) (at ?t v4)))
-   (forall (?t - sng) (or (at ?t v2) (at ?t v5)))
-   (forall (?t - virm) (or (at ?t v3)))
-   (forall (?t - icm) (or (at ?t v6)))
+   (forall (?t - slt) (or (at ?t v3) (at ?t v5)))
+   (forall (?t - sng) (or (at ?t v4) (at ?t v6)))
+   (forall (?t - virm) (or (at ?t v2)))
+   (forall (?t - icm) (or (at ?t v1)))
    (forall (?t - trainunit) (hasBeenParked ?t))
 )))

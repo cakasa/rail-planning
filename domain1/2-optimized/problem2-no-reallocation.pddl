@@ -1,4 +1,4 @@
-(define (problem problem2-fully-optimized-no-reallocation) (:domain domain1-fully-optimized-no-reallocation)
+(define (problem problem2-no-reallocation) (:domain domain1-no-reallocation)
 (:objects
    train1 - sng
    train2 - sng

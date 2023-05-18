@@ -1,4 +1,4 @@
-(define (problem problem2-extended-reallocation) (:domain domain1-extended-reallocation)
+(define (problem problem2) (:domain domain1)
 (:objects
    train1 - sng
    train2 - sng
@@ -49,7 +49,6 @@
    (onPath v4)
    (onPath v5)
    (onPath v6)
-   ; (onPath t0)
    (lastfreePath v6)
    (switch t0)
 )
