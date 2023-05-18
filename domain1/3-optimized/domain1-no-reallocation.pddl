@@ -22,13 +22,13 @@
 )
 
 (:action check-path
-    :parameters (?x ?y ?z - trackpart)
+    :parameters (?from ?to - trackpart)
     :precondition (or
-        (nextTo ?x ?z)
-        (and (nextTo ?x ?y) (validPath ?y ?z))
+        (nextTo ?from ?to)
+        (exists (?next - trackpart) (and (nextTo ?from ?next) (validPath ?next ?to)))
     )
     :effect (and
-        (validPath ?x ?z)
+        (validPath ?from ?to)
     )
 )
 
