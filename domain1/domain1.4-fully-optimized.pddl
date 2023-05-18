@@ -21,14 +21,16 @@
 )
 
 ; Action to move train unit over the arrival path towards the shunting yard
-(:action move-on-arrival
-    :parameters (?train - trainunit ?from ?to - trackpart)
+(:action move-on-arrival-to-switch
+    :parameters (?train - trainunit ?from ?next ?to - trackpart)
     :precondition (and
         (not (hasBeenParked ?train))
         (at ?train ?from)
         (onPath ?from)
+        (free ?next)
         (free ?to)
-        (nextTo ?from ?to))
+        (switch ?to)
+        (nextTo ?from ?next))
     :effect (and
         (at ?train ?to)         (not (at ?train ?from))
         (free ?from)            (not (free ?to))
