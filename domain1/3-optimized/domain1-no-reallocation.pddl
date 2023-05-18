@@ -20,71 +20,44 @@
     (lastfreePath ?x - trackpart) ; last free trackpart x of path L
 )
 
-(:action move-on-arrival-to-switch
-    :parameters (?train - trainunit ?from ?next ?to - trackpart)
-    :precondition (and
-        (not (hasBeenParked ?train))
-        (at ?train ?from)
-        (onPath ?from)
-        (free ?next)
-        (free ?to)
-        (switch ?to)
-        (nextTo ?from ?next))
-    :effect (and
-        (at ?train ?to)         (not (at ?train ?from))
-        (free ?from)            (not (free ?to))
-    )
-)
-
-(:action move-from-switch-to-track
-    :parameters (?train - trainunit ?from ?toprev ?to - trackpart ?t - track)
+(:action move-from-arrival-to-track
+    :parameters (?train - trainunit ?from ?next ?toprev ?to - trackpart ?t - track)
     :precondition (and
         (not (hasBeenParked ?train))
         (not (parkedOn ?train ?t))
         (at ?train ?from)
+        (onPath ?from)
+        (free ?next)
         (free ?to)
         (lastfree ?to ?t)
         (nextTo ?toprev ?to)
-        (onTrack ?to ?t)
-        (switch ?from))
+        (onTrack ?to ?t))
     :effect (and
         (at ?train ?to)         (not (at ?train ?from))
         (free ?from)            (not (free ?to))
-        (lastfree ?toprev ?t)   (not (lastfree ?to ?t))
+        (when (not (switch ?toprev)) (lastfree ?toprev ?t))
+        (not (lastfree ?to ?t))
         (hasBeenParked ?train)
         (parkedOn ?train ?t))
 )
 
 (:action move-from-track-to-switch
-    :parameters (?train - trainunit ?from ?next ?to - trackpart ?t - track)
+    :parameters (?train - trainunit ?from ?next ?toprev ?to - trackpart ?t - track)
     :precondition (and
         (parkedOn ?train ?t)
         (at ?train ?from)
         (onTrack ?from ?t)
         (nextTo ?next ?from)
         (free ?next)
-        (free ?to)
-        (switch ?to)
-        (forall (?unit - trainunit) (hasBeenParked ?unit)))
-    :effect (and
-        (at ?train ?to)         (not (at ?train ?from))
-        (free ?from)            (not (free ?to))
-        (not (parkedOn ?train ?t)))
-)
-
-(:action move-from-switch-to-departure
-    :parameters (?train - trainunit ?from ?toprev ?to - trackpart)
-    :precondition (and
-        (at ?train ?from)
-        (free ?to)
-        (lastfreePath ?to)
         (nextTo ?to ?toprev)
+        (free ?to)
         (onPath ?to)
-        (switch ?from)
+        (lastfreePath ?to)
         (forall (?unit - trainunit) (hasBeenParked ?unit)))
     :effect (and
         (at ?train ?to)         (not (at ?train ?from))
         (free ?from)            (not (free ?to))
-        (lastfreePath ?toprev)  (not (lastfreePath ?to)))
+        (lastfreePath ?toprev)  (not (lastfreePath ?to))
+        (not (parkedOn ?train ?t)))
 )
 )
