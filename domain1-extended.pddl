@@ -20,6 +20,16 @@
     (lastfreePath ?x - trackpart) ; last free trackpart x of track y
 )
 
+; Action to move train unit over the arrival path towards the shunting yard
+(:action move-on-arrival
+    :parameters (?train - trainunit ?from ?to - trackpart)
+    :precondition (and (at ?train ?from) (free ?to)
+                    (nextTo ?from ?to) (not (hasBeenParked ?train))
+                    (onPath ?from))
+    :effect (and (at ?train ?to) (not (at ?train ?from))
+                    (free ?from) (not (free ?to)))
+)
+
 ; action to move a trainunit to a neighbouring trackpart on a track, to park it
 (:action move-from-switch-to-track
     :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
@@ -29,17 +39,6 @@
     :effect (and (at ?train ?to) (not (at ?train ?from))
                     (free ?from) (not (free ?to)) 
                     (hasBeenParked ?train) (parkedOn ?train ?t))
-)
-
-; action to move a trainunit to out of a track, and reset the parkedOn predicate
-(:action move-from-track-to-switch
-    :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
-    :precondition (and (at ?train ?from) (free ?to) 
-                    (nextTo ?to ?from) (onTrack ?from ?t)
-                    (switch ?to))
-    :effect (and (at ?train ?to) (not (at ?train ?from))
-                    (free ?from) (not (free ?to))
-                    (not (parkedOn ?train ?t)))
 )
 
 ; move to last free node of track
@@ -63,24 +62,26 @@
                     (free ?from) (not (free ?to)))
 )
 
+; action to move a trainunit to out of a track, and reset the parkedOn predicate
+(:action move-from-track-to-switch
+    :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
+    :precondition (and (at ?train ?from) (free ?to) 
+                    (nextTo ?to ?from) (onTrack ?from ?t)
+                    (switch ?to))
+    :effect (and (at ?train ?to) (not (at ?train ?from))
+                    (free ?from) (not (free ?to))
+                    (not (parkedOn ?train ?t)))
+)
+
 ; Can only move back to departure if all trains have been parked.
 (:action move-to-departure
     :parameters (?train - trainunit ?from ?toprev ?to - trackpart)
     :precondition (and (at ?train ?from) (free ?to) (lastfreePath ?to)
-                    (nextTo ?to ?toprev) (onPath ?from) (onPath ?toprev) (onPath ?to)
-                    (forall (?unit - trainunit) (hasBeenParked ?unit)))
+                    (nextTo ?to ?toprev) (onPath ?to)
+                    (forall (?unit - trainunit) (hasBeenParked ?unit))
+                    (switch ?from))
     :effect (and (at ?train ?to) (not (at ?train ?from))
                     (free ?from) (not (free ?to))
                     (not (lastfreePath ?to)) (lastfreePath ?toprev))
-)
-
-; Action to move train unit over the arrival path towards the shunting yard
-(:action move-on-arrival
-    :parameters (?train - trainunit ?from ?to - trackpart)
-    :precondition (and (at ?train ?from) (free ?to)
-                    (nextTo ?from ?to) (not (hasBeenParked ?train))
-                    (onPath ?from))
-    :effect (and (at ?train ?to) (not (at ?train ?from))
-                    (free ?from) (not (free ?to)))
 )
 )

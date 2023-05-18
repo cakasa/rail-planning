@@ -1,4 +1,4 @@
-(define (domain domain1-fully-optimized)
+(define (domain domain1-fully-optimized-reallocation)
 
 (:requirements :adl)
 
@@ -39,7 +39,7 @@
 (:action move-from-switch-to-track
     :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
     :precondition (and
-        (not (hasBeenParked ?train))
+        ; (not (hasBeenParked ?train))
         (not (parkedOn ?train ?t))
         (at ?train ?from)
         (switch ?from)
@@ -57,8 +57,8 @@
 (:action move-to-end-of-track
     :parameters (?train - trainunit ?from ?toprev ?to - trackpart ?t - track)
     :precondition (and
-        (not (hasBeenParked ?train))
-        (parkedOn ?train ?t)
+        ; (not (hasBeenParked ?train))
+        ; (parkedOn ?train ?t)
         (at ?train ?from)
         (nextTo ?toprev ?to)
         (free ?to)
@@ -76,13 +76,19 @@
 
 ; (:action move-from-switch-to-end-of-track
 ;     :parameters (?train - trainunit ?from ?toprev ?to - trackpart ?t - track)
-;     :precondition (and (at ?train ?from) (free ?to) (lastfree ?to ?t)
-;                     (nextTo ?toprev ?to) (onTrack ?to ?t)
-;                     (switch ?from) (not (switch ?to)))
-;     :effect (and (at ?train ?to) (not (at ?train ?from))
-;                     (free ?from) (not (free ?to))
-;                     (not (lastfree ?to ?t)) (lastfree ?toprev ?t)
-;                     (hasBeenParked ?train) (parkedOn ?train ?t))
+;     :precondition (and
+;         (at ?train ?from)
+;         (free ?to)
+;         (lastfree ?to ?t)
+;         (nextTo ?toprev ?to)
+;         (onTrack ?to ?t)
+;         (switch ?from))
+;     :effect (and
+;         (at ?train ?to)         (not (at ?train ?from))
+;         (free ?from)            (not (free ?to))
+;         (lastfree ?toprev ?t)   (not (lastfree ?to ?t))
+;         (hasBeenParked ?train)
+;         (parkedOn ?train ?t))
 ; )
 
 (:action move-along-track-backwards
