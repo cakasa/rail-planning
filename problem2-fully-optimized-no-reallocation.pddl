@@ -53,7 +53,7 @@
    (switch t0)
 )
 (:goal (and
-   (forall (?t - slt) (or (at ?t v5) (at ?t v3)))
+   (forall (?t - slt) (or (at ?t v3) (at ?t v5)))
    (forall (?t - sng) (or (at ?t v4) (at ?t v6)))
    (forall (?t - virm) (or (at ?t v2)))
    (forall (?t - icm) (or (at ?t v1)))
