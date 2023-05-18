@@ -50,7 +50,7 @@
         (at ?train ?to)         (not (at ?train ?from))
         (free ?from)            (not (free ?to))
         (lastfree ?toprev ?t)   (not (lastfree ?to ?t))
-        (hasBeenParked ?train)
+        (when (not (hasBeenParked ?train)) (hasBeenParked ?train))
         (parkedOn ?train ?t))
 )
 
