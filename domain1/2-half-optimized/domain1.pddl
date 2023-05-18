@@ -49,7 +49,8 @@
     :effect (and
         (at ?train ?to)         (not (at ?train ?from))
         (free ?from)            (not (free ?to))
-        (lastfree ?toprev ?t)   (not (lastfree ?to ?t))
+        (when (not (switch ?toprev)) (lastfree ?toprev ?t))
+        (not (lastfree ?to ?t))
         (when (not (hasBeenParked ?train)) (hasBeenParked ?train))
         (parkedOn ?train ?t))
 )
@@ -68,6 +69,7 @@
     :effect (and
         (at ?train ?to)         (not (at ?train ?from))
         (free ?from)            (not (free ?to))
+        (lastfree ?from ?t)     (not (lastfree ?next ?t))
         (not (parkedOn ?train ?t)))
 )
 
