@@ -18,17 +18,17 @@ arrival_order = ['train1', 'train2', 'train3', 'train4', 'train5', 'train6', 'tr
 departure_order = arrival_order.copy()
 departure_order.reverse()
 tracks = {
-   'track0': (1, []),
-   'track1': (2, ['cleaning']),
-   'track2': (1, []),
-   'track3': (2, []),
-   'track4': (2, []),
-   'track5': (2, []),
-   'track6': (2, []),
-   'track7': (2, []),
-   'track8': (1, ['inspection']),
-   'track9': (1, []),
-   'track10': (1, []),
+   'track0': (4, []),
+   'track1': (4, ['cleaning']),
+   'track2': (4, []),
+   'track3': (4, []),
+   'track4': (4, []),
+   'track5': (4, []),
+   'track6': (4, []),
+   'track7': (4, []),
+   'track8': (4, ['inspection']),
+   'track9': (4, []),
+   'track10': (4, []),
 }
 next_to = [
     ('track0', 'track1'), 
