@@ -1,4 +1,4 @@
-(define (domain domain1-no-reallocation)
+(define (domain domain1)
 
 (:requirements :adl)
 
@@ -36,7 +36,7 @@
 (:action move-from-arrival-to-track
     :parameters (?train - trainunit ?from ?next ?toprev ?to - trackpart ?t - track)
     :precondition (and
-        (not (hasBeenParked ?train))
+        ; (not (hasBeenParked ?train))
         (not (parkedOn ?train ?t))
         (at ?train ?from)
         (onPath ?from)

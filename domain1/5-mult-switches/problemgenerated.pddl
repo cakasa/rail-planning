@@ -1,4 +1,4 @@
-(define (problem myproblem) (:domain domain1-no-reallocation)
+(define (problem myproblem) (:domain domain1)
 (:objects
     train1 - sng
     train2 - sng
