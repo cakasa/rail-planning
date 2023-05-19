@@ -1,4 +1,4 @@
-(define (domain domain1)
+(define (domain domain1-no-reallocation)
 
 (:requirements :adl)
 
@@ -18,45 +18,45 @@
     (switch ?x) ;trackpart x is a switch
     (lastfree ?x - trackpart ?y - track) ; last free trackpart x of track y
     (lastfreePath ?x - trackpart) ; last free trackpart x of path L
+    (validPath ?x ?y - trackpart) ; path x to y is valid connected path
 )
 
-(:action move-on-arrival-to-switch
-    :parameters (?train - trainunit ?from ?next ?to - trackpart)
+(:action check-path
+    :parameters (?from ?to - trackpart)
+    :precondition (or
+        (nextTo ?from ?to)
+        (exists (?next - trackpart) (and (nextTo ?from ?next) (validPath ?next ?to)))
+    )
+    :effect (and
+        (validPath ?from ?to)
+    )
+)
+
+
+(:action move-from-arrival-to-track
+    :parameters (?train - trainunit ?from ?next ?toprev ?to - trackpart ?t - track)
     :precondition (and
-        (not (hasBeenParked ?train))
+        ; (not (hasBeenParked ?train))
+        (not (parkedOn ?train ?t))
         (at ?train ?from)
         (onPath ?from)
         (free ?next)
         (free ?to)
-        (switch ?to)
-        (nextTo ?from ?next))
-    :effect (and
-        (at ?train ?to)         (not (at ?train ?from))
-        (free ?from)            (not (free ?to))
-    )
-)
-
-(:action move-from-switch-to-track
-    :parameters (?train - trainunit ?from ?toprev ?to - trackpart ?t - track)
-    :precondition (and
-        (not (parkedOn ?train ?t))
-        (at ?train ?from)
-        (free ?to)
         (lastfree ?to ?t)
         (nextTo ?toprev ?to)
         (onTrack ?to ?t)
-        (switch ?from))
+        (validPath ?from ?to))
     :effect (and
         (at ?train ?to)         (not (at ?train ?from))
         (free ?from)            (not (free ?to))
         (when (not (switch ?toprev)) (lastfree ?toprev ?t))
         (not (lastfree ?to ?t))
-        (when (not (hasBeenParked ?train)) (hasBeenParked ?train))
+        (hasBeenParked ?train)
         (parkedOn ?train ?t))
 )
 
-(:action move-from-track-to-switch
-    :parameters (?train - trainunit ?from ?next ?to - trackpart ?t - track)
+(:action move-from-track-to-departure
+    :parameters (?train - trainunit ?from ?next ?toprev ?to - trackpart ?t - track)
     :precondition (and
         (parkedOn ?train ?t)
         (at ?train ?from)
@@ -64,28 +64,15 @@
         (nextTo ?next ?from)
         (free ?next)
         (free ?to)
-        (switch ?to)
-        (forall (?unit - trainunit) (hasBeenParked ?unit)))
-    :effect (and
-        (at ?train ?to)         (not (at ?train ?from))
-        (free ?from)            (not (free ?to))
-        (lastfree ?from ?t)     (not (lastfree ?next ?t))
-        (not (parkedOn ?train ?t)))
-)
-
-(:action move-to-departure
-    :parameters (?train - trainunit ?from ?toprev ?to - trackpart)
-    :precondition (and
-        (at ?train ?from)
-        (free ?to)
-        (lastfreePath ?to)
         (nextTo ?to ?toprev)
         (onPath ?to)
-        (switch ?from)
+        (lastfreePath ?to)
+        (validPath ?to ?from)
         (forall (?unit - trainunit) (hasBeenParked ?unit)))
     :effect (and
         (at ?train ?to)         (not (at ?train ?from))
         (free ?from)            (not (free ?to))
-        (lastfreePath ?toprev)  (not (lastfreePath ?to)))
+        (lastfreePath ?toprev)  (not (lastfreePath ?to))
+        (not (parkedOn ?train ?t)))
 )
 )
