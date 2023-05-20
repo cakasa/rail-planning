@@ -1,12 +1,12 @@
 (define (problem small_nine_trains) (:domain servicing-simple)
 (:objects
-    train1 - slt
-    train2 - sng
-    train3 - icm
-    train4 - virm
-    train5 - sng
-    train6 - icm
-    train7 - sng
+    train1 - sng
+    train2 - slt
+    train3 - virm
+    train4 - sng
+    train5 - icm
+    train6 - sng
+    train7 - virm
     train8 - virm
     train9 - slt
     v1 v2 v3 v4 v5 v6 v7 v8 v9 t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 - trackpart
@@ -15,26 +15,27 @@
 )
 (:init
     ; Initialize trains
-    (at train1 v1)
-    (needsService train1 cleaning)
+    (at train4 v1)
+    (needsService train4 cleaning)
 
-    (at train2 v2)
+    (at train8 v2)
+    (needsService train8 cleaning)
 
-    (at train3 v3)
-    (needsService train3 cleaning)
+    (at train6 v3)
+    (needsService train6 cleaning)
 
-    (at train4 v4)
+    (at train2 v4)
+    (needsService train2 cleaning)
 
-    (at train5 v5)
+    (at train7 v5)
 
-    (at train6 v6)
+    (at train9 v6)
 
-    (at train7 v7)
-    (needsService train7 cleaning)
+    (at train1 v7)
 
-    (at train8 v8)
+    (at train5 v8)
 
-    (at train9 v9)
+    (at train3 v9)
 
     ; Set adjacency of path nodes
     (nextTo v1 v2)
@@ -119,12 +120,12 @@
     (forall (?t - trainunit) (and (hasDeparted ?t) (hasBeenParked ?t)))
     (forall (?t - trainunit ?s - service) (not (needsService ?t ?s)))
     (at train3 v1)
-    (at train7 v2)
-    (at train9 v3)
-    (at train2 v4)
-    (at train8 v5)
-    (at train1 v6)
-    (at train4 v7)
-    (at train6 v8)
-    (at train5 v9)
+    (at train4 v2)
+    (at train1 v3)
+    (at train9 v4)
+    (at train7 v5)
+    (at train8 v6)
+    (at train5 v7)
+    (at train2 v8)
+    (at train6 v9)
 )))

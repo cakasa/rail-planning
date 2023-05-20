@@ -28,3 +28,5 @@ next_to = [
     ('track8', 'track10'),
     ('track11', 'track12'),
 ]
+
+services = ['cleaning', 'inspection']

@@ -1,3 +1,28 @@
+import random
+
+def generate_trains(number_of_trains, services, needs_service_ratio):
+    trains = {}
+    train_types = ['icm', 'virm', 'sng', 'slt']
+
+    for i in range(number_of_trains):
+        train_name = 'train' + str(i + 1)
+        train_type = random.choice(train_types)
+        needed_services = []
+
+        for service in services:
+            if random.random() <= needs_service_ratio:
+                needed_services.append(service)
+
+        trains[train_name] = (train_type, needed_services)
+
+    arrival_order = list(trains.keys()).copy()
+    departure_order = list(trains.keys()).copy()
+    random.shuffle(arrival_order)
+    random.shuffle(departure_order)
+
+    return trains, arrival_order, departure_order
+
+
 def create_problem_file(filename, problem_name, trains, arrival_order, departure_order, tracks, next_to):
     """ Creating PDDL problem files
     - `filename` for creating the file

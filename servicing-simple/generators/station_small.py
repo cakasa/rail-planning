@@ -14,3 +14,5 @@ next_to = [
     ('track1', 'track4'),
     ('track1', 'track5'),
 ]
+
+services = ['cleaning']

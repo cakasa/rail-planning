@@ -1,27 +1,27 @@
 (define (problem small_five_trains) (:domain servicing-simple)
 (:objects
-    train1 - slt
-    train2 - sng
+    train1 - virm
+    train2 - virm
     train3 - icm
-    train4 - virm
-    train5 - sng
+    train4 - icm
+    train5 - icm
     v1 v2 v3 v4 v5 t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 - trackpart
     track0 track1 track2 track3 track4 track5 - track
     cleaning - service
 )
 (:init
     ; Initialize trains
-    (at train1 v1)
+    (at train5 v1)
+    (needsService train5 cleaning)
+
+    (at train3 v2)
+
+    (at train1 v3)
     (needsService train1 cleaning)
 
-    (at train2 v2)
+    (at train2 v4)
 
-    (at train3 v3)
-    (needsService train3 cleaning)
-
-    (at train4 v4)
-
-    (at train5 v5)
+    (at train4 v5)
 
     ; Set adjacency of path nodes
     (nextTo v1 v2)
@@ -93,9 +93,9 @@
 (:goal (and
     (forall (?t - trainunit) (and (hasDeparted ?t) (hasBeenParked ?t)))
     (forall (?t - trainunit ?s - service) (not (needsService ?t ?s)))
-    (at train3 v1)
+    (at train5 v1)
     (at train1 v2)
-    (at train5 v3)
-    (at train2 v4)
+    (at train2 v3)
+    (at train3 v4)
     (at train4 v5)
 )))

@@ -1,60 +1,61 @@
 (define (problem medium_fifteen_trains) (:domain servicing-simple)
 (:objects
-    train1 - slt
-    train2 - sng
+    train1 - icm
+    train2 - slt
     train3 - icm
-    train4 - virm
-    train5 - sng
-    train6 - slt
-    train7 - sng
+    train4 - sng
+    train5 - virm
+    train6 - sng
+    train7 - virm
     train8 - icm
-    train9 - virm
-    train10 - sng
-    train11 - slt
-    train12 - sng
-    train13 - icm
+    train9 - icm
+    train10 - slt
+    train11 - icm
+    train12 - icm
+    train13 - virm
     train14 - virm
-    train15 - sng
+    train15 - icm
     v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 v13 v14 v15 t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 t21 t22 t23 t24 - trackpart
     track0 track1 track2 track3 track4 track5 track6 track7 track8 track9 track10 track11 track12 - track
     cleaning inspection - service
 )
 (:init
     ; Initialize trains
-    (at train1 v1)
-
-    (at train2 v2)
-
-    (at train3 v3)
-    (needsService train3 cleaning)
-
-    (at train4 v4)
+    (at train4 v1)
     (needsService train4 inspection)
 
-    (at train5 v5)
-    (needsService train5 cleaning)
+    (at train1 v2)
 
-    (at train6 v6)
+    (at train11 v3)
+    (needsService train11 inspection)
 
-    (at train7 v7)
+    (at train15 v4)
 
-    (at train8 v8)
-    (needsService train8 inspection)
+    (at train14 v5)
 
-    (at train9 v9)
+    (at train12 v6)
 
-    (at train10 v10)
+    (at train8 v7)
 
-    (at train11 v11)
-    (needsService train11 cleaning)
+    (at train5 v8)
 
-    (at train12 v12)
+    (at train6 v9)
 
-    (at train13 v13)
+    (at train2 v10)
+    (needsService train2 cleaning)
+    (needsService train2 inspection)
 
-    (at train14 v14)
+    (at train9 v11)
+    (needsService train9 cleaning)
 
-    (at train15 v15)
+    (at train10 v12)
+    (needsService train10 inspection)
+
+    (at train7 v13)
+
+    (at train3 v14)
+
+    (at train13 v15)
 
     ; Set adjacency of path nodes
     (nextTo v1 v2)
@@ -218,19 +219,19 @@
 (:goal (and
     (forall (?t - trainunit) (and (hasDeparted ?t) (hasBeenParked ?t)))
     (forall (?t - trainunit ?s - service) (not (needsService ?t ?s)))
-    (at train15 v1)
-    (at train10 v2)
-    (at train13 v3)
+    (at train14 v1)
+    (at train6 v2)
+    (at train10 v3)
     (at train7 v4)
     (at train5 v5)
-    (at train1 v6)
-    (at train12 v7)
-    (at train3 v8)
-    (at train9 v9)
-    (at train6 v10)
-    (at train8 v11)
-    (at train11 v12)
-    (at train2 v13)
-    (at train14 v14)
-    (at train4 v15)
+    (at train4 v6)
+    (at train1 v7)
+    (at train9 v8)
+    (at train3 v9)
+    (at train15 v10)
+    (at train12 v11)
+    (at train8 v12)
+    (at train11 v13)
+    (at train2 v14)
+    (at train13 v15)
 )))

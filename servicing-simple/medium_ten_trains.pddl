@@ -1,44 +1,44 @@
 (define (problem medium_ten_trains) (:domain servicing-simple)
 (:objects
-    train1 - slt
-    train2 - sng
-    train3 - icm
-    train4 - virm
-    train5 - sng
-    train6 - slt
-    train7 - sng
+    train1 - sng
+    train2 - slt
+    train3 - sng
+    train4 - sng
+    train5 - icm
+    train6 - virm
+    train7 - slt
     train8 - icm
-    train9 - virm
+    train9 - sng
     train10 - sng
     v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 t21 t22 t23 t24 - trackpart
     track0 track1 track2 track3 track4 track5 track6 track7 track8 track9 track10 track11 track12 - track
-    cleaning inspection - service
+    inspection cleaning - service
 )
 (:init
     ; Initialize trains
-    (at train1 v1)
+    (at train9 v1)
+    (needsService train9 inspection)
 
-    (at train2 v2)
+    (at train8 v2)
 
-    (at train3 v3)
-    (needsService train3 cleaning)
+    (at train6 v3)
 
-    (at train4 v4)
+    (at train1 v4)
+
+    (at train4 v5)
     (needsService train4 inspection)
 
-    (at train5 v5)
-    (needsService train5 cleaning)
-
-    (at train6 v6)
+    (at train3 v6)
+    (needsService train3 cleaning)
 
     (at train7 v7)
+    (needsService train7 inspection)
 
-    (at train8 v8)
-    (needsService train8 inspection)
+    (at train10 v8)
 
-    (at train9 v9)
+    (at train5 v9)
 
-    (at train10 v10)
+    (at train2 v10)
 
     ; Set adjacency of path nodes
     (nextTo v1 v2)
@@ -187,14 +187,14 @@
 (:goal (and
     (forall (?t - trainunit) (and (hasDeparted ?t) (hasBeenParked ?t)))
     (forall (?t - trainunit ?s - service) (not (needsService ?t ?s)))
-    (at train2 v1)
-    (at train10 v2)
+    (at train9 v1)
+    (at train1 v2)
     (at train4 v3)
-    (at train7 v4)
-    (at train5 v5)
-    (at train1 v6)
-    (at train8 v7)
-    (at train3 v8)
-    (at train9 v9)
+    (at train10 v4)
+    (at train3 v5)
+    (at train2 v6)
+    (at train5 v7)
+    (at train8 v8)
+    (at train7 v9)
     (at train6 v10)
 )))
