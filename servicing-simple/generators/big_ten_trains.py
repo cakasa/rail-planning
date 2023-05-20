@@ -6,19 +6,19 @@ problem_name = os.path.basename(__file__)[:-3]
 filename = '../' + problem_name + '.pddl'
 # icm virm sng slt
 trains = {
-    'train1': ('slt', []),
+    'train1': ('slt', ['washing']),
     'train2': ('sng', []),
-    'train3': ('icm', ['cleaning']),
-    'train4': ('virm', ['inspection']),
-    'train5': ('sng', ['cleaning']),
-    'train6': ('slt', []),
-    'train7': ('sng', []),
-    'train8': ('icm', ['inspection']),
-    'train9': ('virm', []),
+    'train3': ('icm', []),
+    'train4': ('virm', []),
+    'train5': ('sng', []),
+    'train6': ('slt', ['inspection']),
+    'train7': ('sng', ['cleaning']),
+    'train8': ('icm', []),
+    'train9': ('virm', ['cleaning']),
     'train10': ('sng', []),
 }
 arrival_order = ['train1', 'train2', 'train3', 'train4', 'train5', 'train6', 'train7', 'train8', 'train9', 'train10']
-departure_order = ['train2', 'train10', 'train4', 'train7', 'train5', 'train1', 'train8', 'train3', 'train9', 'train6']
+departure_order = ['train8', 'train1', 'train2', 'train10', 'train5', 'train7', 'train3', 'train9', 'train4', 'train6']
 tracks = station.tracks
 next_to = station.next_to
 

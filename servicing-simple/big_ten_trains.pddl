@@ -12,31 +12,31 @@
     train10 - sng
     v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 t21 t22 t23 t24 t25 t26 t27 t28 t29 t30 t31 t32 t33 t34 t35 t36 t37 t38 t39 t40 t41 t42 t43 t44 t45 t46 t47 t48 t49 t50 t51 t52 t53 t54 t55 t56 - trackpart
     track0 track1 track2 track3 track4 track5 track6 track7 track8 track9 track10 track11 track12 track13 track14 track15 track16 track17 track18 track19 track20 track21 track22 track23 track24 track25 track26 track27 track28 track29 track30 track31 track32 track33 track34 track35 track36 track37 - track
-    inspection cleaning washing - service
+    cleaning inspection washing - service
 )
 (:init
     ; Initialize trains
     (at train1 v1)
+    (needsService train1 washing)
 
     (at train2 v2)
 
     (at train3 v3)
-    (needsService train3 cleaning)
 
     (at train4 v4)
-    (needsService train4 inspection)
 
     (at train5 v5)
-    (needsService train5 cleaning)
 
     (at train6 v6)
+    (needsService train6 inspection)
 
     (at train7 v7)
+    (needsService train7 cleaning)
 
     (at train8 v8)
-    (needsService train8 inspection)
 
     (at train9 v9)
+    (needsService train9 cleaning)
 
     (at train10 v10)
 
@@ -346,14 +346,14 @@
 (:goal (and
     (forall (?t - trainunit) (and (hasDeparted ?t) (hasBeenParked ?t)))
     (forall (?t - trainunit ?s - service) (not (needsService ?t ?s)))
-    (at train2 v1)
-    (at train10 v2)
-    (at train4 v3)
-    (at train7 v4)
+    (at train8 v1)
+    (at train1 v2)
+    (at train2 v3)
+    (at train10 v4)
     (at train5 v5)
-    (at train1 v6)
-    (at train8 v7)
-    (at train3 v8)
-    (at train9 v9)
+    (at train7 v6)
+    (at train3 v7)
+    (at train9 v8)
+    (at train4 v9)
     (at train6 v10)
 )))
