@@ -1,41 +1,37 @@
-(define (problem small_nine_trains) (:domain servicing-simple)
+(define (problem small_eight_trains) (:domain servicing-simple)
 (:objects
-    train1 - sng
-    train2 - slt
+    train1 - icm
+    train2 - sng
     train3 - virm
-    train4 - sng
-    train5 - icm
+    train4 - icm
+    train5 - sng
     train6 - sng
-    train7 - virm
-    train8 - virm
-    train9 - slt
-    v1 v2 v3 v4 v5 v6 v7 v8 v9 t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 - trackpart
+    train7 - slt
+    train8 - icm
+    v1 v2 v3 v4 v5 v6 v7 v8 t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 - trackpart
     track0 track1 track2 track3 track4 track5 - track
     cleaning - service
 )
 (:init
     ; Initialize trains
-    (at train4 v1)
-    (needsService train4 cleaning)
+    (at train5 v1)
+    (needsService train5 cleaning)
 
-    (at train8 v2)
+    (at train4 v2)
+
+    (at train8 v3)
     (needsService train8 cleaning)
 
-    (at train6 v3)
-    (needsService train6 cleaning)
+    (at train1 v4)
 
-    (at train2 v4)
-    (needsService train2 cleaning)
+    (at train3 v5)
+    (needsService train3 cleaning)
 
-    (at train7 v5)
+    (at train2 v6)
 
-    (at train9 v6)
+    (at train7 v7)
 
-    (at train1 v7)
-
-    (at train5 v8)
-
-    (at train3 v9)
+    (at train6 v8)
 
     ; Set adjacency of path nodes
     (nextTo v1 v2)
@@ -52,8 +48,6 @@
     (nextTo v7 v6)
     (nextTo v7 v8)
     (nextTo v8 v7)
-    (nextTo v8 v9)
-    (nextTo v9 v8)
     ; Connect path to first non-path node
     (nextTo v1 t0)
     (nextTo t0 v1)
@@ -99,7 +93,6 @@
     (onPath v6)
     (onPath v7)
     (onPath v8)
-    (onPath v9)
 
     ; Assign nodes to tracks
     (onTrack t0 track0)
@@ -119,13 +112,12 @@
 (:goal (and
     (forall (?t - trainunit) (and (hasDeparted ?t) (hasBeenParked ?t)))
     (forall (?t - trainunit ?s - service) (not (needsService ?t ?s)))
-    (at train3 v1)
-    (at train4 v2)
-    (at train1 v3)
-    (at train9 v4)
+    (at train4 v1)
+    (at train6 v2)
+    (at train2 v3)
+    (at train5 v4)
     (at train7 v5)
-    (at train8 v6)
-    (at train5 v7)
-    (at train2 v8)
-    (at train6 v9)
+    (at train3 v6)
+    (at train8 v7)
+    (at train1 v8)
 )))
