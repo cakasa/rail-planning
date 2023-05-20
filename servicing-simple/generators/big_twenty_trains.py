@@ -5,7 +5,7 @@ import problem_generator
 problem_name = os.path.basename(__file__)[:-3]
 filename = '../' + problem_name + '.pddl'
 
-number_of_trains = 25
+number_of_trains = 20
 
 services = station.services
 needs_service_ratio = (1 / 3) / len(services)
