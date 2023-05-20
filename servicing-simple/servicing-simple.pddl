@@ -21,7 +21,8 @@
 
 (:action service-train
     :parameters (?train - trainunit ?at - trackpart ?track - track ?service - service)
-    :precondition (and 
+    :precondition (and
+        (at ?train ?at)
         (isServiceTrack ?track ?service)
         (onTrack ?at ?track)
         (needsService ?train ?service)
