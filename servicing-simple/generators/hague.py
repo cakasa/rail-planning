@@ -4,11 +4,10 @@ from problem_generator import create_problem_file
 problem_name = os.path.basename(__file__)[:-3]
 filename = '../' + problem_name + '.pddl'
 trains = {
-    'train1': ('slt', 2, ['cleaning']),
-    'train2': ('sng', 2, ['cleaning']),
+    'train1': ('slt', ['cleaning']),
 }
-arrival_order = ['train1', 'train2']
-departure_order = ['train2', 'train1']
+arrival_order = ['train1']
+departure_order = ['train1']
 tracks = {
    'track0': (1, []),  # this has to be here, as t0 is always connected with v1
    'track1': (3, []),
