@@ -48,6 +48,7 @@
     :effect (and
         (at ?train ?to) (not (at ?train ?from))
         (free ?from) (not (free ?to))
+        (pathHeader ?from) (not (pathHeader ?next))
         (when (not (switch ?toprev)) (trackHeader ?toprev ?t)) (not (trackHeader ?to ?t))
         (hasBeenParked ?train)
         (parkedOn ?train ?t))
