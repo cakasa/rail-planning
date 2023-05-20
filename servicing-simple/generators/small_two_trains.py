@@ -1,5 +1,6 @@
 import os
-from problem_generator import create_problem_file
+import station_small as station
+from ../problem_generator import create_problem_file
 
 problem_name = os.path.basename(__file__)[:-3]
 filename = '../' + problem_name + '.pddl'
@@ -9,12 +10,8 @@ trains = {
 }
 arrival_order = ['train1', 'train2']
 departure_order = ['train1', 'train2']
-tracks = {
-   'track0': (1, []), # this has to be here, as t0 is always connected with v1
-   'track1': (2, []),
-   'track2': (2, ['cleaning'])
-}
-next_to = [('track0', 'track1'), ('track0', 'track2')]
+tracks = station.tracks
+next_to = station.next_to
 
 create_problem_file(filename, problem_name, trains, arrival_order, departure_order, tracks, next_to)
 ''' Creating PDDL problem files
