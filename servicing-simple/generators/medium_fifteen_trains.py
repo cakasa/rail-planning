@@ -16,9 +16,14 @@ trains = {
     'train8': ('icm', ['inspection']),
     'train9': ('virm', []),
     'train10': ('sng', []),
+    'train11': ('slt', ['cleaning']),
+    'train12': ('sng', []),
+    'train13': ('icm', []),
+    'train14': ('virm', []),
+    'train15': ('sng', []),
 }
-arrival_order = ['train1', 'train2', 'train3', 'train4', 'train5', 'train6', 'train7', 'train8', 'train9', 'train10']
-departure_order = ['train2', 'train10', 'train4', 'train7', 'train5', 'train1', 'train8', 'train3', 'train9', 'train6']
+arrival_order = ['train1', 'train2', 'train3', 'train4', 'train5', 'train6', 'train7', 'train8', 'train9', 'train10', 'train11', 'train12', 'train13', 'train14', 'train15']
+departure_order = ['train15', 'train10', 'train13', 'train7', 'train5', 'train1', 'train12', 'train3', 'train9', 'train6', 'train8', 'train11', 'train2', 'train14', 'train4']
 tracks = station.tracks
 next_to = station.next_to
 
