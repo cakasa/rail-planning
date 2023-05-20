@@ -16,8 +16,8 @@
     (parkedOn ?x - trainunit ?y - track) ; indicates x parked on track y
     (onPath ?x) ;trackpart x is on the arrival/departure path L
     (switch ?x) ;trackpart x is a switch
-    (lastfree ?x - trackpart ?y - track) ; last free trackpart x of track y
-    (lastfreePath ?x - trackpart) ; last free trackpart x of path L
+    (trackHeader ?x - trackpart ?y - track) ; last free trackpart x of track y
+    (pathHeader ?x - trackpart) ; last free trackpart x of path L
     (validPath ?x ?y - trackpart) ; path x to y is valid connected path
 )
 
@@ -43,7 +43,6 @@
     )
 )
 
-
 (:action move-from-arrival-to-track
     :parameters (?train - trainunit ?from ?next ?toprev ?to - trackpart ?t - track)
     :precondition (and
@@ -53,16 +52,15 @@
         (onPath ?from)
         (free ?next)
         (free ?to)
-        (lastfree ?to ?t)
+        (trackHeader ?to ?t)
         (nextTo ?from ?next)
         (nextTo ?toprev ?to)
         (onTrack ?to ?t)
         (validPath ?from ?to))
     :effect (and
-        (at ?train ?to)         (not (at ?train ?from))
-        (free ?from)            (not (free ?to))
-        (when (not (switch ?toprev)) (lastfree ?toprev ?t))
-        (not (lastfree ?to ?t))
+        (at ?train ?to) (not (at ?train ?from))
+        (free ?from) (not (free ?to))
+        (when (not (switch ?toprev)) (trackHeader ?toprev ?t)) (not (trackHeader ?to ?t))
         (hasBeenParked ?train)
         (parkedOn ?train ?t))
 )
@@ -78,13 +76,14 @@
         (nextTo ?next ?from)
         (nextTo ?to ?toprev)
         (onPath ?to)
-        (lastfreePath ?to)
+        (pathHeader ?to)
         (validPath ?to ?from)
         (forall (?unit - trainunit) (hasBeenParked ?unit)))
     :effect (and
-        (at ?train ?to)         (not (at ?train ?from))
-        (free ?from)            (not (free ?to))
-        (lastfreePath ?toprev)  (not (lastfreePath ?to))
+        (at ?train ?to) (not (at ?train ?from))
+        (free ?from) (not (free ?to))
+        (trackHeader ?from ?t) (not (trackHeader ?next ?t))
+        (when (not (switch ?toprev)) (pathHeader ?toprev)) (not (pathHeader ?to))
         (not (parkedOn ?train ?t)))
 )
 )
