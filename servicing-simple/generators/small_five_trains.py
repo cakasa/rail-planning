@@ -1,6 +1,6 @@
 import os
 import station_small as station
-from ../problem_generator import create_problem_file
+from problem_generator import create_problem_file
 
 problem_name = os.path.basename(__file__)[:-3]
 filename = '../' + problem_name + '.pddl'
