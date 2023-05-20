@@ -1,0 +1,1150 @@
+INFO     Running translator.
+INFO     translator inputs: ['rail-planning/domain1/3-optimized/domain1.pddl', 'rail-planning/domain1/3-optimized/problem2.pddl']
+INFO     translator arguments: []
+Parsing...
+Parsing: [0.000s CPU, 0.010s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Trivial rules: Converted to facts.
+Normalizing Datalog program: [0.020s CPU, 0.023s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 59 rules.
+Computing model... [0.030s CPU, 0.031s wall-clock]
+809 relevant atoms
+1530 auxiliary atoms
+2339 final queue length
+4408 total queue pushes
+Completing instantiation... [0.060s CPU, 0.066s wall-clock]
+Instantiating: [0.110s CPU, 0.124s wall-clock]
+Computing fact groups...
+Finding invariants...
+18 initial candidates
+Finding invariants: [0.010s CPU, 0.009s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.001s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.001s wall-clock]
+Choosing groups...
+122 uncovered facts
+Choosing groups: [0.000s CPU, 0.001s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.020s CPU, 0.016s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.001s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.001s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.003s wall-clock]
+Translating task: [0.060s CPU, 0.061s wall-clock]
+1512 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+14 propositions removed
+Detecting unreachable propositions: [0.010s CPU, 0.016s wall-clock]
+Translator variables: 124
+Translator derived variables: 6
+Translator facts: 308
+Translator goal facts: 5
+Translator mutex groups: 18
+Translator total mutex groups size: 156
+Translator operators: 502
+Translator axioms: 8
+Translator task size: 7409
+Translator peak memory: 33764 KB
+Writing output... [0.020s CPU, 0.079s wall-clock]
+Done! [0.230s CPU, 0.315s wall-clock]
+INFO     Running preprocessor.
+INFO     preprocessor input: output.sas
+INFO     preprocessor arguments: []
+Building causal graph...
+The causal graph is not acyclic.
+103 variables of 124 necessary
+12 of 18 mutex groups necessary.
+481 of 502 operators necessary.
+8 of 8 axiom rules necessary.
+Disabling h2 analysis because it does not currently support axioms
+Building domain transition graphs...
+solveable in poly time 0
+Building successor generator...
+Preprocessor variables: 103
+Preprocessor facts: 266
+Preprocessor derived variables: 6
+Preprocessor operators: 481
+Preprocessor mutex groups: 12
+Preprocessor task size: 7217
+Writing output...
+done
+INFO     Running search.
+INFO     search input: output
+INFO     search executable: /mnt/c/Users/Simba/Desktop/Delft-University-of-Technology/CSE/Y6-2022-2023/Q4-Research-Project/planners/team2/src/search/downward-release
+INFO     search portfolio: /mnt/c/Users/Simba/Desktop/Delft-University-of-Technology/CSE/Y6-2022-2023/Q4-Research-Project/planners/team2/src/driver/portfolios/seq_sat_ds.py
+External time limits: -1, -1
+Internal time limit: 1800
+External memory limits: -1, -1
+Internal memory limit: 8000000000
+remaining time at start: 1798.62
+remaining time: 1798.62
+config 0: relative time 100, remaining 1800
+g bound: infinity
+next plan number: 1
+args: ['/mnt/c/Users/Simba/Desktop/Delft-University-of-Technology/CSE/Y6-2022-2023/Q4-Research-Project/planners/team2/src/search/downward-release', '--decoupling', 'fork(search_type=sat, pruning=cost_frontier(irrelevance=TRANSITIONS), max_leaf_size=1000000)', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=infinity)', '--internal-previous-portfolio-plans', '0', '--internal-plan-file', 'sas_plan']
+timeout: 99.92 -> (100, 101)
+using frontier pruning method
+performing irrelevance analysis in leaf factors
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using fork factoring profile
+reading input... [t=0.01s]
+Simplifying transitions... done!
+done reading input! [t=0.06s]
+building causal graph...done! [t=0.06s]
+Peak memory: 7120 KB
+returncode: 3
+
+remaining time: 1798.5
+config 1: relative time 1000, remaining 1700
+g bound: infinity
+next plan number: 1
+args: ['/mnt/c/Users/Simba/Desktop/Delft-University-of-Technology/CSE/Y6-2022-2023/Q4-Research-Project/planners/team2/src/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=infinity, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '0', '--internal-plan-file', 'sas_plan']
+timeout: 1057.94 -> (1058, 1059)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0.02s]
+Simplifying transitions... done!
+done reading input! [t=0.07s]
+building causal graph...done! [t=0.07s]
+Peak memory: 7120 KB
+returncode: 3
+
+remaining time: 1798.4
+config 2: relative time 700, remaining 700
+g bound: infinity
+next plan number: 1
+args: ['/mnt/c/Users/Simba/Desktop/Delft-University-of-Technology/CSE/Y6-2022-2023/Q4-Research-Project/planners/team2/src/search/downward-release', '--heuristic', 'hlm1,hff1=lm_ff_syn(lm_rhw(reasonable_orders=true,                           lm_cost_type=one,cost_type=one))', '--search', 'lazy_greedy([hff1,hlm1],preferred=[hff1,hlm1], cost_type=one, reopen_closed=false, bound=infinity)', '--internal-previous-portfolio-plans', '0', '--internal-plan-file', 'sas_plan']
+timeout: 1798.40 -> (1799, 1800)
+reading input... [t=0.01s]
+Simplifying transitions... done!
+done reading input! [t=0.07s]
+building causal graph...done! [t=0.07s]
+Variables: 103
+Bytes per state: 16
+done! [t=0.07s]
+done initalizing global data [t=0.07s]
+Initializing Exploration...
+Generating landmarks using the RPG/SAS+ approach
+approx. reasonable orders
+approx. obedient reasonable orders
+Removed 0 reasonable or obedient reasonable orders
+Landmarks generation time: 0.0206333s
+Discovered 55 landmarks, of which 6 are disjunctive and 0 are conjunctive 
+277 edges
+Initializing LAMA-FF Synergy Object
+Initializing landmarks count heuristic...
+27 initial landmarks, 5 goal landmarks
+Conducting lazy best first search, (real) bound = 2147483647
+Best heuristic value: 22/19 [g=0, 1 evaluated, 0 expanded, t=0.09s, 7896 KB]
+Best heuristic value: 22/18 [g=1, 2 evaluated, 1 expanded, t=0.09s, 7896 KB]
+Best heuristic value: 22/17 [g=2, 3 evaluated, 2 expanded, t=0.09s, 7896 KB]
+Best heuristic value: 21/16 [g=3, 4 evaluated, 3 expanded, t=0.09s, 7896 KB]
+Best heuristic value: 18/16 [g=4, 5 evaluated, 4 expanded, t=0.09s, 7896 KB]
+Best heuristic value: 18/15 [g=4, 7 evaluated, 6 expanded, t=0.09s, 7896 KB]
+Best heuristic value: 18/14 [g=5, 10 evaluated, 9 expanded, t=0.09s, 7896 KB]
+Best heuristic value: 18/13 [g=6, 13 evaluated, 12 expanded, t=0.09s, 7896 KB]
+Best heuristic value: 18/12 [g=7, 16 evaluated, 15 expanded, t=0.09s, 7896 KB]
+Best heuristic value: 18/11 [g=8, 19 evaluated, 18 expanded, t=0.09s, 7896 KB]
+Switch from bucket-based to heap-based queue at key = 547, num_pushes = 330
+Best heuristic value: 17/11 [g=12, 26 evaluated, 25 expanded, t=0.1s, 7896 KB]
+Best heuristic value: 17/10 [g=15, 40 evaluated, 39 expanded, t=0.1s, 7896 KB]
+Best heuristic value: 13/10 [g=20, 48 evaluated, 47 expanded, t=0.1s, 7896 KB]
+Best heuristic value: 10/10 [g=32, 152 evaluated, 151 expanded, t=0.11s, 8028 KB]
+Best heuristic value: 8/10 [g=41, 212 evaluated, 211 expanded, t=0.12s, 8028 KB]
+Best heuristic value: 7/10 [g=51, 285 evaluated, 284 expanded, t=0.13s, 8160 KB]
+Best heuristic value: 6/10 [g=53, 287 evaluated, 286 expanded, t=0.13s, 8160 KB]
+Best heuristic value: 4/9 [g=54, 289 evaluated, 288 expanded, t=0.13s, 8160 KB]
+Best heuristic value: 4/7 [g=55, 291 evaluated, 290 expanded, t=0.14s, 8160 KB]
+Best heuristic value: 3/7 [g=56, 293 evaluated, 292 expanded, t=0.14s, 8160 KB]
+Best heuristic value: 2/7 [g=62, 337 evaluated, 336 expanded, t=0.14s, 8292 KB]
+Best heuristic value: 1/7 [g=83, 1188 evaluated, 1187 expanded, t=0.27s, 9876 KB]
+Best heuristic value: 1/6 [g=89, 1197 evaluated, 1196 expanded, t=0.27s, 9876 KB]
+Best heuristic value: 0/6 [g=110, 1674 evaluated, 1673 expanded, t=0.34s, 10932 KB]
+Best heuristic value: 0/5 [g=119, 1720 evaluated, 1719 expanded, t=0.35s, 10932 KB]
+Best heuristic value: 0/3 [g=120, 1722 evaluated, 1721 expanded, t=0.35s, 10932 KB]
+Best heuristic value: 0/1 [g=121, 1723 evaluated, 1722 expanded, t=0.35s, 10932 KB]
+Solution found!
+Actual search time: 0.26s [t=0.35s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+check-path v5 t4 (1)
+check-path v6 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v3 t5 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v4 t5 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v5 t3 (1)
+check-path v5 t5 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+check-path v6 t5 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-arrival-to-track train1 v2 v1 t2 t3 track1 (1)
+move-from-arrival-to-track train4 v3 v2 t5 t6 track2 (1)
+move-from-arrival-to-track train5 v4 v3 t1 t2 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train2 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train6 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train6 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train2 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train5 t2 t1 v4 v5 track1 (1)
+check-path v6 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train1 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train1 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-track-to-departure train1 t5 t0 v3 v4 track2 (1)
+move-from-arrival-to-track train1 v4 v3 t1 t2 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train2 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train1 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train5 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train6 t5 t0 v2 v3 track2 (1)
+move-from-arrival-to-track train6 v3 v2 t2 t3 track1 (1)
+move-from-track-to-departure train4 t6 t5 v2 v3 track2 (1)
+move-from-track-to-departure train6 t3 t2 v1 v2 track1 (1)
+move-from-arrival-to-track train6 v2 v1 t5 t6 track2 (1)
+move-from-track-to-departure train3 t4 t3 v1 v2 track1 (1)
+move-from-track-to-departure train6 t6 t5 t0 v1 track2 (1)
+move-from-arrival-to-track train6 v1 t0 t3 t4 track1 (1)
+move-from-arrival-to-track train3 v2 v1 t2 t3 track1 (1)
+move-from-arrival-to-track train4 v3 v2 t1 t2 track1 (1)
+move-from-arrival-to-track train5 v4 v3 t0 t1 track1 (1)
+move-from-arrival-to-track train1 v5 v4 t5 t6 track2 (1)
+move-from-arrival-to-track train2 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train5 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train4 t2 t1 v3 v4 track1 (1)
+check-path v6 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t0 t5 track2 (1)
+move-from-track-to-departure train3 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train4 t5 t0 v2 v3 track2 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-arrival-to-track train1 v2 v1 t2 t3 track1 (1)
+move-from-arrival-to-track train4 v3 v2 t1 t2 track1 (1)
+move-from-arrival-to-track train3 v4 v3 t0 t1 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t5 t6 track2 (1)
+move-from-arrival-to-track train5 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train3 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train4 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train5 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train1 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train1 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train4 v5 v4 t1 t2 track1 (1)
+move-from-track-to-departure train1 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train4 t2 t1 v3 v4 track1 (1)
+move-from-arrival-to-track train4 v4 v3 t0 t5 track2 (1)
+move-from-track-to-departure train5 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train4 t5 t0 v2 v3 track2 (1)
+move-from-track-to-departure train2 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train6 t4 t3 t0 v1 track1 (1)
+Plan length: 122 step(s).
+Plan cost: 122
+Initial state h value: 22/19.
+Expanded 1723 state(s).
+Reopened 0 state(s).
+Evaluated 1724 state(s).
+Evaluations: 3448
+Generated 83103 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 1724
+Search time: 0.26s
+Total time: 0.35s
+Solution found.
+Peak memory: 10932 KB
+returncode: 0
+
+plan manager: found new plan with cost 122
+Abort portfolio and run final config.
+remaining time: 1798.01
+config 0: relative time 1, remaining 1
+g bound: 122
+next plan number: 2
+args: ['/mnt/c/Users/Simba/Desktop/Delft-University-of-Technology/CSE/Y6-2022-2023/Q4-Research-Project/planners/team2/src/search/downward-release', '--heuristic', 'hlm,hff=lm_ff_syn(lm_rhw(reasonable_orders=true,                         lm_cost_type=one,cost_type=one))', '--search', 'iterated([\n                     lazy_greedy([hff,hlm],preferred=[hff,hlm],\n                                 cost_type=one,reopen_closed=false),\n                     lazy_greedy([hff,hlm],preferred=[hff,hlm],\n                                 reopen_closed=false),\n                     lazy_wastar([hff,hlm],preferred=[hff,hlm],w=5),\n                     lazy_wastar([hff,hlm],preferred=[hff,hlm],w=3),\n                     lazy_wastar([hff,hlm],preferred=[hff,hlm],w=2),\n                     lazy_wastar([hff,hlm],preferred=[hff,hlm],w=1)\n                     ],repeat_last=true,continue_on_fail=true, bound=122)', '--internal-previous-portfolio-plans', '1', '--internal-plan-file', 'sas_plan']
+timeout: 1798.01 -> (1799, 1800)
+reading input... [t=0.01s]
+Simplifying transitions... done!
+done reading input! [t=0.05s]
+building causal graph...done! [t=0.05s]
+Variables: 103
+Bytes per state: 16
+done! [t=0.05s]
+done initalizing global data [t=0.05s]
+Initializing Exploration...
+Generating landmarks using the RPG/SAS+ approach
+approx. reasonable orders
+approx. obedient reasonable orders
+Removed 0 reasonable or obedient reasonable orders
+Landmarks generation time: 0.0098845s
+Discovered 55 landmarks, of which 6 are disjunctive and 0 are conjunctive 
+277 edges
+Initializing LAMA-FF Synergy Object
+Initializing landmarks count heuristic...
+27 initial landmarks, 5 goal landmarks
+Starting search: lazy_greedy(list(hff, hlm), preferred = list(hff, hlm), cost_type = one, reopen_closed = false)
+Conducting lazy best first search, (real) bound = 122
+Best heuristic value: 22/19 [g=0, 1 evaluated, 0 expanded, t=0.08s, 7912 KB]
+Best heuristic value: 22/18 [g=1, 2 evaluated, 1 expanded, t=0.08s, 7912 KB]
+Best heuristic value: 22/17 [g=2, 3 evaluated, 2 expanded, t=0.08s, 7912 KB]
+Best heuristic value: 21/16 [g=3, 4 evaluated, 3 expanded, t=0.08s, 7912 KB]
+Best heuristic value: 18/16 [g=4, 5 evaluated, 4 expanded, t=0.08s, 7912 KB]
+Best heuristic value: 18/15 [g=4, 7 evaluated, 6 expanded, t=0.08s, 7912 KB]
+Best heuristic value: 18/14 [g=5, 10 evaluated, 9 expanded, t=0.08s, 7912 KB]
+Best heuristic value: 18/13 [g=6, 13 evaluated, 12 expanded, t=0.08s, 7912 KB]
+Best heuristic value: 18/12 [g=7, 16 evaluated, 15 expanded, t=0.08s, 7912 KB]
+Best heuristic value: 18/11 [g=8, 19 evaluated, 18 expanded, t=0.08s, 7912 KB]
+Switch from bucket-based to heap-based queue at key = 547, num_pushes = 330
+Best heuristic value: 17/11 [g=12, 26 evaluated, 25 expanded, t=0.08s, 7912 KB]
+Best heuristic value: 17/10 [g=15, 40 evaluated, 39 expanded, t=0.09s, 7912 KB]
+Best heuristic value: 13/10 [g=20, 48 evaluated, 47 expanded, t=0.09s, 7912 KB]
+Best heuristic value: 10/10 [g=32, 152 evaluated, 151 expanded, t=0.1s, 8044 KB]
+Best heuristic value: 8/10 [g=41, 212 evaluated, 211 expanded, t=0.11s, 8044 KB]
+Best heuristic value: 7/10 [g=51, 285 evaluated, 284 expanded, t=0.12s, 8176 KB]
+Best heuristic value: 6/10 [g=53, 287 evaluated, 286 expanded, t=0.12s, 8176 KB]
+Best heuristic value: 4/9 [g=54, 289 evaluated, 288 expanded, t=0.12s, 8176 KB]
+Best heuristic value: 4/7 [g=55, 291 evaluated, 290 expanded, t=0.13s, 8176 KB]
+Best heuristic value: 3/7 [g=56, 293 evaluated, 292 expanded, t=0.13s, 8176 KB]
+Best heuristic value: 2/7 [g=62, 337 evaluated, 336 expanded, t=0.13s, 8308 KB]
+Best heuristic value: 1/7 [g=83, 1188 evaluated, 1187 expanded, t=0.26s, 9896 KB]
+Best heuristic value: 1/6 [g=89, 1197 evaluated, 1196 expanded, t=0.26s, 10028 KB]
+Best heuristic value: 0/6 [g=110, 1674 evaluated, 1673 expanded, t=0.36s, 10952 KB]
+Best heuristic value: 0/5 [g=119, 1720 evaluated, 1719 expanded, t=0.36s, 10952 KB]
+Best heuristic value: 0/3 [g=120, 1722 evaluated, 1721 expanded, t=0.37s, 10952 KB]
+Best heuristic value: 0/1 [g=121, 1723 evaluated, 1722 expanded, t=0.37s, 10952 KB]
+Solution found!
+Actual search time: 0.4s [t=0.48s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+check-path v5 t4 (1)
+check-path v6 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v3 t5 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v4 t5 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v5 t3 (1)
+check-path v5 t5 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+check-path v6 t5 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-arrival-to-track train1 v2 v1 t2 t3 track1 (1)
+move-from-arrival-to-track train4 v3 v2 t5 t6 track2 (1)
+move-from-arrival-to-track train5 v4 v3 t1 t2 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train2 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train6 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train6 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train2 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train5 t2 t1 v4 v5 track1 (1)
+check-path v6 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train1 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train1 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-track-to-departure train1 t5 t0 v3 v4 track2 (1)
+move-from-arrival-to-track train1 v4 v3 t1 t2 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train2 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train1 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train6 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train4 t6 t5 v2 v3 track2 (1)
+move-from-track-to-departure train5 t3 t2 v1 v2 track1 (1)
+move-from-arrival-to-track train5 v2 v1 t5 t6 track2 (1)
+move-from-track-to-departure train3 t4 t3 v1 v2 track1 (1)
+move-from-track-to-departure train5 t6 t5 t0 v1 track2 (1)
+move-from-arrival-to-track train5 v1 t0 t3 t4 track1 (1)
+move-from-arrival-to-track train3 v2 v1 t2 t3 track1 (1)
+check-path v6 t3 (1)
+move-from-arrival-to-track train4 v3 v2 t1 t2 track1 (1)
+move-from-arrival-to-track train6 v4 v3 t0 t1 track1 (1)
+move-from-arrival-to-track train1 v5 v4 t5 t6 track2 (1)
+move-from-arrival-to-track train2 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train4 t2 t1 v3 v4 track1 (1)
+move-from-arrival-to-track train4 v4 v3 t0 t5 track2 (1)
+move-from-track-to-departure train3 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train4 t5 t0 v2 v3 track2 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-arrival-to-track train1 v2 v1 t2 t3 track1 (1)
+move-from-arrival-to-track train4 v3 v2 t1 t2 track1 (1)
+move-from-arrival-to-track train3 v4 v3 t0 t1 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t5 t6 track2 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train3 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train6 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train4 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train1 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train1 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train6 v5 v4 t1 t2 track1 (1)
+move-from-track-to-departure train1 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train6 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train2 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train5 t4 t3 t0 v1 track1 (1)
+Plan length: 118 step(s).
+Plan cost: 118
+Initial state h value: 22/19.
+Expanded 2329 state(s).
+Reopened 0 state(s).
+Evaluated 2330 state(s).
+Evaluations: 4660
+Generated 114752 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 2330
+Best solution cost so far: 118
+Solution found - keep searching
+Starting search: lazy_greedy(list(hff, hlm), preferred = list(hff, hlm), reopen_closed = false)
+Conducting lazy best first search, (real) bound = 118
+Best heuristic value: 22/19 [g=0, 1 evaluated, 0 expanded, t=0.49s, 12276 KB]
+Best heuristic value: 22/18 [g=1, 2 evaluated, 1 expanded, t=0.49s, 12276 KB]
+Best heuristic value: 22/17 [g=2, 3 evaluated, 2 expanded, t=0.49s, 12276 KB]
+Best heuristic value: 21/16 [g=3, 4 evaluated, 3 expanded, t=0.49s, 12276 KB]
+Best heuristic value: 18/16 [g=4, 5 evaluated, 4 expanded, t=0.49s, 12276 KB]
+Best heuristic value: 18/15 [g=4, 7 evaluated, 6 expanded, t=0.49s, 12276 KB]
+Best heuristic value: 18/14 [g=5, 10 evaluated, 9 expanded, t=0.49s, 12276 KB]
+Best heuristic value: 18/13 [g=6, 13 evaluated, 12 expanded, t=0.49s, 12276 KB]
+Best heuristic value: 18/12 [g=7, 16 evaluated, 15 expanded, t=0.49s, 12276 KB]
+Best heuristic value: 18/11 [g=8, 19 evaluated, 18 expanded, t=0.49s, 12276 KB]
+Best heuristic value: 17/11 [g=12, 26 evaluated, 25 expanded, t=0.49s, 12276 KB]
+Best heuristic value: 17/10 [g=15, 40 evaluated, 39 expanded, t=0.5s, 12276 KB]
+Best heuristic value: 13/10 [g=20, 48 evaluated, 47 expanded, t=0.5s, 12276 KB]
+Best heuristic value: 10/10 [g=32, 152 evaluated, 151 expanded, t=0.52s, 12276 KB]
+Best heuristic value: 8/10 [g=41, 212 evaluated, 211 expanded, t=0.53s, 12408 KB]
+Best heuristic value: 7/10 [g=51, 285 evaluated, 284 expanded, t=0.55s, 12540 KB]
+Best heuristic value: 6/10 [g=53, 287 evaluated, 286 expanded, t=0.55s, 12540 KB]
+Best heuristic value: 4/9 [g=54, 289 evaluated, 288 expanded, t=0.55s, 12540 KB]
+Best heuristic value: 4/7 [g=55, 291 evaluated, 290 expanded, t=0.55s, 12540 KB]
+Best heuristic value: 3/7 [g=56, 293 evaluated, 292 expanded, t=0.55s, 12540 KB]
+Best heuristic value: 2/7 [g=62, 337 evaluated, 336 expanded, t=0.56s, 12672 KB]
+Best heuristic value: 1/7 [g=83, 1188 evaluated, 1187 expanded, t=0.71s, 14124 KB]
+Best heuristic value: 1/6 [g=89, 1197 evaluated, 1196 expanded, t=0.71s, 14124 KB]
+Best heuristic value: 0/6 [g=110, 1674 evaluated, 1673 expanded, t=0.82s, 15048 KB]
+Best heuristic value: 0/3 [g=117, 1722 evaluated, 1721 expanded, t=0.83s, 15048 KB]
+Best heuristic value: 0/1 [g=117, 2277 evaluated, 2276 expanded, t=0.95s, 16104 KB]
+Solution found!
+Actual search time: 0.68s [t=1.17s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+check-path v5 t4 (1)
+check-path v6 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v3 t5 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v4 t5 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v5 t3 (1)
+check-path v5 t5 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+check-path v6 t5 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-arrival-to-track train1 v2 v1 t2 t3 track1 (1)
+move-from-arrival-to-track train4 v3 v2 t5 t6 track2 (1)
+move-from-arrival-to-track train5 v4 v3 t1 t2 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train2 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train6 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train6 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train2 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train5 t2 t1 v4 v5 track1 (1)
+check-path v6 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train1 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train1 v3 v2 t0 t5 track2 (1)
+move-from-track-to-departure train3 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train1 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train1 v2 v1 t3 t4 track1 (1)
+move-from-arrival-to-track train3 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-track-to-departure train3 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train4 t6 t5 v2 v3 track2 (1)
+move-from-arrival-to-track train4 v3 v2 t1 t2 track1 (1)
+move-from-arrival-to-track train3 v4 v3 t0 t1 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t5 t6 track2 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train3 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train4 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train5 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train1 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train6 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train6 v2 v1 t3 t4 track1 (1)
+move-from-arrival-to-track train1 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train4 v5 v4 t1 t2 track1 (1)
+move-from-track-to-departure train1 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train4 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train5 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train2 t6 t5 v1 v2 track2 (1)
+move-from-arrival-to-track train2 v2 v1 t2 t3 track1 (1)
+move-from-arrival-to-track train5 v3 v2 t5 t6 track2 (1)
+move-from-track-to-departure train2 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train2 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+move-from-track-to-departure train2 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train6 t4 t3 v1 v2 track1 (1)
+move-from-arrival-to-track train6 v2 v1 t0 t5 track2 (1)
+move-from-arrival-to-track train4 v3 v2 t3 t4 track1 (1)
+move-from-arrival-to-track train2 v4 v3 t2 t3 track1 (1)
+move-from-track-to-departure train6 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train2 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train2 v3 v2 t0 t5 track2 (1)
+move-from-track-to-departure train4 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train2 t5 t0 v1 v2 track2 (1)
+move-from-track-to-departure train5 t6 t5 t0 v1 track2 (1)
+Plan length: 115 step(s).
+Plan cost: 115
+Initial state h value: 22/19.
+Expanded 3580 state(s).
+Reopened 0 state(s).
+Evaluated 3581 state(s).
+Evaluations: 7162
+Generated 180053 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 3633
+Best solution cost so far: 115
+Solution found - keep searching
+Starting search: lazy_wastar(list(hff, hlm), preferred = list(hff, hlm), w = 5)
+Conducting lazy best first search, (real) bound = 115
+Best heuristic value: 22/19 [g=0, 1 evaluated, 0 expanded, t=1.18s, 18664 KB]
+Best heuristic value: 22/18 [g=1, 2 evaluated, 1 expanded, t=1.18s, 18664 KB]
+Best heuristic value: 22/17 [g=2, 3 evaluated, 2 expanded, t=1.19s, 18664 KB]
+Best heuristic value: 21/16 [g=3, 4 evaluated, 3 expanded, t=1.19s, 18664 KB]
+Best heuristic value: 18/16 [g=4, 5 evaluated, 4 expanded, t=1.19s, 18664 KB]
+Best heuristic value: 18/15 [g=4, 7 evaluated, 6 expanded, t=1.19s, 18664 KB]
+Best heuristic value: 18/14 [g=5, 10 evaluated, 9 expanded, t=1.19s, 18664 KB]
+Best heuristic value: 18/13 [g=6, 13 evaluated, 12 expanded, t=1.19s, 18664 KB]
+Best heuristic value: 18/12 [g=7, 16 evaluated, 15 expanded, t=1.19s, 18664 KB]
+Best heuristic value: 18/11 [g=8, 19 evaluated, 18 expanded, t=1.19s, 18664 KB]
+Best heuristic value: 17/11 [g=12, 26 evaluated, 25 expanded, t=1.19s, 18796 KB]
+Best heuristic value: 17/10 [g=15, 40 evaluated, 39 expanded, t=1.19s, 18796 KB]
+Best heuristic value: 13/10 [g=20, 134 evaluated, 133 expanded, t=1.2s, 18796 KB]
+Best heuristic value: 10/10 [g=32, 588 evaluated, 587 expanded, t=1.27s, 19324 KB]
+Best heuristic value: 8/10 [g=41, 629 evaluated, 628 expanded, t=1.27s, 19324 KB]
+Best heuristic value: 7/10 [g=51, 942 evaluated, 941 expanded, t=1.34s, 19720 KB]
+Best heuristic value: 6/10 [g=53, 945 evaluated, 944 expanded, t=1.34s, 19720 KB]
+Best heuristic value: 4/9 [g=54, 947 evaluated, 946 expanded, t=1.34s, 19720 KB]
+Best heuristic value: 4/7 [g=55, 949 evaluated, 948 expanded, t=1.34s, 19852 KB]
+Best heuristic value: 3/7 [g=56, 951 evaluated, 950 expanded, t=1.35s, 19852 KB]
+Best heuristic value: 2/7 [g=62, 998 evaluated, 997 expanded, 1 reopened, t=1.35s, 19852 KB]
+Best heuristic value: 1/7 [g=58, 5804 evaluated, 5803 expanded, 455 reopened, t=2.24s, 28044 KB]
+Best heuristic value: 0/5 [g=62, 6293 evaluated, 6292 expanded, 515 reopened, t=2.3s, 28968 KB]
+Best heuristic value: 0/3 [g=63, 6294 evaluated, 6293 expanded, 515 reopened, t=2.3s, 28968 KB]
+Best heuristic value: 0/1 [g=66, 6298 evaluated, 6297 expanded, 515 reopened, t=2.3s, 28968 KB]
+Solution found!
+Actual search time: 1.12s [t=2.3s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v3 t5 (1)
+check-path v4 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+check-path v4 t4 (1)
+check-path v4 t5 (1)
+check-path v5 t4 (1)
+check-path v5 t5 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+check-path v2 t6 (1)
+check-path v6 t5 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train3 t4 t3 v1 v2 track1 (1)
+move-from-arrival-to-track train3 v2 v1 t0 t5 track2 (1)
+move-from-arrival-to-track train4 v3 v2 t3 t4 track1 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t1 t2 track1 (1)
+move-from-track-to-departure train3 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train3 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train3 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train5 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train4 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train6 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train6 v2 v1 t3 t4 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train6 t4 t3 t0 v1 track1 (1)
+Plan length: 67 step(s).
+Plan cost: 67
+Initial state h value: 22/19.
+Expanded 6299 state(s).
+Reopened 515 state(s).
+Evaluated 6300 state(s).
+Evaluations: 12600
+Generated 272600 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 8647
+Best solution cost so far: 67
+Solution found - keep searching
+Starting search: lazy_wastar(list(hff, hlm), preferred = list(hff, hlm), w = 3)
+Conducting lazy best first search, (real) bound = 67
+Best heuristic value: 22/19 [g=0, 1 evaluated, 0 expanded, t=2.31s, 29240 KB]
+Best heuristic value: 22/18 [g=1, 2 evaluated, 1 expanded, t=2.31s, 29240 KB]
+Best heuristic value: 22/17 [g=2, 3 evaluated, 2 expanded, t=2.31s, 29240 KB]
+Best heuristic value: 21/16 [g=3, 4 evaluated, 3 expanded, t=2.31s, 29240 KB]
+Best heuristic value: 18/16 [g=4, 5 evaluated, 4 expanded, t=2.31s, 29240 KB]
+Best heuristic value: 18/15 [g=4, 7 evaluated, 6 expanded, t=2.31s, 29240 KB]
+Best heuristic value: 18/14 [g=5, 10 evaluated, 9 expanded, t=2.31s, 29240 KB]
+Best heuristic value: 18/13 [g=6, 13 evaluated, 12 expanded, t=2.31s, 29240 KB]
+Best heuristic value: 18/12 [g=7, 16 evaluated, 15 expanded, t=2.31s, 29240 KB]
+Best heuristic value: 18/11 [g=8, 19 evaluated, 18 expanded, t=2.31s, 29240 KB]
+Best heuristic value: 17/11 [g=12, 26 evaluated, 25 expanded, t=2.31s, 29240 KB]
+Best heuristic value: 17/10 [g=15, 40 evaluated, 39 expanded, t=2.32s, 29240 KB]
+Best heuristic value: 13/10 [g=20, 127 evaluated, 126 expanded, t=2.33s, 29372 KB]
+Best heuristic value: 10/10 [g=32, 698 evaluated, 697 expanded, t=2.41s, 29768 KB]
+Best heuristic value: 8/10 [g=32, 2186 evaluated, 2185 expanded, t=2.66s, 31616 KB]
+Best heuristic value: 7/10 [g=40, 5109 evaluated, 5108 expanded, t=3.13s, 35708 KB]
+Best heuristic value: 5/10 [g=41, 5112 evaluated, 5111 expanded, t=3.13s, 35708 KB]
+Best heuristic value: 4/9 [g=50, 5159 evaluated, 5158 expanded, t=3.14s, 35708 KB]
+Best heuristic value: 4/7 [g=51, 5162 evaluated, 5161 expanded, t=3.14s, 35708 KB]
+Best heuristic value: 3/7 [g=53, 5166 evaluated, 5165 expanded, t=3.14s, 35840 KB]
+Best heuristic value: 2/7 [g=58, 6643 evaluated, 6642 expanded, 117 reopened, t=3.38s, 38412 KB]
+Best heuristic value: 1/7 [g=56, 10939 evaluated, 10938 expanded, 620 reopened, t=4.2s, 45828 KB]
+Best heuristic value: 0/5 [g=60, 13410 evaluated, 13409 expanded, 930 reopened, t=4.56s, 49920 KB]
+Best heuristic value: 0/3 [g=61, 13411 evaluated, 13410 expanded, 930 reopened, t=4.56s, 49920 KB]
+Best heuristic value: 0/1 [g=64, 13416 evaluated, 13415 expanded, 930 reopened, t=4.56s, 49920 KB]
+Solution found!
+Actual search time: 2.25s [t=4.56s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train3 t4 t3 v1 v2 track1 (1)
+check-path v2 t6 (1)
+check-path v6 t5 (1)
+move-from-arrival-to-track train3 v2 v1 t0 t5 track2 (1)
+move-from-arrival-to-track train4 v3 v2 t3 t4 track1 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t1 t2 track1 (1)
+move-from-track-to-departure train3 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train3 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train3 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train5 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train4 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train6 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train6 v2 v1 t3 t4 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train6 t4 t3 t0 v1 track1 (1)
+Plan length: 65 step(s).
+Plan cost: 65
+Initial state h value: 22/19.
+Expanded 13416 state(s).
+Reopened 930 state(s).
+Evaluated 13417 state(s).
+Evaluations: 26834
+Generated 554624 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 17919
+Best solution cost so far: 65
+Solution found - keep searching
+Starting search: lazy_wastar(list(hff, hlm), preferred = list(hff, hlm), w = 2)
+Conducting lazy best first search, (real) bound = 65
+Best heuristic value: 22/19 [g=0, 1 evaluated, 0 expanded, t=4.57s, 50464 KB]
+Best heuristic value: 22/18 [g=1, 2 evaluated, 1 expanded, t=4.57s, 50464 KB]
+Best heuristic value: 22/17 [g=2, 3 evaluated, 2 expanded, t=4.57s, 50464 KB]
+Best heuristic value: 21/16 [g=3, 4 evaluated, 3 expanded, t=4.57s, 50464 KB]
+Best heuristic value: 18/16 [g=4, 5 evaluated, 4 expanded, t=4.57s, 50464 KB]
+Best heuristic value: 18/15 [g=4, 7 evaluated, 6 expanded, t=4.57s, 50464 KB]
+Best heuristic value: 18/14 [g=5, 10 evaluated, 9 expanded, t=4.57s, 50464 KB]
+Best heuristic value: 18/13 [g=6, 13 evaluated, 12 expanded, t=4.57s, 50464 KB]
+Best heuristic value: 18/12 [g=7, 16 evaluated, 15 expanded, t=4.57s, 50464 KB]
+Best heuristic value: 18/11 [g=8, 19 evaluated, 18 expanded, t=4.57s, 50464 KB]
+Best heuristic value: 17/11 [g=12, 26 evaluated, 25 expanded, t=4.57s, 50464 KB]
+Best heuristic value: 17/10 [g=15, 39 evaluated, 38 expanded, t=4.58s, 50596 KB]
+Best heuristic value: 13/10 [g=20, 120 evaluated, 119 expanded, t=4.59s, 50596 KB]
+Best heuristic value: 10/10 [g=32, 660 evaluated, 659 expanded, t=4.66s, 50992 KB]
+Best heuristic value: 8/10 [g=32, 2396 evaluated, 2395 expanded, t=4.88s, 52972 KB]
+Best heuristic value: 7/10 [g=40, 6240 evaluated, 6239 expanded, t=5.45s, 57988 KB]
+Best heuristic value: 5/10 [g=41, 6242 evaluated, 6241 expanded, t=5.45s, 57988 KB]
+Best heuristic value: 4/9 [g=50, 6272 evaluated, 6271 expanded, t=5.46s, 57988 KB]
+Best heuristic value: 4/7 [g=51, 6276 evaluated, 6275 expanded, t=5.46s, 57988 KB]
+Best heuristic value: 3/7 [g=53, 6282 evaluated, 6281 expanded, t=5.46s, 57988 KB]
+Best heuristic value: 1/7 [g=46, 550026 evaluated, 550025 expanded, 370 reopened, t=79.02s, 667020 KB]
+Best heuristic value: 0/7 [g=48, 550033 evaluated, 550032 expanded, 370 reopened, t=79.02s, 667020 KB]
+Best heuristic value: 0/6 [g=51, 550151 evaluated, 550150 expanded, 371 reopened, t=79.03s, 667152 KB]
+Best heuristic value: 0/5 [g=50, 596950 evaluated, 596949 expanded, 568 reopened, t=85s, 726004 KB]
+Best heuristic value: 0/4 [g=56, 763780 evaluated, 763779 expanded, 851 reopened, t=106.21s, 928432 KB]
+Best heuristic value: 0/2 [g=54, 783315 evaluated, 783314 expanded, 896 reopened, t=108.91s, 961136 KB]
+Best heuristic value: 0/1 [g=55, 783316 evaluated, 783315 expanded, 896 reopened, t=108.91s, 961136 KB]
+Solution found!
+Actual search time: 104.34s [t=108.91s]
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+move-from-arrival-to-track train1 v1 t0 t3 t4 track1 (1)
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+move-from-arrival-to-track train2 v2 v1 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+move-from-arrival-to-track train3 v3 v2 t0 t5 track2 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+check-path v6 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+check-path v3 t6 (1)
+check-path v6 t5 (1)
+move-from-track-to-departure train3 t5 t0 v5 v6 track2 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-track-to-departure train2 t6 t5 v4 v5 track2 (1)
+move-from-track-to-departure train6 t1 t0 v3 v4 track1 (1)
+check-path v2 t4 (1)
+move-from-track-to-departure train5 t2 t1 v2 v3 track1 (1)
+move-from-arrival-to-track train5 v3 v2 t5 t6 track2 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train1 t4 t3 v1 v2 track1 (1)
+move-from-track-to-departure train5 t6 t5 t0 v1 track2 (1)
+Plan length: 56 step(s).
+Plan cost: 56
+Initial state h value: 22/19.
+Expanded 783316 state(s).
+Reopened 896 state(s).
+Evaluated 783317 state(s).
+Evaluations: 1566634
+Generated 23595394 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 790260
+Best solution cost so far: 56
+Solution found - keep searching
+Starting search: lazy_wastar(list(hff, hlm), preferred = list(hff, hlm), w = 1)
+Conducting lazy best first search, (real) bound = 56
+Best heuristic value: 22/19 [g=0, 1 evaluated, 0 expanded, t=108.93s, 984996 KB]
+Best heuristic value: 22/18 [g=1, 2 evaluated, 1 expanded, t=108.93s, 984996 KB]
+Best heuristic value: 22/17 [g=2, 3 evaluated, 2 expanded, t=108.93s, 984996 KB]
+Best heuristic value: 21/16 [g=3, 4 evaluated, 3 expanded, t=108.93s, 984996 KB]
+Best heuristic value: 18/16 [g=4, 5 evaluated, 4 expanded, t=108.93s, 984996 KB]
+Best heuristic value: 18/15 [g=4, 7 evaluated, 6 expanded, t=108.93s, 984996 KB]
+Best heuristic value: 18/14 [g=5, 10 evaluated, 9 expanded, t=108.93s, 984996 KB]
+Best heuristic value: 18/13 [g=6, 13 evaluated, 12 expanded, t=108.93s, 984996 KB]
+Best heuristic value: 18/12 [g=7, 15 evaluated, 14 expanded, t=108.93s, 984996 KB]
+Best heuristic value: 18/11 [g=8, 18 evaluated, 17 expanded, t=108.93s, 984996 KB]
+Best heuristic value: 17/11 [g=8, 23 evaluated, 22 expanded, t=108.93s, 984996 KB]
+Best heuristic value: 17/10 [g=15, 87 evaluated, 86 expanded, t=108.94s, 984996 KB]
+Best heuristic value: 13/10 [g=18, 133 evaluated, 132 expanded, t=108.94s, 984996 KB]
+Best heuristic value: 10/10 [g=25, 772 evaluated, 771 expanded, t=109.02s, 985524 KB]
+Best heuristic value: 8/10 [g=32, 2434 evaluated, 2433 expanded, t=109.22s, 987372 KB]
+Best heuristic value: 7/10 [g=41, 6520 evaluated, 6519 expanded, t=109.84s, 992652 KB]
+Best heuristic value: 5/10 [g=41, 6819 evaluated, 6818 expanded, t=109.88s, 993180 KB]
+Best heuristic value: 4/9 [g=50, 7085 evaluated, 7084 expanded, t=109.92s, 993444 KB]
+Best heuristic value: 4/7 [g=51, 7087 evaluated, 7086 expanded, t=109.92s, 993444 KB]
+Best heuristic value: 3/7 [g=52, 7297 evaluated, 7296 expanded, t=109.94s, 993840 KB]
+Best heuristic value: 1/7 [g=46, 2001756 evaluated, 2001755 expanded, 14 reopened, t=366.44s, 3238420 KB]
+Best heuristic value: 0/7 [g=48, 2001762 evaluated, 2001761 expanded, 14 reopened, t=366.44s, 3238556 KB]
+Best heuristic value: 0/6 [g=51, 2088472 evaluated, 2088471 expanded, 17 reopened, t=378.16s, 3353088 KB]
+Best heuristic value: 0/5 [g=50, 2146124 evaluated, 2146123 expanded, 29 reopened, t=386.53s, 3433064 KB]
+Best heuristic value: 0/4 [g=53, 2205017 evaluated, 2205016 expanded, 79 reopened, t=394.91s, 3503568 KB]
+Best heuristic value: 0/2 [g=54, 2205018 evaluated, 2205017 expanded, 79 reopened, t=394.91s, 3503568 KB]
+Best heuristic value: 0/1 [g=55, 2205019 evaluated, 2205018 expanded, 79 reopened, t=394.91s, 3503568 KB]
+Solution found!
+Actual search time: 488.47s [t=597.39s]
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+move-from-arrival-to-track train1 v1 t0 t3 t4 track1 (1)
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+move-from-arrival-to-track train2 v2 v1 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+move-from-arrival-to-track train3 v3 v2 t0 t5 track2 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+check-path v6 t5 (1)
+move-from-track-to-departure train3 t5 t0 v5 v6 track2 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-track-to-departure train2 t6 t5 v4 v5 track2 (1)
+move-from-track-to-departure train6 t1 t0 v3 v4 track1 (1)
+move-from-arrival-to-track train6 v4 v3 t5 t6 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+check-path v2 t4 (1)
+move-from-track-to-departure train1 t4 t3 v1 v2 track1 (1)
+move-from-track-to-departure train6 t6 t5 t0 v1 track2 (1)
+Plan length: 55 step(s).
+Plan cost: 55
+Initial state h value: 22/19.
+Expanded 3181946 state(s).
+Reopened 11559 state(s).
+Evaluated 3181947 state(s).
+Evaluations: 6363894
+Generated 113798946 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 3178320
+Best solution cost so far: 55
+Solution found - keep searching
+Starting search: lazy_wastar(list(hff, hlm), preferred = list(hff, hlm), w = 1)
+Conducting lazy best first search, (real) bound = 55
+Best heuristic value: 22/19 [g=0, 1 evaluated, 0 expanded, t=597.41s, 4047528 KB]
+Best heuristic value: 22/18 [g=1, 2 evaluated, 1 expanded, t=597.41s, 4047528 KB]
+Best heuristic value: 22/17 [g=2, 3 evaluated, 2 expanded, t=597.41s, 4047528 KB]
+Best heuristic value: 21/16 [g=3, 4 evaluated, 3 expanded, t=597.41s, 4047528 KB]
+Best heuristic value: 18/16 [g=4, 5 evaluated, 4 expanded, t=597.41s, 4047528 KB]
+Best heuristic value: 18/15 [g=4, 7 evaluated, 6 expanded, t=597.41s, 4047528 KB]
+Best heuristic value: 18/14 [g=5, 10 evaluated, 9 expanded, t=597.41s, 4047528 KB]
+Best heuristic value: 18/13 [g=6, 13 evaluated, 12 expanded, t=597.42s, 4047528 KB]
+Best heuristic value: 18/12 [g=7, 15 evaluated, 14 expanded, t=597.42s, 4047528 KB]
+Best heuristic value: 18/11 [g=8, 18 evaluated, 17 expanded, t=597.42s, 4047528 KB]
+Best heuristic value: 17/11 [g=8, 23 evaluated, 22 expanded, t=597.43s, 4047528 KB]
+Best heuristic value: 17/10 [g=15, 87 evaluated, 86 expanded, t=597.43s, 4047528 KB]
+Best heuristic value: 13/10 [g=18, 133 evaluated, 132 expanded, t=597.44s, 4047528 KB]
+Best heuristic value: 10/10 [g=25, 772 evaluated, 771 expanded, t=597.52s, 4047528 KB]
+Best heuristic value: 8/10 [g=32, 2434 evaluated, 2433 expanded, t=597.75s, 4047660 KB]
+Best heuristic value: 7/10 [g=41, 6520 evaluated, 6519 expanded, t=598.34s, 4047796 KB]
+Best heuristic value: 5/10 [g=41, 6819 evaluated, 6818 expanded, t=598.38s, 4047796 KB]
+Best heuristic value: 4/9 [g=50, 7085 evaluated, 7084 expanded, t=598.42s, 4047796 KB]
+Best heuristic value: 4/7 [g=51, 7087 evaluated, 7086 expanded, t=598.42s, 4047796 KB]
+Best heuristic value: 3/7 [g=52, 7297 evaluated, 7296 expanded, t=598.46s, 4047796 KB]
+Best heuristic value: 1/7 [g=46, 2001756 evaluated, 2001755 expanded, 14 reopened, t=862.7s, 5099568 KB]
+Best heuristic value: 0/7 [g=48, 2001762 evaluated, 2001761 expanded, 14 reopened, t=862.71s, 5099568 KB]
+Best heuristic value: 0/6 [g=51, 2088472 evaluated, 2088471 expanded, 17 reopened, t=874.26s, 5201512 KB]
+Best heuristic value: 0/5 [g=50, 2146124 evaluated, 2146123 expanded, 29 reopened, t=882.12s, 5272980 KB]
+Best heuristic value: 0/4 [g=53, 2205016 evaluated, 2205015 expanded, 79 reopened, t=890.39s, 5334756 KB]
+Best heuristic value: 0/2 [g=54, 2205017 evaluated, 2205016 expanded, 79 reopened, t=890.39s, 5334756 KB]
+Best heuristic value: 0/1 [g=54, 3119815 evaluated, 3119814 expanded, 7964 reopened, t=1102.58s, 5646612 KB]
+Completely explored state space -- no solution!
+Actual search time: 613.49s [t=1210.88s]
+Initial state h value: 22/19.
+Expanded 3328290 state(s).
+Reopened 43877 state(s).
+Evaluated 3328290 state(s).
+Evaluations: 6656580
+Generated 120575353 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 3338456
+Best solution cost so far: 55
+No solution found - keep searching
+Actual search time: 1210.8s [t=1210.88s]
+Cumulative statistics:
+Expanded 7319176 state(s).
+Reopened 57777 state(s).
+Evaluated 7319182 state(s).
+Evaluations: 14638364
+Generated 259091722 state(s).
+Dead ends: 0 state(s).
+Search time: 1210.8s
+Total time: 1210.88s
+Solution found.
+Peak memory: 5646612 KB
+returncode: 0
+
+plan manager: found new plan with cost 118
+plan manager: found new plan with cost 115
+plan manager: found new plan with cost 67
+plan manager: found new plan with cost 65
+plan manager: found new plan with cost 56
+plan manager: found new plan with cost 55
+Exit codes: [3, 3, 0, 0]
+Error: Unexpected exit codes: [3]
+Command '['run-portfolio', '/mnt/c/Users/Simba/Desktop/Delft-University-of-Technology/CSE/Y6-2022-2023/Q4-Research-Project/planners/team2/src/driver/portfolios/seq_sat_ds.py']' returned non-zero exit status 3

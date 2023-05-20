@@ -1,0 +1,679 @@
+INFO     Running translator.
+INFO     translator inputs: ['rail-planning/domain1/3-optimized/domain1-no-reallocation.pddl', 'rail-planning/domain1/3-optimized/problem2-no-reallocation.pddl']
+INFO     translator arguments: []
+Parsing...
+Parsing: [0.000s CPU, 0.011s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Trivial rules: Converted to facts.
+Normalizing Datalog program: [0.010s CPU, 0.022s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 59 rules.
+Computing model... [0.020s CPU, 0.018s wall-clock]
+809 relevant atoms
+1530 auxiliary atoms
+2339 final queue length
+4408 total queue pushes
+Completing instantiation... [0.030s CPU, 0.030s wall-clock]
+Instantiating: [0.060s CPU, 0.075s wall-clock]
+Computing fact groups...
+Finding invariants...
+18 initial candidates
+Finding invariants: [0.000s CPU, 0.006s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.001s wall-clock]
+Instantiating groups... [0.010s CPU, 0.001s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.001s wall-clock]
+Choosing groups...
+122 uncovered facts
+Choosing groups: [0.000s CPU, 0.002s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.010s CPU, 0.017s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.001s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.001s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.002s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.001s wall-clock]
+Processing axioms: [0.010s CPU, 0.004s wall-clock]
+Translating task: [0.050s CPU, 0.052s wall-clock]
+1512 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+14 propositions removed
+Detecting unreachable propositions: [0.010s CPU, 0.009s wall-clock]
+Translator variables: 124
+Translator derived variables: 6
+Translator facts: 308
+Translator goal facts: 5
+Translator mutex groups: 18
+Translator total mutex groups size: 156
+Translator operators: 502
+Translator axioms: 8
+Translator task size: 7625
+Translator peak memory: 33764 KB
+Writing output... [0.030s CPU, 0.095s wall-clock]
+Done! [0.170s CPU, 0.273s wall-clock]
+INFO     Running preprocessor.
+INFO     preprocessor input: output.sas
+INFO     preprocessor arguments: []
+Building causal graph...
+The causal graph is not acyclic.
+103 variables of 124 necessary
+12 of 18 mutex groups necessary.
+481 of 502 operators necessary.
+8 of 8 axiom rules necessary.
+Disabling h2 analysis because it does not currently support axioms
+Building domain transition graphs...
+solveable in poly time 0
+Building successor generator...
+Preprocessor variables: 103
+Preprocessor facts: 266
+Preprocessor derived variables: 6
+Preprocessor operators: 481
+Preprocessor mutex groups: 12
+Preprocessor task size: 7433
+Writing output...
+done
+INFO     Running search.
+INFO     search input: output
+INFO     search executable: /mnt/c/Users/Simba/Desktop/Delft-University-of-Technology/CSE/Y6-2022-2023/Q4-Research-Project/planners/team2/src/search/downward-release
+INFO     search portfolio: /mnt/c/Users/Simba/Desktop/Delft-University-of-Technology/CSE/Y6-2022-2023/Q4-Research-Project/planners/team2/src/driver/portfolios/seq_sat_ds.py
+External time limits: -1, -1
+Internal time limit: 1800
+External memory limits: -1, -1
+Internal memory limit: 8000000000
+remaining time at start: 1797.53
+remaining time: 1797.53
+config 0: relative time 100, remaining 1800
+g bound: infinity
+next plan number: 1
+args: ['/mnt/c/Users/Simba/Desktop/Delft-University-of-Technology/CSE/Y6-2022-2023/Q4-Research-Project/planners/team2/src/search/downward-release', '--decoupling', 'fork(search_type=sat, pruning=cost_frontier(irrelevance=TRANSITIONS), max_leaf_size=1000000)', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=infinity)', '--internal-previous-portfolio-plans', '0', '--internal-plan-file', 'sas_plan']
+timeout: 99.86 -> (100, 101)
+using frontier pruning method
+performing irrelevance analysis in leaf factors
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using fork factoring profile
+reading input... [t=0.01s]
+Simplifying transitions... done!
+done reading input! [t=0.06s]
+building causal graph...done! [t=0.06s]
+Peak memory: 7120 KB
+returncode: 3
+
+remaining time: 1797.44
+config 1: relative time 1000, remaining 1700
+g bound: infinity
+next plan number: 1
+args: ['/mnt/c/Users/Simba/Desktop/Delft-University-of-Technology/CSE/Y6-2022-2023/Q4-Research-Project/planners/team2/src/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=infinity, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '0', '--internal-plan-file', 'sas_plan']
+timeout: 1057.32 -> (1058, 1059)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0.01s]
+Simplifying transitions... done!
+done reading input! [t=0.05s]
+building causal graph...done! [t=0.06s]
+Peak memory: 7124 KB
+returncode: 3
+
+remaining time: 1797.35
+config 2: relative time 700, remaining 700
+g bound: infinity
+next plan number: 1
+args: ['/mnt/c/Users/Simba/Desktop/Delft-University-of-Technology/CSE/Y6-2022-2023/Q4-Research-Project/planners/team2/src/search/downward-release', '--heuristic', 'hlm1,hff1=lm_ff_syn(lm_rhw(reasonable_orders=true,                           lm_cost_type=one,cost_type=one))', '--search', 'lazy_greedy([hff1,hlm1],preferred=[hff1,hlm1], cost_type=one, reopen_closed=false, bound=infinity)', '--internal-previous-portfolio-plans', '0', '--internal-plan-file', 'sas_plan']
+timeout: 1797.35 -> (1798, 1799)
+reading input... [t=0.02s]
+Simplifying transitions... done!
+done reading input! [t=0.07s]
+building causal graph...done! [t=0.07s]
+Variables: 103
+Bytes per state: 16
+done! [t=0.07s]
+done initalizing global data [t=0.07s]
+Initializing Exploration...
+Generating landmarks using the RPG/SAS+ approach
+approx. reasonable orders
+approx. obedient reasonable orders
+Removed 0 reasonable or obedient reasonable orders
+Landmarks generation time: 0.0147713s
+Discovered 53 landmarks, of which 6 are disjunctive and 0 are conjunctive 
+267 edges
+Initializing LAMA-FF Synergy Object
+Initializing landmarks count heuristic...
+26 initial landmarks, 5 goal landmarks
+Conducting lazy best first search, (real) bound = 2147483647
+Best heuristic value: 21/19 [g=0, 1 evaluated, 0 expanded, t=0.09s, 7884 KB]
+Best heuristic value: 21/18 [g=1, 2 evaluated, 1 expanded, t=0.09s, 7884 KB]
+Best heuristic value: 21/17 [g=2, 3 evaluated, 2 expanded, t=0.09s, 7884 KB]
+Best heuristic value: 20/16 [g=3, 4 evaluated, 3 expanded, t=0.09s, 7884 KB]
+Best heuristic value: 16/16 [g=4, 5 evaluated, 4 expanded, t=0.09s, 7884 KB]
+Best heuristic value: 16/15 [g=4, 7 evaluated, 6 expanded, t=0.09s, 8012 KB]
+Best heuristic value: 16/14 [g=5, 10 evaluated, 9 expanded, t=0.09s, 8012 KB]
+Best heuristic value: 16/13 [g=6, 13 evaluated, 12 expanded, t=0.09s, 8012 KB]
+Best heuristic value: 16/12 [g=7, 16 evaluated, 15 expanded, t=0.09s, 8012 KB]
+Best heuristic value: 16/11 [g=8, 19 evaluated, 18 expanded, t=0.09s, 8012 KB]
+Switch from bucket-based to heap-based queue at key = 478, num_pushes = 321
+Best heuristic value: 14/11 [g=13, 26 evaluated, 25 expanded, t=0.1s, 8012 KB]
+Best heuristic value: 14/10 [g=16, 37 evaluated, 36 expanded, t=0.1s, 8012 KB]
+Best heuristic value: 12/10 [g=21, 66 evaluated, 65 expanded, t=0.1s, 8012 KB]
+Best heuristic value: 8/10 [g=30, 117 evaluated, 116 expanded, t=0.11s, 8012 KB]
+Best heuristic value: 7/10 [g=39, 147 evaluated, 146 expanded, t=0.11s, 8012 KB]
+Best heuristic value: 4/9 [g=51, 1463 evaluated, 1384 expanded, t=0.26s, 9956 KB]
+Best heuristic value: 4/8 [g=52, 1464 evaluated, 1385 expanded, t=0.26s, 9956 KB]
+Best heuristic value: 4/5 [g=53, 1465 evaluated, 1386 expanded, t=0.26s, 9956 KB]
+Best heuristic value: 3/2 [g=54, 1466 evaluated, 1387 expanded, t=0.26s, 9956 KB]
+Best heuristic value: 2/1 [g=55, 1467 evaluated, 1388 expanded, t=0.26s, 9956 KB]
+Solution found!
+Actual search time: 0.17s [t=0.26s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+check-path v6 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+check-path v6 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t3 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train2 t5 t0 v5 v6 track2 (1)
+move-from-track-to-departure train6 t1 t0 v4 v5 track1 (1)
+move-from-track-to-departure train1 t6 t5 v3 v4 track2 (1)
+move-from-track-to-departure train5 t2 t1 v2 v3 track1 (1)
+move-from-track-to-departure train4 t3 t2 v1 v2 track1 (1)
+move-from-track-to-departure train3 t4 t3 t0 v1 track1 (1)
+Plan length: 56 step(s).
+Plan cost: 56
+Initial state h value: 21/19.
+Expanded 1389 state(s).
+Reopened 0 state(s).
+Evaluated 1468 state(s).
+Evaluations: 2936
+Generated 53567 state(s).
+Dead ends: 78 state(s).
+Number of registered states: 1468
+Search time: 0.17s
+Total time: 0.26s
+Solution found.
+Peak memory: 9956 KB
+returncode: 0
+
+plan manager: found new plan with cost 56
+Abort portfolio and run final config.
+remaining time: 1797.05
+config 0: relative time 1, remaining 1
+g bound: 56
+next plan number: 2
+args: ['/mnt/c/Users/Simba/Desktop/Delft-University-of-Technology/CSE/Y6-2022-2023/Q4-Research-Project/planners/team2/src/search/downward-release', '--heuristic', 'hlm,hff=lm_ff_syn(lm_rhw(reasonable_orders=true,                         lm_cost_type=one,cost_type=one))', '--search', 'iterated([\n                     lazy_greedy([hff,hlm],preferred=[hff,hlm],\n                                 cost_type=one,reopen_closed=false),\n                     lazy_greedy([hff,hlm],preferred=[hff,hlm],\n                                 reopen_closed=false),\n                     lazy_wastar([hff,hlm],preferred=[hff,hlm],w=5),\n                     lazy_wastar([hff,hlm],preferred=[hff,hlm],w=3),\n                     lazy_wastar([hff,hlm],preferred=[hff,hlm],w=2),\n                     lazy_wastar([hff,hlm],preferred=[hff,hlm],w=1)\n                     ],repeat_last=true,continue_on_fail=true, bound=56)', '--internal-previous-portfolio-plans', '1', '--internal-plan-file', 'sas_plan']
+timeout: 1797.05 -> (1798, 1799)
+reading input... [t=0.01s]
+Simplifying transitions... done!
+done reading input! [t=0.08s]
+building causal graph...done! [t=0.08s]
+Variables: 103
+Bytes per state: 16
+done! [t=0.08s]
+done initalizing global data [t=0.08s]
+Initializing Exploration...
+Generating landmarks using the RPG/SAS+ approach
+approx. reasonable orders
+approx. obedient reasonable orders
+Removed 0 reasonable or obedient reasonable orders
+Landmarks generation time: 0.0168549s
+Discovered 53 landmarks, of which 6 are disjunctive and 0 are conjunctive 
+267 edges
+Initializing LAMA-FF Synergy Object
+Initializing landmarks count heuristic...
+26 initial landmarks, 5 goal landmarks
+Starting search: lazy_greedy(list(hff, hlm), preferred = list(hff, hlm), cost_type = one, reopen_closed = false)
+Conducting lazy best first search, (real) bound = 56
+Best heuristic value: 21/19 [g=0, 1 evaluated, 0 expanded, t=0.11s, 8012 KB]
+Best heuristic value: 21/18 [g=1, 2 evaluated, 1 expanded, t=0.11s, 8012 KB]
+Best heuristic value: 21/17 [g=2, 3 evaluated, 2 expanded, t=0.11s, 8012 KB]
+Best heuristic value: 20/16 [g=3, 4 evaluated, 3 expanded, t=0.11s, 8012 KB]
+Best heuristic value: 16/16 [g=4, 5 evaluated, 4 expanded, t=0.11s, 8012 KB]
+Best heuristic value: 16/15 [g=4, 7 evaluated, 6 expanded, t=0.11s, 8012 KB]
+Best heuristic value: 16/14 [g=5, 10 evaluated, 9 expanded, t=0.11s, 8012 KB]
+Best heuristic value: 16/13 [g=6, 13 evaluated, 12 expanded, t=0.12s, 8012 KB]
+Best heuristic value: 16/12 [g=7, 16 evaluated, 15 expanded, t=0.12s, 8012 KB]
+Best heuristic value: 16/11 [g=8, 19 evaluated, 18 expanded, t=0.12s, 8012 KB]
+Switch from bucket-based to heap-based queue at key = 478, num_pushes = 321
+Best heuristic value: 14/11 [g=13, 26 evaluated, 25 expanded, t=0.12s, 8012 KB]
+Best heuristic value: 14/10 [g=16, 37 evaluated, 36 expanded, t=0.12s, 8012 KB]
+Best heuristic value: 12/10 [g=21, 66 evaluated, 65 expanded, t=0.12s, 8012 KB]
+Best heuristic value: 8/10 [g=30, 117 evaluated, 116 expanded, t=0.13s, 8012 KB]
+Best heuristic value: 7/10 [g=39, 147 evaluated, 146 expanded, t=0.13s, 8144 KB]
+Best heuristic value: 4/9 [g=51, 1463 evaluated, 1384 expanded, t=0.29s, 9948 KB]
+Best heuristic value: 4/8 [g=52, 1464 evaluated, 1385 expanded, t=0.29s, 9948 KB]
+Best heuristic value: 4/5 [g=53, 1465 evaluated, 1386 expanded, t=0.29s, 9948 KB]
+Best heuristic value: 3/2 [g=54, 1466 evaluated, 1387 expanded, t=0.3s, 9948 KB]
+Best heuristic value: 2/1 [g=55, 1467 evaluated, 1388 expanded, t=0.3s, 9948 KB]
+Solution found!
+Actual search time: 0.19s [t=0.3s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+check-path v6 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+check-path v6 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train2 t5 t0 v5 v6 track2 (1)
+move-from-track-to-departure train6 t1 t0 v4 v5 track1 (1)
+move-from-track-to-departure train1 t6 t5 v3 v4 track2 (1)
+move-from-track-to-departure train5 t2 t1 v2 v3 track1 (1)
+move-from-track-to-departure train4 t3 t2 v1 v2 track1 (1)
+move-from-track-to-departure train3 t4 t3 t0 v1 track1 (1)
+Plan length: 55 step(s).
+Plan cost: 55
+Initial state h value: 21/19.
+Expanded 1397 state(s).
+Reopened 0 state(s).
+Evaluated 1478 state(s).
+Evaluations: 2956
+Generated 53944 state(s).
+Dead ends: 80 state(s).
+Number of registered states: 1478
+Best solution cost so far: 55
+Solution found - keep searching
+Starting search: lazy_greedy(list(hff, hlm), preferred = list(hff, hlm), reopen_closed = false)
+Conducting lazy best first search, (real) bound = 55
+Best heuristic value: 21/19 [g=0, 1 evaluated, 0 expanded, t=0.3s, 10084 KB]
+Best heuristic value: 21/18 [g=1, 2 evaluated, 1 expanded, t=0.3s, 10084 KB]
+Best heuristic value: 21/17 [g=2, 3 evaluated, 2 expanded, t=0.3s, 10084 KB]
+Best heuristic value: 20/16 [g=3, 4 evaluated, 3 expanded, t=0.31s, 10084 KB]
+Best heuristic value: 16/16 [g=4, 5 evaluated, 4 expanded, t=0.31s, 10084 KB]
+Best heuristic value: 16/15 [g=4, 7 evaluated, 6 expanded, t=0.31s, 10084 KB]
+Best heuristic value: 16/14 [g=5, 10 evaluated, 9 expanded, t=0.31s, 10084 KB]
+Best heuristic value: 16/13 [g=6, 13 evaluated, 12 expanded, t=0.31s, 10084 KB]
+Best heuristic value: 16/12 [g=7, 16 evaluated, 15 expanded, t=0.31s, 10084 KB]
+Best heuristic value: 16/11 [g=8, 19 evaluated, 18 expanded, t=0.31s, 10084 KB]
+Best heuristic value: 14/11 [g=13, 26 evaluated, 25 expanded, t=0.31s, 10084 KB]
+Best heuristic value: 14/10 [g=16, 37 evaluated, 36 expanded, t=0.31s, 10084 KB]
+Best heuristic value: 12/10 [g=21, 66 evaluated, 65 expanded, t=0.32s, 10084 KB]
+Best heuristic value: 8/10 [g=30, 117 evaluated, 116 expanded, t=0.33s, 10216 KB]
+Best heuristic value: 7/10 [g=39, 147 evaluated, 146 expanded, t=0.33s, 10216 KB]
+Best heuristic value: 4/9 [g=51, 1462 evaluated, 1384 expanded, t=0.52s, 11880 KB]
+Best heuristic value: 4/8 [g=52, 1463 evaluated, 1385 expanded, t=0.52s, 11880 KB]
+Best heuristic value: 4/5 [g=53, 1464 evaluated, 1386 expanded, t=0.52s, 11880 KB]
+Best heuristic value: 3/2 [g=54, 1465 evaluated, 1387 expanded, t=0.52s, 11880 KB]
+Best heuristic value: 2/1 [g=54, 1475 evaluated, 1395 expanded, t=0.53s, 11880 KB]
+Solution found!
+Actual search time: 0.29s [t=0.59s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+check-path v6 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train2 t5 t0 v5 v6 track2 (1)
+move-from-track-to-departure train6 t1 t0 v4 v5 track1 (1)
+move-from-track-to-departure train1 t6 t5 v3 v4 track2 (1)
+move-from-track-to-departure train5 t2 t1 v2 v3 track1 (1)
+move-from-track-to-departure train4 t3 t2 v1 v2 track1 (1)
+move-from-track-to-departure train3 t4 t3 t0 v1 track1 (1)
+Plan length: 54 step(s).
+Plan cost: 54
+Initial state h value: 21/19.
+Expanded 1819 state(s).
+Reopened 0 state(s).
+Evaluated 1928 state(s).
+Evaluations: 3856
+Generated 71956 state(s).
+Dead ends: 108 state(s).
+Number of registered states: 1931
+Best solution cost so far: 54
+Solution found - keep searching
+Starting search: lazy_wastar(list(hff, hlm), preferred = list(hff, hlm), w = 5)
+Conducting lazy best first search, (real) bound = 54
+Best heuristic value: 21/19 [g=0, 1 evaluated, 0 expanded, t=0.6s, 12656 KB]
+Best heuristic value: 21/18 [g=1, 2 evaluated, 1 expanded, t=0.6s, 12656 KB]
+Best heuristic value: 21/17 [g=2, 3 evaluated, 2 expanded, t=0.6s, 12656 KB]
+Best heuristic value: 20/16 [g=3, 4 evaluated, 3 expanded, t=0.6s, 12656 KB]
+Best heuristic value: 16/16 [g=4, 5 evaluated, 4 expanded, t=0.6s, 12656 KB]
+Best heuristic value: 16/15 [g=4, 7 evaluated, 6 expanded, t=0.6s, 12656 KB]
+Best heuristic value: 16/14 [g=5, 10 evaluated, 9 expanded, t=0.6s, 12656 KB]
+Best heuristic value: 16/13 [g=6, 13 evaluated, 12 expanded, t=0.61s, 12656 KB]
+Best heuristic value: 16/12 [g=7, 16 evaluated, 15 expanded, t=0.61s, 12656 KB]
+Best heuristic value: 16/11 [g=8, 19 evaluated, 18 expanded, t=0.61s, 12656 KB]
+Best heuristic value: 14/11 [g=13, 26 evaluated, 25 expanded, t=0.62s, 12656 KB]
+Best heuristic value: 14/10 [g=16, 37 evaluated, 36 expanded, t=0.62s, 12656 KB]
+Best heuristic value: 12/10 [g=21, 136 evaluated, 135 expanded, t=0.64s, 12788 KB]
+Best heuristic value: 8/10 [g=31, 273 evaluated, 272 expanded, t=0.66s, 12916 KB]
+Best heuristic value: 7/10 [g=39, 290 evaluated, 289 expanded, t=0.67s, 12916 KB]
+Best heuristic value: 4/9 [g=49, 1415 evaluated, 1411 expanded, t=0.87s, 14332 KB]
+Best heuristic value: 4/8 [g=50, 1416 evaluated, 1412 expanded, t=0.87s, 14332 KB]
+Best heuristic value: 4/5 [g=51, 1417 evaluated, 1413 expanded, t=0.87s, 14332 KB]
+Best heuristic value: 3/2 [g=52, 1418 evaluated, 1414 expanded, t=0.87s, 14332 KB]
+Best heuristic value: 2/1 [g=53, 1419 evaluated, 1415 expanded, t=0.87s, 14332 KB]
+Solution found!
+Actual search time: 0.31s [t=0.91s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+check-path v6 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train2 t5 t0 v5 v6 track2 (1)
+move-from-track-to-departure train6 t1 t0 v4 v5 track1 (1)
+move-from-track-to-departure train1 t6 t5 v3 v4 track2 (1)
+move-from-track-to-departure train5 t2 t1 v2 v3 track1 (1)
+move-from-track-to-departure train4 t3 t2 v1 v2 track1 (1)
+move-from-track-to-departure train3 t4 t3 t0 v1 track1 (1)
+Plan length: 53 step(s).
+Plan cost: 53
+Initial state h value: 21/19.
+Expanded 1747 state(s).
+Reopened 0 state(s).
+Evaluated 1763 state(s).
+Evaluations: 3526
+Generated 58148 state(s).
+Dead ends: 15 state(s).
+Number of registered states: 2891
+Best solution cost so far: 53
+Solution found - keep searching
+Starting search: lazy_wastar(list(hff, hlm), preferred = list(hff, hlm), w = 3)
+Conducting lazy best first search, (real) bound = 53
+Best heuristic value: 21/19 [g=0, 1 evaluated, 0 expanded, t=0.91s, 14980 KB]
+Best heuristic value: 21/18 [g=1, 2 evaluated, 1 expanded, t=0.91s, 14980 KB]
+Best heuristic value: 21/17 [g=2, 3 evaluated, 2 expanded, t=0.91s, 14980 KB]
+Best heuristic value: 20/16 [g=3, 4 evaluated, 3 expanded, t=0.91s, 14980 KB]
+Best heuristic value: 16/16 [g=4, 5 evaluated, 4 expanded, t=0.91s, 14980 KB]
+Best heuristic value: 16/15 [g=4, 7 evaluated, 6 expanded, t=0.91s, 14980 KB]
+Best heuristic value: 16/14 [g=5, 10 evaluated, 9 expanded, t=0.91s, 14980 KB]
+Best heuristic value: 16/13 [g=6, 13 evaluated, 12 expanded, t=0.92s, 14980 KB]
+Best heuristic value: 16/12 [g=7, 16 evaluated, 15 expanded, t=0.92s, 14980 KB]
+Best heuristic value: 16/11 [g=8, 19 evaluated, 18 expanded, t=0.92s, 14980 KB]
+Best heuristic value: 14/11 [g=13, 26 evaluated, 25 expanded, t=0.92s, 14980 KB]
+Best heuristic value: 14/10 [g=16, 40 evaluated, 39 expanded, t=0.93s, 14980 KB]
+Best heuristic value: 12/10 [g=23, 132 evaluated, 131 expanded, t=0.94s, 15112 KB]
+Best heuristic value: 8/10 [g=31, 679 evaluated, 678 expanded, t=1.01s, 15496 KB]
+Best heuristic value: 7/10 [g=39, 694 evaluated, 693 expanded, t=1.01s, 15496 KB]
+Best heuristic value: 5/10 [g=41, 6501 evaluated, 6499 expanded, t=1.91s, 23504 KB]
+Best heuristic value: 4/9 [g=48, 6522 evaluated, 6511 expanded, t=1.91s, 23504 KB]
+Best heuristic value: 4/8 [g=49, 6523 evaluated, 6512 expanded, t=1.91s, 23504 KB]
+Best heuristic value: 4/5 [g=50, 6524 evaluated, 6513 expanded, t=1.91s, 23504 KB]
+Best heuristic value: 3/2 [g=51, 6525 evaluated, 6514 expanded, t=1.91s, 23504 KB]
+Best heuristic value: 2/1 [g=52, 6527 evaluated, 6516 expanded, t=1.91s, 23504 KB]
+Completely explored state space -- no solution!
+Actual search time: 532.72s [t=533.63s]
+Initial state h value: 21/19.
+Expanded 2906454 state(s).
+Reopened 0 state(s).
+Evaluated 2920354 state(s).
+Evaluations: 5840708
+Generated 100785854 state(s).
+Dead ends: 13900 state(s).
+Number of registered states: 2920449
+Best solution cost so far: 53
+No solution found - keep searching
+Starting search: lazy_wastar(list(hff, hlm), preferred = list(hff, hlm), w = 2)
+Conducting lazy best first search, (real) bound = 53
+Best heuristic value: 21/19 [g=0, 1 evaluated, 0 expanded, t=533.68s, 2824408 KB]
+Best heuristic value: 21/18 [g=1, 2 evaluated, 1 expanded, t=533.68s, 2824408 KB]
+Best heuristic value: 21/17 [g=2, 3 evaluated, 2 expanded, t=533.68s, 2824408 KB]
+Best heuristic value: 20/16 [g=3, 4 evaluated, 3 expanded, t=533.68s, 2824408 KB]
+Best heuristic value: 16/16 [g=4, 5 evaluated, 4 expanded, t=533.68s, 2824408 KB]
+Best heuristic value: 16/15 [g=4, 7 evaluated, 6 expanded, t=533.68s, 2824408 KB]
+Best heuristic value: 16/14 [g=5, 10 evaluated, 9 expanded, t=533.69s, 2824408 KB]
+Best heuristic value: 16/13 [g=6, 13 evaluated, 12 expanded, t=533.69s, 2824408 KB]
+Best heuristic value: 16/12 [g=7, 16 evaluated, 15 expanded, t=533.69s, 2824408 KB]
+Best heuristic value: 16/11 [g=8, 19 evaluated, 18 expanded, t=533.69s, 2824408 KB]
+Best heuristic value: 14/11 [g=13, 26 evaluated, 25 expanded, t=533.69s, 2824408 KB]
+Best heuristic value: 14/10 [g=16, 40 evaluated, 39 expanded, t=533.69s, 2824408 KB]
+Best heuristic value: 12/10 [g=23, 129 evaluated, 128 expanded, t=533.7s, 2824408 KB]
+Best heuristic value: 8/10 [g=31, 651 evaluated, 650 expanded, t=533.77s, 2824408 KB]
+Best heuristic value: 7/10 [g=32, 1703 evaluated, 1702 expanded, t=533.9s, 2824408 KB]
+Best heuristic value: 4/9 [g=49, 6321 evaluated, 6316 expanded, t=534.44s, 2824408 KB]
+Best heuristic value: 4/8 [g=50, 6322 evaluated, 6317 expanded, t=534.44s, 2824408 KB]
+Best heuristic value: 4/5 [g=51, 6323 evaluated, 6318 expanded, t=534.44s, 2824408 KB]
+Best heuristic value: 3/2 [g=52, 6324 evaluated, 6319 expanded, t=534.45s, 2824408 KB]
+Best heuristic value: 2/1 [g=52, 6381 evaluated, 6371 expanded, t=534.45s, 2824408 KB]
+Completely explored state space -- no solution!
+Actual search time: 516.14s [t=1049.81s]
+Initial state h value: 21/19.
+Expanded 2906454 state(s).
+Reopened 0 state(s).
+Evaluated 2920354 state(s).
+Evaluations: 5840708
+Generated 100785854 state(s).
+Dead ends: 13900 state(s).
+Number of registered states: 2920449
+Best solution cost so far: 53
+No solution found - keep searching
+Starting search: lazy_wastar(list(hff, hlm), preferred = list(hff, hlm), w = 1)
+Conducting lazy best first search, (real) bound = 53
+Best heuristic value: 21/19 [g=0, 1 evaluated, 0 expanded, t=1049.92s, 3009496 KB]
+Best heuristic value: 21/18 [g=1, 2 evaluated, 1 expanded, t=1049.92s, 3009496 KB]
+Best heuristic value: 21/17 [g=2, 3 evaluated, 2 expanded, t=1049.92s, 3009496 KB]
+Best heuristic value: 20/16 [g=3, 4 evaluated, 3 expanded, t=1049.92s, 3009496 KB]
+Best heuristic value: 16/16 [g=4, 5 evaluated, 4 expanded, t=1049.92s, 3009496 KB]
+Best heuristic value: 16/15 [g=4, 7 evaluated, 6 expanded, t=1049.92s, 3009496 KB]
+Best heuristic value: 16/14 [g=5, 10 evaluated, 9 expanded, t=1049.92s, 3009496 KB]
+Best heuristic value: 16/13 [g=6, 13 evaluated, 12 expanded, t=1049.92s, 3009496 KB]
+Best heuristic value: 16/12 [g=7, 16 evaluated, 15 expanded, t=1049.92s, 3009496 KB]
+Best heuristic value: 16/11 [g=8, 19 evaluated, 18 expanded, t=1049.92s, 3009496 KB]
+Best heuristic value: 14/11 [g=8, 23 evaluated, 22 expanded, t=1049.92s, 3009496 KB]
+Best heuristic value: 14/10 [g=14, 63 evaluated, 62 expanded, t=1049.93s, 3009496 KB]
+Best heuristic value: 12/10 [g=16, 187 evaluated, 186 expanded, t=1049.95s, 3009496 KB]
+Best heuristic value: 8/10 [g=25, 703 evaluated, 702 expanded, t=1050.01s, 3009496 KB]
+Best heuristic value: 7/10 [g=36, 2433 evaluated, 2432 expanded, t=1050.21s, 3009496 KB]
+Best heuristic value: 5/10 [g=41, 6226 evaluated, 6224 expanded, t=1050.65s, 3009496 KB]
+Best heuristic value: 4/10 [g=46, 6743 evaluated, 6726 expanded, t=1050.71s, 3009496 KB]
+Best heuristic value: 4/9 [g=47, 6744 evaluated, 6727 expanded, t=1050.71s, 3009496 KB]
+Best heuristic value: 4/8 [g=49, 6749 evaluated, 6730 expanded, t=1050.71s, 3009496 KB]
+Best heuristic value: 4/5 [g=50, 6750 evaluated, 6731 expanded, t=1050.72s, 3009496 KB]
+Best heuristic value: 3/2 [g=51, 6751 evaluated, 6732 expanded, t=1050.72s, 3009496 KB]
+Best heuristic value: 2/1 [g=52, 6752 evaluated, 6733 expanded, t=1050.72s, 3009496 KB]
+Completely explored state space -- no solution!
+Actual search time: 513.5s [t=1563.39s]
+Initial state h value: 21/19.
+Expanded 2906454 state(s).
+Reopened 0 state(s).
+Evaluated 2920354 state(s).
+Evaluations: 5840708
+Generated 100785854 state(s).
+Dead ends: 13900 state(s).
+Number of registered states: 2920449
+Best solution cost so far: 53
+No solution found - keep searching
+Actual search time: 1563.28s [t=1563.39s]
+Cumulative statistics:
+Expanded 8724325 state(s).
+Reopened 0 state(s).
+Evaluated 8766231 state(s).
+Evaluations: 17532462
+Generated 302541610 state(s).
+Dead ends: 0 state(s).
+Search time: 1563.28s
+Total time: 1563.39s
+Solution found.
+Peak memory: 3117336 KB
+returncode: 0
+
+plan manager: found new plan with cost 55
+plan manager: found new plan with cost 54
+plan manager: found new plan with cost 53
+Exit codes: [3, 3, 0, 0]
+Error: Unexpected exit codes: [3]
+Command '['run-portfolio', '/mnt/c/Users/Simba/Desktop/Delft-University-of-Technology/CSE/Y6-2022-2023/Q4-Research-Project/planners/team2/src/driver/portfolios/seq_sat_ds.py']' returned non-zero exit status 3
