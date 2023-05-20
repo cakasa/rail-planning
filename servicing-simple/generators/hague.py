@@ -5,9 +5,11 @@ problem_name = os.path.basename(__file__)[:-3]
 filename = '../' + problem_name + '.pddl'
 trains = {
     'train1': ('slt', ['cleaning']),
+    'train2': ('virm', ['inspection']),
+    'train3': ('slt', [])
 }
-arrival_order = ['train1']
-departure_order = ['train1']
+arrival_order = ['train1', 'train2', 'train3']
+departure_order = ['train1', 'train3', 'train2']
 tracks = {
    'track0': (1, []),  # this has to be here, as t0 is always connected with v1
    'track1': (3, []),
