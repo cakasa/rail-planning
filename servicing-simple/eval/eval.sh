@@ -2,7 +2,7 @@
 mkdir $1
 cd $1
 
-problems="small_two_trains small_five_trains small_eight_trains medium_five_trains medium_ten_trains medium_fifteen_trains medium_twenty_trains"
+problems="small_two_trains small_five_trains medium_five_trains big_ten_trains medium_ten_trains big_twenty_trains small_eight_trains medium_fifteen_trains medium_twenty_trains big_thirty_trains"
 
 for problem in $problems
 do
