@@ -2,23 +2,18 @@
 mkdir $1
 cd $1
 
-mkdir small-two
-mkdir small-five
-mkdir small-nine
-mkdir medium-five
-mkdir medium-ten
-mkdir medium-fifteen
-mkdir medium-twenty
-mkdir big-ten
-mkdir big-twenty
-mkdir big-thirty
+problems="small_two_trains small_five_trains small_nine_trains medium_five_trains medium_ten_trains medium_fifteen_trains medium_twenty_trains"
 
-cd small-two
-
-for value in {1..5}
+for problem in $problems
 do
-    mkdir run$value
-    cd run$value
-    { time /data/ipc2018/solvers/sat/$1/planner.img ./../../../../servicing-simple.pddl ./../../../../small_two_trains.pddl ./re.out ; } 2> time.txt
+    mkdir $problem
+    cd $problem
+    for run in {1..2}
+    do
+        mkdir run$value
+        cd run$value
+        { time /data/ipc2018/solvers/sat/$1/planner.img ./../../../../servicing-simple.pddl ./../../../../$problem.pddl ./re.out ; } 2> time.txt
+        cd ..
+    done
     cd ..
 done
