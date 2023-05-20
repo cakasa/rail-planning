@@ -1,17 +1,5 @@
-import os
-from problem_generator import create_problem_file
-
-problem_name = os.path.basename(__file__)[:-3]
-filename = '../' + problem_name + '.pddl'
-trains = {
-    'train1': ('slt', ['cleaning']),
-    'train2': ('virm', ['inspection']),
-    'train3': ('slt', [])
-}
-arrival_order = ['train1', 'train2', 'train3']
-departure_order = ['train1', 'train3', 'train2']
 tracks = {
-   'track0': (1, []),  # this has to be here, as t0 is always connected with v1
+   'track0': (1, []),
    'track1': (1, []),
    'track2': (1, []),
    'track3': (1, []),
@@ -22,11 +10,11 @@ tracks = {
    'track8': (3, ['inspection']),
    'track9': (1, []),
    'track10': (2, []),
-   'track11': (3, []),
-   'track12': (3, []),
-   'track13': (3, []),
-   'track14': (3, []),
-   'track15': (3, []),
+   'track11': (2, []),
+   'track12': (2, []),
+   'track13': (2, []),
+   'track14': (2, []),
+   'track15': (2, []),
    'track16': (1, []),
    'track17': (1, []),
    'track18': (1, []),
@@ -38,7 +26,7 @@ tracks = {
    'track24': (2, []),
    'track25': (2, []),
    'track26': (2, []),
-   'track27': (3, []),
+   'track27': (2, []),
    'track28': (2, []),
    'track29': (3, ['washing']),
    'track30': (2, ['cleaning']),
@@ -104,14 +92,3 @@ next_to = [
     ('track27', 'track29'),
     ('track35', 'track32')
 ]
-
-create_problem_file(filename, problem_name, trains, arrival_order, departure_order, tracks, next_to)
-''' Creating PDDL problem files
-    - `filename` for creating the file
-    - `problem_name` is the name to be given to the problem instance
-    - `trains` is a dictionary, key = name, value = a 3-tuple of the form (train_type, train_length, needed_services)
-    - `arrival_order` is a list of the order of the arriving trains (the train with index 0 arrives first)
-    - `departure_order` is a list of the order of the departing trains (the train with index 0 departs last)
-    - `tracks` is a dictionary, key = trackname, value = (length, services)`
-    - `next_to` - a list of adjacent track pairs (where first track's last element is adjacent to the second track's first element)
-'''
