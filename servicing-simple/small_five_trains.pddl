@@ -97,5 +97,5 @@
     (at train1 v2)
     (at train5 v3)
     (at train2 v4)
-    (at train6 v5)
+    (at train4 v5)
 )))
