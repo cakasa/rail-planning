@@ -12,7 +12,7 @@ do
     do
         mkdir run$value
         cd run$value
-        { time /data/ipc2018/solvers/sat/$1/planner.img ./../../../../servicing-simple.pddl ./../../../../$problem.pddl ./re.out ; } 2> time.txt
+        { time /data/ipc2018/solvers/sat/$1/planner.img ./../../../../servicing-simple.pddl ./../../../../$problem.pddl ./re.out ; } |& console.txt
         cd ..
     done
     cd ..
