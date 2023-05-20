@@ -14,4 +14,11 @@ mkdir big-twenty
 mkdir big-thirty
 
 cd small-two
-time /data/ipc2018/solvers/sat/$1/planner.img ./../../../servicing-simple.pddl ./../../../small_two_trains.pddl ./re.out
+
+for value in {1..5}
+do
+    mkdir run$value
+    cd run$value
+    time /data/ipc2018/solvers/sat/$1/planner.img ./../../../../servicing-simple.pddl ./../../../../small_two_trains.pddl ./re.out
+    cd ..
+done
