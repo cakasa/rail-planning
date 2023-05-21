@@ -1,4 +1,4 @@
-(define (problem problemgenerated) (:domain domain1)
+(define (problem problemgenerated-no-realloc) (:domain domain1-no-realloc)
 (:objects
     train1 - sng
     train2 - sng
@@ -90,15 +90,15 @@
     (onPath v10)
 )
 (:goal (and
-    (exists (?t - slt) (at ?t v1))
-    (exists (?t - virm) (at ?t v2))
-    (exists (?t - virm) (at ?t v3))
-    (exists (?t - virm) (at ?t v4))
+    (exists (?t - sng) (at ?t v1))
+    (exists (?t - sng) (at ?t v2))
+    (exists (?t - sng) (at ?t v3))
+    (exists (?t - icm) (at ?t v4))
     (exists (?t - icm) (at ?t v5))
     (exists (?t - icm) (at ?t v6))
-    (exists (?t - icm) (at ?t v7))
-    (exists (?t - sng) (at ?t v8))
-    (exists (?t - sng) (at ?t v9))
-    (exists (?t - sng) (at ?t v10))
+    (exists (?t - virm) (at ?t v7))
+    (exists (?t - virm) (at ?t v8))
+    (exists (?t - virm) (at ?t v9))
+    (exists (?t - slt) (at ?t v10))
     (forall (?t - trainunit) (hasBeenParked ?t))
 )))

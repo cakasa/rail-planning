@@ -1,4 +1,4 @@
-(define (domain domain1-no-reallocation)
+(define (domain domain1-no-realloc)
 
 (:requirements :adl)
 
