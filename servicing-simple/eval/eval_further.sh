@@ -13,5 +13,5 @@ do
     { time /data/ipc2018/solvers/sat/$1/planner.img ./../../../../servicing-simple.pddl ./../../../../$problem.pddl ./re.out ; } &> console.txt
     echo "Planner $1: Done evaluating $problem run1"
     cd ..
-    cd .
+    cd ..
 done
