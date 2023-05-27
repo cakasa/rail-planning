@@ -3,8 +3,8 @@
     train1 - sng
     train2 - icm
     train3 - slt
-    v1 v2 v3 t0 t1 t2 t3 t4 t5 t6  - trackpart
-    track1 track2  - track
+    v1 v2 v3 t0 t1 t2 t3  - trackpart
+    track1  - track
 )
 (:init
     (at train1 v1)
@@ -27,26 +27,19 @@
     (nextTo t2 t3)
     (nextTo t3 t2)
     (free t3)
-    (nextTo t0 t4)
-    (nextTo t4 t0)
-    (free t4)
-    (nextTo t4 t5)
-    (nextTo t5 t4)
-    (free t5)
-    (nextTo t5 t6)
-    (nextTo t6 t5)
-    (free t6)
+    (nextTo t0 t3)
+    (nextTo t3 t0)
     (onTrack t1 track1)
     (onTrack t2 track1)
     (onTrack t3 track1)
-    (onTrack t4 track2)
-    (onTrack t5 track2)
-    (onTrack t6 track2)
     (onPath v1)
     (onPath v2)
     (onPath v3)
 )
 (:goal (and
+    (at v1 train1)
+    (at v2 train3)
+    (at v3 train2)
     (hasBeenParked train1)
     (hasBeenParked train2)
     (hasBeenParked train3)
