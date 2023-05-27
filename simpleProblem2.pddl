@@ -47,9 +47,9 @@
     (onPath v3)
 )
 (:goal (and
-    (at t1 train3)
-    (at t2 train2)
-    (at t3 train1)
+    (at v1 train3)
+    (at v2 train2)
+    (at v3 train1)
     (hasBeenParked train1)
     (hasBeenParked train2)
     (hasBeenParked train3)
