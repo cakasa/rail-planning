@@ -6,7 +6,8 @@
     train4 - virm
     train5 - virm
     v1 v2 v3 v4 v5 t0 t1 t2 t3 t4 t5  - trackpart
-    track1 track2  - track
+    track1 - free
+    track2 - LIFO
 )
 (:init
     (at train1 v1)

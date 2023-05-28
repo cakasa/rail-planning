@@ -5,6 +5,7 @@
 (:types
     trackpart track trainunit - object
     icm virm sng slt - trainunit ; these are the different types of train units
+    LIFO free - track
 )
 
 (:predicates 
