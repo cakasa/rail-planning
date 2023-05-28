@@ -1,0 +1,149 @@
+var0:
+  0: Atom at(train4, t4)
+  1: Atom at(train4, t5)
+  2: Atom at(train4, t2)
+  3: Atom at(train4, v5)
+  4: Atom at(train4, t3)
+  5: Atom at(train4, t6)
+  6: Atom at(train4, t0)
+  7: Atom at(train4, v1)
+  8: Atom at(train4, t1)
+  9: Atom at(train4, v2)
+  10: Atom at(train4, v3)
+  11: Atom at(train4, v4)
+var1:
+  0: Atom at(train2, v5)
+  1: Atom at(train2, t1)
+  2: Atom at(train2, t4)
+  3: Atom at(train2, t2)
+  4: Atom at(train2, v3)
+  5: Atom at(train2, t3)
+  6: Atom at(train2, v1)
+  7: Atom at(train2, t5)
+  8: Atom at(train2, t6)
+  9: Atom at(train2, t0)
+  10: Atom at(train2, v2)
+  11: Atom at(train2, v4)
+var2:
+  0: Atom at(train3, v2)
+  1: Atom at(train3, t6)
+  2: Atom at(train3, t3)
+  3: Atom at(train3, t5)
+  4: Atom at(train3, v4)
+  5: Atom at(train3, t4)
+  6: Atom at(train3, t2)
+  7: Atom at(train3, v1)
+  8: Atom at(train3, t1)
+  9: Atom at(train3, t0)
+  10: Atom at(train3, v5)
+  11: Atom at(train3, v3)
+var3:
+  0: Atom at(train5, t6)
+  1: Atom at(train5, t1)
+  2: Atom at(train5, v3)
+  3: Atom at(train5, v5)
+  4: Atom at(train5, v4)
+  5: Atom at(train5, t0)
+  6: Atom at(train5, t5)
+  7: Atom at(train5, t3)
+  8: Atom at(train5, v2)
+  9: Atom at(train5, t2)
+  10: Atom at(train5, v1)
+  11: Atom at(train5, t4)
+var4:
+  0: Atom at(train1, v5)
+  1: Atom at(train1, v4)
+  2: Atom at(train1, v3)
+  3: Atom at(train1, t4)
+  4: Atom at(train1, t1)
+  5: Atom at(train1, t6)
+  6: Atom at(train1, v2)
+  7: Atom at(train1, v1)
+  8: Atom at(train1, t0)
+  9: Atom at(train1, t3)
+  10: Atom at(train1, t2)
+  11: Atom at(train1, t5)
+var5:
+  0: Atom hasbeenparked(train3)
+  1: <none of those>
+var6:
+  0: Atom parkedon(train5, track1)
+  1: <none of those>
+var7:
+  0: Atom free(t3)
+  1: <none of those>
+var8:
+  0: Atom free(t1)
+  1: <none of those>
+var9:
+  0: Atom hasbeenparked(train4)
+  1: <none of those>
+var10:
+  0: Atom parkedon(train3, track2)
+  1: <none of those>
+var11:
+  0: Atom free(t0)
+  1: <none of those>
+var12:
+  0: Atom parkedon(train3, track1)
+  1: <none of those>
+var13:
+  0: Atom free(v3)
+  1: <none of those>
+var14:
+  0: Atom free(t5)
+  1: <none of those>
+var15:
+  0: Atom parkedon(train4, track1)
+  1: <none of those>
+var16:
+  0: Atom hasbeenparked(train1)
+  1: <none of those>
+var17:
+  0: Atom free(t6)
+  1: <none of those>
+var18:
+  0: Atom parkedon(train2, track1)
+  1: <none of those>
+var19:
+  0: Atom parkedon(train1, track2)
+  1: <none of those>
+var20:
+  0: Atom hasbeenparked(train5)
+  1: <none of those>
+var21:
+  0: Atom new-axiom@0()
+  1: <none of those>
+var22:
+  0: Atom parkedon(train4, track2)
+  1: <none of those>
+var23:
+  0: Atom parkedon(train2, track2)
+  1: <none of those>
+var24:
+  0: Atom hasbeenparked(train2)
+  1: <none of those>
+var25:
+  0: Atom parkedon(train1, track1)
+  1: <none of those>
+var26:
+  0: Atom free(v5)
+  1: <none of those>
+var27:
+  0: Atom free(v4)
+  1: <none of those>
+var28:
+  0: Atom parkedon(train5, track2)
+  1: <none of those>
+var29:
+  0: Atom free(t2)
+  1: <none of those>
+var30:
+  0: Atom free(v2)
+  1: <none of those>
+var31:
+  0: Atom free(v1)
+  1: <none of those>
+var32:
+  0: Atom free(t4)
+  1: <none of those>
