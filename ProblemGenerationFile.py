@@ -86,8 +86,8 @@ def create_problem_file(filename, name, arrival_order, departure_train_units, tr
         f.write(")))\n")
 
 if __name__ == "__main__":
-    create_problem_file("D:\\DelftFiles\\3Q4\\GitHub\\rail-planning\\mediumProblem3.pddl", "mediumProblem3", 
-                        ["sng", "icm", "slt", "virm", "virm"], 
-                        ["sng", "slt", "icm", "virm", "virm"], 
-                        [(0,1), (1,2), (2,3), (0,4), (4,5), (5,6)], 
-                        [[1,2,3], [4,5,6]])
+    create_problem_file("D:\\DelftFiles\\3Q4\\GitHub\\rail-planning\\complexProblem3.pddl", "complexProblem3", 
+                        ["sng", "icm", "slt", "virm", "virm", "sng", "icm", "slt", "virm", "virm"], 
+                        ["sng", "slt", "icm", "virm", "virm", "sng", "icm", "slt", "virm", "virm"], 
+                        [(0,1), (1,2), (2,3), (3,4), (4,5), (5,6), (0,6), (0,7), (7,8), (8,9), (0,10), (10,11), (11,12)], 
+                        [[1,2,3,4,5,6], [7,8,9], [10,11,12]])
