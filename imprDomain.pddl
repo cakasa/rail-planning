@@ -21,17 +21,17 @@
     (last-track ?x - trackpart)
 )
 
-; ; action to move a trainunit to a neighbouring trackpart on a track, to park it 
-; (:action move-to-track
-;     :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
-;     :precondition (and (at ?train ?from) (free ?to) 
-;                     (nextTo ?from ?to) (onTrack ?to ?t)
-;                     (onTrack ?to ?t)
-;                     (switch ?from))
-;     :effect (and (at ?train ?to) (not (at ?train ?from)) 
-;                     (free ?from) (not (free ?to)) 
-;                     (hasBeenParked ?train) (parkedOn ?train ?t))
-; )
+; action to move a trainunit to a neighbouring trackpart on a track, to park it 
+(:action move-to-track
+    :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
+    :precondition (and (at ?train ?from) (free ?to) 
+                    (or (next ?from ?to) (prev ?from ?to)) (onTrack ?to ?t)
+                    (onTrack ?to ?t)
+                    (switch ?from))
+    :effect (and (at ?train ?to) (not (at ?train ?from)) 
+                    (free ?from) (not (free ?to)) 
+                    (hasBeenParked ?train) (parkedOn ?train ?t))
+)
 ; action to move a trainunit to a neighbouring trackpart on a track, to park it 
 (:action move-to-LIFO-track
     :parameters (?train - trainunit ?from ?to ?last ?prev - trackpart ?t - track)
@@ -61,14 +61,14 @@
 )
 
 ; ; action to move a trainunit along a track
-; (:action move-along-track
-;     :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
-;     :precondition (and (at ?train ?from) (free ?to) 
-;                     (nextTo ?from ?to) (onTrack ?from ?t)
-;                     (onTrack ?to ?t))
-;     :effect (and (at ?train ?to) (not (at ?train ?from))
-;                     (free ?from) (not (free ?to)))
-; )
+(:action move-along-track
+    :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
+    :precondition (and (at ?train ?from) (free ?to) 
+                    (or (next ?from ?to) (prev ?from ?to)) (onTrack ?from ?t)
+                    (onTrack ?to ?t))
+    :effect (and (at ?train ?to) (not (at ?train ?from))
+                    (free ?from) (not (free ?to)))
+)
 ; action to move a trainunit along a track
 (:action move-along-LIFO-track
     :parameters (?train - trainunit ?from ?last ?prev - trackpart ?t - track)
