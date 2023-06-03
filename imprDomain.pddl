@@ -23,7 +23,6 @@
 
 (:derived (last-track ?x - trackpart)
     (and (onTrack ?x ?t)
-        (LIFO ?t)
         (forall (?y - trackpart) (implies (onTrack ?y ?t)
             (or (not (next ?y ?x))
             (not (available ?y)))))
