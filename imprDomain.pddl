@@ -82,7 +82,17 @@
 ; Can only move back to departure if all trains have been parked. 
 (:action move-to-departure
     :parameters (?train - trainunit ?from ?to - trackpart)
-    :precondition (and (at ?train ?from) (free ?to) 
+    :precondition (and (at ?train ?from) (free ?to) (last-track ?to)
+                    (or (next ?from ?to) (prev ?from ?to)) (onPath ?to)
+                    (forall (?unit - trainunit) (hasBeenParked ?unit)))
+    :effect (and (at ?train ?to) (not (at ?train ?from)) 
+                    (free ?from) (not (free ?to)) (last-track ?from)
+                    (not (last-track ?to)))
+)
+
+(:action move-to-departure2
+    :parameters (?train - trainunit ?from ?to - trackpart)
+    :precondition (and (at ?train ?from) (free ?to)
                     (or (next ?from ?to) (prev ?from ?to)) (onPath ?to)
                     (forall (?unit - trainunit) (hasBeenParked ?unit)))
     :effect (and (at ?train ?to) (not (at ?train ?from)) 
