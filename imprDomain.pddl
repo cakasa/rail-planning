@@ -21,15 +21,6 @@
     (last-track ?x - trackpart)
 )
 
-(:derived (last-track ?x - trackpart)
-    (and (onTrack ?x ?t)
-        (forall (?y - trackpart) (implies (onTrack ?y ?t)
-            (or (not (next ?y ?x))
-            (not (available ?y)))))
-    )
-)
-
-
 ; ; action to move a trainunit to a neighbouring trackpart on a track, to park it 
 ; (:action move-to-track
 ;     :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
@@ -43,13 +34,15 @@
 ; )
 ; action to move a trainunit to a neighbouring trackpart on a track, to park it 
 (:action move-to-LIFO-track
-    :parameters (?train - trainunit ?from ?to ?last - trackpart ?t - track)
+    :parameters (?train - trainunit ?from ?to ?last ?prev - trackpart ?t - track)
     :precondition (and (at ?train ?from) (free ?to) 
                     (or (next ?from ?to) (prev ?from ?to)) (onTrack ?to ?t)
                     (switch ?from) (last-track ?last)
+                    (prev ?last ?prev)
                     (onTrack ?last ?t)) 
     :effect (and (at ?train ?last) (not (at ?train ?from)) 
                     (free ?from) (not (free ?last)) 
+                    (not (last-track ?last)) (last-track ?prev)
                     (hasBeenParked ?train) (parkedOn ?train ?t))
 )
 
@@ -78,11 +71,13 @@
 ; )
 ; action to move a trainunit along a track
 (:action move-along-LIFO-track
-    :parameters (?train - trainunit ?from ?last - trackpart ?t - track)
+    :parameters (?train - trainunit ?from ?last ?prev - trackpart ?t - track)
     :precondition (and (at ?train ?from) (onTrack ?from ?t)
+                    (prev ?last ?prev)
                     (onTrack ?last ?t))
     :effect (and (at ?train ?last) (not (at ?train ?from))
-                    (free ?from) (not (free ?last)))
+                    (free ?from) (not (free ?last))
+                    (not (last-track ?last)) (last-track ?prev))
 )
 ; Can only move back to departure if all trains have been parked. 
 (:action move-to-departure
@@ -98,7 +93,7 @@
 (:action move-on-arrival
     :parameters (?train - trainunit ?from ?to - trackpart)
     :precondition (and (at ?train ?from) (free ?to) 
-                    (or (next ?from ?to) (prev ?from ?to) (not (hasBeenParked ?train))
+                    (or (next ?from ?to) (prev ?from ?to)) (not (hasBeenParked ?train))
                     (onPath ?from))
     :effect (and (at ?train ?to) (not (at ?train ?from)) 
                     (free ?from) (not (free ?to)))
