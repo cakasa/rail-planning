@@ -70,27 +70,19 @@
                     (free ?from) (not (free ?to)))
 )
 ; action to move a trainunit along a track
-(:action move-along-LIFO-track
-    :parameters (?train - trainunit ?from ?last ?prev - trackpart ?t - track)
+(:action move-to-switch-LIFO-track
+    :parameters (?train - trainunit ?from ?prev ?con ?switch - trackpart ?t - track)
     :precondition (and (at ?train ?from) (onTrack ?from ?t)
-                    (prev ?last ?prev)
-                    (onTrack ?last ?t))
-    :effect (and (at ?train ?last) (not (at ?train ?from))
-                    (free ?from) (not (free ?last))
-                    (not (last-track ?last)) (last-track ?prev))
+                    (onTrack ?con ?t) (prev ?from ?prev)
+                    (onTrack ?prev ?t) (last-track ?prev)
+                    (prev ?con ?switch))
+    :effect (and (at ?train ?switch) (not (at ?train ?from))
+                    (free ?from) (not (free ?switch))
+                    (not (last-track ?prev)) (last-track ?from)
+                    (not (parkedOn ?train ?t))
 )
 ; Can only move back to departure if all trains have been parked. 
 (:action move-to-departure
-    :parameters (?train - trainunit ?from ?to - trackpart)
-    :precondition (and (at ?train ?from) (free ?to) (last-track ?to)
-                    (or (next ?from ?to) (prev ?from ?to)) (onPath ?to)
-                    (forall (?unit - trainunit) (hasBeenParked ?unit)))
-    :effect (and (at ?train ?to) (not (at ?train ?from)) 
-                    (free ?from) (not (free ?to)) (last-track ?from)
-                    (not (last-track ?to)))
-)
-
-(:action move-to-departure2
     :parameters (?train - trainunit ?from ?to - trackpart)
     :precondition (and (at ?train ?from) (free ?to)
                     (or (next ?from ?to) (prev ?from ?to)) (onPath ?to)
