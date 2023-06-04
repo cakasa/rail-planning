@@ -98,6 +98,7 @@
     (onPath v8)
     (onPath v9)
     (onPath v10)
+    (free-track track1)
 )
 (:goal (and
     (at train6 v1)

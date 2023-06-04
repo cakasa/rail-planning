@@ -18,6 +18,7 @@
     (parkedOn ?x - trainunit ?y - track) ; indicates x parked on track y
     (onPath ?x) ;trackpart x is on the arrival/departure path L
     (switch ?x) ;trackpart x is a switch
+    (free-track ?x - track)
     (last-track ?x - trackpart)
 )
 
@@ -26,7 +27,7 @@
     :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
     :precondition (and (at ?train ?from) (free ?to) 
                     (or (next ?from ?to) (prev ?from ?to)) (onTrack ?to ?t)
-                    (onTrack ?to ?t)
+                    (onTrack ?to ?t) (free-track ?t)
                     (switch ?from))
     :effect (and (at ?train ?to) (not (at ?train ?from)) 
                     (free ?from) (not (free ?to)) 
@@ -65,7 +66,7 @@
     :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
     :precondition (and (at ?train ?from) (free ?to) 
                     (or (next ?from ?to) (prev ?from ?to)) (onTrack ?from ?t)
-                    (onTrack ?to ?t))
+                    (onTrack ?to ?t) (free-track ?t))
     :effect (and (at ?train ?to) (not (at ?train ?from))
                     (free ?from) (not (free ?to)))
 )
@@ -106,7 +107,7 @@
     :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
     :precondition (and (at ?train ?from) (free ?to) 
                     (or (next ?from ?to) (prev ?from ?to)) (onTrack ?from ?t)
-                    (switch ?to)
+                    (switch ?to) (free-track ?t)
                     (forall (?unit - trainunit) (hasBeenParked ?unit)))
     :effect (and (at ?train ?to) (not (at ?train ?from))
                     (free ?from) (not (free ?to))
