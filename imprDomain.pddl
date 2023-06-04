@@ -79,7 +79,7 @@
     :effect (and (at ?train ?switch) (not (at ?train ?from))
                     (free ?from) (not (free ?switch))
                     (not (last-track ?prev)) (last-track ?from)
-                    (not (parkedOn ?train ?t))
+                    (not (parkedOn ?train ?t)))
 )
 ; Can only move back to departure if all trains have been parked. 
 (:action move-to-departure
