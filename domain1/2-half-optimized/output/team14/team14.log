@@ -1,0 +1,95 @@
+1. Running translator
+Second argument is a file name: use two translator arguments.
+Parsing...
+Parsing: [0.010s CPU, 0.005s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Trivial rules: Converted to facts.
+Normalizing Datalog program: [0.000s CPU, 0.006s wall-clock]
+Preparing model... [0.000s CPU, 0.002s wall-clock]
+Generated 64 rules.
+Computing model... [0.020s CPU, 0.016s wall-clock]
+387 relevant atoms
+640 auxiliary atoms
+1027 final queue length
+1399 total queue pushes
+Completing instantiation... [0.010s CPU, 0.014s wall-clock]
+Instantiating: [0.030s CPU, 0.039s wall-clock]
+Computing fact groups...
+Finding invariants...
+15 initial candidates
+Finding invariants: [0.010s CPU, 0.010s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.001s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+45 uncovered facts
+Choosing groups: [0.010s CPU, 0.001s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.020s CPU, 0.013s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.001s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.002s wall-clock]
+Translating task: [0.020s CPU, 0.025s wall-clock]
+0 implied effects removed
+0 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+11 propositions removed
+Detecting unreachable propositions: [0.010s CPU, 0.004s wall-clock]
+Translator variables: 50
+Translator derived variables: 6
+Translator facts: 171
+Translator goal facts: 5
+Translator mutex groups: 20
+Translator total mutex groups size: 176
+Translator operators: 180
+Translator axioms: 8
+Translator task size: 2322
+Translator peak memory: 26096 KB
+Writing output... [0.000s CPU, 0.005s wall-clock]
+Done! [0.090s CPU, 0.096s wall-clock]
+
+2. Running preprocessor
+Building causal graph...
+The causal graph is not acyclic.
+50 variables of 50 necessary
+13 of 20 mutex groups necessary.
+180 of 180 operators necessary.
+8 of 8 axiom rules necessary.
+Building domain transition graphs...
+solveable in poly time 0
+Building successor generator...
+Preprocessor facts: 171
+Preprocessor derived variables: 6
+Preprocessor task size: 2237
+Writing output...
+done
+
+
+3. Running search
+Dispatcher selected state size 1.
+This is a unit task.
+Simplifying transitions... done!
+Initializing Exploration...
+Generating landmarks using the RPG/SAS+ approach
+approx. reasonable orders
+approx. obedient reasonable orders
+Removed 0 reasonable or obedient reasonable orders
+Landmarks generation time: 0.00795812s
+Discovered 56 landmarks, of which 1 are disjunctive and 0 are conjunctive 
+359 edges
+Initializing landmarks count heuristic...
+26 initial landmarks, 5 goal landmarks
+Starting search: lazy(open = alt(list(tiebreaking(list(hn, hrb)), single(hrb, pref_only = true), single(hlm), single(hlm, pref_only = true)), boost = 1000), preferred = list(hrb, hlm))
+Conducting lazy best first search, (real) bound = 2147483647
+Initializing Red-Black Relaxation heuristic...
+Peak memory: 4720 KB

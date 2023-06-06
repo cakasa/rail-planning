@@ -1,0 +1,149 @@
+{
+    "carj": [
+        {
+            "storeOverhead": 0.00280840671621263
+        }
+    ],
+    "incplan": {
+        "parameters": {
+            "allSolutions": 0,
+            "cleanLitearl": false,
+            "exhaustMakeSpan": 2,
+            "exponentialStepBasis": 0.0,
+            "exponentialStepOffset": 0.0,
+            "frozen": false,
+            "icaps2017": false,
+            "inputFile": "/tmp/243733.output.cnf",
+            "intermediateSolveStep": false,
+            "learnMakeSpan": 2,
+            "linearStepSize": 1,
+            "loose": false,
+            "maxSizeLearnedClause": 2,
+            "nonIncrementalSolving": false,
+            "outputSolverLike": true,
+            "pathSearchPrefix": [],
+            "ratio": 0.5,
+            "reEncode": false,
+            "seed": -2,
+            "singleEnded": false,
+            "timeout": 2.0,
+            "transformLearned": false,
+            "unitInGoal2Assume": false,
+            "useAddLearned": false,
+            "usePDR": false
+        },
+        "result": {
+            "finalMakeSpan": 26,
+            "solves": [
+                {
+                    "makespan": 0,
+                    "time": 8.99570004548877e-05
+                },
+                {
+                    "makespan": 1,
+                    "time": 3.32419986079913e-05
+                },
+                {
+                    "makespan": 2,
+                    "time": 3.67079992429353e-05
+                },
+                {
+                    "makespan": 3,
+                    "time": 3.94039998354856e-05
+                },
+                {
+                    "makespan": 4,
+                    "time": 4.40420008089859e-05
+                },
+                {
+                    "makespan": 5,
+                    "time": 4.45830009994097e-05
+                },
+                {
+                    "makespan": 6,
+                    "time": 4.7278001147788e-05
+                },
+                {
+                    "makespan": 7,
+                    "time": 5.55929982510861e-05
+                },
+                {
+                    "makespan": 8,
+                    "time": 5.80580017413013e-05
+                },
+                {
+                    "makespan": 9,
+                    "time": 5.33589991391636e-05
+                },
+                {
+                    "makespan": 10,
+                    "time": 0.0724680721759796
+                },
+                {
+                    "makespan": 11,
+                    "time": 4.89410012960434e-05
+                },
+                {
+                    "makespan": 12,
+                    "time": 4.97120017826091e-05
+                },
+                {
+                    "makespan": 13,
+                    "time": 5.31990008312277e-05
+                },
+                {
+                    "makespan": 14,
+                    "time": 5.66050002817065e-05
+                },
+                {
+                    "makespan": 15,
+                    "time": 6.15349999861792e-05
+                },
+                {
+                    "makespan": 16,
+                    "time": 0.0844938457012177
+                },
+                {
+                    "makespan": 17,
+                    "time": 5.90290001127869e-05
+                },
+                {
+                    "makespan": 18,
+                    "time": 6.09230010013562e-05
+                },
+                {
+                    "makespan": 19,
+                    "time": 7.98690016381443e-05
+                },
+                {
+                    "makespan": 20,
+                    "time": 0.000118080002721399
+                },
+                {
+                    "makespan": 21,
+                    "time": 0.000155439993250184
+                },
+                {
+                    "makespan": 22,
+                    "time": 0.000188762001926079
+                },
+                {
+                    "makespan": 23,
+                    "time": 0.0846650525927544
+                },
+                {
+                    "makespan": 24,
+                    "time": 0.0016885029617697
+                },
+                {
+                    "makespan": 25,
+                    "time": 0.00979232974350452
+                },
+                {
+                    "makespan": 26,
+                    "time": 0.0134639358147979
+                }
+            ]
+        }
+    }
+}

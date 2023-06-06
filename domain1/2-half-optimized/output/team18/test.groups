@@ -1,0 +1,226 @@
+var0:
+  0: Atom at-train2-t5()
+  1: Atom at-train1-t5()
+  2: Atom at-train3-t5()
+  3: Atom lastfree-t5-track2()
+  4: Atom lastfree-t6-track2()
+  5: Atom at-train6-t5()
+  6: <none of those>
+var1:
+  0: Atom at-train2-t1()
+  1: Atom lastfree-t2-track1()
+  2: Atom at-train3-t1()
+  3: Atom at-train4-t1()
+  4: Atom lastfree-t1-track1()
+  5: Atom free-t3()
+  6: <none of those>
+var2:
+  0: Atom at-train4-v3()
+  1: Atom at-train6-v3()
+  2: Atom at-train1-v3()
+  3: Atom at-train2-v3()
+  4: Atom free-v3()
+  5: Atom at-train3-v3()
+  6: Atom at-train5-v3()
+var3:
+  0: Atom at-train5-v1()
+  1: Atom at-train6-v1()
+  2: Atom at-train2-v1()
+  3: Atom at-train1-v1()
+  4: Atom free-v1()
+  5: Atom at-train4-v1()
+  6: Atom at-train3-v1()
+var4:
+  0: Atom at-train6-t2()
+  1: Atom at-train3-t2()
+  2: Atom at-train2-t2()
+  3: Atom at-train5-t2()
+  4: Atom at-train4-t2()
+  5: Atom free-t2()
+  6: Atom at-train1-t2()
+var5:
+  0: Atom at-train4-t0()
+  1: Atom at-train3-t0()
+  2: Atom at-train5-t0()
+  3: Atom at-train6-t0()
+  4: Atom at-train1-t0()
+  5: Atom at-train2-t0()
+  6: Atom free-t0()
+var6:
+  0: Atom at-train5-v2()
+  1: Atom free-v2()
+  2: Atom at-train1-v2()
+  3: Atom at-train6-v2()
+  4: Atom at-train3-v2()
+  5: Atom at-train2-v2()
+  6: Atom at-train4-v2()
+var7:
+  0: Atom at-train1-t6()
+  1: Atom at-train3-t6()
+  2: Atom at-train2-t6()
+  3: Atom free-t6()
+  4: Atom at-train4-t6()
+  5: Atom at-train5-t6()
+  6: Atom at-train6-t6()
+var8:
+  0: Atom at-train4-t4()
+  1: Atom at-train5-t4()
+  2: Atom at-train6-t4()
+  3: Atom lastfree-t4-track1()
+  4: Atom at-train3-t4()
+  5: Atom at-train1-t4()
+  6: Atom at-train2-t4()
+var9:
+  0: Atom at-train4-t3()
+  1: Atom at-train6-t3()
+  2: Atom at-train2-t3()
+  3: Atom at-train5-t3()
+  4: Atom at-train3-t3()
+  5: Atom at-train1-t3()
+  6: <none of those>
+var10:
+  0: Atom lastfreepath-v1()
+  1: Atom lastfreepath-v2()
+  2: Atom lastfreepath-v5()
+  3: Atom lastfreepath-v6()
+  4: Atom lastfreepath-v3()
+  5: Atom lastfreepath-v4()
+  6: <none of those>
+var11:
+  0: Atom at-train1-t1()
+  1: Atom at-train5-t1()
+  2: Atom at-train6-t1()
+  3: Atom free-t1()
+  4: <none of those>
+var12:
+  0: Atom at-train4-t5()
+  1: Atom at-train5-t5()
+  2: Atom free-t5()
+  3: <none of those>
+var13:
+  0: Atom not-parkedon-train4-track2()
+  1: Atom parkedon-train4-track2()
+var14:
+  0: Atom not-parkedon-train5-track1()
+  1: Atom parkedon-train5-track1()
+var15:
+  0: Atom not-parkedon-train3-track2()
+  1: Atom parkedon-train3-track2()
+var16:
+  0: Atom parkedon-train2-track1()
+  1: Atom not-parkedon-train2-track1()
+var17:
+  0: Atom not-parkedon-train5-track2()
+  1: Atom parkedon-train5-track2()
+var18:
+  0: Atom not-parkedon-train2-track2()
+  1: Atom parkedon-train2-track2()
+var19:
+  0: Atom free-t4()
+  1: Atom lastfree-t3-track1()
+  2: <none of those>
+var20:
+  0: Atom not-parkedon-train6-track1()
+  1: Atom parkedon-train6-track1()
+var21:
+  0: Atom parkedon-train1-track1()
+  1: Atom not-parkedon-train1-track1()
+var22:
+  0: Atom not-parkedon-train1-track2()
+  1: Atom parkedon-train1-track2()
+var23:
+  0: Atom not-hasbeenparked-train5()
+  1: Atom hasbeenparked-train5()
+var24:
+  0: Atom not-hasbeenparked-train2()
+  1: Atom hasbeenparked-train2()
+var25:
+  0: Atom not-hasbeenparked-train6()
+  1: Atom hasbeenparked-train6()
+var26:
+  0: Atom not-parkedon-train6-track2()
+  1: Atom parkedon-train6-track2()
+var27:
+  0: Atom hasbeenparked-train3()
+  1: Atom not-hasbeenparked-train3()
+var28:
+  0: Atom not-hasbeenparked-train4()
+  1: Atom hasbeenparked-train4()
+var29:
+  0: Atom not-parkedon-train4-track1()
+  1: Atom parkedon-train4-track1()
+var30:
+  0: Atom parkedon-train3-track1()
+  1: Atom not-parkedon-train3-track1()
+var31:
+  0: Atom not-hasbeenparked-train1()
+  1: Atom hasbeenparked-train1()
+var32:
+  0: Atom free-v4()
+  1: <none of those>
+var33:
+  0: Atom at-train4-v5()
+  1: <none of those>
+var34:
+  0: Atom at-train6-v4()
+  1: <none of those>
+var35:
+  0: Atom at-train5-v5()
+  1: <none of those>
+var36:
+  0: Atom free-v6()
+  1: <none of those>
+var37:
+  0: Atom at-train1-v4()
+  1: <none of those>
+var38:
+  0: Atom at-train2-v6()
+  1: <none of those>
+var39:
+  0: Atom at-train1-v6()
+  1: <none of those>
+var40:
+  0: Atom at-train3-v5()
+  1: <none of those>
+var41:
+  0: Atom at-train4-v6()
+  1: <none of those>
+var42:
+  0: Atom at-train6-v6()
+  1: <none of those>
+var43:
+  0: Atom free-v5()
+  1: <none of those>
+var44:
+  0: Atom lastfreepath-t0()
+  1: <none of those>
+var45:
+  0: Atom at-train1-v5()
+  1: <none of those>
+var46:
+  0: Atom at-train2-v5()
+  1: <none of those>
+var47:
+  0: Atom goal-reached()
+  1: <none of those>
+var48:
+  0: Atom at-train4-v4()
+  1: <none of those>
+var49:
+  0: Atom at-train3-v6()
+  1: <none of those>
+var50:
+  0: Atom at-train5-v6()
+  1: <none of those>
+var51:
+  0: Atom at-train3-v4()
+  1: <none of those>
+var52:
+  0: Atom at-train6-v5()
+  1: <none of those>
+var53:
+  0: Atom at-train5-v4()
+  1: <none of those>
+var54:
+  0: Atom at-train2-v4()
+  1: <none of those>
