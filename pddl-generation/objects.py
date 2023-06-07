@@ -108,16 +108,23 @@ class TrainUnit:
     __id: int
     __at: Segment
     __length: int
+    __arrive_at: int
+    __depart_at: int
 
-    def __init__(self, at: Segment, length: int) -> None:
+    def __init__(self, at: Segment, arrive_at: int, depart_at: int, length: int) -> None:
         self.__at = at
         self.__length = length
         self.__id = TrainUnit.next
+        self.__arrive_at = arrive_at
+        self.__depart_at = depart_at
         TrainUnit.next = TrainUnit.next + 1
         TrainUnit.occupied.add(at)
 
     def __str__(self) -> str:
         return f"train{self.id}"
+    
+    def set_departure(self, d: int):
+        self.__depart_at = d
     
     @property
     def type(self) -> str:
@@ -143,12 +150,20 @@ class TrainUnit:
     @property
     def at(self) -> Segment:
         return self.__at
+    
+    @property
+    def arrival(self) -> int:
+        return self.__arrive_at
+    
+    @property
+    def departure(self) -> int:
+        return self.__depart_at
 
     
 class SLT(TrainUnit):
 
-    def __init__(self, at: Segment, length=3) -> None:
-        super().__init__(at, length)
+    def __init__(self, at: Segment, arrive_at: int, depart_at: int, length=3) -> None:
+        super().__init__(at, arrive_at, depart_at, length)
 
     @property
     def type(self) -> str:
@@ -156,8 +171,8 @@ class SLT(TrainUnit):
 
 class SNG(TrainUnit):
     
-    def __init__(self, at: Segment, length=4) -> None:
-        super().__init__(at, length)
+    def __init__(self, at: Segment, arrive_at: int, depart_at: int, length=4) -> None:
+        super().__init__(at, arrive_at, depart_at, length)
 
     @property
     def type(self) -> str:
@@ -165,8 +180,8 @@ class SNG(TrainUnit):
 
 class ICM(TrainUnit):
 
-    def __init__(self, at: Segment, length=9) -> None:
-        super().__init__(at, length)
+    def __init__(self, at: Segment, arrive_at: int, depart_at: int, length=9) -> None:
+        super().__init__(at, arrive_at, depart_at, length)
 
     @property
     def type(self) -> str:
@@ -174,8 +189,8 @@ class ICM(TrainUnit):
 
 class VIRM(TrainUnit):
 
-    def __init__(self, at: Segment, length=6) -> None:
-        super().__init__(at, length)
+    def __init__(self, at: Segment, arrive_at: int, depart_at: int, length=6) -> None:
+        super().__init__(at, arrive_at, depart_at, length)
 
     @property
     def type(self) -> str:
@@ -300,8 +315,8 @@ class Departure(Schedule):
 
 class Departure_Time(Schedule):
 
-    def __init__(self, unit: TrainUnit) -> None:
-        super().__init__(0, unit)
+    def __init__(self, unit: TrainUnit, time=0) -> None:
+        super().__init__(time, unit)
 
     def __str__(self) -> str:
         return f"\t(= (departed {super().unit}) {super().time})\n"

@@ -19,6 +19,9 @@ def init_tree(components: list[o.Segment], option: int) -> o.Node:
             while (components):
                 random_tree(components, res)
 
+        case 2:
+            constant_tree(components, res)
+
     
     return o.TN(e, res.pop())
 
@@ -90,7 +93,7 @@ def random_tree(comps: list[o.Segment], ns: list[o.Node]) -> None:
 def straight_tree(comps: list[o.Segment], ns: list[o.Node]) -> None:
     ts = filter(o.Trackpart, comps)
     if ts:
-        c = ts.pop(math.floor(random.random() * len(ts)))
+        c = ts.pop(0) #math.floor(random.random() * len(ts)))
         comps.remove(c)
         ns.append(o.TN(c, ns.pop(math.floor(random.random() * len(ns)))))
 
@@ -99,6 +102,21 @@ def straight_tree(comps: list[o.Segment], ns: list[o.Node]) -> None:
         t1 = ns.pop(math.floor(random.random() * len(ns)))
         t2 = ns.pop(math.floor(random.random() * len(ns)))
         ns.append(o.SN(c, t1, t2))
+
+def constant_tree(comps: list[o.Segment], ns: list[o.Node]):
+    ts = filter(o.Trackpart, comps)
+    w = len(ns)
+    for c in range(len(ts)):
+        i = c % w
+        n = ts.pop(0)
+        comps.remove(n)
+        ns[i] = (o.TN(n, ns[i]))
+
+    for c in comps:
+        ns.append(o.SN(c, ns.pop(), ns.pop()))
+
+
+
     
 
 

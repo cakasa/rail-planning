@@ -2,28 +2,51 @@ import objects as o
 
 def create_problem_file(name: str, trains: list[o.TrainUnit], segments: list[o.Segment],
                         schedule: list[o.Schedule], tree: o.Node, tracks: list[o.Track]) -> str:
-    res = f"(define (problem {name}) (:domain domain3)\n"
+    res = f"(define (problem {name}) (:domain domain5)\n"
     res += define_objects(trains, segments, tracks)
     res += "(:init\n"
     res += construct_layout(tree)
     res += track_properties(segments)
     res += set_tracks(tracks)
     res += place_trains(trains)
-    res += "\t(= (timestep) 0)\n"
+    res += "\t(= (timestep) 0)\n\t(= (cost) 0)\n"
     res += print_schedule(schedule)
     res += train_unit_length(trains)
     res += define_capacity(tracks) 
     res += ")\n"
-    res += define_goal(trains)
-    res += ")"
+    res += set_goal(schedule, trains)
+    res += "(\n\t:metric minimize (cost)\n)\n)"
     return res
 
-def define_goal(trains: list[o.TrainUnit]):
-    res = "(:goal (and\n"
-    for t in trains:
-        res += f"\t(exists (?t - {t.type}) (and (at ?t {t.at}) (<= (depart ?t) 25) (= (length ?t) {t.l})))\n"
 
-    return res + "\t(forall (?t - trainunit) (hasBeenParked ?t))\n))\n"
+def depart_at(schedule: list[o.Schedule], train: o.TrainUnit):
+    for s in schedule:
+        if isinstance(s, o.Departure):
+            if s.unit.id == train.id:
+                return s.time
+    
+    return 0
+        
+
+def define_goal(schedule: list[o.Schedule], trains: list[o.TrainUnit]):
+    res = "(:goal (and\n"
+    max = 0
+    for t in trains:
+        if t.departure > max:
+            max = t.departure
+        res += f"\t(exists (?t - {t.type}) (and (>= (departed ?t) {t.departure}) (<= (departed ?t) {t.departure + 2})))\n" # (<= (depart ?t) {depart_at(schedule, t) + 1}) (= (length ?t) {t.l})))\n"
+
+    return res + f"\t(forall (?t - trainunit) (and (hasBeenParked ?t) (at ?t v1)))\n\t(<= (timestep) {max + 2})\n))\n"
+
+def set_goal(schedule: list[o.Schedule], trains: list[o.TrainUnit]):
+    res = "(:goal (and\n"
+    max = 0
+    for t in trains:
+        if t.departure > max:
+            max = t.departure
+        res += f"\t(exists (?t - {t.type}) (= (departed ?t) {t.departure}))\n" # (<= (depart ?t) {depart_at(schedule, t) + 1}) (= (length ?t) {t.l})))\n"
+
+    return res + f"\t(forall (?t - trainunit) (and (hasBeenParked ?t) (at ?t v1)))\n\t(<= (timestep) {max + 1})\n))\n"
     
 
 def set_tracks(tracks: list[o.Track]) -> str:

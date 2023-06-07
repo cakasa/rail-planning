@@ -1,6 +1,6 @@
-(define (domain domain3)
+(define (domain domain5)
 
-(:requirements :adl :fluents)
+(:requirements :equality :strips :typing :quantified-preconditions :conditional-effects :fluents)
 
 (:types
     trackpart track trainunit - object
@@ -18,9 +18,9 @@
     (parkedOn ?x - trainunit ?y - track) ;train unit x is currently parted on track y
 )
 (:functions
+    (cost) ; keeps track of the operation cost of the plan
     (timestep) ; this keeps track of the global time (in timesteps)
     (arrive ?x - trainunit) ;this is the arrival time (a certain time step) of train unit x
-    (depart ?x - trainunit) ;this is the departure arrival time (a certain time step) of train unit x
     (departed ?x - trainunit) ; this is the time the train unit x actually departed
     (length ?x - trainunit) ;this is the length of a train unit (in relative sense)
     (capacity ?t - track) ;this is the capacity of a track, the combined lenght of the train units parked on this track cannot exceed the capacity of that track.
@@ -43,7 +43,8 @@
                     (free ?from) (not (free ?to)) 
                     (hasBeenParked ?train)
                     (parkedOn ?train ?t)
-                    (increase (timestep) 1)
+                    ; (increase (timestep) 1)
+                    (increase (cost) 1)
                     (decrease (capacity ?t) (length ?train))
                 )
 )
@@ -64,7 +65,8 @@
                     (free ?from)
                     (not (free ?to))
                     (not (parkedOn ?train ?t))
-                    (increase (timestep) 1)
+                    ; (increase (timestep) 1)
+                    (increase (cost) 1)
                     (increase (capacity ?t) (length ?train))
                 )
 )
@@ -84,7 +86,28 @@
                     (not (at ?train ?from))
                     (free ?from)
                     (not (free ?to))
-                    (increase (timestep) 1)
+                    ; (increase (timestep) 1)
+                    (increase (cost) 1)
+                )
+)
+
+; move a train from one switch to another
+(:action move-between-switch
+    :parameters (?train - trainunit ?from ?to - trackpart)
+    :precondition (and 
+                    (switch ?from)
+                    (switch ?to)
+                    (at ?train ?from)
+                    (free ?to) 
+                    (nextTo ?from ?to)
+                )
+    :effect (and 
+                    (at ?train ?to)
+                    (not (at ?train ?from))
+                    (free ?from)
+                    (not (free ?to))
+                    ; (increase (timestep) 1)
+                    (increase (cost) 1)
                 )
 )
 
@@ -96,7 +119,8 @@
                     (nextTo ?from ?to)
                     (onPath ?to)
                     (hasBeenParked ?train)
-                    (>= (timestep) (depart ?train))
+                    ; (>= (timestep) (depart ?train))
+                    ; (<= (timestep) (departed ?train))
                     ; (forall (?unit - trainunit) (hasBeenParked ?unit))
                 )
     :effect (and 
@@ -113,11 +137,11 @@
 (:action move-on-arrival
     :parameters (?train - trainunit ?from ?to - trackpart)
     :precondition (and
-                    (<= (arrive ?train) (timestep))
+                    (= (timestep) (arrive ?train))
                     (at ?train ?from) 
                     (free ?to) 
                     (nextTo ?from ?to) 
-                    (not (hasBeenParked ?train))
+                    ; (not (hasBeenParked ?train))
                     (onPath ?from) 
                 )
     :effect (and 
@@ -130,10 +154,10 @@
 )
 
 ; a wait action if no train has arrived yet. 
-(:action wait
-    :parameters ()
-    :precondition (and )
-    :effect (and (increase (timestep) 1))
-)
+; (:action wait
+;     :parameters ()
+;     :precondition (and )
+;     :effect (and (increase (timestep) 1))
+; )
 
 )
