@@ -13,7 +13,7 @@ def process(exe: str, path: str, domain: str, problem: str, settings: int, to: i
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
+    if len(sys.argv) < 3:
         print("Too few arguments")
         exit(1)
 
@@ -22,13 +22,13 @@ if __name__ == "__main__":
     path = os.getcwd()
     print(path)
     domain = "domain5.pddl"
-    problem = "hello0.pddl"
+    problem = f"{sys.argv[1]}.pddl"
 
-    res = process(exe, path, domain, problem, sys.argv[1], 5)
+    res = process(exe, path, domain, problem, sys.argv[2], 5)
 
 
-    if len(sys.argv) >= 3:
-        with open(sys.argv[2], "w+") as f:
+    if len(sys.argv) >= 4:
+        with open(sys.argv[3], "w+") as f:
             f.write(res)
     else:
         print(res)
