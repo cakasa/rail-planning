@@ -5,7 +5,7 @@ def execute(system: int, cwd: str, problem: str, settings: int, timeout: int):
     domain = "domain5.pddl"
     if system == 0:
         os.chdir('/data/Metric-FF-v2.1/')
-        result = process("ff", cwd, domain, problem, settings)
+        result = process("./ff", cwd, domain, problem, settings)
         os.chdir(cwd)
     else:
         result = process("ff-v2.1.exe", cwd, domain, problem, settings, timeout)
