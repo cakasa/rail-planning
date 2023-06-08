@@ -7,11 +7,13 @@ if __name__ == "__main__":
         exit(1)
 
     
-    exe = "ff.exe"
+    exe = "ff"
     path = os.getcwd()
+    print(path)
     domain = "domain5.pddl"
     problem = "hello0.pddl"
     os.chdir("/data/Metric-FF-v2.1/")
+    print(os.getcwd())
     res = os.popen(f"{exe} -p {path}/ -o {domain} -f problems/{problem} -s {sys.argv[1]}")
     os.chdir(path)
 
