@@ -1,14 +1,9 @@
-import os, sys, datetime, signal
+import os, sys, datetime
 import subprocess as sp
 
-def execute(system: int, cwd: str, problem: str, settings: int, timeout: int):
+def execute(exe: str, cwd: str, problem: str, settings: int, timeout: int):
     domain = "domain5.pddl"
-    if system == 0:
-        os.chdir('/data/Metric-FF-v2.1/')
-        result = process("./ff", cwd, domain, problem, settings, True)
-        os.chdir(cwd)
-    else:
-        result = process("ff-v2.1.exe", cwd, domain, problem, settings, timeout)
+    result = process(exe, cwd, domain, problem, settings, timeout)
 
     if not os.path.isdir(os.path.join(cwd, "results")):
         os.mkdir(os.path.join(cwd, "results"))
@@ -21,21 +16,18 @@ def execute(system: int, cwd: str, problem: str, settings: int, timeout: int):
         f.write(result)
         f.close()
 
-def process(exe: str, path: str, domain: str, problem: str, settings: int, timeout: int, sh=False) -> str:
+def process(exe: str, path: str, domain: str, problem: str, settings: int, to: int) -> str:
+    id = os.getpid()
+    cmd = f"{exe} -p {path}/ -o {domain} -f problems/{problem} -s {settings}"
     try:
-        sub = sp.Popen(f"{exe} -p {path}/ -o {domain} -f problems/{problem} -s {settings}", shell={sh}, stdout=sp.PIPE)
-        sub.wait(timeout)
+        sub = sp.check_output(cmd.split(), timeout=to)
     except sp.TimeoutExpired:
-        if exe == "./ff":
-            sub.kill()
-        else:
-            sub.terminate()
-        return f"Search on the {problem} file with strategy {settings} timed out at {datetime.timedelta(seconds=timeout)}.\nProcess terminated."
-    return sub.communicate()[0].decode()
+        return f"Search on the {problem} file with strategy {settings} timed out at {datetime.timedelta(seconds=to)}.\nProcess terminated."
+    return sub.decode()
 
 
 if __name__ == "__main__":
-    system = 0
+    exe = "/data/Metric-FF-v2.1/ff"
     timeout = 3600
     if len(sys.argv) >= 2:
         try:
@@ -45,7 +37,8 @@ if __name__ == "__main__":
 
     if len(sys.argv) >= 3:
         try:
-            system = int(sys.argv[2])
+            if int(sys.argv[2]) == 1:
+                exe = "ff-v2.1.exe"
         except:
             print("Optional positional argument must be 1 or 0!\n\tDefault: 0 for mapfw server\n\tUse 1 on PC")
             exit(1)
@@ -56,7 +49,7 @@ if __name__ == "__main__":
 
     for p in ps:
         for i in range(6):
-            execute(system, cwd, p, i, timeout)
+            execute(exe, cwd, p, i, timeout)
     
     #     pool: list[mp.Process]
     #     pool = []
