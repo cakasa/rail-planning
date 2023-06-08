@@ -26,7 +26,10 @@ def process(exe: str, path: str, domain: str, problem: str, settings: int, timeo
         sub = sp.Popen(f"{exe} -p {path}/ -o {domain} -f problems/{problem} -s {settings}", shell={sh}, stdout=sp.PIPE)
         sub.wait(timeout)
     except sp.TimeoutExpired:
-        sub.terminate()
+        if exe == "./ff":
+            sub.kill()
+        else:
+            sub.terminate()
         return f"Search on the {problem} file with strategy {settings} timed out at {datetime.timedelta(seconds=timeout)}.\nProcess terminated."
     return sub.communicate()[0].decode()
 

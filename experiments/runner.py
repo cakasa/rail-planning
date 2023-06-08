@@ -1,13 +1,17 @@
-import os, sys, datetime
+import os, sys, datetime, signal
 import subprocess as sp
+from multiprocessing import active_children
 
 
 def process(exe: str, path: str, domain: str, problem: str, settings: int, timeout: int) -> str:
+    id = os.getpid()
     try:
-        sub = sp.Popen(f"{exe} -p {path}/ -o {domain} -f problems/{problem} -s {settings}",shell=True, stdout=sp.PIPE)
+        sub = sp.Popen(f"{exe} -p {path}/ -o {domain} -f problems/{problem} -s {settings}",shell=True, stdout=sp.PIPE, preexec_fn=os.setsid)
         sub.wait(timeout)
     except sp.TimeoutExpired:
-        sub.terminate()
+        print(active_children())
+        os.kill(sub.pid, signal.SIGINT)
+        print(active_children())
         return f"Search on the {problem} file with strategy {settings} timed out at {datetime.timedelta(seconds=timeout)}.\nProcess terminated."
     return sub.communicate()[0].decode()
 
