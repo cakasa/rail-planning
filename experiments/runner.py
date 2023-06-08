@@ -4,11 +4,10 @@ import subprocess as sp
 
 def process(exe: str, path: str, domain: str, problem: str, settings: int, to: int) -> str:
     id = os.getpid()
-    cmd = f"-p {path}/ -o {domain} -f problems/{problem} -s {settings}"
+    cmd = f"{exe} -p {path}/ -o {domain} -f problems/{problem} -s {settings}"
     try:
-
         # sub = os.popen()
-        sub = sp.check_output(args=cmd, executable=exe, timeout=to)
+        sub = sp.check_output(cmd, timeout=to)
     except sp.TimeoutExpired:
         # os.kill(sub.pid, signal.SIGINT)
         return f"Search on the {problem} file with strategy {settings} timed out at {datetime.timedelta(seconds=to)}.\nProcess terminated."
@@ -27,7 +26,7 @@ if __name__ == "__main__":
     domain = "domain5.pddl"
     problem = "hello0.pddl"
     # os.chdir("/data/Metric-FF-v2.1/")
-    print(os.getcwd())
+    # print(os.getcwd())
     res = process(exe, path, domain, problem, sys.argv[1], 5)
     # os.chdir(path)
 
