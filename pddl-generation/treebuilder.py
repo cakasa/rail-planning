@@ -2,56 +2,6 @@ import objects as o
 import random
 import math
 
-def init_tree(components: list[o.Segment], option: int) -> o.Node:
-    w = compute_width(components)
-    if len(filter(o.Trackpart, components)) < w:
-        raise RuntimeError("Tree cannot be built. There are not enough tracks to build minimum width with given swith amount.")
-    
-    e = entrance(components)
-    res = define_base(components, w)
-    
-    match option:
-        case 0:
-            constant_tree(components, res)
-
-        case 1:
-            while (components):
-                straight_tree(components, res)
-            
-        case 2:
-            while (components):
-                random_tree(components, res)
-
-
-    
-    return o.TN(e, res.pop())
-
-def extract_tracks(tree: o.Node, ts: list[o.Track]):
-    if isinstance(tree, o.TN):
-        if isinstance(tree.component, o.Trackpart):
-            if ts:
-                ts[0].add_track(tree.component)
-            else:
-                ts.append(o.Track(tree.component))
-
-            extract_tracks(tree.next, ts)
-
-        else:
-            extract_tracks(tree.next, ts)
-
-    if isinstance(tree, o.EN):
-        if ts:
-            ts[0].add_track(tree.component)
-        else:
-            ts.append(o.Track(tree.component))
-
-    if isinstance(tree, o.SN):
-        t1 = []
-        t2 = []
-        extract_tracks(tree.l, t1)
-        extract_tracks(tree.r, t2)
-        ts.extend(t1)
-        ts.extend(t2)
 
 def entrance(comps: list[o.Segment]) -> o.Entrance:
     for i in range(len(comps)):

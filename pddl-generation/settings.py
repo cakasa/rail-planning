@@ -1,5 +1,5 @@
 import objects as o
-import treebuilder as t
+import tree as t
 import parsing as p
 
 
@@ -22,6 +22,11 @@ class Settings:
         self.__entrance = o.Entrance()
         self.__tree_option = tree_option
         self.__order = order
+
+        if tree_option == 3:
+            ns = t.sn
+            nt = t.tn
+
         self.__nt = nt
         self.__ns = ns
 

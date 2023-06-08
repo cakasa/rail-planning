@@ -1,4 +1,5 @@
 +slt -slt +virm -virm
 +slt +slt -slt +virm -virm -slt
-+slt +sng +sng +virm +icm -sng +slt -sng -virm -icm -slt -slt
-+icm +slt +slt +sng +virm -slt -icm +sng +virm +icm -slt -sng -virm -icm -virm -sng 
++sng +virm +sng -virm -sng +slt -sng -slt
++slt +icm +slt +virm +sng -slt +sng -virm -sng -icm -sng -slt
++icm +slt +slt +sng +virm -slt -icm +sng +virm -slt -sng -virm -virm -sng 
