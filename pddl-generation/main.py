@@ -12,10 +12,11 @@ def printlist(list:list):
     print(out + "]")
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Not enough arguments. Example usage:\n'python main.py \"name\" <tree_options: int> <number_of_trackparts: int> <number_of_switches:int>'")
+    if len(sys.argv) < 3:
+        print("Not enough arguments. Example usage:\n'python main.py \"name\" \"schedule_path\" <tree_options: int> <number_of_trackparts: int> <number_of_switches:int>'")
         exit(-1)
     name = sys.argv[1]
+    path = sys.argv[2]
     l = len(name)
     if '.' in name:
         name = name[0:name.index('.')]
@@ -23,35 +24,43 @@ if __name__ == "__main__":
     tree_option = 0
     nt = 10
     ns = 3
-    if len(sys.argv) >= 3:
-        try:
-            tree_option = int(sys.argv[2])
-        except:
-            print(f"Error occured while converting second argument ('{sys.argv[2]}') to integer.\nUsing default tree setting: 0 = straight_tree.")
-
     if len(sys.argv) >= 4:
         try:
-            nt = int(sys.argv[3])
+            tree_option = int(sys.argv[3])
         except:
-            print(f"Error occured while converting third argument ('{sys.argv[3]}') to integer.\nUsing default tree setting: 10.")
+            print(f"Error occured while converting second argument ('{sys.argv[3]}') to integer.\nUsing default tree setting: 0 = constant_tree.")
 
     if len(sys.argv) >= 5:
         try:
-            ns = int(sys.argv[4])
+            nt = int(sys.argv[4])
         except:
-            print(f"Error occured while converting second argument ('{sys.argv[4]}') to integer.\nUsing default tree setting: 3.")
+            print(f"Error occured while converting third argument ('{sys.argv[4]}') to integer.\nUsing default tree setting: 10.")
+
+    if len(sys.argv) >= 6:
+        try:
+            ns = int(sys.argv[5])
+        except:
+            print(f"Error occured while converting second argument ('{sys.argv[5]}') to integer.\nUsing default tree setting: 3.")
 
     # printlist(t.filter(lambda x : isinstance(x, o.Switch), s.segments))
-    with open(f"../problems/{name}.pddl", 'w+') as f:
-        settings = s.Settings(tree_option, nt, ns)
+    lines = open(path, 'r').readlines()
+    c = 0
+
+    for schedule in lines:
+        settings = s.Settings(schedule, tree_option, nt, ns)
         settings.build()
-        f.write(g.create_problem_file(
-            name,
-            settings.trains,
-            settings.segments,
-            settings.schedule,
-            settings.tree,
-            settings.tracks
-        ))
-        f.close()
+        
+        with open(f"../experiments/problems/{name}{c}.pddl", 'w+') as f:
+            f.write(g.create_problem_file(
+                f"{name}{c}",
+                settings.trains,
+                settings.segments,
+                settings.schedule,
+                settings.tree,
+                settings.tracks
+            ))
+            f.close()
+
+        c += 1
+        o.reset_static_vals()
 

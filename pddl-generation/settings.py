@@ -6,6 +6,7 @@ import parsing as p
 class Settings:
     __entrance = o.Entrance
     __tree_option: int
+    __order: str
     __nt: int
     __ns: int
 
@@ -17,9 +18,10 @@ class Settings:
     goal: list[o.Departure]
 
 
-    def __init__(self, tree_option: int, nt: int, ns: int) -> None:
+    def __init__(self, order: str, tree_option: int, nt: int, ns: int) -> None:
         self.__entrance = o.Entrance()
         self.__tree_option = tree_option
+        self.__order = order
         self.__nt = nt
         self.__ns = ns
 
@@ -47,8 +49,7 @@ class Settings:
         return [self.__entrance] + self.__trackparts() + self.__switches()
 
     def __trains(self) -> list[o.TrainUnit]:
-        res = open("schedule.txt", 'r').read()
-        return p.parser(res, self.__entrance)
+        return p.parser(self.__order, self.__entrance)
 
         # return [
         #     o.SLT(self.__entrance, 1, 10),

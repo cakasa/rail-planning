@@ -12,15 +12,16 @@ def init_tree(components: list[o.Segment], option: int) -> o.Node:
     
     match option:
         case 0:
-            while (components):
-                straight_tree(components, res)
+            constant_tree(components, res)
 
         case 1:
             while (components):
+                straight_tree(components, res)
+            
+        case 2:
+            while (components):
                 random_tree(components, res)
 
-        case 2:
-            constant_tree(components, res)
 
     
     return o.TN(e, res.pop())
@@ -113,7 +114,7 @@ def constant_tree(comps: list[o.Segment], ns: list[o.Node]):
         ns[i] = (o.TN(n, ns[i]))
 
     for c in comps:
-        ns.append(o.SN(c, ns.pop(), ns.pop()))
+        ns.append(o.SN(c, ns.pop(0), ns.pop(0)))
 
 
 

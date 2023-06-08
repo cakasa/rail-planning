@@ -1,5 +1,13 @@
 import sys
 
+def reset_static_vals():
+    Trackpart.next = 1
+    Switch.next = 1
+    Entrance.next = 1
+    Track.next = 1
+    TrainUnit.occupied = set()
+    TrainUnit.next = 1
+
 
 class Segment:
 

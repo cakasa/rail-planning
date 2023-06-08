@@ -47,6 +47,9 @@ def parser(inp: str, at:o.Entrance) -> list[o.TrainUnit]:
                 res.append(unit)
                 c += 1
 
+            case _ :
+                raise SyntaxError()
+
     return res
 
 def get_type(ts: list[o.TrainUnit], ty: type) -> o.TrainUnit:
