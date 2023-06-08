@@ -5,7 +5,7 @@ def execute(system: int, cwd: str, problem: str, settings: int, timeout: int):
     domain = "domain5.pddl"
     if system == 0:
         os.chdir('/data/Metric-FF-v2.1/')
-        result = process("./ff", cwd, domain, problem, settings)
+        result = process("./ff", cwd, domain, problem, settings, True)
         os.chdir(cwd)
     else:
         result = process("ff-v2.1.exe", cwd, domain, problem, settings, timeout)
@@ -21,9 +21,9 @@ def execute(system: int, cwd: str, problem: str, settings: int, timeout: int):
         f.write(result)
         f.close()
 
-def process(exe: str, path: str, domain: str, problem: str, settings: int, timeout: int) -> str:
+def process(exe: str, path: str, domain: str, problem: str, settings: int, timeout: int, sh=False) -> str:
     try:
-        sub = sp.Popen(f"{exe} -p {path}/ -o {domain} -f problems/{problem} -s {settings}", stdout=sp.PIPE)
+        sub = sp.Popen(f"{exe} -p {path}/ -o {domain} -f problems/{problem} -s {settings}", shell={sh}, stdout=sp.PIPE)
         sub.wait(timeout)
     except sp.TimeoutExpired:
         sub.terminate()

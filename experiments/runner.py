@@ -4,7 +4,7 @@ import subprocess as sp
 
 def process(exe: str, path: str, domain: str, problem: str, settings: int, timeout: int) -> str:
     try:
-        sub = sp.Popen(f"{exe} -p {path}/ -o {domain} -f problems/{problem} -s {settings}", stdout=sp.PIPE)
+        sub = sp.Popen(f"{exe} -p {path}/ -o {domain} -f problems/{problem} -s {settings}",shell=True, stdout=sp.PIPE)
         sub.wait(timeout)
     except sp.TimeoutExpired:
         sub.terminate()
