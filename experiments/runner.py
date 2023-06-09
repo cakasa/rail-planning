@@ -23,14 +23,19 @@ if __name__ == "__main__":
     print(path)
     domain = "domain5.pddl"
     problem = f"{sys.argv[1]}.pddl"
+    timeout = 3600
+    try:
+        timeout = sys.argv[4]
+    except:
+        pass
 
     res = process(exe, path, domain, problem, sys.argv[2], 5)
 
 
-    if len(sys.argv) >= 4:
+    try:
         with open(sys.argv[3], "w+") as f:
             f.write(res)
-    else:
+    except:
         print(res)
 
         
