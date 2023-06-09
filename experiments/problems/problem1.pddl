@@ -1,4 +1,4 @@
-(define (problem problem1) (:domain domain5)
+(define (problem problem1) (:domain domain6)
 (:objects
 	train1  - slt
 	train3  - virm
@@ -75,20 +75,13 @@
 	(= (departed train1) 0)
 	(= (departed train3) 0)
 	(= (departed train2) 0)
-	(= (length train1) 3)
-	(= (length train3) 6)
-	(= (length train2) 3)
-	(= (capacity track1) 16)
-	(= (capacity track2) 12)
-	(= (capacity track3) 8)
-	(= (capacity track4) 8)
 )
 (:goal (and
 	(exists (?t - slt) (= (departed ?t) 2))
 	(exists (?t - virm) (= (departed ?t) 4))
 	(exists (?t - slt) (= (departed ?t) 5))
 	(forall (?t - trainunit) (and (hasBeenParked ?t) (at ?t v1)))
-	(<= (timestep) 6)
+	(= (timestep) 6)
 ))
 (
 	:metric minimize (cost)

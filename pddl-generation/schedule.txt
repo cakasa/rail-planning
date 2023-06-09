@@ -1,5 +1,6 @@
 +slt -slt +virm -virm
 +slt +slt -slt +virm -virm -slt
 +sng +virm +sng -virm -sng +slt -sng -slt
++slt +slt +virm +sng -slt +sng -virm -sng -sng -slt
 +slt +icm +slt +virm +sng -slt +sng -virm -sng -icm -sng -slt
 +icm +slt +slt +sng +virm -slt -icm +sng +virm -slt -sng -virm -virm -sng 

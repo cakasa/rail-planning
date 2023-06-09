@@ -2,7 +2,7 @@ import objects as o
 
 def create_problem_file(name: str, trains: list[o.TrainUnit], segments: list[o.Segment],
                         schedule: list[o.Schedule], tree: o.Node, tracks: list[o.Track]) -> str:
-    res = f"(define (problem {name}) (:domain domain5)\n"
+    res = f"(define (problem {name}) (:domain domain6)\n"
     res += define_objects(trains, segments, tracks)
     res += "(:init\n"
     res += construct_layout(tree)
@@ -11,8 +11,8 @@ def create_problem_file(name: str, trains: list[o.TrainUnit], segments: list[o.S
     res += place_trains(trains)
     res += "\t(= (timestep) 0)\n\t(= (cost) 0)\n"
     res += print_schedule(schedule)
-    res += train_unit_length(trains)
-    res += define_capacity(tracks) 
+    # res += train_unit_length(trains)
+    # res += define_capacity(tracks) 
     res += ")\n"
     res += set_goal(schedule, trains)
     res += "(\n\t:metric minimize (cost)\n)\n)"
@@ -46,7 +46,7 @@ def set_goal(schedule: list[o.Schedule], trains: list[o.TrainUnit]):
             max = t.departure
         res += f"\t(exists (?t - {t.type}) (= (departed ?t) {t.departure}))\n" # (<= (depart ?t) {depart_at(schedule, t) + 1}) (= (length ?t) {t.l})))\n"
 
-    return res + f"\t(forall (?t - trainunit) (and (hasBeenParked ?t) (at ?t v1)))\n\t(<= (timestep) {max + 1})\n))\n"
+    return res + f"\t(forall (?t - trainunit) (and (hasBeenParked ?t) (at ?t v1)))\n\t(= (timestep) {max + 1})\n))\n"
     
 
 def set_tracks(tracks: list[o.Track]) -> str:
