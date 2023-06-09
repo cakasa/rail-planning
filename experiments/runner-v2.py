@@ -2,7 +2,7 @@ import os, sys, datetime
 import subprocess as sp
 
 def execute(exe: str, cwd: str, problem: str, settings: int, timeout: int):
-    domain = "domain5.pddl"
+    domain = "domain6.pddl"
     print(f"Start search with option [{settings}] on file '{problem}' at {datetime.datetime.now()}")
     result = process(exe, cwd, domain, problem, settings, timeout)
     print(f"Search finished. Writing to file.")

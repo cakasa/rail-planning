@@ -21,7 +21,7 @@ if __name__ == "__main__":
     exe = "/data/Metric-FF-v2.1/ff"
     path = os.getcwd()
     print(path)
-    domain = "domain5.pddl"
+    domain = "domain6.pddl"
     problem = f"{sys.argv[1]}.pddl"
     timeout = 3600
     try:
