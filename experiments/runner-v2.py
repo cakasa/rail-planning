@@ -3,7 +3,7 @@ import os, sys, runner
 
 if __name__ == "__main__":
     exe = "/data/Metric-FF-v2.1/ff"
-    timeout = 3600
+    timeout = 1800
     try:
         timeout = int(sys.argv[1])
     except:
@@ -16,12 +16,13 @@ if __name__ == "__main__":
         print("Optional positional argument for sysytem not specified.\n\tDefault: 0 for mapfw server\n\tUse 1 on PC")
 
 
+    run = [0, 3, 5]
     cwd = os.getcwd()
     ps = os.listdir("problems")
     print(f"Executing ff for the following files: {ps}")
 
     for p in ps:
-        for i in range(6):
+        for i in run:
             runner.execute(exe, cwd, p, i, timeout)
     
     #     pool: list[mp.Process]
