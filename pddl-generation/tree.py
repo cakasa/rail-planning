@@ -1,7 +1,7 @@
 import objects as o
 import treebuilder as tb
 
-tl = [4, 3, 2, 2]
+tl = [3, 3, 3]
 sn = len(tl) - 1
 tn = sum(tl)
 

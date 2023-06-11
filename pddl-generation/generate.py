@@ -2,14 +2,15 @@ import objects as o
 
 def create_problem_file(name: str, trains: list[o.TrainUnit], segments: list[o.Segment],
                         schedule: list[o.Schedule], tree: o.Node, tracks: list[o.Track]) -> str:
-    res = f"(define (problem {name}) (:domain domain6)\n"
+    res = f"(define (problem {name}) (:domain tusd)\n"
     res += define_objects(trains, segments, tracks)
-    res += "(:init\n"
-    res += construct_layout(tree)
-    res += track_properties(segments)
-    res += set_tracks(tracks)
+    # res += "(:init\n"
+    # res += construct_layout(tree)
+    # res += track_properties(segments)
+    # res += set_tracks(tracks)
+    # res += "\t(= (timestep) 0)\n\t(= (cost) 0)\n"
+    res += open("template.txt").read()
     res += place_trains(trains)
-    res += "\t(= (timestep) 0)\n\t(= (cost) 0)\n"
     res += print_schedule(schedule)
     # res += train_unit_length(trains)
     # res += define_capacity(tracks) 
@@ -62,15 +63,15 @@ def define_objects(trains: list[o.TrainUnit], segments: list[o.Segment], tracks:
     for unit in trains:
         res += f"\t{unit}  - {unit.type}\n"
 
-    res += "\t"
-    for s in segments:
-        res += f"{s} "
+    # res += "\t"
+    # for s in segments:
+    #     res += f"{s} "
     
-    res += " - trackpart\n\t"
-    for t in tracks:
-        res += f"{t} "
+    # res += " - trackpart\n\t"
+    # for t in tracks:
+    #     res += f"{t} "
 
-    return res + " - track\n)\n"
+    return res #+ " - track\n)\n"
 
 def track_properties(segments: list[o.Segment]) -> str:
     res = ""

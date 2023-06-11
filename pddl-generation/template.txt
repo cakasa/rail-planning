@@ -1,7 +1,3 @@
-(define (problem problem0) (:domain tusd)
-(:objects
-	train1  - slt
-	train2  - virm
 	v1 t1 t2 t3 t4 t5 t6 t7 t8 t9 - trackpart
 	track1 track2 track3  - track
 )
@@ -51,20 +47,3 @@
 	(onTrack t3 track3)
 	(= (timestep) 0)
 	(= (cost) 0)
-	(at train1 v1)
-	(at train2 v1)
-	(= (arrive train1) 0)
-	(= (arrive train2) 2)
-	(= (departed train1) 0)
-	(= (departed train2) 0)
-)
-(:goal (and
-	(exists (?t - slt) (= (departed ?t) 1))
-	(exists (?t - virm) (= (departed ?t) 3))
-	(forall (?t - trainunit) (and (hasBeenParked ?t) (at ?t v1)))
-	(= (timestep) 4)
-))
-(
-	:metric minimize (cost)
-)
-)

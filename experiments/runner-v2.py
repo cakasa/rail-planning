@@ -1,30 +1,4 @@
-import os, sys, datetime
-import subprocess as sp
-
-def execute(exe: str, cwd: str, problem: str, settings: int, timeout: int):
-    domain = "domain6.pddl"
-    print(f"Start search with option [{settings}] on file '{problem}' at {datetime.datetime.now()}")
-    result = process(exe, cwd, domain, problem, settings, timeout)
-    print(f"Search finished. Writing to file.")
-
-    if not os.path.isdir(os.path.join(cwd, "results")):
-        os.mkdir(os.path.join(cwd, "results"))
-    if '.' in problem:
-        name = problem[0:problem.index('.')]
-    else:
-        name = problem
-    fname = f"./results/result-{name}-setting-{settings}.out"
-    with open(fname, 'w+') as f:
-        f.write(result)
-        f.close()
-
-def process(exe: str, path: str, domain: str, problem: str, settings: int, to: int) -> str:
-    cmd = f"{exe} -p {path}/ -o {domain} -f problems/{problem} -s {settings}"
-    try:
-        sub = sp.check_output(cmd.split(), timeout=to)
-    except sp.TimeoutExpired:
-        return f"Search on the {problem} file with strategy {settings} timed out at {datetime.timedelta(seconds=to)}.\nProcess terminated."
-    return sub.decode()
+import os, sys, runner
 
 
 if __name__ == "__main__":
@@ -48,7 +22,7 @@ if __name__ == "__main__":
 
     for p in ps:
         for i in range(6):
-            execute(exe, cwd, p, i, timeout)
+            runner.execute(exe, cwd, p, i, timeout)
     
     #     pool: list[mp.Process]
     #     pool = []
