@@ -57,7 +57,7 @@
         (at ?train ?to)
         (not (free ?to))
         (free ?from)
-        (increase (cost) 1)
+        (increase (cost) 2)
     )
 )
 
