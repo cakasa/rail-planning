@@ -1,4 +1,4 @@
-(define (domain servicing-simple)
+neex -(define (domain servicing-simple)
 
 (:requirements :adl)
 
