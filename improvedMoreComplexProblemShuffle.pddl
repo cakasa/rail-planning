@@ -1,4 +1,4 @@
-(define (problem improvedMoreComplexProblemShuffle) (:domain domain1)
+(define (problem improvedMoreComplexProblemShuffle) (:domain imprDomain)
 (:objects
     train1 - sng
     train2 - icm
@@ -11,7 +11,7 @@
     train9 - virm
     train10 - virm
     v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12  - trackpart
-    track1 track2 track3 track4  - track
+    track1 track2 track3 track4  - LIFO
 )
 (:init
     (at train1 v1)
@@ -106,6 +106,16 @@
     (onPath v10)
 )
 (:goal (and
+    (at train9 v1)
+    (at train6 v2)
+    (at train8 v3)
+    (at train7 v4)
+    (at train2 v5)
+    (at train10 v6)
+    (at train4 v7)
+    (at train3 v8)
+    (at train5 v9)
+    (at train1 v10)
     (hasBeenParked train1)
     (hasBeenParked train2)
     (hasBeenParked train3)
