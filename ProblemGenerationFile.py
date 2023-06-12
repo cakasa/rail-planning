@@ -46,18 +46,18 @@ def create_problem_file(filename, name, arrival_order, departure_train_units, tr
             f.write("    (at train{} v{})\n".format(i+1, i+1))
             # initialize the position of the track parts on the arrival path
             if i < len(arrival_order) - 1:
-                f.write("    (nextTo v{} v{})\n".format(i+1, i+2))
-                f.write("    (nextTo v{} v{})\n".format(i+2, i+1))
+                f.write("    (next v{} v{})\n".format(i+1, i+2))
+                f.write("    (prev v{} v{})\n".format(i+2, i+1))
         # initialize the main switch (t0) and its direct neighbor on the arrival path
-        f.write("    (nextTo v1 t0)\n")
-        f.write("    (nextTo t0 v1)\n")
+        f.write("    (next v1 t0)\n")
+        f.write("    (prev t0 v1)\n")
         f.write("    (switch t0)\n")
 
         # initialize the position of the track parts in the tree
         nodes = set()
         for edge in tree_edges:
-            f.write("    (nextTo t{} t{})\n".format(edge[0], edge[1]))
-            f.write("    (nextTo t{} t{})\n".format(edge[1], edge[0]))
+            f.write("    (next t{} t{})\n".format(edge[0], edge[1]))
+            f.write("    (prev t{} t{})\n".format(edge[1], edge[0]))
             # indicate which nodes are not occupied
             for node in edge:
                 if not node in nodes:
@@ -86,8 +86,8 @@ def create_problem_file(filename, name, arrival_order, departure_train_units, tr
         f.write(")))\n")
 
 if __name__ == "__main__":
-    create_problem_file("D:\\DelftFiles\\3Q4\\GitHub\\rail-planning\\newComplexProblem2.pddl", "newComplexProblem2", 
+    create_problem_file("D:\\DelftFiles\\3Q4\\GitHub\\rail-planning\\moreComplexProblemShuffle.pddl", "moreComplexProblemShuffle", 
                         ["sng", "icm", "slt", "virm", "virm", "sng", "icm", "slt", "virm", "virm"], 
                         ["sng", "slt", "icm", "virm", "virm", "sng", "icm", "slt", "virm", "virm"], 
-                        [(0,1), (1,2), (2,3), (3,4), (4,5), (5,6), (0,6), (0,7), (7,8), (8,9), (0,10), (10,11), (11,12)], 
-                        [[1,2,3,4,5,6], [7,8,9], [10,11,12]])
+                        [(0,1), (1,2), (2,3), (0,4), (4,5), (5,6), (0,7), (7,8), (8,9), (0,10), (10,11), (11,12)], 
+                        [[1,2,3], [4,5,6], [7,8,9], [10,11,12]])
