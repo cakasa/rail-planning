@@ -95,8 +95,9 @@
 
 ; action to move a trainunit to a neighbouring trackpart on a track, to park it 
 (:action move-to-LIFO-track
-    :parameters (?train - trainunit ?from ?prev ?last - trackpart ?t - track)
-    :precondition (and (at ?train ?from)  
+    :parameters (?train - trainunit ?from ?to ?prev ?last - trackpart ?t - track)
+    :precondition (and (at ?train ?from) (free ?to) 
+                    (or (next ?from ?to) (prev ?from ?to)) (onTrack ?to ?t)
                     (switch ?from) (last-track ?last)
                     (prev ?last ?prev)
                     (onTrack ?last ?t)) 
@@ -105,19 +106,19 @@
                     (not (last-track ?last)) (last-track ?prev)
                     (hasBeenParked ?train) (parkedOn ?train ?t))
 )
-; ; action to move a trainunit to a neighbouring trackpart on a track, to park it 
-; (:action move-to-LIFO-track-two-track
-;     :parameters (?train - trainunit ?from ?prev ?last - trackpart ?t - track)
-;     :precondition (and (at ?train ?from)  
-;                         (or (next ?from ?prev) (prev ?from ?prev)) (onTrack ?prev ?t)
-;                     (switch ?from) (last-track ?last)
-;                     (prev ?last ?prev)
-;                     (onTrack ?last ?t)) 
-;     :effect (and (at ?train ?last) (not (at ?train ?from)) 
-;                     (free ?from) (not (free ?last)) 
-;                     (not (last-track ?last)) (last-track ?prev)
-;                     (hasBeenParked ?train) (parkedOn ?train ?t))
-; )
+; action to move a trainunit to a neighbouring trackpart on a track, to park it 
+(:action move-to-LIFO-track-two-track
+    :parameters (?train - trainunit ?from ?prev ?last - trackpart ?t - track)
+    :precondition (and (at ?train ?from)  
+                        (or (next ?from ?prev) (prev ?from ?prev)) (onTrack ?prev ?t)
+                    (switch ?from) (last-track ?last)
+                    (prev ?last ?prev)
+                    (onTrack ?last ?t)) 
+    :effect (and (at ?train ?last) (not (at ?train ?from)) 
+                    (free ?from) (not (free ?last)) 
+                    (not (last-track ?last)) (last-track ?prev)
+                    (hasBeenParked ?train) (parkedOn ?train ?t))
+)
 ; action to move a trainunit to a neighbouring trackpart on a track, to park it 
 (:action move-to-LIFO-track-onetrack
     :parameters (?train - trainunit ?from ?last - trackpart ?t - track)
