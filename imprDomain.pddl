@@ -68,9 +68,9 @@
                     (free ?from) (not (free ?to))
                     (not (parkedOn ?train ?t)))
 )
-
+; switches between LIFO tracks
 (:action switch-LIFO-track
-    :parameters (?train - trainunit ?from ?prev ?switch ?newLast ?last- trackpart ?t1 ?t2 - track)
+    :parameters (?train - trainunit ?from ?prev ?switch ?newLast ?last - trackpart ?t1 ?t2 - track)
     :precondition (and (at ?train ?from) (onTrack ?from ?t1)
                     (onTrack ?last ?t2) (prev ?from ?prev) (prev ?last ?newLast)
                     (free ?switch) (switch ?switch) (last-track ?prev)
