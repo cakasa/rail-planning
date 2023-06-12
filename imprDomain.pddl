@@ -96,7 +96,7 @@
 ; action to move a trainunit to a neighbouring trackpart on a track, to park it 
 (:action move-to-LIFO-track
     :parameters (?train - trainunit ?from ?to ?prev ?last - trackpart ?t - track)
-    :precondition (and (at ?train ?from) (free ?to) 
+    :precondition (and (at ?train ?from) (free ?to) (not (last-track ?to))
                     (or (next ?from ?to) (prev ?from ?to)) (onTrack ?to ?t)
                     (switch ?from) (last-track ?last)
                     (prev ?last ?prev)
