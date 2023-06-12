@@ -96,7 +96,8 @@
 (:action move-to-LIFO-track
     :parameters (?train - trainunit ?from ?to ?last ?prev - trackpart ?t - track)
     :precondition (and (at ?train ?from) (free ?to) 
-                    (or (next ?from ?to) (prev ?from ?to)) (onTrack ?to ?t)
+                    (or (or (next ?from ?to) (prev ?from ?to)) (onTrack ?to ?t)
+                        (or (next ?from ?prev) (prev ?from ?prev)) (onTrack ?prev ?t))
                     (switch ?from) (last-track ?last)
                     (prev ?last ?prev)
                     (onTrack ?last ?t)) 
