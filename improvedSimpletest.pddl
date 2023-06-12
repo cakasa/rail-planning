@@ -6,8 +6,7 @@
     train4 - slt
     v1 v2 v3 v4 t0 t1 t2 t3 t4 - trackpart
     track1 track2 - LIFO
-    v1 t0 t1  - trackpart
-    track1 - LIFO
+
 )
 (:init
     (at train1 v1)
@@ -23,7 +22,6 @@
     (next v1 t0)
     (prev t0 v1)
     (switch t0)
-@ -25,33 +13,13 @@
     (prev t1 t0)
     (free t0)
     (free t1)
@@ -54,7 +52,6 @@
     (at train1 v2)
     (at train3 v3)
     (at train2 v4) 
-    (at train1 v1)
     (hasBeenParked train1)
     (hasBeenParked train2)
     (hasBeenParked train3)
