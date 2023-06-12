@@ -69,6 +69,19 @@
                     (not (parkedOn ?train ?t)))
 )
 
+(:action switch-LIFO-track
+    :parameters (?train - trainunit ?from ?prev ?switch ?newLast ?last- trackpart ?t1 ?t2 - track)
+    :precondition (and (at ?train ?from) (onTrack ?from ?t1)
+                    (onTrack ?last ?t2) (prev ?from ?prev) (prev ?last ?newLast)
+                    (free ?switch) (switch ?switch) (last-track ?prev)
+                    (last-track ?last)
+    )
+    :effect (and (at ?train ?last) (not (at ?train ?from))
+                (free ?from) (last-track ?from) (not (last-track ?prev))
+                (not (last-track ?last)) (last-track ?newLast) (not (parkedOn ?train ?t1))
+                (parkedOn ?train ?t2) (not (free ?last))
+    )
+)
 ; action to move a trainunit along a track
 (:action move-to-switch-LIFO-track
     :parameters (?train - trainunit ?from ?prev ?con ?switch - trackpart ?t - track)
