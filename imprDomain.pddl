@@ -52,7 +52,7 @@
     :parameters (?train - trainunit ?from ?switch ?to - trackpart ?t1 ?t2 - track )
     :precondition (and (at ?train ?from) (free ?to) (free ?switch) 
                     (or (next ?from ?switch) (prev ?from ?switch)) (onTrack ?from ?t1)
-                    (switch ?switch)
+                    (switch ?switch) (free-track ?t1) (free-track ?t2)
                     (or (next ?switch ?to) (prev ?switch ?to)) (onTrack ?to ?t2)
                     (not (forall (?unit - trainunit) (hasBeenParked ?unit))))
     :effect (and (at ?train ?to) (not (at ?train ?from))
