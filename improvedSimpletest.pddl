@@ -5,7 +5,7 @@
     train3 - slt
     train4 - slt
     v1 v2 v3 t0 t1 t2 t3 t4 - trackpart
-    track1  - LIFO
+    track1 track2 - LIFO
 )
 (:init
     (at train1 v1)
@@ -37,7 +37,8 @@
     (prev t4 t3)
     (onTrack t1 track1)
     (onTrack t2 track1)
-    (onTrack t3 track1)
+    (onTrack t3 track2)
+    (onTrack t4 track2)
     (onPath v1)
     (onPath v2)
     (onPath v3)
