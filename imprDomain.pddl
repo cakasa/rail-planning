@@ -75,7 +75,7 @@
     :precondition (and (at ?train ?from) (onTrack ?from ?t)
                     (onTrack ?con ?t) (prev ?from ?prev)
                     (onTrack ?prev ?t) (last-track ?prev)
-                    (prev ?con ?switch) (free ?switch))
+                    (prev ?con ?switch) (free ?switch) (switch ?switch))
     :effect (and (at ?train ?switch) (not (at ?train ?from))
                     (free ?from) (not (free ?switch))
                     (not (last-track ?prev)) (last-track ?from)
@@ -85,7 +85,7 @@
 (:action move-to-switch-LIFO-track-last
     :parameters (?train - trainunit ?from  ?switch - trackpart ?t - track)
     :precondition (and (at ?train ?from) (onTrack ?from ?t)
-                    (prev ?from ?switch)
+                    (prev ?from ?switch) (switch ?switch)
                     (free ?switch) (not (free-track ?t)))
     :effect (and (at ?train ?switch) (not (at ?train ?from))
                     (free ?from) (not (free ?switch))
