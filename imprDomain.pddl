@@ -76,7 +76,7 @@
     :precondition (and (at ?train ?from) (onTrack ?from ?t)
                     (onTrack ?con ?t) (prev ?from ?prev)
                     (onTrack ?prev ?t) (last-track ?prev)
-                    (prev ?con ?switch))
+                    (prev ?con ?switch) (free ?switch))
     :effect (and (at ?train ?switch) (not (at ?train ?from))
                     (free ?from) (not (free ?switch))
                     (not (last-track ?prev)) (last-track ?from)
