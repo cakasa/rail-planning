@@ -13,7 +13,7 @@
     (prev t1 t0)
     (free t0)
     (free t1)
-    
+    (last-track t1)
     (onTrack t1 track1)
    
     (onPath v1)
