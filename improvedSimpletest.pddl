@@ -22,6 +22,7 @@
     (next v1 t0)
     (prev t0 v1)
     (switch t0)
+    (next t0 t1)
     (prev t1 t0)
     (free t0)
     (free t1)
