@@ -35,6 +35,8 @@
     (free t4)
     (next t3 t4)
     (prev t4 t3)
+    (last-track t2)
+    (last-track t4)
     (onTrack t1 track1)
     (onTrack t2 track1)
     (onTrack t3 track2)
