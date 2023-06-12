@@ -4,6 +4,7 @@
 
 (:types
     trackpart track trainunit - object
+    pathpart switch - trackpart
     icm virm sng slt - trainunit ; these are the different types of train units
 )
 
@@ -16,8 +17,8 @@
     (parkedOn ?x - trainunit ?y - track) ; indicates x parked on track y
     (onPath ?x) ;trackpart x is on the arrival/departure path L
     (switch ?x) ;trackpart x is a switch
-    (lastfree ?x - trackpart ?y - track) ; last free trackpart x of track y
-    (lastfreePath ?x - trackpart) ; last free trackpart x of path L
+    (trackHeader ?x - trackpart ?y - track) ; last free trackpart x of track y
+    (pathHeader ?x - trackpart) ; last free trackpart x of path L
 )
 
 (:action move-on-arrival-to-switch
@@ -29,10 +30,12 @@
         (free ?next)
         (free ?to)
         (switch ?to)
-        (nextTo ?from ?next))
+        (nextTo ?from ?next)
+        (forall (?t - trackpart) (or (not (switch ?t)) (and (switch ?t) (free ?t)))))
     :effect (and
         (at ?train ?to)         (not (at ?train ?from))
         (free ?from)            (not (free ?to))
+        (pathHeader ?from)      (not (pathHeader ?next))
     )
 )
 
@@ -54,16 +57,15 @@
         (not (parkedOn ?train ?t))
         (at ?train ?from)
         (free ?to)
-        (lastfree ?to ?t)
+        (trackHeader ?to ?t)
         (nextTo ?toprev ?to)
         (onTrack ?to ?t)
         (switch ?from))
     :effect (and
         (at ?train ?to)         (not (at ?train ?from))
         (free ?from)            (not (free ?to))
-        (when (not (switch ?toprev)) (lastfree ?toprev ?t))
-        (not (lastfree ?to ?t))
-        (when (not (hasBeenParked ?train)) (hasBeenParked ?train))
+        (when (not (switch ?toprev)) (trackHeader ?toprev ?t)) (not (trackHeader ?to ?t))
+        (hasBeenParked ?train)
         (parkedOn ?train ?t))
 )
 
@@ -77,20 +79,21 @@
         (free ?next)
         (free ?to)
         (switch ?to)
+        (forall (?t - trackpart) (or (not (switch ?t)) (and (switch ?t) (free ?t))))
         (forall (?unit - trainunit) (hasBeenParked ?unit)))
     :effect (and
         (at ?train ?to)         (not (at ?train ?from))
         (free ?from)            (not (free ?to))
-        (lastfree ?from ?t)     (not (lastfree ?next ?t))
+        (trackHeader ?from ?t)  (not (trackHeader ?next ?t))
         (not (parkedOn ?train ?t)))
 )
 
-(:action move-to-departure
+(:action move-from-switch-to-departure
     :parameters (?train - trainunit ?from ?toprev ?to - trackpart)
     :precondition (and
         (at ?train ?from)
         (free ?to)
-        (lastfreePath ?to)
+        (pathHeader ?to)
         (nextTo ?to ?toprev)
         (onPath ?to)
         (switch ?from)
@@ -98,6 +101,6 @@
     :effect (and
         (at ?train ?to)         (not (at ?train ?from))
         (free ?from)            (not (free ?to))
-        (lastfreePath ?toprev)  (not (lastfreePath ?to)))
+        (when (not (switch ?toprev)) (pathHeader ?toprev)) (not (pathHeader ?to)))
 )
 )
