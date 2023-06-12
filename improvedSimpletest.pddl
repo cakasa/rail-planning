@@ -52,7 +52,7 @@
     (at train4 v1)
     (at train1 v2)
     (at train3 v3)
-    (at train2 v4) ) 
+    (at train2 v4) 
     (hasBeenParked train1)
     (hasBeenParked train2)
     (hasBeenParked train3)
