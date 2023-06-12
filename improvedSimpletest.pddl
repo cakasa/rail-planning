@@ -4,7 +4,7 @@
     train2 - icm
     train3 - slt
     train4 - slt
-    v1 v2 v3 t0 t1 t2 t3 t4 - trackpart
+    v1 v2 v3 v4 t0 t1 t2 t3 t4 - trackpart
     track1 track2 - LIFO
 )
 (:init
