@@ -1,4 +1,4 @@
-neex -(define (domain servicing-simple)
+(define (domain servicing-simple)
 
 (:requirements :adl)
 
@@ -19,6 +19,7 @@ neex -(define (domain servicing-simple)
     (hasDeparted ?x - trainunit) ; train unit x has departed
 )
 
+; action to service a train for a service
 (:action service-train
     :parameters (?train - trainunit ?at - trackpart ?track - track ?service - service)
     :precondition (and
