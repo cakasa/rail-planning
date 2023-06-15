@@ -71,7 +71,7 @@
                     (nextTo ?from ?to)
                     (not (hasDeparted ?train))
                     (not (hasBeenParked ?train))
-                    (onPath ?from))
+                    (onPath ?to))
     :effect (and (at ?train ?to) (not (at ?train ?from)) 
                     (free ?from) (not (free ?to)))
 )
