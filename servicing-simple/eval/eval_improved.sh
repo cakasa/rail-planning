@@ -13,7 +13,7 @@ do
         mkdir run$run
         cd run$run
         { time ./../../../../team4/p.img ./../../../../servicing-simple.pddl ./../../../../$problem.pddl ./re.out ; } &> console.txt
-        echo "Done evaluating$ problem run $run"
+        echo "Done evaluating $problem run $run"
         cd ..
     done
     cd ..
