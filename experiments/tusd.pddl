@@ -76,6 +76,7 @@
                     (free ?from)
                     (increase (departed ?train) (timestep))
                     (increase (timestep) 1)
+                    ; (increase (cost) 1)
                 )
 )
 
@@ -95,6 +96,7 @@
                     (not (free ?to))
                     (hasBeenParked ?train)
                     (increase (timestep) 1)
+                    ; (increase (cost) 1)
                 )
 )
 

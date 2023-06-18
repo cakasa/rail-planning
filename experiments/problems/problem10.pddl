@@ -1,11 +1,9 @@
-(define (problem problem4) (:domain tusd)
+(define (problem problem10) (:domain tusd)
 (:objects
-	train1  - slt
-	train2  - icm
-	train4  - virm
-	train5  - sng
-	train6  - sng
-	train3  - slt
+	train1 train2 train3  - slt
+	train4 train5 train6  - sng
+	train7 train8 - virm
+	train9 train10 - icm
 	v1 t1 t2 t3 t4 t5 t6 t7 t8 t9 - trackpart
 	track1 track2 track3  - track
 )
@@ -57,32 +55,48 @@
 	(= (cost) 0)
 	(at train1 v1)
 	(at train2 v1)
+	(at train3 v1)
 	(at train4 v1)
 	(at train5 v1)
 	(at train6 v1)
-	(at train3 v1)
-	(= (arrive train1) 0)
-	(= (arrive train2) 1)
-	(= (arrive train4) 4)
-	(= (arrive train5) 5)
-	(= (arrive train6) 7)
-	(= (arrive train3) 2)
+	(at train7 v1)
+	(at train8 v1)
+	(at train9 v1)
+	(at train10 v1)
+	(= (arrive train1) 3)
+	(= (arrive train2) 4)
+	(= (arrive train3) 12)
+	(= (arrive train4) 5)
+	(= (arrive train5) 9)
+	(= (arrive train6) 10)
+	(= (arrive train7) 2)
+	(= (arrive train8) 11)
+	(= (arrive train9) 0)
+	(= (arrive train10) 1)
 	(= (departed train1) 0)
 	(= (departed train2) 0)
+	(= (departed train3) 0)
 	(= (departed train4) 0)
 	(= (departed train5) 0)
 	(= (departed train6) 0)
-	(= (departed train3) 0)
+	(= (departed train7) 0)
+	(= (departed train8) 0)
+	(= (departed train9) 0)
+	(= (departed train10) 0)
 )
 (:goal (and
-	(exists (?t - slt) (= (departed ?t) 3))
 	(exists (?t - icm) (= (departed ?t) 6))
+	(exists (?t - icm) (= (departed ?t) 16))
+	(exists (?t - slt) (= (departed ?t) 7))
+	(exists (?t - slt) (= (departed ?t) 14))
+	(exists (?t - slt) (= (departed ?t) 15))
+	(exists (?t - sng) (= (departed ?t) 13))
+	(exists (?t - sng) (= (departed ?t) 18))
+	(exists (?t - sng) (= (departed ?t) 19))
 	(exists (?t - virm) (= (departed ?t) 8))
-	(exists (?t - sng) (= (departed ?t) 9))
-	(exists (?t - sng) (= (departed ?t) 10))
-	(exists (?t - slt) (= (departed ?t) 11))
+	(exists (?t - virm) (= (departed ?t) 17))
 	(forall (?t - trainunit) (and (hasBeenParked ?t) (at ?t v1)))
-	(= (timestep) 12)
+	(= (timestep) 20)
 ))
 (
 	:metric minimize (cost)

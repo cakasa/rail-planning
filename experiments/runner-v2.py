@@ -16,7 +16,7 @@ if __name__ == "__main__":
         print("Optional positional argument for sysytem not specified.\n\tDefault: 0 for mapfw server\n\tUse 1 on PC")
 
 
-    run = [0, 3, 5]
+    run = [0, 1, 2, 3, 4, 5]
     cwd = os.getcwd()
     ps = os.listdir("problems")
     print(f"Executing ff for the following files: {ps}")

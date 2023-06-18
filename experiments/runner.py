@@ -3,14 +3,23 @@ import subprocess as sp
 
 
 def process(exe: str, path: str, domain: str, problem: str, settings: int, to: int) -> str:
-    id = os.getpid()
-    cmd = f"{exe} -p {path}/ -o {domain} -f problems/{problem} -s {settings}"
+    cmd = f"{exe} -p {path}/ -o {domain} -f problems/{problem} -s {settings} -w 10"
     try:
         sub = sp.check_output(cmd.split(), timeout=to)
     except sp.TimeoutExpired:
-
         return f"Search on the {problem} file with strategy {settings} timed out at {datetime.timedelta(seconds=to)}.\nProcess terminated."
     return sub.decode()
+
+def process2(exe: str, path: str, domain: str, problem: str, settings: int, to: int) -> str:
+    id = os.getpid()
+    cmd = f"{exe} -p {path}/ -o {domain} -f problems/{problem} -s {settings}"
+    sub = sp.Popen(cmd.split(), stdout=sp.PIPE, stderr=sp.STDOUT)
+    out = sub.communicate()[0].decode()
+    try:
+        sub.wait(to)
+    except sp.TimeoutExpired:
+        return f"Search on the {problem} file with strategy {settings} timed out at {datetime.timedelta(seconds=to)}.\nProcess terminated. Results:\n\n{out}"
+    return out
 
 def execute(exe: str, cwd: str, problem: str, settings: int, timeout: int):
     domain = "tusd.pddl"
@@ -35,12 +44,12 @@ if __name__ == "__main__":
         exit(1)
 
     
-    exe = "/data/Metric-FF-v2.1/ff"
+    exe = "ff-v2.1.exe"#"/data/Metric-FF-v2.1/ff"
     path = os.getcwd()
     print(path)
     domain = "tusd.pddl"
     problem = f"{sys.argv[1]}.pddl"
-    timeout = 3600
+    timeout = 5#3600
     try:
         timeout = sys.argv[4]
     except:
