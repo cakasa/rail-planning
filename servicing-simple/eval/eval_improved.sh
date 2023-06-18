@@ -1,8 +1,7 @@
 #!/bin/bash
-mkdir improved
-cd improved
+cd improved2
 
-problems="small_two_trains small_five_trains medium_five_trains big_ten_trains medium_ten_trains big_twenty_trains small_eight_trains medium_fifteen_trains big_thirty_train"
+problems="small_two_trains small_five_trains medium_five_trains big_ten_trains medium_ten_trains big_twenty_trains small_eight_trains medium_fifteen_trains big_thirty_trains"
 
 for problem in $problems
 do
