@@ -31,7 +31,8 @@
         (trackHeader ?to ?t)
         (nextTo ?from ?next)
         (nextTo ?toprev ?to)
-        (onTrack ?to ?t))
+        (onTrack ?to ?t)
+        (exists (?switch - trackpart) (and (switch ?switch) (free ?switch))))
     :effect (and
         (at ?train ?to) (not (at ?train ?from))
         (free ?from) (not (free ?to))
@@ -53,7 +54,8 @@
         (nextTo ?to ?toprev)
         (onPath ?to)
         (pathHeader ?to)
-        (forall (?unit - trainunit) (hasBeenParked ?unit)))
+        (forall (?unit - trainunit) (hasBeenParked ?unit))
+        (exists (?switch - trackpart) (and (switch ?switch) (free ?switch))))
     :effect (and
         (at ?train ?to) (not (at ?train ?from))
         (free ?from) (not (free ?to))
@@ -61,4 +63,41 @@
         (when (not (switch ?toprev)) (pathHeader ?toprev)) (not (pathHeader ?to))
         (not (parkedOn ?train ?t)))
 )
+)
+
+(:action move-from-switch-to-track
+    :parameters (?train - trainunit ?from ?toprev ?to - trackpart ?t - track)
+    :precondition (and
+        (not (parkedOn ?train ?t))
+        (at ?train ?from)
+        (free ?to)
+        (lastfree ?to ?t)
+        (nextTo ?toprev ?to)
+        (onTrack ?to ?t)
+        (switch ?from))
+    :effect (and
+        (at ?train ?to)         (not (at ?train ?from))
+        (free ?from)            (not (free ?to))
+        (when (not (switch ?toprev)) (lastfree ?toprev ?t))
+        (not (lastfree ?to ?t))
+        (when (not (hasBeenParked ?train)) (hasBeenParked ?train))
+        (parkedOn ?train ?t))
+)
+
+(:action move-from-track-to-switch
+    :parameters (?train - trainunit ?from ?next ?to - trackpart ?t - track)
+    :precondition (and
+        (parkedOn ?train ?t)
+        (at ?train ?from)
+        (onTrack ?from ?t)
+        (nextTo ?next ?from)
+        (free ?next)
+        (free ?to)
+        (switch ?to)
+        (forall (?unit - trainunit) (hasBeenParked ?unit)))
+    :effect (and
+        (at ?train ?to)         (not (at ?train ?from))
+        (free ?from)            (not (free ?to))
+        (lastfree ?from ?t)     (not (lastfree ?next ?t))
+        (not (parkedOn ?train ?t)))
 )
