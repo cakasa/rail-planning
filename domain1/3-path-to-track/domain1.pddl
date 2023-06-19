@@ -32,6 +32,7 @@
         (nextTo ?from ?next)
         (nextTo ?toprev ?to)
         (onTrack ?to ?t)
+        (not (hasBeenParked ?train))
         (exists (?switch - trackpart) (and (switch ?switch) (free ?switch))))
     :effect (and
         (at ?train ?to) (not (at ?train ?from))
@@ -70,16 +71,16 @@
         (not (parkedOn ?train ?t))
         (at ?train ?from)
         (free ?to)
-        (lastfree ?to ?t)
+        (trackHeader ?to ?t)
         (nextTo ?toprev ?to)
         (onTrack ?to ?t)
-        (switch ?from))
+        (switch ?from)
+        (forall (?unit - trainunit) (hasBeenParked ?unit)))
     :effect (and
         (at ?train ?to)         (not (at ?train ?from))
         (free ?from)            (not (free ?to))
-        (when (not (switch ?toprev)) (lastfree ?toprev ?t))
-        (not (lastfree ?to ?t))
-        (when (not (hasBeenParked ?train)) (hasBeenParked ?train))
+        (when (not (switch ?toprev)) (trackHeader ?toprev ?t))
+        (not (trackHeader ?to ?t))
         (parkedOn ?train ?t))
 )
 
@@ -97,7 +98,7 @@
     :effect (and
         (at ?train ?to)         (not (at ?train ?from))
         (free ?from)            (not (free ?to))
-        (lastfree ?from ?t)     (not (lastfree ?next ?t))
+        (trackHeader ?from ?t)  (not (trackHeader ?next ?t))
         (not (parkedOn ?train ?t)))
 )
 )
