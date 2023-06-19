@@ -63,7 +63,6 @@
         (when (not (switch ?toprev)) (pathHeader ?toprev)) (not (pathHeader ?to))
         (not (parkedOn ?train ?t)))
 )
-)
 
 (:action move-from-switch-to-track
     :parameters (?train - trainunit ?from ?toprev ?to - trackpart ?t - track)
@@ -100,4 +99,5 @@
         (free ?from)            (not (free ?to))
         (lastfree ?from ?t)     (not (lastfree ?next ?t))
         (not (parkedOn ?train ?t)))
+)
 )
