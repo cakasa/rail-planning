@@ -18,6 +18,19 @@
     (switch ?x) ;trackpart x is a switch
     (trackHeader ?x - trackpart ?y - track) ; last free trackpart x of track y
     (pathHeader ?x - trackpart) ; last free trackpart x of path L
+    (validPath ?x ?y - trackpart) ; path x to y is valid connected path
+)
+
+(:action check-path
+    :parameters (?from ?to - trackpart)
+    :precondition (or
+        (validPath ?from ?to)
+        (nextTo ?from ?to)
+        (exists (?next - trackpart) (and (nextTo ?from ?next) (validPath ?next ?to)))
+    )
+    :effect (and
+        (validPath ?from ?to)
+    )
 )
 
 (:action move-from-arrival-to-track
@@ -31,7 +44,8 @@
         (trackHeader ?to ?t)
         (nextTo ?from ?next)
         (nextTo ?toprev ?to)
-        (onTrack ?to ?t))
+        (onTrack ?to ?t)
+        (validPath ?from ?to))
     :effect (and
         (at ?train ?to) (not (at ?train ?from))
         (free ?from) (not (free ?to))
@@ -53,6 +67,7 @@
         (nextTo ?to ?toprev)
         (onPath ?to)
         (pathHeader ?to)
+        (validPath ?to ?from)
         (forall (?unit - trainunit) (hasBeenParked ?unit)))
     :effect (and
         (at ?train ?to) (not (at ?train ?from))
