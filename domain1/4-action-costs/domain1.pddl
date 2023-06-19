@@ -1,6 +1,6 @@
 (define (domain domain1)
 
-(:requirements :adl :action-costs :fluents)
+(:requirements :adl :action-costs :object-fluents)
 
 (:types
     trackpart track trainunit - object
@@ -20,21 +20,21 @@
 
 (:functions
     (total-cost)
-    (prevtrain)
+    (prevtrain) - trainunit
 )
 
 ; action to move a trainunit to a neighbouring trackpart on a track, to park it 
 (:action move-to-track
     :parameters (?train - trainunit ?from ?to - trackpart ?t - track)
-    :precondition (and (at ?train ?from) (free ?to) 
+    :precondition (and (at ?train ?from) (free ?to)
                     (nextTo ?from ?to) (onTrack ?to ?t)
                     (switch ?from))
     :effect (and (at ?train ?to) (not (at ?train ?from))
                     (free ?from) (not (free ?to))
                     (hasBeenParked ?train) (parkedOn ?train ?t)
-                    (when (forall (?unit - trainunit) (hasBeenParked ?unit)) (increase (total-cost) 1))
-                    ; (when (not (= ?train (prevtrain))) (increase (total-cost) 1))
-                    ; (assign (prevtrain) ?train)
+                    ; (when (forall (?unit - trainunit) (hasBeenParked ?unit)) (increase (total-cost) 1))
+                    (when (not (= ?train (prevtrain))) (increase (total-cost) 1))
+                    (assign (prevtrain) ?train)
     )
 )
 

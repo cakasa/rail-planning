@@ -1,5 +1,0 @@
-INFO     Running translator.
-INFO     translator inputs: ['../../domain1.pddl', '../../problem2.pddl']
-INFO     translator arguments: []
-Parsing...
-Command '['/planner/src/translate/translate.py', '../../domain1.pddl', '../../problem2.pddl']' returned non-zero exit status 1
