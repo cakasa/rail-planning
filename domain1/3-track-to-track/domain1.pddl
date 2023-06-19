@@ -24,10 +24,12 @@
 (:action check-path
     :parameters (?from ?to - trackpart)
     :precondition (or
+        (validPath ?from ?to)
         (nextTo ?from ?to)
         (exists (?next - trackpart) (and (nextTo ?from ?next) (validPath ?next ?to)))
     )
     :effect (and
+        (validPath ?from ?next)
         (validPath ?from ?to)
     )
 )
