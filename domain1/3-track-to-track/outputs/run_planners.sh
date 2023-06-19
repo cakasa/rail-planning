@@ -1,4 +1,4 @@
-for PLANNER in explicit-baseline-planner team2 team4 team7
+for PLANNER in explicit-baseline-planners team2 team4 team7
 do
     mkdir $PLANNER
     cd $PLANNER
