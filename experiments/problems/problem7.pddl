@@ -66,13 +66,13 @@
 (:goal (and
 	(exists (?t - icm) (= (departed ?t) 5))
 	(exists (?t - slt) (= (departed ?t) 9))
-	(exists (?t - slt) (= (departed ?t) 15))
+	(exists (?t - slt) (= (departed ?t) 13))
 	(exists (?t - sng) (= (departed ?t) 6))
 	(exists (?t - sng) (= (departed ?t) 12))
 	(exists (?t - virm) (= (departed ?t) 10))
 	(exists (?t - virm) (= (departed ?t) 11))
 	(forall (?t - trainunit) (and (hasBeenParked ?t) (at ?t v1)))
-	(= (timestep) 16)
+	(>= (timestep) 14)
 ))
 (
 	:metric minimize (cost)

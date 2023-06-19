@@ -43,7 +43,7 @@
 	(exists (?t - slt) (= (departed ?t) 5))
 	(exists (?t - virm) (= (departed ?t) 4))
 	(forall (?t - trainunit) (and (hasBeenParked ?t) (at ?t v1)))
-	(= (timestep) 6)
+	(>= (timestep) 6)
 ))
 (
 	:metric minimize (cost)
