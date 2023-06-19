@@ -1,4 +1,4 @@
-(define (domain domain1)
+(define (domain domain1-check-path)
 
 (:requirements :adl)
 
