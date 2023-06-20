@@ -1,6 +1,6 @@
 (define (domain domain1)
 
-(:requirements :adl :action-costs)
+(:requirements :adl :action-costs :conditional-effects)
 
 (:types
     trackpart track trainunit - object
