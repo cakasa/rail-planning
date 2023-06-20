@@ -1,1 +1,1 @@
-echo ./script0.sh & echo ./script1.sh & echo ./script2.sh
+./script0.sh & ./script1.sh & ./script2.sh
