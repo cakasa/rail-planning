@@ -1,0 +1,8 @@
+INFO     Running translator.
+INFO     translator input: ['../../domain1.pddl', '../../problem2.pddl']
+INFO     translator arguments: []
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     callstring: /usr/bin/python /planner/fast-downward-conjunctions/builds/release64clangpgonative/bin/translate/translate.py ../../domain1.pddl ../../problem2.pddl
+Parsing...
+Command '['/usr/bin/python', '/planner/fast-downward-conjunctions/builds/release64clangpgonative/bin/translate/translate.py', '../../domain1.pddl', '../../problem2.pddl']' returned non-zero exit status 1

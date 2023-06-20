@@ -1,0 +1,6 @@
+../../domain1.pddl ../../problem2.pddl re.out
+4
+/planner/src
+1. Running translator
+Second argument is a file name: use two translator arguments.
+Parsing...

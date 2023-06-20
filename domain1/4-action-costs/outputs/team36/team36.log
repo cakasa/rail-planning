@@ -1,0 +1,19 @@
+
+********************************************************************************
+WARNING! Fixing PYTHONHASHSEED to 1 to obtain more reliable results
+********************************************************************************
+
+Problem domain:               ..
+Problem instance:             problem2
+Working directory:            /home/simbachiu/workspace/problem2
+Parsing the PDDL domain...
+Parsing the PDDL problem...
+Simplifying the problem representation...
+Parsing time: 0.22552752494812012
+Grounding the problem...
+Using ASP grounder found at '/planning/clingo/gringo'
+Writing LP into file "/home/simbachiu/workspace/problem2/preprocessing/asp_model.lp"
+Processing result of grounding: /home/simbachiu/workspace/problem2/preprocessing/asp_model.sol
+Grounding time: 0.09864330291748047
+Simplifying the ground encoding...
+Simplify time: 0.019581079483032227

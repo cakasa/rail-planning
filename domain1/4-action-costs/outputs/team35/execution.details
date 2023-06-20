@@ -1,0 +1,7 @@
+;; NOT I-REACHABLE ;;
+Total time: 19.1208
+Nodes generated during search: 55470
+Nodes expanded during search: 55469
+Nodes pruned by bound: 99674
+Average ef. width: -nan
+Max ef. width: 0
