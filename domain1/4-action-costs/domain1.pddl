@@ -1,6 +1,6 @@
 (define (domain domain1)
 
-(:requirements :adl :action-costs :object-fluents)
+(:requirements :adl :action-costs)
 
 (:types
     trackpart track trainunit - object
@@ -14,13 +14,13 @@
     (hasBeenParked ?x - trainunit) ;true if x is parked on some track 
     (free ?x - trackpart) ;trackpart x has nothing parked there
     (parkedOn ?x - trainunit ?y - track) ; indicates x parked on track y
-    (onPath ?x) ;trackpart x is on the arrival/departure path L
-    (switch ?x) ;trackpart x is a switch
+    (onPath ?x - trackpart) ;trackpart x is on the arrival/departure path L
+    (switch ?x - trackpart) ;trackpart x is a switch
+    (prevtrain ?x - trainunit) ; previous train unit x that was moved
 )
 
 (:functions
     (total-cost)
-    (prevtrain) - trainunit
 )
 
 ; action to move a trainunit to a neighbouring trackpart on a track, to park it 
@@ -32,10 +32,10 @@
     :effect (and (at ?train ?to) (not (at ?train ?from))
                     (free ?from) (not (free ?to))
                     (hasBeenParked ?train) (parkedOn ?train ?t)
-                    ; (when (forall (?unit - trainunit) (hasBeenParked ?unit)) (increase (total-cost) 1))
-                    (when (not (= ?train (prevtrain))) (increase (total-cost) 1))
-                    (assign (prevtrain) ?train)
-    )
+                    (when (forall (?unit - trainunit) (hasBeenParked ?unit)) (increase (total-cost) 1))
+                    (when (not (prevtrain ?train)) (increase (total-cost) 1))
+                    (forall (?unit - trainunit) (not (prevtrain ?unit)))
+                    (prevtrain ?train))
 )
 
 ; action to move a trainunit to out of a track, and reset the parkedOn predicate
@@ -46,7 +46,10 @@
                     (switch ?to))
     :effect (and (at ?train ?to) (not (at ?train ?from))
                     (free ?from) (not (free ?to))
-                    (not (parkedOn ?train ?t)))
+                    (not (parkedOn ?train ?t))
+                    (when (not (prevtrain ?train)) (increase (total-cost) 1))
+                    (forall (?unit - trainunit) (not (prevtrain ?unit)))
+                    (prevtrain ?train))
 )
 
 ; action to move a trainunit along a track
@@ -56,7 +59,10 @@
                     (nextTo ?from ?to) (onTrack ?from ?t)
                     (onTrack ?to ?t))
     :effect (and (at ?train ?to) (not (at ?train ?from))
-                    (free ?from) (not (free ?to)))
+                    (free ?from) (not (free ?to))
+                    (when (not (prevtrain ?train)) (increase (total-cost) 1))
+                    (forall (?unit - trainunit) (not (prevtrain ?unit)))
+                    (prevtrain ?train))
 )
 
 ; Can only move back to departure if all trains have been parked. 
@@ -66,7 +72,10 @@
                     (nextTo ?from ?to) (onPath ?to)
                     (forall (?unit - trainunit) (hasBeenParked ?unit)))
     :effect (and (at ?train ?to) (not (at ?train ?from)) 
-                    (free ?from) (not (free ?to)))
+                    (free ?from) (not (free ?to))
+                    (when (not (prevtrain ?train)) (increase (total-cost) 1))
+                    (forall (?unit - trainunit) (not (prevtrain ?unit)))
+                    (prevtrain ?train))
 )
 
 ; Action to move train unit over the arrival path towards the shunting yard
@@ -76,6 +85,9 @@
                     (nextTo ?from ?to) (not (hasBeenParked ?train))
                     (onPath ?from))
     :effect (and (at ?train ?to) (not (at ?train ?from)) 
-                    (free ?from) (not (free ?to)))
+                    (free ?from) (not (free ?to))
+                    (when (not (prevtrain ?train)) (increase (total-cost) 1))
+                    (forall (?unit - trainunit) (not (prevtrain ?unit)))
+                    (prevtrain ?train))
 )
 )
