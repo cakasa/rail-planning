@@ -34,7 +34,7 @@
                     (hasBeenParked ?train) (parkedOn ?train ?t)
                     (when (forall (?unit - trainunit) (hasBeenParked ?unit)) (increase (total-cost) 1))
                     (when (not (prevtrain ?train)) (increase (total-cost) 1))
-                    (forall (?unit - trainunit) (not (prevtrain ?unit)))
+                    (forall (?unit - trainunit) (when (not (= ?unit ?train)) (not (prevtrain ?unit))))
                     (prevtrain ?train))
 )
 
@@ -48,7 +48,7 @@
                     (free ?from) (not (free ?to))
                     (not (parkedOn ?train ?t))
                     (when (not (prevtrain ?train)) (increase (total-cost) 1))
-                    (forall (?unit - trainunit) (not (prevtrain ?unit)))
+                    (forall (?unit - trainunit) (when (not (= ?unit ?train)) (not (prevtrain ?unit))))
                     (prevtrain ?train))
 )
 
@@ -61,7 +61,7 @@
     :effect (and (at ?train ?to) (not (at ?train ?from))
                     (free ?from) (not (free ?to))
                     (when (not (prevtrain ?train)) (increase (total-cost) 1))
-                    (forall (?unit - trainunit) (not (prevtrain ?unit)))
+                    (forall (?unit - trainunit) (when (not (= ?unit ?train)) (not (prevtrain ?unit))))
                     (prevtrain ?train))
 )
 
@@ -74,7 +74,7 @@
     :effect (and (at ?train ?to) (not (at ?train ?from)) 
                     (free ?from) (not (free ?to))
                     (when (not (prevtrain ?train)) (increase (total-cost) 1))
-                    (forall (?unit - trainunit) (not (prevtrain ?unit)))
+                    (forall (?unit - trainunit) (when (not (= ?unit ?train)) (not (prevtrain ?unit))))
                     (prevtrain ?train))
 )
 
@@ -87,7 +87,7 @@
     :effect (and (at ?train ?to) (not (at ?train ?from)) 
                     (free ?from) (not (free ?to))
                     (when (not (prevtrain ?train)) (increase (total-cost) 1))
-                    (forall (?unit - trainunit) (not (prevtrain ?unit)))
+                    (forall (?unit - trainunit) (when (not (= ?unit ?train)) (not (prevtrain ?unit))))
                     (prevtrain ?train))
 )
 )

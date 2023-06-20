@@ -8,7 +8,7 @@ ssh mapfw.ewi.tudelft.nl
 
 #### Assign ssh key `<keyname>` to ssh agent
 ```
-eval "ssh-agent" -s
+eval "$(ssh-agent)
 ssh-add ~/.ssh/<keyname>
 ```
 
