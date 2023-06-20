@@ -1,5 +1,5 @@
 mkdir results
-EXE=./data/Metric-FF-v2.1/ff
+EXE=/data/Metric-FF-v2.1/ff
 
 for SETTING in 2 0 1
 do
