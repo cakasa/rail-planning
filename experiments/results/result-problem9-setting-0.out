@@ -1,0 +1,36 @@
+
+ff: parsing domain file
+domain 'TUSD' defined
+ ... done.
+ff: parsing problem file
+problem 'PROBLEM9' defined
+ ... done.
+
+
+
+ff: search configuration is Enforced Hill-Climbing, if that fails then best-first search.
+Metric is plan length.
+NO COST MINIMIZATION (and no cost-minimizing relaxed plans).
+
+Cueing down from goal distance:   61 into depth [1]
+                                  31            [1]
+                                  30            [1]
+                                  25            [1][2]
+                                  22            [1][2]
+                                  21            [1][2]
+                                  20            [1] --- pruning stopped --- [1][2][3][4][5][6][7]
+                                  17            [1][2]
+                                  16            [1]
+                                  15            [1][2]
+                                  13            [1][2]
+                                  11            [1] --- pruning stopped --- [1][2][3][4][5][6]
+                                   9            [1] --- pruning stopped --- [1][2][3][4][5][6][7][8][9][10][11][12][13][14][15][16][17][18][19][20][21]
+
+Enforced Hill-climbing failed !
+switching to Best-first Search now.
+
+
+advancing to goal distance:   61
+                              31
+                              29
+                              24

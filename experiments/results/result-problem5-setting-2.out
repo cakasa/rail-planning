@@ -1,0 +1,22 @@
+
+ff: parsing domain file
+domain 'TUSD' defined
+ ... done.
+ff: parsing problem file
+problem 'PROBLEM5' defined
+ ... done.
+
+
+
+ff: search configuration is best-first search with helpful actions pruning.
+Metric is plan length.
+NO COST MINIMIZATION. (and no cost-minimizing relaxed plans).
+
+advancing to goal distance:   23
+                              21
+                              14
+                              13
+                              11
+                               8
+                               7
+                               4

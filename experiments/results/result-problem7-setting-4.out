@@ -1,0 +1,62 @@
+
+ff: parsing domain file
+domain 'TUSD' defined
+ ... done.
+ff: parsing problem file
+problem 'PROBLEM7' defined
+ ... done.
+
+
+warning: numeric precondition. turning cost-minimizing relaxed plans OFF.
+
+ff: search configuration is A*epsilon with weight 5.
+Metric is ((1.00*[RF7](COST)) - () + 0.00)
+COST MINIMIZATION DONE (WITHOUT cost-minimizing relaxed plans).
+
+Advancing to goal distance:   54
+                              29
+                              24
+                              18
+                              17
+                              13
+                              11
+                               9
+                               6
+                               5
+                               4
+                               2
+                               1
+                               0
+
+ff: found legal plan as follows
+step    0: MOVE-ON-ARRIVAL TRAIN3 V1 T7
+        1: MOVE-ON-ARRIVAL TRAIN5 V1 T1
+        2: MOVE-ON-ARRIVAL TRAIN7 V1 T4
+        3: MOVE TRAIN3 T7 T8 TRACK3
+        4: MOVE-ON-ARRIVAL TRAIN4 V1 T7
+        5: MOVE TRAIN5 T1 T2 TRACK1
+        6: MOVE-BETWEEN-TRACKS TRAIN4 T7 T1 TRACK3 TRACK1
+        7: MOVE-ON-ARRIVAL TRAIN1 V1 T7
+        8: MOVE-TO-DEPARTURE TRAIN7 T4 V1
+        9: MOVE-TO-DEPARTURE TRAIN4 T1 V1
+       10: MOVE-ON-ARRIVAL TRAIN2 V1 T4
+       11: MOVE-ON-ARRIVAL TRAIN6 V1 T1
+       12: MOVE-TO-DEPARTURE TRAIN2 T4 V1
+       13: MOVE-BETWEEN-TRACKS TRAIN1 T7 T4 TRACK3 TRACK2
+       14: MOVE-TO-DEPARTURE TRAIN6 T1 V1
+       15: MOVE TRAIN5 T2 T1 TRACK1
+       16: MOVE TRAIN3 T8 T7 TRACK3
+       17: MOVE-TO-DEPARTURE TRAIN5 T1 V1
+       18: MOVE-TO-DEPARTURE TRAIN3 T7 V1
+       19: MOVE-TO-DEPARTURE TRAIN1 T4 V1
+       20: REACH-GOAL
+plan cost: 8.000000
+
+time spent:    0.00 seconds instantiating 252 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 86 facts and 316 actions
+               0.00 seconds creating final representation with 87 relevant facts, 17 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               6.53 seconds searching, evaluating 44696 states, to a max depth of 0
+               6.53 seconds total time
+
