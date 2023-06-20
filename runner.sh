@@ -1,0 +1,1 @@
+echo ./script0.sh & echo ./script1.sh & echo ./script2.sh
