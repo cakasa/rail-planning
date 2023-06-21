@@ -1,0 +1,35 @@
+Straring problem7 with setting 0 at 2023-06-21 01:03:24.666
+
+ff: parsing domain file
+domain 'TUSD' defined
+ ... done.
+ff: parsing problem file
+problem 'PROBLEM7' defined
+ ... done.
+
+
+
+ff: search configuration is Enforced Hill-Climbing, if that fails then best-first search.
+Metric is plan length.
+NO COST MINIMIZATION (and no cost-minimizing relaxed plans).
+
+Cueing down from goal distance:   54 into depth [1]
+                                  29            [1]
+                                  24            [1]
+                                  19            [1][2]
+                                  18            [1][2][3][4]
+                                  17            [1][2]
+                                  13            [1][2]
+                                  11            [1][2]
+                                   9            [1] --- pruning stopped --- [1][2][3][4][5][6][7][8][9][10][11][12][13][14][15][16][17][18][19][20][21]
+
+Enforced Hill-climbing failed !
+switching to Best-first Search now.
+
+
+advancing to goal distance:   54
+                              29
+                              24
+                              19
+                              18-e Execution of problem7 with setting 0 stopped at 2023-06-21 01:33:24.679
+Total time elapsed = 00:30:00.013000000

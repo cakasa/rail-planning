@@ -1,0 +1,83 @@
+Straring problem7b with setting 5 at 2023-06-21 01:35:48.177
+
+ff: parsing domain file
+domain 'TUSD' defined
+ ... done.
+ff: parsing problem file
+problem 'PROBLEM7B' defined
+ ... done.
+
+
+warning: numeric precondition. turning cost-minimizing relaxed plans OFF.
+
+ff: search configuration is Enforced Hill-Climbing, then A*epsilon with weight 5.
+Metric is ((1.00*[RF7](COST)) - () + 0.00)
+COST MINIMIZATION DONE (WITHOUT cost-minimizing relaxed plans).
+
+Cueing down from goal distance:   26 into depth [1][2]
+                                  24            [1]
+                                  20            [1][2]
+                                  19            [1][2][3]
+                                  18            [1][2][3][4]
+                                  17            [1][2]
+                                  13            [1][2]
+                                  11            [1][2]
+                                   9            [1] --- pruning stopped --- [1][2][3][4][5][6][7][8][9][10][11][12][13][14][15][16][17][18][19][20][21]
+
+Enforced Hill-climbing not successful.
+Switching to A*epsilon now.
+
+Advancing to goal distance:   26
+                              24
+                              20
+                              18
+                              17
+                              13
+                              11
+                               9
+                               6
+                               4
+                               3
+                               2
+                               1
+                               0
+
+ff: found legal plan as follows
+step    0: MOVE-ON-ARRIVAL TRAIN1 V1 T7
+        1: MOVE-ON-ARRIVAL TRAIN5 V1 T4
+        2: MOVE-ON-ARRIVAL TRAIN7 V1 T1
+        3: MOVE TRAIN7 T1 T2 TRACK1
+        4: MOVE-BETWEEN-TRACKS TRAIN1 T7 T1 TRACK3 TRACK1
+        5: MOVE-BETWEEN-TRACKS TRAIN5 T4 T7 TRACK2 TRACK3
+        6: MOVE-BETWEEN-TRACKS TRAIN1 T1 T4 TRACK1 TRACK2
+        7: MOVE-ON-ARRIVAL TRAIN4 V1 T1
+        8: MOVE-BETWEEN-TRACKS TRAIN1 T4 T5 TRACK2 TRACK2
+        9: MOVE-ON-ARRIVAL TRAIN3 V1 T4
+       10: MOVE-BETWEEN-TRACKS TRAIN5 T7 T8 TRACK3 TRACK3
+       11: MOVE-BETWEEN-TRACKS TRAIN4 T1 T7 TRACK1 TRACK3
+       12: MOVE TRAIN7 T2 T1 TRACK1
+       13: MOVE-TO-DEPARTURE TRAIN7 T1 V1
+       14: MOVE-TO-DEPARTURE TRAIN4 T7 V1
+       15: MOVE-ON-ARRIVAL TRAIN2 V1 T1
+       16: MOVE-ON-ARRIVAL TRAIN6 V1 T7
+       17: MOVE-TO-DEPARTURE TRAIN2 T1 V1
+       18: MOVE-TO-DEPARTURE TRAIN6 T7 V1
+       19: MOVE TRAIN5 T8 T7 TRACK3
+       20: MOVE-BETWEEN-TRACKS TRAIN3 T4 T1 TRACK2 TRACK1
+       21: MOVE-TO-DEPARTURE TRAIN5 T7 V1
+       22: MOVE-TO-DEPARTURE TRAIN3 T1 V1
+       23: MOVE-BETWEEN-TRACKS TRAIN1 T5 T4 TRACK2 TRACK2
+       24: MOVE-TO-DEPARTURE TRAIN1 T4 V1
+       25: REACH-GOAL
+plan cost: 19.000000
+
+time spent:    0.00 seconds instantiating 252 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 86 facts and 316 actions
+               0.00 seconds creating final representation with 87 relevant facts, 17 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               2.60 seconds searching, evaluating 20370 states, to a max depth of 21
+               2.60 seconds total time
+
+-e Execution of problem7b with setting 5 stopped at 2023-06-21 01:35:50.792
+Total time elapsed = 00:00:02.615000000

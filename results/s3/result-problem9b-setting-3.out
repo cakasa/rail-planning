@@ -1,0 +1,26 @@
+Straring problem9b with setting 3 at 2023-06-20 23:05:14.906
+
+ff: parsing domain file
+domain 'TUSD' defined
+ ... done.
+ff: parsing problem file
+problem 'PROBLEM9B' defined
+ ... done.
+
+
+warning: numeric precondition. turning cost-minimizing relaxed plans OFF.
+
+ff: search configuration is weighted A* with weight 5.
+Metric is ((1.00*[RF9](COST)) - () + 0.00)
+COST MINIMIZATION DONE (WITHOUT cost-minimizing relaxed plans).
+
+advancing to goal distance:   61
+                              31
+                              30
+                              29
+                              26
+                              25
+                              23
+                              22
+                              21-e Execution of problem9b with setting 3 stopped at 2023-06-20 23:35:14.927
+Total time elapsed = 00:30:00.021000000

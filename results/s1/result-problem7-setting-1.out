@@ -1,0 +1,21 @@
+Straring problem7 with setting 1 at 2023-06-21 03:03:24.758
+
+ff: parsing domain file
+domain 'TUSD' defined
+ ... done.
+ff: parsing problem file
+problem 'PROBLEM7' defined
+ ... done.
+
+
+
+ff: search configuration is best-first search.
+Metric is plan length.
+NO COST MINIMIZATION (and no cost-minimizing relaxed plans).
+
+advancing to goal distance:   54
+                              29
+                              24
+                              19
+                              18-e Execution of problem7 with setting 1 stopped at 2023-06-21 03:33:24.773
+Total time elapsed = 00:30:00.015000000
