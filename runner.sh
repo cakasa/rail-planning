@@ -1,1 +1,1 @@
-./script0.sh & ./script1.sh & ./script2.sh
+./script3.sh & ./script4.sh & ./script2.sh
