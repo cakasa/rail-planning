@@ -73,7 +73,7 @@
 	(exists (?t - slt) (= (departed ?t) 13))
 	(exists (?t - slt) (= (departed ?t) 14))
 	(exists (?t - sng) (= (departed ?t) 6))
-	(exists (?t - sng) (= (departed ?t) 12))
+	(exists (?t - sng) (= (departed ?t) 11))
 	(exists (?t - virm) (= (departed ?t) 15))
 	(forall (?t - trainunit) (and (hasBeenParked ?t) (at ?t v1)))
 	(>= (timestep) 16)
