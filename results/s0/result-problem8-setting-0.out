@@ -1,4 +1,4 @@
-Straring problem8 with setting 0 at 2023-06-22 14:35:40.258
+Straring problem8 with setting 0 at 2023-06-22 15:56:31.311
 
 ff: parsing domain file
 domain 'TUSD' defined
@@ -28,4 +28,5 @@ switching to Best-first Search now.
 
 advancing to goal distance:   27
                               23
-                              22
+                              22-e Execution of problem8 with setting 0 stopped at 2023-06-22 16:26:31.328
+Total time elapsed = 00:30:00.017000000

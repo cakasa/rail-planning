@@ -1,4 +1,4 @@
-Straring problem8 with setting 3 at 2023-06-22 12:06:03.457
+Straring problem8 with setting 3 at 2023-06-22 15:26:21.923
 
 ff: parsing domain file
 domain 'TUSD' defined
@@ -26,6 +26,6 @@ advancing to goal distance:   27
                               13
                               11
                                9
-                               7
-                               6-e Execution of problem8 with setting 3 stopped at 2023-06-22 12:36:03.485
-Total time elapsed = 00:30:00.028000000
+                               8
+                               6-e Execution of problem8 with setting 3 stopped at 2023-06-22 15:56:21.949
+Total time elapsed = 00:30:00.026000000

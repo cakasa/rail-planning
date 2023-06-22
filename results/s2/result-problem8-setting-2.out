@@ -1,4 +1,4 @@
-Straring problem8 with setting 2 at 2023-06-22 13:06:03.499
+Straring problem8 with setting 2 at 2023-06-22 16:26:28.373
 
 ff: parsing domain file
 domain 'TUSD' defined
@@ -15,5 +15,5 @@ NO COST MINIMIZATION. (and no cost-minimizing relaxed plans).
 
 advancing to goal distance:   27
                               24
-                              23-e Execution of problem8 with setting 2 stopped at 2023-06-22 13:36:03.513
+                              23-e Execution of problem8 with setting 2 stopped at 2023-06-22 16:56:28.387
 Total time elapsed = 00:30:00.014000000
