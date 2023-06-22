@@ -1,0 +1,39 @@
+Straring problem8 with setting 5 at 2023-06-22 14:06:03.590
+
+ff: parsing domain file
+domain 'TUSD' defined
+ ... done.
+ff: parsing problem file
+problem 'PROBLEM8' defined
+ ... done.
+
+
+warning: numeric precondition. turning cost-minimizing relaxed plans OFF.
+
+ff: search configuration is Enforced Hill-Climbing, then A*epsilon with weight 5.
+Metric is ((1.00*[RF8](COST)) - () + 0.00)
+COST MINIMIZATION DONE (WITHOUT cost-minimizing relaxed plans).
+
+Cueing down from goal distance:   27 into depth [1][2][3]
+                                  23            [1][2]
+                                  20            [1][2]
+                                  19            [1][2][3][4][5][6]
+                                  15            [1][2]
+                                  13            [1][2]
+                                  11            [1][2]
+                                   9            [1] --- pruning stopped --- [1][2][3][4][5][6][7][8][9][10][11][12][13][14][15][16][17][18][19][20][21]
+
+Enforced Hill-climbing not successful.
+Switching to A*epsilon now.
+
+Advancing to goal distance:   27
+                              23
+                              22
+                              19
+                              15
+                              14
+                              13
+                              11
+                               9
+                               6-e Execution of problem8 with setting 5 stopped at 2023-06-22 14:35:28.086
+Total time elapsed = 00:29:24.496000000
