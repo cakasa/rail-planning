@@ -1,1 +1,1 @@
-  1, /home/simbachiu/rail-planning/domain1/4-action-costs/problem2.pddl, 128, 220, 13, 32, 2.461539, -11, 0.000000, 2.430278, 1, 1.000000, 0.000000, 5.165138, 9.880733, 220
+  1, /home/simbachiu/rail-planning/domain1/4-action-costs/problem2.pddl, 128, 268, 13, 37, 2.846154, -6, 0.054688, 1.062931, 1, 1.000000, 0.000000, 10.048508, 3.164179, 148
