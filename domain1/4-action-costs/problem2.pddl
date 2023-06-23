@@ -11,6 +11,7 @@
 )
 (:init
    (= (total-cost) 0)
+   (currtrain train1)
    (at train1 v1)
    (nextTo v1 v2)
    (nextTo v2 v1)
