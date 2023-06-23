@@ -13,18 +13,16 @@
     (entrance ?x - trackpart);track part x on arrival/departure path
     (at ?x - trainunit ?y - trackpart) ; trainunit x is on trackpart y
     (free ?x - trackpart)  ; there is not trainunit on trackpart x
-    (hasBeenParked ?x)
-    ; (parkedOn ?x - trainunit ?y - track) ;train unit x is currently parted on track y
+    (hasBeenParked ?x) ;the train unit has been inside the yard
 )
 (:functions
     (cost) ; keeps track of the operation cost of the plan
     (timestep) ; this keeps track of the global time (in timesteps)
     (arrive ?x - trainunit) ;this is the arrival time (a certain time step) of train unit x
     (departed ?x - trainunit) ; this is the time the train unit x actually departed
-    ; (length ?x - trainunit) ;this is the length of a train unit (in relative sense)
-    ; (capacity ?t - track) ;this is the capacity of a track, the combined lenght of the train units parked on this track cannot exceed the capacity of that track.
 )
 
+; move a train along a track
 (:action move
     :parameters (?train - trainunit ?from ?to - trackpart ?track - track)
     :precondition (and 
@@ -43,6 +41,7 @@
     )
 )
 
+; move a train between tracks
 (:action move-between-tracks
     :parameters (?train - trainunit ?from ?to - trackpart ?track1 ?track2 - track)
     :precondition (and 
@@ -62,7 +61,7 @@
 )
 
 
-; move a train to the path, once all trains have been parked
+; move a train to the path, once it have been parked
 (:action move-to-departure
     :parameters (?train - trainunit ?from ?to - trackpart)
     :precondition (and 
@@ -76,11 +75,10 @@
                     (free ?from)
                     (increase (departed ?train) (timestep))
                     (increase (timestep) 1)
-                    ; (increase (cost) 1)
                 )
 )
 
-; move a train from the arrival path into the shunting yard
+; move a train from the entrance into the shunting yard
 (:action move-on-arrival
     :parameters (?train - trainunit ?from ?to - trackpart)
     :precondition (and
@@ -96,8 +94,6 @@
                     (not (free ?to))
                     (hasBeenParked ?train)
                     (increase (timestep) 1)
-                    ; (increase (cost) 1)
                 )
 )
-
 )

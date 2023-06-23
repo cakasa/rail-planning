@@ -1,10 +1,10 @@
 mkdir results
 EXE=/data/Metric-FF-v2.1/ff
 
-for SETTING in 3 4 1 2
+for SETTING in 0 1 2 3 4 5
 do
     mkdir results/s$SETTING
-    for PROBLEM in problem8
+    for PROBLEM in problem3 problem5 problem7 problem8 problem9
     do
         THEN=$(date +"%Y-%m-%d %T.%N" | cut -b 1-23)
         echo "Straring $PROBLEM with setting $SETTING at $THEN" 
