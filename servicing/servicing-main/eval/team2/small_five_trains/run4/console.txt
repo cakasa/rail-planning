@@ -1,0 +1,409 @@
+INFO     Running translator.
+INFO     translator inputs: ['./../../../../servicing-simple.pddl', './../../../../small_five_trains.pddl']
+INFO     translator arguments: []
+Parsing...
+Parsing: [0.000s CPU, 0.002s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.003s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 44 rules.
+Computing model... [0.020s CPU, 0.012s wall-clock]
+442 relevant atoms
+718 auxiliary atoms
+1160 final queue length
+1599 total queue pushes
+Completing instantiation... [0.010s CPU, 0.010s wall-clock]
+Instantiating: [0.030s CPU, 0.028s wall-clock]
+Computing fact groups...
+Finding invariants...
+12 initial candidates
+Finding invariants: [0.000s CPU, 0.003s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.001s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+30 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.000s CPU, 0.006s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.001s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.001s wall-clock]
+Translating task: [0.020s CPU, 0.013s wall-clock]
+189 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+5 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.002s wall-clock]
+Translator variables: 35
+Translator derived variables: 3
+Translator facts: 135
+Translator goal facts: 7
+Translator mutex groups: 20
+Translator total mutex groups size: 165
+Translator operators: 189
+Translator axioms: 3
+Translator task size: 1862
+Translator peak memory: 26056 KB
+Writing output... [0.000s CPU, 0.003s wall-clock]
+Done! [0.050s CPU, 0.058s wall-clock]
+INFO     Running preprocessor.
+INFO     preprocessor input: output.sas
+INFO     preprocessor arguments: ['--h2-time-limit', '30']
+Building causal graph...
+The causal graph is not acyclic.
+35 variables of 35 necessary
+15 of 20 mutex groups necessary.
+189 of 189 operators necessary.
+3 of 3 axiom rules necessary.
+Disabling h2 analysis because it does not currently support axioms
+Building domain transition graphs...
+solveable in poly time 0
+Building successor generator...
+Preprocessor variables: 35
+Preprocessor facts: 135
+Preprocessor derived variables: 3
+Preprocessor operators: 189
+Preprocessor mutex groups: 15
+Preprocessor task size: 1787
+Writing output...
+done
+INFO     Running search.
+INFO     search input: output
+INFO     search executable: /planner/src/search/downward-release
+INFO     search portfolio: /planner/src/driver/portfolios/seq_sat_ds.py
+No timeout has been set for the portfolio so we take the default of 1800s.
+External time limits: -1, -1
+Internal time limit: 1800
+External memory limits: -1, -1
+Internal memory limit: 8000000000
+remaining time at start: 1799.67
+remaining time: 1799.67
+config 0: relative time 100, remaining 1800
+g bound: infinity
+next plan number: 1
+args: ['/planner/src/search/downward-release', '--decoupling', 'fork(search_type=sat, pruning=cost_frontier(irrelevance=TRANSITIONS), max_leaf_size=1000000)', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=infinity)', '--internal-previous-portfolio-plans', '0', '--internal-plan-file', './re.out']
+timeout: 99.98 -> (100, 101)
+using frontier pruning method
+performing irrelevance analysis in leaf factors
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using fork factoring profile
+reading input... [t=0.01s]
+Simplifying transitions... done!
+done reading input! [t=0.02s]
+building causal graph...done! [t=0.02s]
+Heuristic does not support axioms!
+Terminating.
+Tried to use unsupported feature.
+Peak memory: 4800 KB
+returncode: 3
+
+remaining time: 1799.62
+config 1: relative time 1000, remaining 1700
+g bound: infinity
+next plan number: 1
+args: ['/planner/src/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=infinity, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '0', '--internal-plan-file', './re.out']
+timeout: 1058.60 -> (1059, 1060)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0s]
+Simplifying transitions... done!
+done reading input! [t=0s]
+building causal graph...done! [t=0.01s]
+Heuristic does not support axioms!
+Terminating.
+Tried to use unsupported feature.
+Peak memory: 4800 KB
+returncode: 3
+
+remaining time: 1799.61
+config 2: relative time 700, remaining 700
+g bound: infinity
+next plan number: 1
+args: ['/planner/src/search/downward-release', '--heuristic', 'hlm1,hff1=lm_ff_syn(lm_rhw(reasonable_orders=true,                           lm_cost_type=one,cost_type=one))', '--search', 'lazy_greedy([hff1,hlm1],preferred=[hff1,hlm1], cost_type=one, reopen_closed=false, bound=infinity)', '--internal-previous-portfolio-plans', '0', '--internal-plan-file', './re.out']
+timeout: 1799.61 -> (1800, 1801)
+reading input... [t=0s]
+Simplifying transitions... done!
+done reading input! [t=0.01s]
+building causal graph...done! [t=0.01s]
+Variables: 35
+Bytes per state: 8
+done! [t=0.01s]
+done initalizing global data [t=0.01s]
+Initializing Exploration...
+Generating landmarks using the RPG/SAS+ approach
+approx. reasonable orders
+approx. obedient reasonable orders
+Removed 0 reasonable or obedient reasonable orders
+Landmarks generation time: 0.00259539s
+Discovered 61 landmarks, of which 5 are disjunctive and 0 are conjunctive 
+347 edges
+Initializing LAMA-FF Synergy Object
+Initializing landmarks count heuristic...
+26 initial landmarks, 7 goal landmarks
+Conducting lazy best first search, (real) bound = 2147483647
+Switch from bucket-based to heap-based queue at key = 227, num_pushes = 144
+Best heuristic value: 32/26 [g=0, 1 evaluated, 0 expanded, t=0.01s, 5256 KB]
+Best heuristic value: 31/26 [g=1, 3 evaluated, 2 expanded, t=0.01s, 5256 KB]
+Best heuristic value: 30/25 [g=2, 7 evaluated, 6 expanded, t=0.01s, 5256 KB]
+Best heuristic value: 29/24 [g=3, 9 evaluated, 8 expanded, t=0.02s, 5256 KB]
+Best heuristic value: 28/24 [g=5, 12 evaluated, 11 expanded, t=0.02s, 5256 KB]
+Best heuristic value: 28/23 [g=6, 14 evaluated, 13 expanded, t=0.02s, 5256 KB]
+Best heuristic value: 27/23 [g=6, 15 evaluated, 14 expanded, t=0.02s, 5384 KB]
+Best heuristic value: 26/23 [g=7, 20 evaluated, 19 expanded, t=0.02s, 5384 KB]
+Best heuristic value: 24/23 [g=9, 26 evaluated, 25 expanded, t=0.02s, 5384 KB]
+Best heuristic value: 24/22 [g=10, 27 evaluated, 26 expanded, t=0.02s, 5384 KB]
+Best heuristic value: 23/22 [g=10, 29 evaluated, 28 expanded, t=0.02s, 5384 KB]
+Best heuristic value: 21/22 [g=11, 31 evaluated, 30 expanded, t=0.02s, 5384 KB]
+Best heuristic value: 20/22 [g=13, 40 evaluated, 39 expanded, t=0.02s, 5384 KB]
+Best heuristic value: 20/21 [g=14, 41 evaluated, 40 expanded, t=0.02s, 5384 KB]
+Completely explored state space -- no solution!
+Actual search time: 3.64s [t=3.65s]
+Initial state h value: 32/26.
+Expanded 42406 state(s).
+Reopened 0 state(s).
+Evaluated 63910 state(s).
+Evaluations: 127820
+Generated 302386 state(s).
+Dead ends: 21504 state(s).
+Number of registered states: 63910
+Search time: 3.64s
+Total time: 3.65s
+Search stopped without finding a solution.
+Peak memory: 19804 KB
+returncode: 5
+
+Abort portfolio and run final config.
+remaining time: 1795.95
+config 0: relative time 1, remaining 1
+g bound: infinity
+next plan number: 1
+args: ['/planner/src/search/downward-release', '--heuristic', 'hlm,hff=lm_ff_syn(lm_rhw(reasonable_orders=true,                         lm_cost_type=one,cost_type=one))', '--search', 'iterated([\n                     lazy_greedy([hff,hlm],preferred=[hff,hlm],\n                                 cost_type=one,reopen_closed=false),\n                     lazy_greedy([hff,hlm],preferred=[hff,hlm],\n                                 reopen_closed=false),\n                     lazy_wastar([hff,hlm],preferred=[hff,hlm],w=5),\n                     lazy_wastar([hff,hlm],preferred=[hff,hlm],w=3),\n                     lazy_wastar([hff,hlm],preferred=[hff,hlm],w=2),\n                     lazy_wastar([hff,hlm],preferred=[hff,hlm],w=1)\n                     ],repeat_last=true,continue_on_fail=true, bound=infinity)', '--internal-previous-portfolio-plans', '0', '--internal-plan-file', './re.out']
+timeout: 1795.95 -> (1796, 1797)
+reading input... [t=0s]
+Simplifying transitions... done!
+done reading input! [t=0.01s]
+building causal graph...done! [t=0.01s]
+Variables: 35
+Bytes per state: 8
+done! [t=0.01s]
+done initalizing global data [t=0.01s]
+Initializing Exploration...
+Generating landmarks using the RPG/SAS+ approach
+approx. reasonable orders
+approx. obedient reasonable orders
+Removed 0 reasonable or obedient reasonable orders
+Landmarks generation time: 0.00648101s
+Discovered 61 landmarks, of which 5 are disjunctive and 0 are conjunctive 
+347 edges
+Initializing LAMA-FF Synergy Object
+Initializing landmarks count heuristic...
+26 initial landmarks, 7 goal landmarks
+Starting search: lazy_greedy(list(hff, hlm), preferred = list(hff, hlm), cost_type = one, reopen_closed = false)
+Conducting lazy best first search, (real) bound = 2147483647
+Switch from bucket-based to heap-based queue at key = 227, num_pushes = 144
+Best heuristic value: 32/26 [g=0, 1 evaluated, 0 expanded, t=0.01s, 5344 KB]
+Best heuristic value: 31/26 [g=1, 3 evaluated, 2 expanded, t=0.02s, 5344 KB]
+Best heuristic value: 30/25 [g=2, 7 evaluated, 6 expanded, t=0.02s, 5344 KB]
+Best heuristic value: 29/24 [g=3, 9 evaluated, 8 expanded, t=0.02s, 5344 KB]
+Best heuristic value: 28/24 [g=5, 12 evaluated, 11 expanded, t=0.02s, 5344 KB]
+Best heuristic value: 28/23 [g=6, 14 evaluated, 13 expanded, t=0.02s, 5344 KB]
+Best heuristic value: 27/23 [g=6, 15 evaluated, 14 expanded, t=0.02s, 5344 KB]
+Best heuristic value: 26/23 [g=7, 20 evaluated, 19 expanded, t=0.02s, 5344 KB]
+Best heuristic value: 24/23 [g=9, 26 evaluated, 25 expanded, t=0.02s, 5344 KB]
+Best heuristic value: 24/22 [g=10, 27 evaluated, 26 expanded, t=0.02s, 5344 KB]
+Best heuristic value: 23/22 [g=10, 29 evaluated, 28 expanded, t=0.02s, 5344 KB]
+Best heuristic value: 21/22 [g=11, 31 evaluated, 30 expanded, t=0.02s, 5344 KB]
+Best heuristic value: 20/22 [g=13, 40 evaluated, 39 expanded, t=0.02s, 5344 KB]
+Best heuristic value: 20/21 [g=14, 41 evaluated, 40 expanded, t=0.02s, 5344 KB]
+Completely explored state space -- no solution!
+Actual search time: 4.22s [t=4.23s]
+Initial state h value: 32/26.
+Expanded 42406 state(s).
+Reopened 0 state(s).
+Evaluated 63910 state(s).
+Evaluations: 127820
+Generated 302386 state(s).
+Dead ends: 21504 state(s).
+Number of registered states: 63910
+No solution found - keep searching
+Starting search: lazy_greedy(list(hff, hlm), preferred = list(hff, hlm), reopen_closed = false)
+Conducting lazy best first search, (real) bound = 2147483647
+Best heuristic value: 32/26 [g=0, 1 evaluated, 0 expanded, t=4.23s, 21900 KB]
+Best heuristic value: 31/26 [g=1, 3 evaluated, 2 expanded, t=4.23s, 21900 KB]
+Best heuristic value: 30/25 [g=2, 7 evaluated, 6 expanded, t=4.23s, 21900 KB]
+Best heuristic value: 29/24 [g=3, 9 evaluated, 8 expanded, t=4.23s, 21900 KB]
+Best heuristic value: 28/24 [g=5, 12 evaluated, 11 expanded, t=4.23s, 21900 KB]
+Best heuristic value: 28/23 [g=6, 14 evaluated, 13 expanded, t=4.23s, 21900 KB]
+Best heuristic value: 27/23 [g=6, 15 evaluated, 14 expanded, t=4.23s, 21900 KB]
+Best heuristic value: 26/23 [g=7, 20 evaluated, 19 expanded, t=4.23s, 21900 KB]
+Best heuristic value: 24/23 [g=9, 26 evaluated, 25 expanded, t=4.23s, 21900 KB]
+Best heuristic value: 24/22 [g=10, 27 evaluated, 26 expanded, t=4.23s, 21900 KB]
+Best heuristic value: 23/22 [g=10, 29 evaluated, 28 expanded, t=4.23s, 21900 KB]
+Best heuristic value: 21/22 [g=11, 31 evaluated, 30 expanded, t=4.23s, 21900 KB]
+Best heuristic value: 20/22 [g=13, 40 evaluated, 39 expanded, t=4.23s, 21900 KB]
+Best heuristic value: 20/21 [g=14, 41 evaluated, 40 expanded, t=4.23s, 21900 KB]
+Completely explored state space -- no solution!
+Actual search time: 2.66s [t=6.89s]
+Initial state h value: 32/26.
+Expanded 42406 state(s).
+Reopened 0 state(s).
+Evaluated 63910 state(s).
+Evaluations: 127820
+Generated 302386 state(s).
+Dead ends: 21504 state(s).
+Number of registered states: 63910
+No solution found - keep searching
+Starting search: lazy_wastar(list(hff, hlm), preferred = list(hff, hlm), w = 5)
+Conducting lazy best first search, (real) bound = 2147483647
+Best heuristic value: 32/26 [g=0, 1 evaluated, 0 expanded, t=6.89s, 23912 KB]
+Best heuristic value: 31/26 [g=1, 3 evaluated, 2 expanded, t=6.89s, 23912 KB]
+Best heuristic value: 30/25 [g=2, 7 evaluated, 6 expanded, t=6.89s, 23912 KB]
+Best heuristic value: 29/24 [g=3, 9 evaluated, 8 expanded, t=6.89s, 23912 KB]
+Best heuristic value: 28/24 [g=5, 12 evaluated, 11 expanded, t=6.89s, 23912 KB]
+Best heuristic value: 28/23 [g=6, 14 evaluated, 13 expanded, t=6.89s, 23912 KB]
+Best heuristic value: 27/23 [g=6, 15 evaluated, 14 expanded, t=6.89s, 23912 KB]
+Best heuristic value: 26/23 [g=7, 20 evaluated, 19 expanded, t=6.89s, 23912 KB]
+Best heuristic value: 24/23 [g=9, 26 evaluated, 25 expanded, t=6.89s, 23912 KB]
+Best heuristic value: 24/22 [g=10, 27 evaluated, 26 expanded, t=6.89s, 23912 KB]
+Best heuristic value: 23/22 [g=10, 29 evaluated, 28 expanded, t=6.89s, 23912 KB]
+Best heuristic value: 21/22 [g=11, 31 evaluated, 30 expanded, t=6.89s, 23912 KB]
+Best heuristic value: 20/22 [g=13, 40 evaluated, 39 expanded, t=6.89s, 23912 KB]
+Best heuristic value: 20/21 [g=14, 41 evaluated, 40 expanded, t=6.89s, 23912 KB]
+Completely explored state space -- no solution!
+Actual search time: 3.05s [t=9.94s]
+Initial state h value: 32/26.
+Expanded 50510 state(s).
+Reopened 8104 state(s).
+Evaluated 72014 state(s).
+Evaluations: 144028
+Generated 357808 state(s).
+Dead ends: 21504 state(s).
+Number of registered states: 63910
+No solution found - keep searching
+Starting search: lazy_wastar(list(hff, hlm), preferred = list(hff, hlm), w = 3)
+Conducting lazy best first search, (real) bound = 2147483647
+Best heuristic value: 32/26 [g=0, 1 evaluated, 0 expanded, t=9.94s, 27480 KB]
+Best heuristic value: 31/26 [g=1, 3 evaluated, 2 expanded, t=9.94s, 27480 KB]
+Best heuristic value: 30/25 [g=2, 7 evaluated, 6 expanded, t=9.94s, 27480 KB]
+Best heuristic value: 29/24 [g=3, 9 evaluated, 8 expanded, t=9.94s, 27480 KB]
+Best heuristic value: 28/24 [g=5, 12 evaluated, 11 expanded, t=9.94s, 27480 KB]
+Best heuristic value: 28/23 [g=6, 14 evaluated, 13 expanded, t=9.95s, 27480 KB]
+Best heuristic value: 27/23 [g=6, 15 evaluated, 14 expanded, t=9.95s, 27480 KB]
+Best heuristic value: 26/23 [g=7, 20 evaluated, 19 expanded, t=9.95s, 27480 KB]
+Best heuristic value: 24/23 [g=9, 27 evaluated, 26 expanded, t=9.95s, 27480 KB]
+Best heuristic value: 24/22 [g=10, 28 evaluated, 27 expanded, t=9.95s, 27480 KB]
+Best heuristic value: 23/22 [g=10, 30 evaluated, 29 expanded, t=9.95s, 27480 KB]
+Best heuristic value: 21/22 [g=11, 31 evaluated, 30 expanded, t=9.95s, 27480 KB]
+Best heuristic value: 20/22 [g=13, 38 evaluated, 37 expanded, t=9.95s, 27480 KB]
+Best heuristic value: 20/21 [g=14, 40 evaluated, 39 expanded, t=9.95s, 27480 KB]
+Completely explored state space -- no solution!
+Actual search time: 2.88s [t=12.82s]
+Initial state h value: 32/26.
+Expanded 46619 state(s).
+Reopened 4213 state(s).
+Evaluated 68123 state(s).
+Evaluations: 136246
+Generated 331344 state(s).
+Dead ends: 21504 state(s).
+Number of registered states: 63910
+No solution found - keep searching
+Starting search: lazy_wastar(list(hff, hlm), preferred = list(hff, hlm), w = 2)
+Conducting lazy best first search, (real) bound = 2147483647
+Best heuristic value: 32/26 [g=0, 1 evaluated, 0 expanded, t=12.82s, 28876 KB]
+Best heuristic value: 31/26 [g=1, 3 evaluated, 2 expanded, t=12.82s, 28876 KB]
+Best heuristic value: 30/25 [g=2, 7 evaluated, 6 expanded, t=12.82s, 28876 KB]
+Best heuristic value: 29/24 [g=3, 9 evaluated, 8 expanded, t=12.82s, 28876 KB]
+Best heuristic value: 28/24 [g=5, 12 evaluated, 11 expanded, t=12.82s, 28876 KB]
+Best heuristic value: 28/23 [g=6, 14 evaluated, 13 expanded, t=12.82s, 28876 KB]
+Best heuristic value: 27/23 [g=6, 15 evaluated, 14 expanded, t=12.82s, 28876 KB]
+Best heuristic value: 26/23 [g=7, 20 evaluated, 19 expanded, t=12.82s, 28876 KB]
+Best heuristic value: 25/23 [g=8, 29 evaluated, 28 expanded, t=12.82s, 28876 KB]
+Best heuristic value: 23/23 [g=10, 34 evaluated, 33 expanded, t=12.82s, 28876 KB]
+Best heuristic value: 21/23 [g=11, 35 evaluated, 34 expanded, t=12.82s, 28876 KB]
+Best heuristic value: 21/22 [g=12, 38 evaluated, 37 expanded, t=12.82s, 28876 KB]
+Best heuristic value: 20/22 [g=13, 42 evaluated, 41 expanded, t=12.82s, 28876 KB]
+Best heuristic value: 20/21 [g=14, 43 evaluated, 42 expanded, t=12.82s, 28876 KB]
+Completely explored state space -- no solution!
+Actual search time: 2.76s [t=15.58s]
+Initial state h value: 32/26.
+Expanded 44271 state(s).
+Reopened 1865 state(s).
+Evaluated 65775 state(s).
+Evaluations: 131550
+Generated 315854 state(s).
+Dead ends: 21504 state(s).
+Number of registered states: 63910
+No solution found - keep searching
+Starting search: lazy_wastar(list(hff, hlm), preferred = list(hff, hlm), w = 1)
+Conducting lazy best first search, (real) bound = 2147483647
+Best heuristic value: 32/26 [g=0, 1 evaluated, 0 expanded, t=15.58s, 30480 KB]
+Best heuristic value: 31/26 [g=1, 3 evaluated, 2 expanded, t=15.58s, 30480 KB]
+Best heuristic value: 30/25 [g=2, 7 evaluated, 6 expanded, t=15.58s, 30480 KB]
+Best heuristic value: 29/24 [g=3, 9 evaluated, 8 expanded, t=15.58s, 30480 KB]
+Best heuristic value: 28/24 [g=5, 17 evaluated, 16 expanded, t=15.58s, 30480 KB]
+Best heuristic value: 28/23 [g=6, 29 evaluated, 28 expanded, t=15.58s, 30480 KB]
+Best heuristic value: 27/23 [g=6, 30 evaluated, 29 expanded, t=15.58s, 30480 KB]
+Best heuristic value: 26/23 [g=7, 45 evaluated, 44 expanded, t=15.58s, 30480 KB]
+Best heuristic value: 25/23 [g=8, 65 evaluated, 64 expanded, t=15.59s, 30480 KB]
+Best heuristic value: 24/23 [g=9, 84 evaluated, 83 expanded, t=15.59s, 30480 KB]
+Best heuristic value: 22/23 [g=10, 86 evaluated, 85 expanded, t=15.59s, 30480 KB]
+Best heuristic value: 21/23 [g=11, 88 evaluated, 87 expanded, t=15.59s, 30480 KB]
+Best heuristic value: 21/22 [g=12, 93 evaluated, 92 expanded, t=15.59s, 30480 KB]
+Best heuristic value: 21/21 [g=13, 110 evaluated, 109 expanded, t=15.59s, 30480 KB]
+Best heuristic value: 20/21 [g=14, 169 evaluated, 168 expanded, 2 reopened, t=15.59s, 30480 KB]
+Completely explored state space -- no solution!
+Actual search time: 2.73s [t=18.31s]
+Initial state h value: 32/26.
+Expanded 43675 state(s).
+Reopened 1269 state(s).
+Evaluated 65179 state(s).
+Evaluations: 130358
+Generated 312259 state(s).
+Dead ends: 21504 state(s).
+Number of registered states: 63910
+No solution found - keep searching
+Actual search time: 18.3s [t=18.31s]
+Cumulative statistics:
+Expanded 269887 state(s).
+Reopened 15451 state(s).
+Evaluated 398911 state(s).
+Evaluations: 797822
+Generated 1922037 state(s).
+Dead ends: 0 state(s).
+Search time: 18.3s
+Total time: 18.31s
+Search stopped without finding a solution.
+Peak memory: 31016 KB
+returncode: 5
+
+Exit codes: [3, 3, 5, 5]
+Error: Unexpected exit codes: [3]
+Command '['run-portfolio', '/planner/src/driver/portfolios/seq_sat_ds.py']' returned non-zero exit status 3
+
+real	0m22.638s
+user	0m22.218s
+sys	0m0.350s

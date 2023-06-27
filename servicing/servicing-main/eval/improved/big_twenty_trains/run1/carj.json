@@ -1,0 +1,413 @@
+{
+    "carj": [
+        {
+            "storeOverhead": 0.0198723953217268
+        }
+    ],
+    "incplan": {
+        "parameters": {
+            "allSolutions": 0,
+            "cleanLitearl": false,
+            "exhaustMakeSpan": 2,
+            "exponentialStepBasis": 0.0,
+            "exponentialStepOffset": 0.0,
+            "frozen": false,
+            "icaps2017": false,
+            "inputFile": "/tmp/1056985.output.cnf",
+            "intermediateSolveStep": false,
+            "learnMakeSpan": 2,
+            "linearStepSize": 1,
+            "loose": false,
+            "maxSizeLearnedClause": 2,
+            "nonIncrementalSolving": false,
+            "outputSolverLike": true,
+            "pathSearchPrefix": [],
+            "ratio": 0.5,
+            "reEncode": false,
+            "seed": -2,
+            "singleEnded": false,
+            "timeout": 2.0,
+            "transformLearned": false,
+            "unitInGoal2Assume": false,
+            "useAddLearned": false,
+            "usePDR": false
+        },
+        "result": {
+            "finalMakeSpan": 92,
+            "solves": [
+                {
+                    "makespan": 0,
+                    "time": 0.000223285998799838
+                },
+                {
+                    "makespan": 1,
+                    "time": 0.000209570993320085
+                },
+                {
+                    "makespan": 2,
+                    "time": 0.000279720989055932
+                },
+                {
+                    "makespan": 3,
+                    "time": 0.000352858012774959
+                },
+                {
+                    "makespan": 4,
+                    "time": 0.000438216986367479
+                },
+                {
+                    "makespan": 5,
+                    "time": 0.000551437027752399
+                },
+                {
+                    "makespan": 6,
+                    "time": 0.000553280988242477
+                },
+                {
+                    "makespan": 7,
+                    "time": 0.000656923977658153
+                },
+                {
+                    "makespan": 8,
+                    "time": 0.000684625003486872
+                },
+                {
+                    "makespan": 9,
+                    "time": 0.00089812302030623
+                },
+                {
+                    "makespan": 10,
+                    "time": 0.00118458701763302
+                },
+                {
+                    "makespan": 11,
+                    "time": 0.00118528795428574
+                },
+                {
+                    "makespan": 12,
+                    "time": 0.00130306696519256
+                },
+                {
+                    "makespan": 13,
+                    "time": 0.00138537096790969
+                },
+                {
+                    "makespan": 14,
+                    "time": 0.00148069800343364
+                },
+                {
+                    "makespan": 15,
+                    "time": 0.00132895598653704
+                },
+                {
+                    "makespan": 16,
+                    "time": 0.00159243703819811
+                },
+                {
+                    "makespan": 17,
+                    "time": 0.00178966496605426
+                },
+                {
+                    "makespan": 18,
+                    "time": 0.00196595303714275
+                },
+                {
+                    "makespan": 19,
+                    "time": 0.00180739699862897
+                },
+                {
+                    "makespan": 20,
+                    "time": 0.0023610380012542
+                },
+                {
+                    "makespan": 21,
+                    "time": 0.00225244602188468
+                },
+                {
+                    "makespan": 22,
+                    "time": 0.00215302989818156
+                },
+                {
+                    "makespan": 23,
+                    "time": 0.00240182504057884
+                },
+                {
+                    "makespan": 24,
+                    "time": 0.00253572408109903
+                },
+                {
+                    "makespan": 25,
+                    "time": 0.00261359009891748
+                },
+                {
+                    "makespan": 26,
+                    "time": 0.00275260792113841
+                },
+                {
+                    "makespan": 27,
+                    "time": 0.00286748190410435
+                },
+                {
+                    "makespan": 28,
+                    "time": 0.00291435909457505
+                },
+                {
+                    "makespan": 29,
+                    "time": 0.00298400991596282
+                },
+                {
+                    "makespan": 30,
+                    "time": 0.00297881010919809
+                },
+                {
+                    "makespan": 31,
+                    "time": 0.00303182797506452
+                },
+                {
+                    "makespan": 32,
+                    "time": 0.00300370599143207
+                },
+                {
+                    "makespan": 33,
+                    "time": 0.00296481302939355
+                },
+                {
+                    "makespan": 34,
+                    "time": 0.0030236120801419
+                },
+                {
+                    "makespan": 35,
+                    "time": 0.00300650205463171
+                },
+                {
+                    "makespan": 36,
+                    "time": 0.00309628900140524
+                },
+                {
+                    "makespan": 37,
+                    "time": 0.00310648791491985
+                },
+                {
+                    "makespan": 38,
+                    "time": 0.00304188695736229
+                },
+                {
+                    "makespan": 39,
+                    "time": 0.00316582806408405
+                },
+                {
+                    "makespan": 40,
+                    "time": 0.00318069499917328
+                },
+                {
+                    "makespan": 41,
+                    "time": 0.00313126388937235
+                },
+                {
+                    "makespan": 42,
+                    "time": 0.00523947179317474
+                },
+                {
+                    "makespan": 43,
+                    "time": 0.00547342607751489
+                },
+                {
+                    "makespan": 44,
+                    "time": 0.00502641312777996
+                },
+                {
+                    "makespan": 45,
+                    "time": 0.00549567816779017
+                },
+                {
+                    "makespan": 46,
+                    "time": 0.00602926220744848
+                },
+                {
+                    "makespan": 47,
+                    "time": 0.00567365018650889
+                },
+                {
+                    "makespan": 48,
+                    "time": 0.00645153922960162
+                },
+                {
+                    "makespan": 49,
+                    "time": 0.00577420787885785
+                },
+                {
+                    "makespan": 50,
+                    "time": 0.00584503915160894
+                },
+                {
+                    "makespan": 51,
+                    "time": 0.00596600491553545
+                },
+                {
+                    "makespan": 52,
+                    "time": 0.00610478315502405
+                },
+                {
+                    "makespan": 53,
+                    "time": 0.00613956805318594
+                },
+                {
+                    "makespan": 54,
+                    "time": 0.00627343682572246
+                },
+                {
+                    "makespan": 55,
+                    "time": 0.00646174792200327
+                },
+                {
+                    "makespan": 56,
+                    "time": 0.00648300815373659
+                },
+                {
+                    "makespan": 57,
+                    "time": 0.006654417142272
+                },
+                {
+                    "makespan": 58,
+                    "time": 0.00698394002392888
+                },
+                {
+                    "makespan": 59,
+                    "time": 0.0101226381957531
+                },
+                {
+                    "makespan": 60,
+                    "time": 0.00536289112642407
+                },
+                {
+                    "makespan": 61,
+                    "time": 0.00486367102712393
+                },
+                {
+                    "makespan": 62,
+                    "time": 0.00549677107483149
+                },
+                {
+                    "makespan": 63,
+                    "time": 0.00557436514645815
+                },
+                {
+                    "makespan": 64,
+                    "time": 0.00564882392063737
+                },
+                {
+                    "makespan": 65,
+                    "time": 0.00575013319030404
+                },
+                {
+                    "makespan": 66,
+                    "time": 0.0058694751933217
+                },
+                {
+                    "makespan": 67,
+                    "time": 0.0059207808226347
+                },
+                {
+                    "makespan": 68,
+                    "time": 0.00599711295217276
+                },
+                {
+                    "makespan": 69,
+                    "time": 0.0220125205814838
+                },
+                {
+                    "makespan": 70,
+                    "time": 0.00624541612342
+                },
+                {
+                    "makespan": 71,
+                    "time": 0.00622832309454679
+                },
+                {
+                    "makespan": 72,
+                    "time": 0.00656506977975368
+                },
+                {
+                    "makespan": 73,
+                    "time": 0.0063739949837327
+                },
+                {
+                    "makespan": 74,
+                    "time": 0.0068365060724318
+                },
+                {
+                    "makespan": 75,
+                    "time": 0.00656553078442812
+                },
+                {
+                    "makespan": 76,
+                    "time": 0.0069200019352138
+                },
+                {
+                    "makespan": 77,
+                    "time": 0.00675923284143209
+                },
+                {
+                    "makespan": 78,
+                    "time": 0.0071191219612956
+                },
+                {
+                    "makespan": 79,
+                    "time": 0.00692547298967838
+                },
+                {
+                    "makespan": 80,
+                    "time": 0.00718289101496339
+                },
+                {
+                    "makespan": 81,
+                    "time": 0.00712210917845368
+                },
+                {
+                    "makespan": 82,
+                    "time": 0.0079041151329875
+                },
+                {
+                    "makespan": 83,
+                    "time": 0.00732285296544433
+                },
+                {
+                    "makespan": 84,
+                    "time": 0.0075830458663404
+                },
+                {
+                    "makespan": 85,
+                    "time": 0.00751407910138369
+                },
+                {
+                    "makespan": 86,
+                    "time": 0.00777222914621234
+                },
+                {
+                    "makespan": 87,
+                    "time": 0.00770298112183809
+                },
+                {
+                    "makespan": 88,
+                    "time": 0.00785602629184723
+                },
+                {
+                    "makespan": 89,
+                    "time": 4.82178640365601
+                },
+                {
+                    "makespan": 90,
+                    "time": 0.00262362789362669
+                },
+                {
+                    "makespan": 91,
+                    "time": 0.00283047300763428
+                },
+                {
+                    "makespan": 92,
+                    "time": 0.996771216392517
+                }
+            ]
+        }
+    }
+}

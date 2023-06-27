@@ -1,0 +1,36 @@
+/planner/plan.sh: 1: /planner/plan.sh: !/bin/bash: not found
+Madagascar 0.99999 18/06/2023 14:35:35 amd64 1-core (no VSIDS)
+Options: file:./../../../../servicing-simple.pddl file:./../../../../big_twenty_trains.pddl -b /tmp/1057064.output
+Domain: servicing-simple
+Problem: big_twenty_trains
+Parser: 4620 ground actions and 1980 state variables
+Invariants: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39  7.62 secs
+Goal: conjunctive
+Simplified: 4392 ground actions and 1666 state variables
+Actions: STRIPS
+Plan type: E-step
+Separated DIMACS output
+Writing /tmp/1057064.output.cnf
+total time 8.15 preprocess 8.11 
+total size 125.000 MB
+max. learned clause length 0
+./../../../../servicing-simple.pddl ./../../../../big_twenty_trains.pddl /tmp/1057064 92 lol
+Madagascar 0.99999 18/06/2023 14:35:35 amd64 1-core (no VSIDS)
+Options: file:./../../../../servicing-simple.pddl file:./../../../../big_twenty_trains.pddl -s /tmp/1057064.solution.txt -T 92 -o ./re.out
+Domain: servicing-simple
+Problem: big_twenty_trains
+Parser: 4620 ground actions and 1980 state variables
+Invariants: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39  6.74 secs
+Goal: conjunctive
+Simplified: 4392 ground actions and 1666 state variables
+Actions: STRIPS
+Plan type: E-step
+1131 actions in the plan.
+Plan is VALID
+total time 7.32 preprocess 7.22 
+total size 235.000 MB
+max. learned clause length 0
+
+real	0m26.419s
+user	0m24.787s
+sys	0m1.491s
