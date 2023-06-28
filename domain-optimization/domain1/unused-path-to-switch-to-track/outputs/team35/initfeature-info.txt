@@ -1,0 +1,1 @@
+  1, /home/simbachiu/rail-planning/domain1/2-half-optimized/problem_ready.txt, 141, 196, 12, 18, 1.500000, -6, 0.007092, 1.151604, 1, 1.000000, 0.000000, 6.719388, 4.250000, 243

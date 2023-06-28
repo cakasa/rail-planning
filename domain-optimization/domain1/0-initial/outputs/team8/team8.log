@@ -1,0 +1,162 @@
+INFO     Running translator.
+INFO     translator input: ['../../domain1.pddl', '../../problem2.pddl']
+INFO     translator arguments: []
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     callstring: /usr/bin/python /planner/fast-downward-conjunctions/builds/release64clangpgonative/bin/translate/translate.py ../../domain1.pddl ../../problem2.pddl
+Parsing...
+Parsing: [0.010s CPU, 0.011s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Trivial rules: Converted to facts.
+Normalizing Datalog program: [0.010s CPU, 0.008s wall-clock]
+Preparing model... [0.010s CPU, 0.003s wall-clock]
+Generated 60 rules.
+Computing model... [0.020s CPU, 0.023s wall-clock]
+444 relevant atoms
+879 auxiliary atoms
+1323 final queue length
+1671 total queue pushes
+Completing instantiation... [0.020s CPU, 0.019s wall-clock]
+Instantiating: [0.060s CPU, 0.054s wall-clock]
+Computing fact groups...
+Finding invariants...
+10 initial candidates
+Finding invariants: [0.010s CPU, 0.009s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.001s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+37 uncovered facts
+Choosing groups: [0.000s CPU, 0.001s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.010s CPU, 0.014s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.010s CPU, 0.002s wall-clock]
+Translating task: [0.030s CPU, 0.022s wall-clock]
+216 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+6 propositions removed
+Detecting unreachable propositions: [0.010s CPU, 0.010s wall-clock]
+Translator variables: 43
+Translator derived variables: 6
+Translator facts: 152
+Translator goal facts: 5
+Translator mutex groups: 19
+Translator total mutex groups size: 169
+Translator operators: 204
+Translator axioms: 8
+Translator task size: 1791
+Translator peak memory: 44896 KB
+Writing output... [0.000s CPU, 0.005s wall-clock]
+Done! [0.120s CPU, 0.119s wall-clock]
+INFO     Running preprocessor (release64clangpgonative).
+INFO     preprocessor input: output.sas
+INFO     preprocessor arguments: []
+INFO     preprocessor time limit: None
+INFO     preprocessor memory limit: None
+INFO     callstring: /planner/fast-downward-conjunctions/builds/release64clangpgonative/bin/preprocess < output.sas
+Building causal graph...
+The causal graph is not acyclic.
+31 variables of 43 necessary
+13 of 19 mutex groups necessary.
+204 of 204 operators necessary.
+8 of 8 axiom rules necessary.
+Disabling h2 analysis because it does not currently support axioms
+Preprocessor variables: 31
+Preprocessor facts: 128
+Preprocessor derived variables: 6
+Preprocessor operators: 204
+Preprocessor mutex groups: 13
+Preprocessor task size: 1653
+Writing output...
+done
+INFO     Running search (release64clangpgonative).
+INFO     search input: output
+INFO     search arguments: ['--if-unit-cost', '--heuristic', 'hcff_normalcost=cff(seed=42, cache_estimates=false, cost_type=PLUSONE)', '--heuristic', 'hn_normalcost=novelty(cache_estimates=false)', '--heuristic', 'tmp_normalcost=novelty_linker(hcff_normalcost, [hn_normalcost])', '--heuristic', 'hlm_normalcost=lmcount(lm_rhw(reasonable_orders=true))', '--search', 'ipc18_iterated([ehc_cn(hcff_normalcost, preferred=hcff_normalcost, novelty=hn_normalcost, seed=42, max_growth=8, max_time=1200), lazy_iterated_weights_c([hcff_normalcost, hlm_normalcost], preferred=[hcff_normalcost], conjunctions_heuristic=hcff_normalcost, strategy=maintain_fixed_size_probabilistic(initial_removal_mode=UNTIL_BOUND, base_probability=0.02, target_growth_ratio=1.50))], delete_after_phase_heuristics=[hn_normalcost, tmp_normalcost], delete_after_phase_phases=[0, 0], continue_on_fail=true)', '--if-non-unit-cost', '--heuristic', 'hcff=cff(seed=42, cache_estimates=false, cost_type=ONE)', '--heuristic', 'hn=novelty(cache_estimates=false)', '--heuristic', 'tmp=novelty_linker(hcff, [hn])', '--heuristic', 'hcff_normalcost=cff(seed=42, cache_estimates=false, cost_type=PLUSONE)', '--heuristic', 'hn_normalcost=novelty(cache_estimates=false)', '--heuristic', 'tmp_normalcost=novelty_linker(hcff_normalcost, [hn_normalcost])', '--heuristic', 'hlm=lmcount(lm_rhw(reasonable_orders=true, lm_cost_type=ONE), cost_type=ONE)', '--heuristic', 'hlm_normalcost=lmcount(lm_rhw(reasonable_orders=true))', '--search', 'ipc18_iterated([ehc_cn(hcff, preferred=hcff, novelty=hn, seed=42, cost_type=ONE, max_growth=8, max_time=1200), lazy_greedy_c([hcff, hlm], preferred=[hcff], conjunctions_heuristic=hcff, strategy=maintain_fixed_size_probabilistic(initial_removal_mode=UNTIL_BOUND, base_probability=0.02, target_growth_ratio=1.50), cost_type=ONE), ehc_cn(hcff_normalcost, preferred=hcff_normalcost, novelty=hn_normalcost, seed=42, max_growth=8, max_time=1200), lazy_iterated_weights_c([hcff_normalcost, hlm_normalcost], preferred=[hcff_normalcost], conjunctions_heuristic=hcff_normalcost, strategy=maintain_fixed_size_probabilistic(generate_initially=true, initial_removal_mode=UNTIL_BOUND, base_probability=0.02, target_growth_ratio=1.50))], skip_if_solved=[1], skip_if_failed=[2], delete_after_phase_heuristics=[hn, tmp, hcff, hlm, hn_normalcost, tmp_normalcost], delete_after_phase_phases=[0, 0, 1, 1, 2, 2], continue_on_fail=true)']
+INFO     search time limit: None
+INFO     search memory limit: None
+INFO     search executable: /planner/fast-downward-conjunctions/builds/release64clangpgonative/bin/downward
+INFO     callstring: /planner/fast-downward-conjunctions/builds/release64clangpgonative/bin/downward --if-unit-cost --heuristic 'hcff_normalcost=cff(seed=42, cache_estimates=false, cost_type=PLUSONE)' --heuristic 'hn_normalcost=novelty(cache_estimates=false)' --heuristic 'tmp_normalcost=novelty_linker(hcff_normalcost, [hn_normalcost])' --heuristic 'hlm_normalcost=lmcount(lm_rhw(reasonable_orders=true))' --search 'ipc18_iterated([ehc_cn(hcff_normalcost, preferred=hcff_normalcost, novelty=hn_normalcost, seed=42, max_growth=8, max_time=1200), lazy_iterated_weights_c([hcff_normalcost, hlm_normalcost], preferred=[hcff_normalcost], conjunctions_heuristic=hcff_normalcost, strategy=maintain_fixed_size_probabilistic(initial_removal_mode=UNTIL_BOUND, base_probability=0.02, target_growth_ratio=1.50))], delete_after_phase_heuristics=[hn_normalcost, tmp_normalcost], delete_after_phase_phases=[0, 0], continue_on_fail=true)' --if-non-unit-cost --heuristic 'hcff=cff(seed=42, cache_estimates=false, cost_type=ONE)' --heuristic 'hn=novelty(cache_estimates=false)' --heuristic 'tmp=novelty_linker(hcff, [hn])' --heuristic 'hcff_normalcost=cff(seed=42, cache_estimates=false, cost_type=PLUSONE)' --heuristic 'hn_normalcost=novelty(cache_estimates=false)' --heuristic 'tmp_normalcost=novelty_linker(hcff_normalcost, [hn_normalcost])' --heuristic 'hlm=lmcount(lm_rhw(reasonable_orders=true, lm_cost_type=ONE), cost_type=ONE)' --heuristic 'hlm_normalcost=lmcount(lm_rhw(reasonable_orders=true))' --search 'ipc18_iterated([ehc_cn(hcff, preferred=hcff, novelty=hn, seed=42, cost_type=ONE, max_growth=8, max_time=1200), lazy_greedy_c([hcff, hlm], preferred=[hcff], conjunctions_heuristic=hcff, strategy=maintain_fixed_size_probabilistic(initial_removal_mode=UNTIL_BOUND, base_probability=0.02, target_growth_ratio=1.50), cost_type=ONE), ehc_cn(hcff_normalcost, preferred=hcff_normalcost, novelty=hn_normalcost, seed=42, max_growth=8, max_time=1200), lazy_iterated_weights_c([hcff_normalcost, hlm_normalcost], preferred=[hcff_normalcost], conjunctions_heuristic=hcff_normalcost, strategy=maintain_fixed_size_probabilistic(generate_initially=true, initial_removal_mode=UNTIL_BOUND, base_probability=0.02, target_growth_ratio=1.50))], skip_if_solved=[1], skip_if_failed=[2], delete_after_phase_heuristics=[hn, tmp, hcff, hlm, hn_normalcost, tmp_normalcost], delete_after_phase_phases=[0, 0, 1, 1, 2, 2], continue_on_fail=true)' --internal-plan-file re.out < output
+reading input... [t=0.00162538s]
+done reading input! [t=0.0051779s]
+packing state variables...done! [t=0.00519635s]
+Variables: 31
+FactPairs: 128
+Bytes per state: 8
+Building successor generator...done! [t=0.00537916s]
+done initalizing global data [t=0.00538434s]
+cross context: 1
+best supporter function: h^Cadd
+no relaxed plan extraction: 0
+tie breaking: RANDOM
+WARNING: task has axioms that are being ignored by the heuristic!
+Initializing CFF heuristic...
+The original task would have 624 counters.
+Finished hcff initialization, t = 0.000890661s
+Initializing novelty heuristic...
+Linking novelty heuristics to the conjunctions heuristic...
+Initializing Exploration...
+Initializing landmarks count heuristic...
+Generating landmarks using the RPG/SAS+ approach
+approx. reasonable orders
+approx. obedient reasonable orders
+Removed 0 reasonable or obedient reasonable orders
+Landmarks generation time: 0.00449872s
+Discovered 65 landmarks, of which 0 are disjunctive and 0 are conjunctive 
+442 edges
+Initialized conflict extraction with ranking sequence [PRIORITY, FEWEST_COUNTERS]
+Starting search: ehc_cn(hcff_normalcost, preferred = hcff_normalcost, novelty = hn_normalcost, seed = 42, max_growth = 8, max_time = 1200)
+Conducting enforced hill-climbing search with explicit conjunctions, (real) bound = 2147483646
+Using preferred operators for pruning
+Breadth first search depth bound: 2147483647
+Always reevaluate the local minimum neighborhood after adding a conjunction: 0
+Cache the heuristic results of known states: 1
+conjunctions per iteration: 1
+check relaxed plan: 1
+growth bound in the number of conjunctions (including singletons): 1
+growth bound in the number of counters: 1.79769e+308
+learning time bound: 60
+|C| = 128 (including 128 singletons)
+Total number of counters: 624
+Conjunction growth ratio: 1
+Counter growth ratio: 1
+Counter size growth ratio: 1
+Finished initialization, t = 5.5444e-05s
+Learning phases: 0
+Learning time: 7.51e-07s
+Max learning time: 7.51e-07s
+Counter growth: 1
+Counter size growth: 1
+Counter group growth: 1
+Counter group size growth: 1
+New conjunctions: 0
+Unregressable conjunctions: 18
+Unreachable conjunctions: 6
+Evaluations per second: 0
+EHC Phases: 0
+Average expansions per EHC phase: 0
+Dead ends during learning: 0
+Dead ends during learning or backjumping: 0
+No better state after learning: 0
+Max learning stagnation count: 0
+Average learning stagnation count: 0
+Evaluations saved by buffering: 0
+Exhausted search space: 0
+Average dead end backjump length: 0
+Total time spent on evaluating novelty: 0
+Initial heuristic value for cff(seed = 42, cache_estimates = false, cost_type = plusone): infinity
+Initial state is a dead end, no solution
+Task is provably unsolvable.
+Peak memory: 5568 KB
