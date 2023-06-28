@@ -1,0 +1,33 @@
+Domain: ../../domain1.pddl Problem: ../../problem2.pddl
+Parsing...
+Parsing: [0.010s CPU, 0.008s wall-clock]
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Trivial rules: Converted to facts.
+Normalizing Datalog program: [0.010s CPU, 0.009s wall-clock]
+Preparing model... [0.000s CPU, 0.003s wall-clock]
+Generated 82 rules.
+Computing model... [0.020s CPU, 0.020s wall-clock]
+498 relevant atoms
+895 auxiliary atoms
+1393 final queue length
+1808 total queue pushes
+Completing instantiation... [0.020s CPU, 0.018s wall-clock]
+goal relaxed reachable: True
+121 atoms
+Computing fact groups...
+Finding invariants...
+12 initial candidates
+Time limit reached, aborting invariant generation
+Finding invariants: [0.000s CPU, 0.001s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+121 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.000s CPU, 0.003s wall-clock]
+Axioms 18
+Deterministic 252 actions
+13 negated fluents created

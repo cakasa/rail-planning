@@ -1,0 +1,290 @@
+begin_groups
+44
+group
+7
+4 9 at 2 train1 t3 
+2 5 at 2 train2 t3 
+3 2 at 2 train3 t3 
+1 5 at 2 train4 t3 
+5 8 at 2 train5 t3 
+0 1 at 2 train6 t3 
+21 0 free 1 t3 
+group
+7
+4 4 at 2 train1 t1 
+2 1 at 2 train2 t1 
+3 9 at 2 train3 t1 
+1 9 at 2 train4 t1 
+5 1 at 2 train5 t1 
+0 11 at 2 train6 t1 
+33 0 free 1 t1 
+group
+13
+5 11 at 2 train5 v1 
+5 9 at 2 train5 v2 
+5 3 at 2 train5 v3 
+5 5 at 2 train5 v4 
+5 4 at 2 train5 v5 
+5 2 at 2 train5 v6 
+5 6 at 2 train5 t0 
+5 1 at 2 train5 t1 
+5 10 at 2 train5 t2 
+5 8 at 2 train5 t3 
+5 12 at 2 train5 t4 
+5 7 at 2 train5 t5 
+5 0 at 2 train5 t6 
+group
+13
+4 7 at 2 train1 v1 
+4 6 at 2 train1 v2 
+4 2 at 2 train1 v3 
+4 1 at 2 train1 v4 
+4 0 at 2 train1 v5 
+4 11 at 2 train1 v6 
+4 8 at 2 train1 t0 
+4 4 at 2 train1 t1 
+4 10 at 2 train1 t2 
+4 9 at 2 train1 t3 
+4 3 at 2 train1 t4 
+4 12 at 2 train1 t5 
+4 5 at 2 train1 t6 
+group
+6
+6 5 currtrain 1 train1 
+6 3 currtrain 1 train2 
+6 0 currtrain 1 train3 
+6 2 currtrain 1 train4 
+6 1 currtrain 1 train5 
+6 4 currtrain 1 train6 
+group
+13
+3 8 at 2 train3 v1 
+3 0 at 2 train3 v2 
+3 12 at 2 train3 v3 
+3 4 at 2 train3 v4 
+3 11 at 2 train3 v5 
+3 6 at 2 train3 v6 
+3 10 at 2 train3 t0 
+3 9 at 2 train3 t1 
+3 7 at 2 train3 t2 
+3 2 at 2 train3 t3 
+3 5 at 2 train3 t4 
+3 3 at 2 train3 t5 
+3 1 at 2 train3 t6 
+group
+7
+4 0 at 2 train1 v5 
+2 0 at 2 train2 v5 
+3 11 at 2 train3 v5 
+1 3 at 2 train4 v5 
+5 4 at 2 train5 v5 
+0 10 at 2 train6 v5 
+27 0 free 1 v5 
+group
+7
+4 10 at 2 train1 t2 
+2 3 at 2 train2 t2 
+3 7 at 2 train3 t2 
+1 2 at 2 train4 t2 
+5 10 at 2 train5 t2 
+0 0 at 2 train6 t2 
+41 0 free 1 t2 
+group
+7
+4 8 at 2 train1 t0 
+2 10 at 2 train2 t0 
+3 10 at 2 train3 t0 
+1 7 at 2 train4 t0 
+5 6 at 2 train5 t0 
+0 7 at 2 train6 t0 
+34 0 free 1 t0 
+group
+7
+4 7 at 2 train1 v1 
+2 6 at 2 train2 v1 
+3 8 at 2 train3 v1 
+1 8 at 2 train4 v1 
+5 11 at 2 train5 v1 
+0 5 at 2 train6 v1 
+20 0 free 1 v1 
+group
+7
+4 5 at 2 train1 t6 
+2 9 at 2 train2 t6 
+3 1 at 2 train3 t6 
+1 6 at 2 train4 t6 
+5 0 at 2 train5 t6 
+0 8 at 2 train6 t6 
+37 0 free 1 t6 
+group
+7
+4 2 at 2 train1 v3 
+2 4 at 2 train2 v3 
+3 12 at 2 train3 v3 
+1 11 at 2 train4 v3 
+5 3 at 2 train5 v3 
+0 3 at 2 train6 v3 
+13 0 free 1 v3 
+group
+7
+4 3 at 2 train1 t4 
+2 2 at 2 train2 t4 
+3 5 at 2 train3 t4 
+1 0 at 2 train4 t4 
+5 12 at 2 train5 t4 
+0 2 at 2 train6 t4 
+11 0 free 1 t4 
+group
+7
+4 1 at 2 train1 v4 
+2 12 at 2 train2 v4 
+3 4 at 2 train3 v4 
+1 12 at 2 train4 v4 
+5 5 at 2 train5 v4 
+0 9 at 2 train6 v4 
+29 0 free 1 v4 
+group
+7
+4 11 at 2 train1 v6 
+2 8 at 2 train2 v6 
+3 6 at 2 train3 v6 
+1 4 at 2 train4 v6 
+5 2 at 2 train5 v6 
+0 4 at 2 train6 v6 
+42 0 free 1 v6 
+group
+7
+4 12 at 2 train1 t5 
+2 7 at 2 train2 t5 
+3 3 at 2 train3 t5 
+1 1 at 2 train4 t5 
+5 7 at 2 train5 t5 
+0 6 at 2 train6 t5 
+24 0 free 1 t5 
+group
+13
+2 6 at 2 train2 v1 
+2 11 at 2 train2 v2 
+2 4 at 2 train2 v3 
+2 12 at 2 train2 v4 
+2 0 at 2 train2 v5 
+2 8 at 2 train2 v6 
+2 10 at 2 train2 t0 
+2 1 at 2 train2 t1 
+2 3 at 2 train2 t2 
+2 5 at 2 train2 t3 
+2 2 at 2 train2 t4 
+2 7 at 2 train2 t5 
+2 9 at 2 train2 t6 
+group
+7
+4 6 at 2 train1 v2 
+2 11 at 2 train2 v2 
+3 0 at 2 train3 v2 
+1 10 at 2 train4 v2 
+5 9 at 2 train5 v2 
+0 12 at 2 train6 v2 
+43 0 free 1 v2 
+group
+13
+1 8 at 2 train4 v1 
+1 10 at 2 train4 v2 
+1 11 at 2 train4 v3 
+1 12 at 2 train4 v4 
+1 3 at 2 train4 v5 
+1 4 at 2 train4 v6 
+1 7 at 2 train4 t0 
+1 9 at 2 train4 t1 
+1 2 at 2 train4 t2 
+1 5 at 2 train4 t3 
+1 0 at 2 train4 t4 
+1 1 at 2 train4 t5 
+1 6 at 2 train4 t6 
+group
+13
+0 5 at 2 train6 v1 
+0 12 at 2 train6 v2 
+0 3 at 2 train6 v3 
+0 9 at 2 train6 v4 
+0 10 at 2 train6 v5 
+0 4 at 2 train6 v6 
+0 7 at 2 train6 t0 
+0 11 at 2 train6 t1 
+0 0 at 2 train6 t2 
+0 1 at 2 train6 t3 
+0 2 at 2 train6 t4 
+0 6 at 2 train6 t5 
+0 8 at 2 train6 t6 
+group
+1
+7 0 parkedon 2 train5 track1 
+group
+1
+8 0 hasbeenparked 1 train1 
+group
+1
+9 0 parkedon 2 train1 track1 
+group
+1
+10 0 hasbeenparked 1 train6 
+group
+1
+12 0 parkedon 2 train3 track2 
+group
+1
+14 0 new-axiom@0 0 
+group
+1
+15 0 parkedon 2 train2 track2 
+group
+1
+16 0 hasbeenparked 1 train2 
+group
+1
+17 0 new-axiom@2 0 
+group
+1
+18 0 parkedon 2 train6 track1 
+group
+1
+19 0 parkedon 2 train6 track2 
+group
+1
+22 0 hasbeenparked 1 train4 
+group
+1
+23 0 new-axiom@1 0 
+group
+1
+25 0 parkedon 2 train2 track1 
+group
+1
+26 0 parkedon 2 train4 track2 
+group
+1
+28 0 new-axiom@4 0 
+group
+1
+30 0 parkedon 2 train5 track2 
+group
+1
+31 0 new-axiom@3 0 
+group
+1
+32 0 hasbeenparked 1 train3 
+group
+1
+35 0 parkedon 2 train3 track1 
+group
+1
+36 0 parkedon 2 train4 track1 
+group
+1
+38 0 new-axiom@5 0 
+group
+1
+39 0 parkedon 2 train1 track2 
+group
+1
+40 0 hasbeenparked 1 train5 
+end_groups

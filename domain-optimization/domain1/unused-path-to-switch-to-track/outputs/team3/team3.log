@@ -1,0 +1,92 @@
+../../domain1.pddl ../../problem2.pddl re.out
+4
+/planner/src
+1. Running translator
+Second argument is a file name: use two translator arguments.
+Parsing...
+Parsing: [0.000s CPU, 0.003s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Trivial rules: Converted to facts.
+Normalizing Datalog program: [0.010s CPU, 0.009s wall-clock]
+Preparing model... [0.000s CPU, 0.002s wall-clock]
+Generated 64 rules.
+Computing model... [0.020s CPU, 0.016s wall-clock]
+387 relevant atoms
+640 auxiliary atoms
+1027 final queue length
+1399 total queue pushes
+Completing instantiation... [0.010s CPU, 0.014s wall-clock]
+Instantiating: [0.040s CPU, 0.042s wall-clock]
+Computing fact groups...
+Finding invariants...
+15 initial candidates
+Finding invariants: [0.010s CPU, 0.009s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.001s wall-clock]
+Collecting mutex groups... [0.010s CPU, 0.000s wall-clock]
+Choosing groups...
+32 uncovered facts
+Choosing groups: [0.000s CPU, 0.001s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.020s CPU, 0.013s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.001s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.002s wall-clock]
+Translating task: [0.010s CPU, 0.016s wall-clock]
+0 implied effects removed
+144 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+18 propositions removed
+Detecting unreachable propositions: [0.010s CPU, 0.003s wall-clock]
+Translator variables: 44
+Translator derived variables: 6
+Translator facts: 158
+Translator mutex groups: 20
+Translator total mutex groups size: 176
+Translator operators: 144
+Translator task size: 1703
+Translator peak memory: 27172 KB
+Writing output... [0.000s CPU, 0.004s wall-clock]
+Done! [0.080s CPU, 0.083s wall-clock]
+
+2. Running preprocessor
+Building causal graph...
+The causal graph is not acyclic.
+44 variables of 44 necessary
+6 of 20 mutex groups necessary.
+144 of 144 operators necessary.
+8 of 8 axiom rules necessary.
+Axioms: h2 not used.
+Ordering: 44
+previous variable order: var26 - var33 - var35 - var37 - var39 - var41 - var43 - var5 - var6 - var24 - var13 - var14 - var15 - var16 - var17 - var18 - var7 - var8 - var9 - var10 - var11 - var12 - var32 - var34 - var36 - var38 - var1 - var40 - var42 - var2 - var3 - var4 - var22 - var23 - var21 - var20 - var19 - var25 - var0 - var31 - var29 - var27 - var28 - var30 - : 72563
+New value: 26805
+New value: 26793
+new variable order: var28 - var31 - var42 - var32 - var36 - var34 - var40 - var4 - var22 - var3 - var21 - var20 - var2 - var1 - var19 - var38 - var18 - var13 - var15 - var14 - var17 - var0 - var26 - var16 - var12 - var11 - var10 - var9 - var8 - var7 - var23 - var24 - var5 - var6 - var25 - var43 - var33 - var37 - var35 - var41 - var39 - var27 - var29 - var30 - : 26793
+Building domain transition graphs...
+solveable in poly time 0
+Building successor generator...
+Preprocessor facts: 158
+Preprocessor derived variables: 6
+Preprocessor task size: 1605
+Writing output...
+Number of vars: 44
+weighted 44
+done
+
+
+3. Running search
+/planner/src/search/downward ipc-18 symple100000SAT --plan-file re.out
+Dispatcher selected state size 1.
+This is a unit task.
+Simplifying transitions... done!
+Peak memory: 6192 KB

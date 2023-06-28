@@ -1,0 +1,33 @@
+Madagascar 0.99999 06/03/2023 11:56:29 amd64 1-core (no VSIDS)
+Options: file:../../domain1.pddl file:../../problem2.pddl -b /tmp/256216.output
+Domain: domain1
+Problem: problem2
+Parser: 540 ground actions and 167 state variables
+Invariants: 0 1 2 3 4 5 6 7 8  0.09 secs
+Goal: disjunctive
+Simplified: 350 ground actions and 127 state variables
+Actions: general
+Disabling graph %: 10 20 30 40 50 60 70 80 90 100 0.00 secs (max SCC size 1)
+Plan type: E-step
+Separated DIMACS output
+Writing /tmp/256216.output.cnf
+total time 0.11 preprocess 0.10 
+total size 60.000 MB
+max. learned clause length 0
+Madagascar 0.99999 06/03/2023 11:56:29 amd64 1-core (no VSIDS)
+Options: file:../../domain1.pddl file:../../problem2.pddl -s /tmp/256216.solution.txt -T 14 -o re.out
+Domain: domain1
+Problem: problem2
+Parser: 540 ground actions and 167 state variables
+Invariants: 0 1 2 3 4 5 6 7 8  0.09 secs
+Goal: disjunctive
+Simplified: 350 ground actions and 127 state variables
+Actions: general
+Disabling graph %: 10 20 30 40 50 60 70 80 90 100 0.00 secs (max SCC size 1)
+Plan type: E-step
+27 actions in the plan.
+Plan is VALID
+Cost of the plan is 27.
+total time 0.11 preprocess 0.10 
+total size 137.000 MB
+max. learned clause length 0

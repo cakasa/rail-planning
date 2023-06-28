@@ -1,0 +1,1 @@
+  1, /home/simbachiu/rail-planning/domain1/3-PT-MSR/problem_ready.txt, 152, 556, 8, 27, 3.375000, -5, 0.026316, 1.658104, 1, 1.000000, 0.000000, 20.848921, 14.690647, 409

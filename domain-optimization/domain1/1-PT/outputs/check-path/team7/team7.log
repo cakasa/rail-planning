@@ -1,0 +1,3212 @@
+INFO     Running translator.
+INFO     translator inputs: ['../../domain1.pddl', '../../problem2.pddl']
+INFO     translator arguments: []
+Parsing...
+Parsing: [0.010s CPU, 0.010s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Trivial rules: Converted to facts.
+Normalizing Datalog program: [0.010s CPU, 0.009s wall-clock]
+Preparing model... [0.000s CPU, 0.002s wall-clock]
+Generated 59 rules.
+Computing model... [0.050s CPU, 0.047s wall-clock]
+809 relevant atoms
+1530 auxiliary atoms
+2339 final queue length
+4408 total queue pushes
+Completing instantiation... [0.080s CPU, 0.080s wall-clock]
+Instantiating: [0.140s CPU, 0.141s wall-clock]
+Computing fact groups...
+Finding invariants...
+18 initial candidates
+Finding invariants: [0.010s CPU, 0.015s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.010s CPU, 0.001s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+122 uncovered facts
+Choosing groups: [0.000s CPU, 0.001s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.020s CPU, 0.022s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.001s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.010s CPU, 0.006s wall-clock]
+Translating task: [0.100s CPU, 0.095s wall-clock]
+1512 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+14 propositions removed
+Detecting unreachable propositions: [0.040s CPU, 0.043s wall-clock]
+Translator variables: 124
+Translator derived variables: 6
+Translator facts: 308
+Translator goal facts: 5
+Translator mutex groups: 18
+Translator total mutex groups size: 156
+Translator operators: 502
+Translator axioms: 8
+Translator task size: 7409
+Translator peak memory: 50172 KB
+Writing output... [0.020s CPU, 0.018s wall-clock]
+Done! [0.330s CPU, 0.335s wall-clock]
+INFO     Running preprocessor.
+INFO     preprocessor input: output.sas
+INFO     preprocessor arguments: ['--h2_time_limit', '30']
+Building causal graph...
+The causal graph is not acyclic.
+103 variables of 124 necessary
+12 of 18 mutex groups necessary.
+481 of 502 operators necessary.
+8 of 8 axiom rules necessary.
+Disabling h2 analysis because it does not currently support axioms
+Preprocessor variables: 103
+Preprocessor facts: 266
+Preprocessor derived variables: 6
+Preprocessor operators: 481
+Preprocessor mutex groups: 12
+Preprocessor task size: 7217
+Writing output...
+done
+INFO     Running search.
+INFO     search input: output
+INFO     search portfolio: /planner/driver/portfolios/seq_sat_saarplan.py
+External time limits: -1, -1
+Internal time limit: 1800
+External memory limits: -1, -1
+Internal memory limit: 8000000000
+remaining time at start: 1799.37
+remaining time: 1799.37
+config 0: relative time 100, remaining 1800
+g bound: infinity
+next plan number: 1
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'fork(search_type=sat, pruning=cost_frontier(irrelevance=TRANSITIONS), max_leaf_size=1000000)', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=infinity)', '--internal-previous-portfolio-plans', '0', '--internal-plan-file', 're.out']
+timeout: 99.97 -> (100, 101)
+using frontier pruning method
+performing irrelevance analysis in leaf factors
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using fork factoring profile
+reading input... [t=0.00319845s]
+done reading input! [t=0.0104749s]
+Peak memory: 3896 KB
+returncode: 3
+
+remaining time: 1799.32
+config 1: relative time 600, remaining 1700
+g bound: infinity
+next plan number: 1
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=infinity, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '0', '--internal-plan-file', 're.out']
+timeout: 635.05 -> (636, 637)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0.00123791s]
+done reading input! [t=0.00523931s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00523931s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0s
+done! [t=0.00523931s]
+done initalizing global data [t=0.00523931s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 2147483647
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.0092401s, 5540 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.0092401s, 5540 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.013239s, 5540 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.013239s, 5540 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.013239s, 5540 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.013239s, 5540 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.013239s, 5540 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.013239s, 5540 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.013239s, 5540 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.013239s, 5540 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0611764s, 5540 KB]
+Best heuristic value: 6 [g=91, 3449 evaluated, 3448 expanded, t=0.55308s, 7972 KB]
+Best heuristic value: 5 [g=91, 3452 evaluated, 3451 expanded, t=0.55308s, 7972 KB]
+Best heuristic value: 3 [g=92, 3453 evaluated, 3452 expanded, t=0.55308s, 7972 KB]
+Best heuristic value: 1 [g=93, 3454 evaluated, 3453 expanded, t=0.557081s, 7972 KB]
+Solution found!
+Actual search time: 0.551842s [t=0.557081s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+check-path v5 t4 (1)
+check-path v6 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+check-path v5 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+check-path v6 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train2 v5 v4 t0 t1 track1 (1)
+check-path v6 t5 (1)
+move-from-track-to-departure train1 t6 t5 v4 v5 track2 (1)
+move-from-track-to-departure train2 t1 t0 v3 v4 track1 (1)
+move-from-arrival-to-track train2 v4 v3 t5 t6 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train4 v3 v2 t0 t5 track2 (1)
+move-from-track-to-departure train3 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train4 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train4 v2 v1 t3 t4 track1 (1)
+move-from-arrival-to-track train3 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-track-to-departure train3 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train5 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train5 v3 v2 t0 t5 track2 (1)
+move-from-track-to-departure train4 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train5 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train5 v2 v1 t3 t4 track1 (1)
+move-from-track-to-departure train2 t6 t5 v1 v2 track2 (1)
+check-path v6 t6 (1)
+move-from-arrival-to-track train2 v2 v1 t2 t3 track1 (1)
+move-from-arrival-to-track train4 v3 v2 t1 t2 track1 (1)
+move-from-arrival-to-track train3 v4 v3 t0 t1 track1 (1)
+move-from-arrival-to-track train1 v5 v4 t5 t6 track2 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train3 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train4 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train6 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train2 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train2 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train6 v4 v3 t2 t3 track1 (1)
+move-from-track-to-departure train2 t5 t0 v3 v4 track2 (1)
+move-from-arrival-to-track train2 v4 v3 t1 t2 track1 (1)
+move-from-arrival-to-track train4 v5 v4 t0 t5 track2 (1)
+move-from-track-to-departure train2 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train6 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train4 t5 t0 v2 v3 track2 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train5 t4 t3 t0 v1 track1 (1)
+Plan length: 94 step(s).
+Plan cost: 94
+Initial state h value: 19.
+Expanded 3454 state(s).
+Reopened 0 state(s).
+Evaluated 3455 state(s).
+Evaluations: 3455
+Generated 171645 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 3455
+Search time: 0.551842s
+Total time: 0.557081s
+Solution found.
+Peak memory: 7972 KB
+returncode: 0
+
+plan manager: found new plan with cost 94
+remaining time: 1798.76
+config 2: relative time 1100, remaining 1100
+g bound: 93
+next plan number: 2
+args: ['/planner/driver/../fast-downward-conjunctions/builds/release64clangpgonative/bin/downward', '--if-unit-cost', '--heuristic', 'hcff_normalcost=cff(seed=42, cache_estimates=false, cost_type=PLUSONE)', '--heuristic', 'hn_normalcost=novelty(cache_estimates=false)', '--heuristic', 'tmp_normalcost=novelty_linker(hcff_normalcost, [hn_normalcost])', '--heuristic', 'hlm_normalcost=lmcount(lm_rhw(reasonable_orders=true))', '--search', 'ipc18_iterated([grey_initial_state_search(grey_painting=all_prefer_inv, cost_type=PLUSONE),                            ehc_cn(hcff_normalcost, preferred=hcff_normalcost, novelty=hn_normalcost, seed=42, max_growth=8, max_time=500),                            lazy_iterated_weights_c([hcff_normalcost, hlm_normalcost], preferred=[hcff_normalcost], conjunctions_heuristic=hcff_normalcost,                                                    strategy=maintain_fixed_size_probabilistic(initial_removal_mode=UNTIL_BOUND, base_probability=0.02, target_growth_ratio=1.50))                           ], delete_after_phase_heuristics=[hn_normalcost, tmp_normalcost], delete_after_phase_phases=[1, 1], continue_on_fail=true, bound=93)', '--if-non-unit-cost', '--heuristic', 'hcff=cff(seed=42, cache_estimates=false, cost_type=ONE)', '--heuristic', 'hn=novelty(cache_estimates=false)', '--heuristic', 'tmp=novelty_linker(hcff, [hn])', '--heuristic', 'hcff_normalcost=cff(seed=42, cache_estimates=false, cost_type=PLUSONE)', '--heuristic', 'hn_normalcost=novelty(cache_estimates=false)', '--heuristic', 'tmp_normalcost=novelty_linker(hcff_normalcost, [hn_normalcost])', '--heuristic', 'hlm=lmcount(lm_rhw(reasonable_orders=true, lm_cost_type=ONE), cost_type=ONE)', '--heuristic', 'hlm_normalcost=lmcount(lm_rhw(reasonable_orders=true))', '--search', 'ipc18_iterated([grey_initial_state_search(grey_painting=all_prefer_inv, cost_type=ONE),                            ehc_cn(hcff, preferred=hcff, novelty=hn, seed=42, cost_type=ONE, max_growth=8, max_time=500),                            lazy_greedy_c([hcff, hlm], preferred=[hcff], conjunctions_heuristic=hcff,                                          strategy=maintain_fixed_size_probabilistic(initial_removal_mode=UNTIL_BOUND, base_probability=0.02, target_growth_ratio=1.50), cost_type=ONE),                            ehc_cn(hcff_normalcost, preferred=hcff_normalcost, novelty=hn_normalcost, seed=42, max_growth=8, max_time=100),                            lazy_iterated_weights_c([hcff_normalcost, hlm_normalcost], preferred=[hcff_normalcost], conjunctions_heuristic=hcff_normalcost,                                                    strategy=maintain_fixed_size_probabilistic(generate_initially=true, initial_removal_mode=UNTIL_BOUND, base_probability=0.02, target_growth_ratio=1.50))                           ], decision_point=1, skip_if_solved=[2], skip_if_failed=[3],                           delete_after_phase_heuristics=[hn, tmp, hcff, hlm, hn_normalcost, tmp_normalcost],                           delete_after_phase_phases=[1, 1, 2, 2, 3, 3], continue_on_fail=true, bound=93)', '--always', '--internal-previous-portfolio-plans', '1', '--internal-plan-file', 're.out']
+timeout: 1798.76 -> (1799, 1800)
+reading input... [t=0.00157371s]
+done reading input! [t=0.00755994s]
+packing state variables...done! [t=0.00755994s]
+Variables: 103
+FactPairs: 266
+Bytes per state: 16
+Building successor generator...done! [t=0.011562s]
+done initalizing global data [t=0.011562s]
+cross context: 1
+best supporter function: h^Cadd
+no relaxed plan extraction: 0
+tie breaking: RANDOM
+WARNING: task has axioms that are being ignored by the heuristic!
+Initializing CFF heuristic...
+The original task would have 3505 counters.
+Finished hcff initialization, t = 0.00400169s
+Initializing novelty heuristic...
+Linking novelty heuristics to the conjunctions heuristic...
+Initializing Exploration...
+Initializing landmarks count heuristic...
+Generating landmarks using the RPG/SAS+ approach
+approx. reasonable orders
+approx. obedient reasonable orders
+Removed 0 reasonable or obedient reasonable orders
+Landmarks generation time: 0.0258833s
+Discovered 55 landmarks, of which 6 are disjunctive and 0 are conjunctive 
+277 edges
+Starting search: grey_initial_state_search(grey_painting = all_prefer_inv, cost_type = plusone)
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Initializing additive heuristic...
+Initializing Red-Black Relaxation heuristic...
+Peak memory: 8552 KB
+returncode: 3
+
+remaining time: 1798.67
+config 0: relative time 600, remaining 600
+g bound: 94
+next plan number: 2
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=94, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '1', '--internal-plan-file', 're.out']
+timeout: 1798.67 -> (1799, 1800)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0s]
+done reading input! [t=0.00551618s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00551618s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0s
+done! [t=0.00551618s]
+done initalizing global data [t=0.00551618s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 94
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.00951749s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.00951749s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.00951749s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.0135174s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.0135174s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.0135174s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.0135174s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.0135174s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.0135174s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0135174s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0615153s, 5536 KB]
+Best heuristic value: 6 [g=91, 2297 evaluated, 2296 expanded, t=0.369461s, 6764 KB]
+Best heuristic value: 5 [g=91, 2300 evaluated, 2299 expanded, t=0.369461s, 6764 KB]
+Best heuristic value: 3 [g=92, 2301 evaluated, 2300 expanded, t=0.369461s, 6764 KB]
+Best heuristic value: 1 [g=93, 2302 evaluated, 2301 expanded, t=0.369461s, 6764 KB]
+Solution found!
+Actual search time: 0.379947s [t=0.385463s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+check-path v5 t4 (1)
+check-path v6 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+check-path v5 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+check-path v6 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train2 v5 v4 t0 t1 track1 (1)
+check-path v6 t5 (1)
+move-from-track-to-departure train1 t6 t5 v4 v5 track2 (1)
+move-from-track-to-departure train2 t1 t0 v3 v4 track1 (1)
+move-from-arrival-to-track train2 v4 v3 t5 t6 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train4 v3 v2 t0 t5 track2 (1)
+move-from-track-to-departure train3 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train4 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train4 v2 v1 t3 t4 track1 (1)
+move-from-arrival-to-track train3 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-track-to-departure train3 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train5 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train5 v3 v2 t0 t5 track2 (1)
+move-from-track-to-departure train4 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train5 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train5 v2 v1 t3 t4 track1 (1)
+move-from-track-to-departure train2 t6 t5 v1 v2 track2 (1)
+move-from-arrival-to-track train2 v2 v1 t2 t3 track1 (1)
+move-from-arrival-to-track train4 v3 v2 t1 t2 track1 (1)
+move-from-arrival-to-track train3 v4 v3 t0 t1 track1 (1)
+move-from-arrival-to-track train1 v5 v4 t5 t6 track2 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train3 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train4 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train6 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train2 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train2 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train6 v4 v3 t2 t3 track1 (1)
+move-from-track-to-departure train2 t5 t0 v3 v4 track2 (1)
+move-from-arrival-to-track train2 v4 v3 t1 t2 track1 (1)
+move-from-arrival-to-track train4 v5 v4 t0 t5 track2 (1)
+move-from-track-to-departure train2 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train6 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train4 t5 t0 v2 v3 track2 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train5 t4 t3 t0 v1 track1 (1)
+Plan length: 93 step(s).
+Plan cost: 93
+Initial state h value: 19.
+Expanded 2399 state(s).
+Reopened 0 state(s).
+Evaluated 2400 state(s).
+Evaluations: 2400
+Generated 116708 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 2400
+Search time: 0.379947s
+Total time: 0.385463s
+Solution found.
+Peak memory: 6896 KB
+returncode: 0
+
+plan manager: found new plan with cost 93
+remaining time: 1798.28
+config 0: relative time 600, remaining 600
+g bound: 93
+next plan number: 3
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=93, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '2', '--internal-plan-file', 're.out']
+timeout: 1798.28 -> (1799, 1800)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0s]
+done reading input! [t=0.0034684s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00746631s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0.00399791s
+done! [t=0.00746631s]
+done initalizing global data [t=0.00746631s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 93
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.0114694s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.0114694s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.0114694s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.0114694s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.0114694s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.0114694s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.0114694s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.0114694s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.0114694s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0154692s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0594672s, 5536 KB]
+Best heuristic value: 6 [g=91, 2296 evaluated, 2295 expanded, t=0.367187s, 6760 KB]
+Best heuristic value: 5 [g=91, 2299 evaluated, 2298 expanded, t=0.367187s, 6760 KB]
+Best heuristic value: 3 [g=92, 2300 evaluated, 2299 expanded, t=0.367187s, 6760 KB]
+Best heuristic value: 1 [g=92, 2380 evaluated, 2379 expanded, t=0.379189s, 6892 KB]
+Solution found!
+Actual search time: 0.555644s [t=0.563111s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+check-path v5 t4 (1)
+check-path v6 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+check-path v5 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+check-path v6 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+check-path v6 t3 (1)
+move-from-arrival-to-track train4 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-track-to-departure train4 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train5 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train5 v3 v2 t0 t5 track2 (1)
+move-from-track-to-departure train3 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train5 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train5 v2 v1 t3 t4 track1 (1)
+move-from-arrival-to-track train3 v3 v2 t0 t5 track2 (1)
+check-path v6 t5 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+move-from-track-to-departure train3 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-arrival-to-track train1 v2 v1 t2 t3 track1 (1)
+move-from-arrival-to-track train4 v3 v2 t1 t2 track1 (1)
+move-from-arrival-to-track train3 v4 v3 t0 t1 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t5 t6 track2 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train3 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train4 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train6 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train1 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train1 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train6 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train4 v5 v4 t1 t2 track1 (1)
+move-from-track-to-departure train1 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train4 t2 t1 v3 v4 track1 (1)
+move-from-arrival-to-track train4 v4 v3 t0 t5 track2 (1)
+move-from-track-to-departure train6 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train4 t5 t0 v2 v3 track2 (1)
+move-from-track-to-departure train2 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train5 t4 t3 t0 v1 track1 (1)
+Plan length: 90 step(s).
+Plan cost: 90
+Initial state h value: 19.
+Expanded 3549 state(s).
+Reopened 0 state(s).
+Evaluated 3550 state(s).
+Evaluations: 3550
+Generated 176654 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 3550
+Search time: 0.555644s
+Total time: 0.563111s
+Solution found.
+Peak memory: 7816 KB
+returncode: 0
+
+plan manager: found new plan with cost 90
+remaining time: 1797.71
+config 0: relative time 600, remaining 600
+g bound: 90
+next plan number: 4
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=90, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '3', '--internal-plan-file', 're.out']
+timeout: 1797.71 -> (1798, 1799)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0s]
+done reading input! [t=0.00574767s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00574767s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0s
+done! [t=0.00574767s]
+done initalizing global data [t=0.00574767s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 90
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.0097496s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.0097496s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.0097496s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.0097496s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.0137485s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.0137485s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.0137485s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.0137485s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.0137485s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0137485s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.061749s, 5536 KB]
+Best heuristic value: 6 [g=89, 2144 evaluated, 2143 expanded, t=0.341653s, 6628 KB]
+Best heuristic value: 3 [g=88, 2194 evaluated, 2193 expanded, t=0.349655s, 6628 KB]
+Best heuristic value: 1 [g=89, 3106 evaluated, 3105 expanded, t=0.493626s, 7420 KB]
+Solution found!
+Actual search time: 1.03976s [t=1.04551s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+check-path v5 t4 (1)
+check-path v6 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+check-path v5 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+check-path v6 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+check-path v6 t3 (1)
+move-from-arrival-to-track train4 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-track-to-departure train4 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train5 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train5 v3 v2 t0 t5 track2 (1)
+move-from-track-to-departure train3 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train5 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train5 v2 v1 t3 t4 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-arrival-to-track train1 v2 v1 t2 t3 track1 (1)
+move-from-arrival-to-track train3 v3 v2 t1 t2 track1 (1)
+move-from-arrival-to-track train4 v4 v3 t0 t1 track1 (1)
+check-path v6 t6 (1)
+move-from-arrival-to-track train2 v5 v4 t5 t6 track2 (1)
+check-path v6 t5 (1)
+move-from-track-to-departure train4 t1 t0 v4 v5 track1 (1)
+move-from-arrival-to-track train4 v5 v4 t0 t5 track2 (1)
+move-from-track-to-departure train3 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train4 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train1 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train1 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+move-from-track-to-departure train1 t5 t0 v3 v4 track2 (1)
+move-from-arrival-to-track train1 v4 v3 t1 t2 track1 (1)
+move-from-arrival-to-track train3 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train3 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train1 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train6 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train2 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train5 t4 t3 t0 v1 track1 (1)
+Plan length: 89 step(s).
+Plan cost: 89
+Initial state h value: 19.
+Expanded 6624 state(s).
+Reopened 0 state(s).
+Evaluated 6625 state(s).
+Evaluations: 6625
+Generated 336991 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 6625
+Search time: 1.03976s
+Total time: 1.04551s
+Solution found.
+Peak memory: 10340 KB
+returncode: 0
+
+plan manager: found new plan with cost 89
+remaining time: 1796.67
+config 0: relative time 600, remaining 600
+g bound: 89
+next plan number: 5
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=89, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '4', '--internal-plan-file', 're.out']
+timeout: 1796.67 -> (1797, 1798)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0s]
+done reading input! [t=0.0071306s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.0071306s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0s
+done! [t=0.0071306s]
+done initalizing global data [t=0.0071306s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 89
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.011283s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.011283s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.011283s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.011283s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.011283s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.011283s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.011283s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.011283s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.011283s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0150972s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0630954s, 5536 KB]
+Best heuristic value: 3 [g=88, 2100 evaluated, 2099 expanded, t=0.3389s, 6636 KB]
+Best heuristic value: 2 [g=88, 5784 evaluated, 5783 expanded, t=0.922595s, 9716 KB]
+Best heuristic value: 1 [g=85, 5826 evaluated, 5825 expanded, t=0.930596s, 9716 KB]
+Solution found!
+Actual search time: 0.923465s [t=0.930596s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+check-path v5 t4 (1)
+check-path v6 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+check-path v5 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+check-path v6 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+check-path v6 t3 (1)
+move-from-arrival-to-track train4 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-track-to-departure train4 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train5 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train5 v3 v2 t0 t5 track2 (1)
+move-from-track-to-departure train3 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train5 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train5 v2 v1 t3 t4 track1 (1)
+move-from-arrival-to-track train3 v3 v2 t0 t5 track2 (1)
+check-path v6 t5 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t1 t2 track1 (1)
+move-from-track-to-departure train3 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train3 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train3 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train4 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train5 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train6 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train6 v2 v1 t3 t4 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-arrival-to-track train1 v2 v1 t2 t3 track1 (1)
+move-from-arrival-to-track train5 v3 v2 t1 t2 track1 (1)
+move-from-arrival-to-track train4 v4 v3 t5 t6 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t6 t5 v2 v3 track2 (1)
+move-from-track-to-departure train1 t3 t2 v1 v2 track1 (1)
+move-from-track-to-departure train6 t4 t3 t0 v1 track1 (1)
+Plan length: 86 step(s).
+Plan cost: 86
+Initial state h value: 19.
+Expanded 5826 state(s).
+Reopened 0 state(s).
+Evaluated 5827 state(s).
+Evaluations: 5827
+Generated 295417 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 5827
+Search time: 0.923465s
+Total time: 0.930596s
+Solution found.
+Peak memory: 9716 KB
+returncode: 0
+
+plan manager: found new plan with cost 86
+remaining time: 1795.73
+config 0: relative time 600, remaining 600
+g bound: 86
+next plan number: 6
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=86, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '5', '--internal-plan-file', 're.out']
+timeout: 1795.73 -> (1796, 1797)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0s]
+done reading input! [t=0.0061035s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00823891s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0.00213542s
+done! [t=0.00823891s]
+done initalizing global data [t=0.00823891s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 86
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.0100396s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.0100396s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.0100396s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.0100396s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.0100396s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.0140415s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.0140415s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.0140415s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.0140415s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0140415s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0620205s, 5536 KB]
+Best heuristic value: 4 [g=85, 2541 evaluated, 2540 expanded, t=0.414025s, 6896 KB]
+Best heuristic value: 3 [g=83, 3837 evaluated, 3836 expanded, t=0.618028s, 7960 KB]
+Best heuristic value: 1 [g=85, 3839 evaluated, 3838 expanded, t=0.618028s, 7960 KB]
+Solution found!
+Actual search time: 0.765789s [t=0.774028s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+check-path v5 t4 (1)
+check-path v6 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+check-path v5 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+check-path v6 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+check-path v6 t3 (1)
+move-from-arrival-to-track train4 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-track-to-departure train4 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train5 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train5 v3 v2 t0 t5 track2 (1)
+move-from-track-to-departure train3 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train5 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train5 v2 v1 t3 t4 track1 (1)
+move-from-arrival-to-track train3 v3 v2 t0 t5 track2 (1)
+check-path v6 t5 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t1 t2 track1 (1)
+move-from-track-to-departure train3 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train3 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train3 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train4 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train6 t5 t0 v2 v3 track2 (1)
+move-from-track-to-departure train5 t4 t3 v1 v2 track1 (1)
+move-from-arrival-to-track train5 v2 v1 t0 t5 track2 (1)
+move-from-arrival-to-track train6 v3 v2 t3 t4 track1 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+move-from-track-to-departure train5 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train6 t4 t3 t0 v1 track1 (1)
+Plan length: 84 step(s).
+Plan cost: 84
+Initial state h value: 19.
+Expanded 4817 state(s).
+Reopened 0 state(s).
+Evaluated 4818 state(s).
+Evaluations: 4818
+Generated 242817 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 4818
+Search time: 0.765789s
+Total time: 0.774028s
+Solution found.
+Peak memory: 8752 KB
+returncode: 0
+
+plan manager: found new plan with cost 84
+remaining time: 1794.95
+config 0: relative time 600, remaining 600
+g bound: 84
+next plan number: 7
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=84, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '6', '--internal-plan-file', 're.out']
+timeout: 1794.95 -> (1795, 1796)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0s]
+done reading input! [t=0.00397967s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00797864s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0.00399897s
+done! [t=0.00797864s]
+done initalizing global data [t=0.00797864s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 84
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.0119789s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.0119789s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.0119789s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.0119789s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.0119789s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.0119789s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.0119789s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.0119789s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.0119789s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0159788s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0599689s, 5536 KB]
+Best heuristic value: 6 [g=83, 2747 evaluated, 2746 expanded, t=0.435672s, 7032 KB]
+Best heuristic value: 3 [g=83, 3459 evaluated, 3458 expanded, t=0.547653s, 7692 KB]
+Best heuristic value: 1 [g=83, 4305 evaluated, 4304 expanded, t=0.679464s, 8360 KB]
+Solution found!
+Actual search time: 1.42714s [t=1.43512s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+check-path v5 t4 (1)
+check-path v6 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+check-path v5 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+check-path v6 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train2 v5 v4 t0 t1 track1 (1)
+check-path v6 t5 (1)
+move-from-track-to-departure train2 t1 t0 v4 v5 track1 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train4 v3 v2 t0 t5 track2 (1)
+move-from-track-to-departure train3 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train4 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train4 v2 v1 t3 t4 track1 (1)
+move-from-arrival-to-track train3 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t1 t2 track1 (1)
+move-from-track-to-departure train3 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train3 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train3 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train6 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train5 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train5 v3 v2 t0 t5 track2 (1)
+move-from-track-to-departure train4 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train5 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train5 v2 v1 t3 t4 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train5 t4 t3 t0 v1 track1 (1)
+Plan length: 79 step(s).
+Plan cost: 79
+Initial state h value: 19.
+Expanded 9271 state(s).
+Reopened 0 state(s).
+Evaluated 9272 state(s).
+Evaluations: 9272
+Generated 474954 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 9272
+Search time: 1.42714s
+Total time: 1.43512s
+Solution found.
+Peak memory: 12296 KB
+returncode: 0
+
+plan manager: found new plan with cost 79
+remaining time: 1793.5
+config 0: relative time 600, remaining 600
+g bound: 79
+next plan number: 8
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=79, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '7', '--internal-plan-file', 're.out']
+timeout: 1793.50 -> (1794, 1795)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0.00128474s]
+done reading input! [t=0.00528423s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00528423s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0s
+done! [t=0.00528423s]
+done initalizing global data [t=0.00528423s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 79
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.0132844s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.0132844s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.0132844s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.0132844s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.0132844s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.0132844s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.0132844s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.0132844s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.0132844s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0172849s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0692833s, 5536 KB]
+Best heuristic value: 3 [g=75, 2846 evaluated, 2845 expanded, t=0.465272s, 7028 KB]
+Best heuristic value: 1 [g=77, 2848 evaluated, 2847 expanded, t=0.465272s, 7028 KB]
+Solution found!
+Actual search time: 0.459988s [t=0.469272s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+check-path v5 t4 (1)
+check-path v6 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+check-path v5 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+check-path v6 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+check-path v6 t3 (1)
+move-from-arrival-to-track train4 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-track-to-departure train4 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train5 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train5 v3 v2 t0 t5 track2 (1)
+move-from-track-to-departure train3 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train5 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train5 v2 v1 t3 t4 track1 (1)
+move-from-arrival-to-track train3 v3 v2 t0 t5 track2 (1)
+check-path v6 t5 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t1 t2 track1 (1)
+move-from-track-to-departure train3 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train3 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train3 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train6 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train5 t4 t3 t0 v1 track1 (1)
+Plan length: 78 step(s).
+Plan cost: 78
+Initial state h value: 19.
+Expanded 2848 state(s).
+Reopened 0 state(s).
+Evaluated 2849 state(s).
+Evaluations: 2849
+Generated 140180 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 2849
+Search time: 0.459988s
+Total time: 0.469272s
+Solution found.
+Peak memory: 7028 KB
+returncode: 0
+
+plan manager: found new plan with cost 78
+remaining time: 1793.03
+config 0: relative time 600, remaining 600
+g bound: 78
+next plan number: 9
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=78, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '8', '--internal-plan-file', 're.out']
+timeout: 1793.03 -> (1794, 1795)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0.0011438s]
+done reading input! [t=0.00514318s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00514318s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0s
+done! [t=0.00514318s]
+done initalizing global data [t=0.00514318s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 78
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.00914521s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.0131432s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.0131432s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.0131432s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.0131432s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.0131432s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.0131432s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.0131432s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.0131432s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0131432s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0611174s, 5536 KB]
+Best heuristic value: 3 [g=75, 2549 evaluated, 2548 expanded, t=0.41688s, 6784 KB]
+Best heuristic value: 1 [g=77, 2551 evaluated, 2550 expanded, t=0.41688s, 6784 KB]
+Solution found!
+Actual search time: 0.843483s [t=0.848626s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+check-path v5 t4 (1)
+check-path v6 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+check-path v5 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+check-path v6 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train2 v5 v4 t0 t1 track1 (1)
+check-path v6 t5 (1)
+move-from-track-to-departure train2 t1 t0 v4 v5 track1 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train4 v3 v2 t0 t5 track2 (1)
+move-from-track-to-departure train3 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train4 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train4 v2 v1 t3 t4 track1 (1)
+move-from-arrival-to-track train3 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t1 t2 track1 (1)
+move-from-track-to-departure train3 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train3 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train3 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train5 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train4 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train6 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train6 v2 v1 t3 t4 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train6 t4 t3 t0 v1 track1 (1)
+Plan length: 77 step(s).
+Plan cost: 77
+Initial state h value: 19.
+Expanded 5243 state(s).
+Reopened 0 state(s).
+Evaluated 5244 state(s).
+Evaluations: 5244
+Generated 265044 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 5244
+Search time: 0.843483s
+Total time: 0.848626s
+Solution found.
+Peak memory: 8904 KB
+returncode: 0
+
+plan manager: found new plan with cost 77
+remaining time: 1792.18
+config 0: relative time 600, remaining 600
+g bound: 77
+next plan number: 10
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=77, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '9', '--internal-plan-file', 're.out']
+timeout: 1792.18 -> (1793, 1794)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0s]
+done reading input! [t=0.00397502s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00397502s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0s
+done! [t=0.00397502s]
+done initalizing global data [t=0.00397502s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 77
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.0119735s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.0119735s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.0119735s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.0119735s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.0119735s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.0119735s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.0119735s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.0119735s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.0119735s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0159738s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0599739s, 5536 KB]
+Best heuristic value: 5 [g=73, 2152 evaluated, 2151 expanded, t=0.339975s, 6508 KB]
+Best heuristic value: 3 [g=76, 2157 evaluated, 2156 expanded, t=0.339975s, 6508 KB]
+Best heuristic value: 1 [g=76, 4533 evaluated, 4532 expanded, t=0.703844s, 8356 KB]
+Solution found!
+Actual search time: 2.36765s [t=2.37563s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+check-path v5 t4 (1)
+check-path v6 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+check-path v5 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+check-path v6 t5 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+check-path v6 t6 (1)
+move-from-arrival-to-track train5 v4 v3 t0 t5 track2 (1)
+move-from-track-to-departure train4 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train3 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train5 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train5 v2 v1 t3 t4 track1 (1)
+move-from-arrival-to-track train3 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t1 t2 track1 (1)
+move-from-track-to-departure train3 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train3 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train3 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train6 t5 t0 v3 v4 track2 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train5 t4 t3 t0 v1 track1 (1)
+Plan length: 73 step(s).
+Plan cost: 73
+Initial state h value: 19.
+Expanded 18646 state(s).
+Reopened 0 state(s).
+Evaluated 18647 state(s).
+Evaluations: 18647
+Generated 963499 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 18647
+Search time: 2.36765s
+Total time: 2.37563s
+Solution found.
+Peak memory: 18344 KB
+returncode: 0
+
+plan manager: found new plan with cost 73
+remaining time: 1789.8
+config 0: relative time 600, remaining 600
+g bound: 73
+next plan number: 11
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=73, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '10', '--internal-plan-file', 're.out']
+timeout: 1789.80 -> (1790, 1791)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0.00134578s]
+done reading input! [t=0.00840132s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00840132s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0s
+done! [t=0.00840132s]
+done initalizing global data [t=0.00840132s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 73
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.013284s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.013284s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.013284s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.013284s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.013284s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.013284s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.013284s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.013284s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.013284s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0172814s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0652828s, 5536 KB]
+Best heuristic value: 6 [g=69, 1722 evaluated, 1721 expanded, t=0.293195s, 6104 KB]
+Best heuristic value: 5 [g=72, 2648 evaluated, 2647 expanded, t=0.445141s, 6764 KB]
+Best heuristic value: 4 [g=72, 3936 evaluated, 3935 expanded, t=0.657007s, 7688 KB]
+Best heuristic value: 3 [g=70, 3940 evaluated, 3939 expanded, t=0.657007s, 7688 KB]
+Best heuristic value: 1 [g=72, 3942 evaluated, 3941 expanded, t=0.657007s, 7688 KB]
+Solution found!
+Actual search time: 1.29147s [t=1.30075s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+check-path v5 t4 (1)
+check-path v6 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+check-path v5 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+check-path v6 t5 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train2 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train2 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train5 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train4 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train3 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train6 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train6 v2 v1 t3 t4 track1 (1)
+move-from-arrival-to-track train3 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+move-from-arrival-to-track train2 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train3 t5 t0 v5 v6 track2 (1)
+move-from-track-to-departure train2 t1 t0 v4 v5 track1 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train6 t4 t3 t0 v1 track1 (1)
+Plan length: 72 step(s).
+Plan cost: 72
+Initial state h value: 19.
+Expanded 7838 state(s).
+Reopened 0 state(s).
+Evaluated 7839 state(s).
+Evaluations: 7839
+Generated 400298 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 7839
+Search time: 1.29147s
+Total time: 1.30075s
+Solution found.
+Peak memory: 10652 KB
+returncode: 0
+
+plan manager: found new plan with cost 72
+remaining time: 1788.48
+config 0: relative time 600, remaining 600
+g bound: 72
+next plan number: 12
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=72, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '11', '--internal-plan-file', 're.out']
+timeout: 1788.48 -> (1789, 1790)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0s]
+done reading input! [t=0.00344389s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00344389s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0s
+done! [t=0.00344389s]
+done initalizing global data [t=0.00344389s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 72
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.00744296s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.00744296s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.00744296s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.00744296s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.00744296s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.00744296s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.00744296s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.00744296s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.0114415s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0114415s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0434418s, 5536 KB]
+Best heuristic value: 6 [g=69, 1541 evaluated, 1540 expanded, t=0.1834s, 5968 KB]
+Best heuristic value: 5 [g=69, 2295 evaluated, 2294 expanded, t=0.2714s, 6496 KB]
+Best heuristic value: 3 [g=70, 3298 evaluated, 3297 expanded, t=0.387401s, 7176 KB]
+Best heuristic value: 1 [g=71, 6708 evaluated, 6707 expanded, t=0.787177s, 9724 KB]
+Solution found!
+Actual search time: 2.85862s [t=2.86206s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+check-path v5 t4 (1)
+check-path v6 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+check-path v5 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+check-path v6 t5 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train2 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train2 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train5 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train4 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train3 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train6 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train6 v2 v1 t3 t4 track1 (1)
+move-from-arrival-to-track train3 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+move-from-arrival-to-track train2 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train3 t5 t0 v5 v6 track2 (1)
+move-from-track-to-departure train2 t1 t0 v4 v5 track1 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train6 t4 t3 t0 v1 track1 (1)
+Plan length: 71 step(s).
+Plan cost: 71
+Initial state h value: 19.
+Expanded 27449 state(s).
+Reopened 0 state(s).
+Evaluated 27450 state(s).
+Evaluations: 27450
+Generated 1408760 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 27450
+Search time: 2.85862s
+Total time: 2.86206s
+Solution found.
+Peak memory: 23752 KB
+returncode: 0
+
+plan manager: found new plan with cost 71
+remaining time: 1785.61
+config 0: relative time 600, remaining 600
+g bound: 71
+next plan number: 13
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=71, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '12', '--internal-plan-file', 're.out']
+timeout: 1785.61 -> (1786, 1787)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0s]
+done reading input! [t=0.00799916s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00799916s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0s
+done! [t=0.00799916s]
+done initalizing global data [t=0.00799916s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 71
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.0120016s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.0120016s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.0120016s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.0120016s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.0120016s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.0120016s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.0120016s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.0120016s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.0120016s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0160013s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0639996s, 5536 KB]
+Best heuristic value: 6 [g=69, 1369 evaluated, 1368 expanded, t=0.238139s, 5836 KB]
+Best heuristic value: 5 [g=69, 1976 evaluated, 1975 expanded, t=0.339919s, 6236 KB]
+Best heuristic value: 3 [g=70, 2738 evaluated, 2737 expanded, t=0.471787s, 6768 KB]
+Best heuristic value: 1 [g=70, 22678 evaluated, 22677 expanded, t=2.85885s, 20384 KB]
+Solution found!
+Actual search time: 4.28228s [t=4.29028s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+check-path v5 t4 (1)
+check-path v6 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train3 t4 t3 v1 v2 track1 (1)
+move-from-arrival-to-track train3 v2 v1 t0 t5 track2 (1)
+check-path v6 t5 (1)
+move-from-arrival-to-track train4 v3 v2 t3 t4 track1 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t1 t2 track1 (1)
+move-from-track-to-departure train3 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train3 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train3 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train5 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train4 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train6 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train6 v2 v1 t3 t4 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train6 t4 t3 t0 v1 track1 (1)
+Plan length: 70 step(s).
+Plan cost: 70
+Initial state h value: 19.
+Expanded 39549 state(s).
+Reopened 0 state(s).
+Evaluated 39550 state(s).
+Evaluations: 39550
+Generated 2021318 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 39550
+Search time: 4.28228s
+Total time: 4.29028s
+Solution found.
+Peak memory: 32044 KB
+returncode: 0
+
+plan manager: found new plan with cost 70
+remaining time: 1781.31
+config 0: relative time 600, remaining 600
+g bound: 70
+next plan number: 14
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=70, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '13', '--internal-plan-file', 're.out']
+timeout: 1781.31 -> (1782, 1783)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0s]
+done reading input! [t=0.00400249s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00800219s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0.0039997s
+done! [t=0.00800219s]
+done initalizing global data [t=0.00800219s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 70
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.0120027s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.0120027s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.0120027s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.0120027s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.0120027s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.0120027s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.0120027s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.0120027s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.0120027s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0160021s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0639632s, 5536 KB]
+Best heuristic value: 6 [g=69, 1218 evaluated, 1217 expanded, t=0.206374s, 5704 KB]
+Best heuristic value: 5 [g=69, 1681 evaluated, 1680 expanded, t=0.27585s, 5968 KB]
+Best heuristic value: 3 [g=69, 4474 evaluated, 4473 expanded, t=0.74353s, 7972 KB]
+Best heuristic value: 1 [g=69, 33673 evaluated, 33672 expanded, t=3.70608s, 27980 KB]
+Solution found!
+Actual search time: 5.86887s [t=5.87688s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+check-path v5 t4 (1)
+check-path v6 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+check-path v5 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+check-path v6 t5 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train2 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train2 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train5 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train4 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train3 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train6 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train6 v2 v1 t3 t4 track1 (1)
+move-from-arrival-to-track train3 v3 v2 t0 t5 track2 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+move-from-arrival-to-track train2 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train3 t5 t0 v5 v6 track2 (1)
+move-from-track-to-departure train2 t1 t0 v4 v5 track1 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train6 t4 t3 t0 v1 track1 (1)
+Plan length: 69 step(s).
+Plan cost: 69
+Initial state h value: 19.
+Expanded 59795 state(s).
+Reopened 0 state(s).
+Evaluated 59796 state(s).
+Evaluations: 59796
+Generated 3009382 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 59796
+Search time: 5.86887s
+Total time: 5.87688s
+Solution found.
+Peak memory: 44848 KB
+returncode: 0
+
+plan manager: found new plan with cost 69
+remaining time: 1775.43
+config 0: relative time 600, remaining 600
+g bound: 69
+next plan number: 15
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=69, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '14', '--internal-plan-file', 're.out']
+timeout: 1775.43 -> (1776, 1777)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0s]
+done reading input! [t=0.00799955s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00799955s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0s
+done! [t=0.00799955s]
+done initalizing global data [t=0.00799955s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 69
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.0120007s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.0120007s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.0120007s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.0120007s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.0120007s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.0120007s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.0120007s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.0120007s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.0120007s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0160007s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0639503s, 5536 KB]
+Best heuristic value: 6 [g=68, 1416 evaluated, 1415 expanded, t=0.243931s, 5836 KB]
+Best heuristic value: 5 [g=68, 6568 evaluated, 6567 expanded, t=1.05933s, 9412 KB]
+Best heuristic value: 3 [g=68, 13484 evaluated, 13483 expanded, t=2.02666s, 14204 KB]
+Best heuristic value: 1 [g=68, 42771 evaluated, 42770 expanded, t=4.49784s, 33416 KB]
+Solution found!
+Actual search time: 5.24584s [t=5.25384s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+check-path v5 t4 (1)
+check-path v6 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train3 t4 t3 v1 v2 track1 (1)
+move-from-arrival-to-track train3 v2 v1 t0 t5 track2 (1)
+check-path v6 t5 (1)
+move-from-arrival-to-track train4 v3 v2 t3 t4 track1 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t1 t2 track1 (1)
+move-from-track-to-departure train3 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train3 v5 v4 t0 t1 track1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train3 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train5 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train4 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train6 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train6 v2 v1 t3 t4 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train6 t4 t3 t0 v1 track1 (1)
+Plan length: 68 step(s).
+Plan cost: 68
+Initial state h value: 19.
+Expanded 51948 state(s).
+Reopened 0 state(s).
+Evaluated 51949 state(s).
+Evaluations: 51949
+Generated 2604350 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 51949
+Search time: 5.24584s
+Total time: 5.25384s
+Solution found.
+Peak memory: 39548 KB
+returncode: 0
+
+plan manager: found new plan with cost 68
+remaining time: 1770.17
+config 0: relative time 600, remaining 600
+g bound: 68
+next plan number: 16
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=68, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '15', '--internal-plan-file', 're.out']
+timeout: 1770.17 -> (1771, 1772)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0.00140166s]
+done reading input! [t=0.00540098s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00940096s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0.00399998s
+done! [t=0.00940096s]
+done initalizing global data [t=0.00940096s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 68
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.0134024s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.0134024s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.0134024s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.0134024s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.0134024s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.0134024s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.0134024s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.0134024s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.0134024s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0174s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0653533s, 5536 KB]
+Best heuristic value: 6 [g=67, 2254 evaluated, 2253 expanded, t=0.381237s, 6364 KB]
+Best heuristic value: 5 [g=66, 16928 evaluated, 16927 expanded, t=2.48558s, 16536 KB]
+Best heuristic value: 3 [g=67, 16932 evaluated, 16931 expanded, t=2.48558s, 16536 KB]
+Best heuristic value: 1 [g=67, 93101 evaluated, 93100 expanded, t=9.0651s, 65536 KB]
+Solution found!
+Actual search time: 9.22363s [t=9.23303s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+check-path v5 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+check-path v6 t5 (1)
+move-from-track-to-departure train2 t5 t0 v5 v6 track2 (1)
+move-from-track-to-departure train6 t1 t0 v4 v5 track1 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train3 t4 t3 v1 v2 track1 (1)
+move-from-arrival-to-track train3 v2 v1 t0 t5 track2 (1)
+move-from-arrival-to-track train4 v3 v2 t3 t4 track1 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train6 v5 v4 t1 t2 track1 (1)
+move-from-arrival-to-track train2 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train3 t5 t0 v5 v6 track2 (1)
+move-from-track-to-departure train2 t1 t0 v4 v5 track1 (1)
+move-from-track-to-departure train6 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train5 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train4 t4 t3 v1 v2 track1 (1)
+move-from-arrival-to-track train4 v2 v1 t0 t5 track2 (1)
+move-from-arrival-to-track train5 v3 v2 t3 t4 track1 (1)
+move-from-track-to-departure train4 t5 t0 v2 v3 track2 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train5 t4 t3 t0 v1 track1 (1)
+Plan length: 67 step(s).
+Plan cost: 67
+Initial state h value: 19.
+Expanded 95159 state(s).
+Reopened 0 state(s).
+Evaluated 95160 state(s).
+Evaluations: 95160
+Generated 4768727 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 95160
+Search time: 9.22363s
+Total time: 9.23303s
+Solution found.
+Peak memory: 66856 KB
+returncode: 0
+
+plan manager: found new plan with cost 67
+remaining time: 1760.93
+config 0: relative time 600, remaining 600
+g bound: 67
+next plan number: 17
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=67, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '16', '--internal-plan-file', 're.out']
+timeout: 1760.93 -> (1761, 1762)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0.00123689s]
+done reading input! [t=0.00523125s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00523125s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0s
+done! [t=0.00523125s]
+done initalizing global data [t=0.00523125s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 67
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.0132334s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.0132334s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.0132334s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.0132334s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.0132334s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.0132334s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.0132334s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.0132334s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.0132334s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0172338s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0611884s, 5536 KB]
+Best heuristic value: 6 [g=66, 6393 evaluated, 6392 expanded, t=1.01686s, 9280 KB]
+Best heuristic value: 5 [g=66, 14104 evaluated, 14103 expanded, t=2.22047s, 14376 KB]
+Best heuristic value: 3 [g=66, 17666 evaluated, 17665 expanded, t=2.61634s, 16756 KB]
+Best heuristic value: 1 [g=66, 77563 evaluated, 77562 expanded, t=7.77434s, 55208 KB]
+Solution found!
+Actual search time: 13.9789s [t=13.9842s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+check-path v4 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train6 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t5 t0 v4 v5 track2 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train3 t4 t3 v1 v2 track1 (1)
+move-from-arrival-to-track train3 v2 v1 t0 t5 track2 (1)
+move-from-arrival-to-track train4 v3 v2 t3 t4 track1 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train2 v5 v4 t1 t2 track1 (1)
+move-from-track-to-departure train3 t5 t0 v4 v5 track2 (1)
+move-from-arrival-to-track train3 v5 v4 t0 t1 track1 (1)
+check-path v6 t5 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t5 track2 (1)
+move-from-track-to-departure train3 t1 t0 v5 v6 track1 (1)
+move-from-track-to-departure train2 t2 t1 v4 v5 track1 (1)
+move-from-track-to-departure train5 t3 t2 v3 v4 track1 (1)
+move-from-track-to-departure train4 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train6 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train6 v2 v1 t3 t4 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train6 t4 t3 t0 v1 track1 (1)
+Plan length: 66 step(s).
+Plan cost: 66
+Initial state h value: 19.
+Expanded 150673 state(s).
+Reopened 0 state(s).
+Evaluated 150674 state(s).
+Evaluations: 150674
+Generated 7464921 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 150674
+Search time: 13.9789s
+Total time: 13.9842s
+Solution found.
+Peak memory: 102228 KB
+returncode: 0
+
+plan manager: found new plan with cost 66
+remaining time: 1746.93
+config 0: relative time 600, remaining 600
+g bound: 66
+next plan number: 18
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=66, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '17', '--internal-plan-file', 're.out']
+timeout: 1746.93 -> (1747, 1748)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0s]
+done reading input! [t=0.00637161s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00637161s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0s
+done! [t=0.00637161s]
+done initalizing global data [t=0.00637161s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 66
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.0103731s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.0103731s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.0103731s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.0143733s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.0143733s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.0143733s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.0143733s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.0143733s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.0143733s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0143733s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0663394s, 5536 KB]
+Best heuristic value: 6 [g=65, 10017 evaluated, 10016 expanded, t=1.6014s, 11604 KB]
+Best heuristic value: 5 [g=65, 14229 evaluated, 14228 expanded, t=2.13708s, 14244 KB]
+Best heuristic value: 3 [g=65, 24786 evaluated, 24785 expanded, t=3.06867s, 21080 KB]
+Best heuristic value: 1 [g=65, 127073 evaluated, 127072 expanded, t=11.8137s, 86736 KB]
+Solution found!
+Actual search time: 17.9395s [t=17.9459s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+move-from-arrival-to-track train2 v2 v1 t0 t5 track2 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+check-path v3 t4 (1)
+move-from-arrival-to-track train3 v3 v2 t3 t4 track1 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+check-path v6 t5 (1)
+move-from-track-to-departure train2 t5 t0 v5 v6 track2 (1)
+move-from-track-to-departure train6 t1 t0 v4 v5 track1 (1)
+move-from-track-to-departure train5 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train3 t4 t3 v1 v2 track1 (1)
+move-from-arrival-to-track train3 v2 v1 t0 t5 track2 (1)
+move-from-arrival-to-track train4 v3 v2 t3 t4 track1 (1)
+move-from-arrival-to-track train5 v4 v3 t2 t3 track1 (1)
+move-from-arrival-to-track train6 v5 v4 t1 t2 track1 (1)
+move-from-arrival-to-track train2 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train3 t5 t0 v5 v6 track2 (1)
+move-from-track-to-departure train2 t1 t0 v4 v5 track1 (1)
+move-from-track-to-departure train6 t2 t1 v3 v4 track1 (1)
+move-from-track-to-departure train5 t3 t2 v2 v3 track1 (1)
+move-from-arrival-to-track train5 v3 v2 t0 t5 track2 (1)
+move-from-track-to-departure train4 t4 t3 v2 v3 track1 (1)
+move-from-track-to-departure train5 t5 t0 v1 v2 track2 (1)
+move-from-arrival-to-track train5 v2 v1 t3 t4 track1 (1)
+move-from-track-to-departure train1 t6 t5 v1 v2 track2 (1)
+move-from-track-to-departure train5 t4 t3 t0 v1 track1 (1)
+Plan length: 65 step(s).
+Plan cost: 65
+Initial state h value: 19.
+Expanded 199848 state(s).
+Reopened 0 state(s).
+Evaluated 199849 state(s).
+Evaluations: 199849
+Generated 9778594 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 199849
+Search time: 17.9395s
+Total time: 17.9459s
+Solution found.
+Peak memory: 130556 KB
+returncode: 0
+
+plan manager: found new plan with cost 65
+remaining time: 1728.96
+config 0: relative time 600, remaining 600
+g bound: 65
+next plan number: 19
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=65, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '18', '--internal-plan-file', 're.out']
+timeout: 1728.96 -> (1729, 1730)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0s]
+done reading input! [t=0.00329045s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00329045s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0s
+done! [t=0.00329045s]
+done initalizing global data [t=0.00329045s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 65
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.00728994s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.00728994s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.00728994s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.00728994s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.00728994s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.00728994s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.00728994s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.00728994s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.00728994s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.00728994s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0330348s, 5536 KB]
+Best heuristic value: 6 [g=64, 9123 evaluated, 9122 expanded, t=0.7389s, 10996 KB]
+Best heuristic value: 5 [g=64, 19094 evaluated, 19093 expanded, t=1.55844s, 17432 KB]
+Best heuristic value: 3 [g=64, 24866 evaluated, 24865 expanded, t=2.03019s, 21260 KB]
+Best heuristic value: 2 [g=64, 157120 evaluated, 157119 expanded, t=13.0831s, 104240 KB]
+Best heuristic value: 1 [g=64, 167625 evaluated, 167624 expanded, t=13.9547s, 110344 KB]
+Solution found!
+Actual search time: 21.6669s [t=21.6702s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+check-path v6 t5 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+move-from-arrival-to-track train2 v2 v1 t3 t4 track1 (1)
+move-from-arrival-to-track train3 v3 v2 t0 t5 track2 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+check-path v5 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+check-path v6 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train3 t5 t0 v5 v6 track2 (1)
+move-from-track-to-departure train1 t6 t5 v4 v5 track2 (1)
+move-from-track-to-departure train6 t1 t0 v3 v4 track1 (1)
+move-from-track-to-departure train5 t2 t1 v2 v3 track1 (1)
+move-from-arrival-to-track train5 v3 v2 t5 t6 track2 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train2 t4 t3 v1 v2 track1 (1)
+move-from-track-to-departure train5 t6 t5 t0 v1 track2 (1)
+Plan length: 57 step(s).
+Plan cost: 57
+Initial state h value: 19.
+Expanded 256499 state(s).
+Reopened 0 state(s).
+Evaluated 256500 state(s).
+Evaluations: 256500
+Generated 12274491 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 256500
+Search time: 21.6669s
+Total time: 21.6702s
+Solution found.
+Peak memory: 159836 KB
+returncode: 0
+
+plan manager: found new plan with cost 57
+remaining time: 1707.27
+config 0: relative time 600, remaining 600
+g bound: 57
+next plan number: 20
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=57, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '19', '--internal-plan-file', 're.out']
+timeout: 1707.27 -> (1708, 1709)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0s]
+done reading input! [t=0.00399708s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00799889s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0.00400182s
+done! [t=0.00799889s]
+done initalizing global data [t=0.00799889s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 57
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.0119991s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.0119991s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.0119991s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.0119991s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.0119991s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.0119991s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.0119991s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.0119991s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.0119991s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0159986s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0639188s, 5536 KB]
+Best heuristic value: 5 [g=52, 45895 evaluated, 45894 expanded, t=4.84256s, 33188 KB]
+Best heuristic value: 4 [g=54, 45897 evaluated, 45896 expanded, t=4.84256s, 33188 KB]
+Best heuristic value: 2 [g=55, 45898 evaluated, 45897 expanded, t=4.84256s, 33188 KB]
+Best heuristic value: 1 [g=56, 45899 evaluated, 45898 expanded, t=4.84256s, 33188 KB]
+Solution found!
+Actual search time: 4.85857s [t=4.86657s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+check-path v6 t5 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+move-from-arrival-to-track train2 v2 v1 t3 t4 track1 (1)
+move-from-arrival-to-track train3 v3 v2 t0 t5 track2 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+check-path v6 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train3 t5 t0 v5 v6 track2 (1)
+move-from-track-to-departure train1 t6 t5 v4 v5 track2 (1)
+move-from-track-to-departure train6 t1 t0 v3 v4 track1 (1)
+move-from-track-to-departure train5 t2 t1 v2 v3 track1 (1)
+move-from-arrival-to-track train5 v3 v2 t5 t6 track2 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train2 t4 t3 v1 v2 track1 (1)
+move-from-track-to-departure train5 t6 t5 t0 v1 track2 (1)
+Plan length: 56 step(s).
+Plan cost: 56
+Initial state h value: 19.
+Expanded 46176 state(s).
+Reopened 0 state(s).
+Evaluated 46177 state(s).
+Evaluations: 46177
+Generated 2045453 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 46177
+Search time: 4.85857s
+Total time: 4.86657s
+Solution found.
+Peak memory: 33320 KB
+returncode: 0
+
+plan manager: found new plan with cost 56
+remaining time: 1702.4
+config 0: relative time 600, remaining 600
+g bound: 56
+next plan number: 21
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=56, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '20', '--internal-plan-file', 're.out']
+timeout: 1702.40 -> (1703, 1704)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0s]
+done reading input! [t=0.00696298s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00696298s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0s
+done! [t=0.00696298s]
+done initalizing global data [t=0.00696298s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 56
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.0109639s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.0109639s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.0109639s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.0109639s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.0109639s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.0149639s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.0149639s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.0149639s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.0149639s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0149639s, 5536 KB]
+Best heuristic value: 7 [g=55, 347 evaluated, 346 expanded, t=0.0668248s, 5536 KB]
+Best heuristic value: 5 [g=52, 33102 evaluated, 33101 expanded, t=3.64888s, 25528 KB]
+Best heuristic value: 4 [g=54, 33104 evaluated, 33103 expanded, t=3.65288s, 25528 KB]
+Best heuristic value: 2 [g=55, 33105 evaluated, 33104 expanded, t=3.65288s, 25528 KB]
+Best heuristic value: 1 [g=55, 33331 evaluated, 33330 expanded, t=3.66888s, 25660 KB]
+Solution found!
+Actual search time: 3.66591s [t=3.67287s]
+check-path t5 t6 (1)
+check-path t0 t6 (1)
+check-path v1 t6 (1)
+check-path v2 t6 (1)
+check-path v3 t6 (1)
+check-path v4 t6 (1)
+check-path v5 t6 (1)
+move-from-arrival-to-track train1 v1 t0 t5 t6 track2 (1)
+check-path t0 t5 (1)
+check-path v1 t5 (1)
+check-path v2 t5 (1)
+check-path v3 t5 (1)
+check-path v4 t5 (1)
+check-path v5 t5 (1)
+check-path v6 t5 (1)
+check-path t3 t4 (1)
+check-path t2 t4 (1)
+check-path t1 t4 (1)
+check-path t0 t4 (1)
+check-path v1 t4 (1)
+check-path v2 t4 (1)
+move-from-arrival-to-track train2 v2 v1 t3 t4 track1 (1)
+move-from-arrival-to-track train3 v3 v2 t0 t5 track2 (1)
+check-path t2 t3 (1)
+check-path t1 t3 (1)
+check-path t0 t3 (1)
+check-path v1 t3 (1)
+check-path v2 t3 (1)
+check-path v3 t3 (1)
+check-path v4 t3 (1)
+move-from-arrival-to-track train4 v4 v3 t2 t3 track1 (1)
+check-path t1 t2 (1)
+check-path t0 t2 (1)
+check-path v1 t2 (1)
+check-path v2 t2 (1)
+check-path v3 t2 (1)
+check-path v4 t2 (1)
+check-path v5 t2 (1)
+move-from-arrival-to-track train5 v5 v4 t1 t2 track1 (1)
+check-path t0 t1 (1)
+check-path v1 t1 (1)
+check-path v2 t1 (1)
+check-path v3 t1 (1)
+check-path v4 t1 (1)
+check-path v5 t1 (1)
+check-path v6 t1 (1)
+move-from-arrival-to-track train6 v6 v5 t0 t1 track1 (1)
+move-from-track-to-departure train3 t5 t0 v5 v6 track2 (1)
+move-from-track-to-departure train1 t6 t5 v4 v5 track2 (1)
+move-from-track-to-departure train6 t1 t0 v3 v4 track1 (1)
+move-from-track-to-departure train5 t2 t1 v2 v3 track1 (1)
+move-from-arrival-to-track train5 v3 v2 t5 t6 track2 (1)
+move-from-track-to-departure train4 t3 t2 v2 v3 track1 (1)
+move-from-track-to-departure train2 t4 t3 v1 v2 track1 (1)
+move-from-track-to-departure train5 t6 t5 t0 v1 track2 (1)
+Plan length: 55 step(s).
+Plan cost: 55
+Initial state h value: 19.
+Expanded 33393 state(s).
+Reopened 0 state(s).
+Evaluated 33394 state(s).
+Evaluations: 33394
+Generated 1442515 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 33394
+Search time: 3.66591s
+Total time: 3.67287s
+Solution found.
+Peak memory: 25792 KB
+returncode: 0
+
+plan manager: found new plan with cost 55
+remaining time: 1698.72
+config 0: relative time 600, remaining 600
+g bound: 55
+next plan number: 22
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=55, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '21', '--internal-plan-file', 're.out']
+timeout: 1698.72 -> (1699, 1700)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0s]
+done reading input! [t=0.00799986s]
+Variables: 103
+Bytes per state: 16
+Building successor generator...done! [t=0.00799986s]
+peak memory difference for root successor generator creation: 132 KB
+time for root successor generation creation: 0s
+done! [t=0.00799986s]
+done initalizing global data [t=0.00799986s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 55
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 3513 unary operators... done! [3513 unary operators]
+Best heuristic value: 19 [g=0, 1 evaluated, 0 expanded, t=0.0120003s, 5536 KB]
+Best heuristic value: 18 [g=1, 2 evaluated, 1 expanded, t=0.0120003s, 5536 KB]
+Best heuristic value: 17 [g=2, 3 evaluated, 2 expanded, t=0.0120003s, 5536 KB]
+Best heuristic value: 16 [g=3, 4 evaluated, 3 expanded, t=0.0120003s, 5536 KB]
+Best heuristic value: 15 [g=4, 5 evaluated, 4 expanded, t=0.0120003s, 5536 KB]
+Best heuristic value: 14 [g=5, 7 evaluated, 6 expanded, t=0.0120003s, 5536 KB]
+Best heuristic value: 13 [g=6, 9 evaluated, 8 expanded, t=0.0120003s, 5536 KB]
+Best heuristic value: 12 [g=7, 11 evaluated, 10 expanded, t=0.0120003s, 5536 KB]
+Best heuristic value: 11 [g=8, 13 evaluated, 12 expanded, t=0.0120003s, 5536 KB]
+Best heuristic value: 10 [g=15, 25 evaluated, 24 expanded, t=0.0159994s, 5536 KB]
+Best heuristic value: 7 [g=54, 722 evaluated, 721 expanded, t=0.0719627s, 5536 KB]
+Best heuristic value: 5 [g=52, 23115 evaluated, 23114 expanded, t=1.85147s, 19220 KB]
+Best heuristic value: 4 [g=54, 23117 evaluated, 23116 expanded, t=1.85147s, 19220 KB]
+Best heuristic value: 2 [g=54, 23275 evaluated, 23274 expanded, t=1.86347s, 19352 KB]
+Best heuristic value: 1 [g=54, 23324 evaluated, 23323 expanded, t=1.86747s, 19352 KB]
+Completely explored state space -- no solution!
+Actual search time: 326.897s [t=326.905s]
+Initial state h value: 19.
+Expanded 3222297 state(s).
+Reopened 0 state(s).
+Evaluated 3222297 state(s).
+Evaluations: 3222297
+Generated 115658848 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 3222297
+Search time: 326.897s
+Total time: 326.905s
+Search stopped without finding a solution.
+Peak memory: 894424 KB
+returncode: 5
+
+Exit codes: [3, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5]
+Error: Unexpected exit codes: [3]
+Command '['run-portfolio', '/planner/driver/portfolios/seq_sat_saarplan.py']' returned non-zero exit status 3

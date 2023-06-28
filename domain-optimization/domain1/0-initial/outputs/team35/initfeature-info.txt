@@ -1,0 +1,1 @@
+  1, /home/simbachiu/rail-planning/domain1/0-initial/problem2.pddl, 116, 220, 13, 32, 2.461539, -6, 0.060345, 0.853884, 1, 1.000000, 0.000000, 9.304545, 3.090909, 96
