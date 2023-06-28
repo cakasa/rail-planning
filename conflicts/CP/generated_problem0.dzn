@@ -1,0 +1,5 @@
+n_trains = 5;
+n_tracks = 3;
+tracks = [{1, 2},{3, 4},{5}];
+arrival_order = [4, 1, 3, 2, 5];
+departure_order = [5, 4, 3, 2, 1];

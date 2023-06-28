@@ -1,0 +1,7 @@
+cd planners/bfs_f-ffparser
+scons -c -g
+scons ipc14_build=1
+cd ../..
+echo "Copying bfs_f..."
+cp planners/bfs_f-ffparser/bfs_f .
+exit
