@@ -1,0 +1,5 @@
+eval_further.sh: line 13: /data/ipc2018/solvers/sat/explicit_baseline_planners/planner.img: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s

@@ -1,0 +1,5158 @@
+begin_version
+3
+end_version
+begin_metric
+0
+end_metric
+48
+begin_variable
+var45
+0
+2
+Atom new-axiom@0()
+NegatedAtom new-axiom@0()
+end_variable
+begin_variable
+var34
+-1
+2
+Atom hasdeparted(train1)
+NegatedAtom hasdeparted(train1)
+end_variable
+begin_variable
+var35
+-1
+2
+Atom hasdeparted(train2)
+NegatedAtom hasdeparted(train2)
+end_variable
+begin_variable
+var36
+-1
+2
+Atom hasdeparted(train3)
+NegatedAtom hasdeparted(train3)
+end_variable
+begin_variable
+var37
+-1
+2
+Atom hasdeparted(train4)
+NegatedAtom hasdeparted(train4)
+end_variable
+begin_variable
+var38
+-1
+2
+Atom hasdeparted(train5)
+NegatedAtom hasdeparted(train5)
+end_variable
+begin_variable
+var39
+-1
+2
+Atom hasdeparted(train6)
+NegatedAtom hasdeparted(train6)
+end_variable
+begin_variable
+var13
+-1
+2
+Atom free(t5)
+NegatedAtom free(t5)
+end_variable
+begin_variable
+var15
+-1
+2
+Atom free(t7)
+NegatedAtom free(t7)
+end_variable
+begin_variable
+var17
+-1
+2
+Atom free(t9)
+NegatedAtom free(t9)
+end_variable
+begin_variable
+var40
+-1
+2
+Atom hasdeparted(train7)
+NegatedAtom hasdeparted(train7)
+end_variable
+begin_variable
+var41
+-1
+2
+Atom hasdeparted(train8)
+NegatedAtom hasdeparted(train8)
+end_variable
+begin_variable
+var26
+-1
+2
+Atom hasbeenparked(train1)
+NegatedAtom hasbeenparked(train1)
+end_variable
+begin_variable
+var27
+-1
+2
+Atom hasbeenparked(train2)
+NegatedAtom hasbeenparked(train2)
+end_variable
+begin_variable
+var28
+-1
+2
+Atom hasbeenparked(train3)
+NegatedAtom hasbeenparked(train3)
+end_variable
+begin_variable
+var29
+-1
+2
+Atom hasbeenparked(train4)
+NegatedAtom hasbeenparked(train4)
+end_variable
+begin_variable
+var30
+-1
+2
+Atom hasbeenparked(train5)
+NegatedAtom hasbeenparked(train5)
+end_variable
+begin_variable
+var31
+-1
+2
+Atom hasbeenparked(train6)
+NegatedAtom hasbeenparked(train6)
+end_variable
+begin_variable
+var32
+-1
+2
+Atom hasbeenparked(train7)
+NegatedAtom hasbeenparked(train7)
+end_variable
+begin_variable
+var33
+-1
+2
+Atom hasbeenparked(train8)
+NegatedAtom hasbeenparked(train8)
+end_variable
+begin_variable
+var12
+-1
+2
+Atom free(t4)
+NegatedAtom free(t4)
+end_variable
+begin_variable
+var14
+-1
+2
+Atom free(t6)
+NegatedAtom free(t6)
+end_variable
+begin_variable
+var16
+-1
+2
+Atom free(t8)
+NegatedAtom free(t8)
+end_variable
+begin_variable
+var11
+-1
+2
+Atom free(t3)
+NegatedAtom free(t3)
+end_variable
+begin_variable
+var9
+-1
+2
+Atom free(t1)
+NegatedAtom free(t1)
+end_variable
+begin_variable
+var25
+-1
+2
+Atom free(v8)
+NegatedAtom free(v8)
+end_variable
+begin_variable
+var10
+-1
+2
+Atom free(t2)
+NegatedAtom free(t2)
+end_variable
+begin_variable
+var8
+-1
+2
+Atom free(t0)
+NegatedAtom free(t0)
+end_variable
+begin_variable
+var18
+-1
+2
+Atom free(v1)
+NegatedAtom free(v1)
+end_variable
+begin_variable
+var24
+-1
+2
+Atom free(v7)
+NegatedAtom free(v7)
+end_variable
+begin_variable
+var19
+-1
+2
+Atom free(v2)
+NegatedAtom free(v2)
+end_variable
+begin_variable
+var23
+-1
+2
+Atom free(v6)
+NegatedAtom free(v6)
+end_variable
+begin_variable
+var20
+-1
+2
+Atom free(v3)
+NegatedAtom free(v3)
+end_variable
+begin_variable
+var22
+-1
+2
+Atom free(v5)
+NegatedAtom free(v5)
+end_variable
+begin_variable
+var21
+-1
+2
+Atom free(v4)
+NegatedAtom free(v4)
+end_variable
+begin_variable
+var0
+-1
+18
+Atom at(train1, t0)
+Atom at(train1, t1)
+Atom at(train1, t2)
+Atom at(train1, t3)
+Atom at(train1, t4)
+Atom at(train1, t5)
+Atom at(train1, t6)
+Atom at(train1, t7)
+Atom at(train1, t8)
+Atom at(train1, t9)
+Atom at(train1, v1)
+Atom at(train1, v2)
+Atom at(train1, v3)
+Atom at(train1, v4)
+Atom at(train1, v5)
+Atom at(train1, v6)
+Atom at(train1, v7)
+Atom at(train1, v8)
+end_variable
+begin_variable
+var1
+-1
+18
+Atom at(train2, t0)
+Atom at(train2, t1)
+Atom at(train2, t2)
+Atom at(train2, t3)
+Atom at(train2, t4)
+Atom at(train2, t5)
+Atom at(train2, t6)
+Atom at(train2, t7)
+Atom at(train2, t8)
+Atom at(train2, t9)
+Atom at(train2, v1)
+Atom at(train2, v2)
+Atom at(train2, v3)
+Atom at(train2, v4)
+Atom at(train2, v5)
+Atom at(train2, v6)
+Atom at(train2, v7)
+Atom at(train2, v8)
+end_variable
+begin_variable
+var2
+-1
+18
+Atom at(train3, t0)
+Atom at(train3, t1)
+Atom at(train3, t2)
+Atom at(train3, t3)
+Atom at(train3, t4)
+Atom at(train3, t5)
+Atom at(train3, t6)
+Atom at(train3, t7)
+Atom at(train3, t8)
+Atom at(train3, t9)
+Atom at(train3, v1)
+Atom at(train3, v2)
+Atom at(train3, v3)
+Atom at(train3, v4)
+Atom at(train3, v5)
+Atom at(train3, v6)
+Atom at(train3, v7)
+Atom at(train3, v8)
+end_variable
+begin_variable
+var3
+-1
+18
+Atom at(train4, t0)
+Atom at(train4, t1)
+Atom at(train4, t2)
+Atom at(train4, t3)
+Atom at(train4, t4)
+Atom at(train4, t5)
+Atom at(train4, t6)
+Atom at(train4, t7)
+Atom at(train4, t8)
+Atom at(train4, t9)
+Atom at(train4, v1)
+Atom at(train4, v2)
+Atom at(train4, v3)
+Atom at(train4, v4)
+Atom at(train4, v5)
+Atom at(train4, v6)
+Atom at(train4, v7)
+Atom at(train4, v8)
+end_variable
+begin_variable
+var4
+-1
+18
+Atom at(train5, t0)
+Atom at(train5, t1)
+Atom at(train5, t2)
+Atom at(train5, t3)
+Atom at(train5, t4)
+Atom at(train5, t5)
+Atom at(train5, t6)
+Atom at(train5, t7)
+Atom at(train5, t8)
+Atom at(train5, t9)
+Atom at(train5, v1)
+Atom at(train5, v2)
+Atom at(train5, v3)
+Atom at(train5, v4)
+Atom at(train5, v5)
+Atom at(train5, v6)
+Atom at(train5, v7)
+Atom at(train5, v8)
+end_variable
+begin_variable
+var5
+-1
+18
+Atom at(train6, t0)
+Atom at(train6, t1)
+Atom at(train6, t2)
+Atom at(train6, t3)
+Atom at(train6, t4)
+Atom at(train6, t5)
+Atom at(train6, t6)
+Atom at(train6, t7)
+Atom at(train6, t8)
+Atom at(train6, t9)
+Atom at(train6, v1)
+Atom at(train6, v2)
+Atom at(train6, v3)
+Atom at(train6, v4)
+Atom at(train6, v5)
+Atom at(train6, v6)
+Atom at(train6, v7)
+Atom at(train6, v8)
+end_variable
+begin_variable
+var6
+-1
+18
+Atom at(train7, t0)
+Atom at(train7, t1)
+Atom at(train7, t2)
+Atom at(train7, t3)
+Atom at(train7, t4)
+Atom at(train7, t5)
+Atom at(train7, t6)
+Atom at(train7, t7)
+Atom at(train7, t8)
+Atom at(train7, t9)
+Atom at(train7, v1)
+Atom at(train7, v2)
+Atom at(train7, v3)
+Atom at(train7, v4)
+Atom at(train7, v5)
+Atom at(train7, v6)
+Atom at(train7, v7)
+Atom at(train7, v8)
+end_variable
+begin_variable
+var7
+-1
+18
+Atom at(train8, t0)
+Atom at(train8, t1)
+Atom at(train8, t2)
+Atom at(train8, t3)
+Atom at(train8, t4)
+Atom at(train8, t5)
+Atom at(train8, t6)
+Atom at(train8, t7)
+Atom at(train8, t8)
+Atom at(train8, t9)
+Atom at(train8, v1)
+Atom at(train8, v2)
+Atom at(train8, v3)
+Atom at(train8, v4)
+Atom at(train8, v5)
+Atom at(train8, v6)
+Atom at(train8, v7)
+Atom at(train8, v8)
+end_variable
+begin_variable
+var44
+-1
+2
+Atom needsservice(train8, cleaning)
+NegatedAtom needsservice(train8, cleaning)
+end_variable
+begin_variable
+var43
+-1
+2
+Atom needsservice(train5, cleaning)
+NegatedAtom needsservice(train5, cleaning)
+end_variable
+begin_variable
+var42
+-1
+2
+Atom needsservice(train3, cleaning)
+NegatedAtom needsservice(train3, cleaning)
+end_variable
+begin_variable
+var47
+1
+2
+Atom new-axiom@2()
+NegatedAtom new-axiom@2()
+end_variable
+begin_variable
+var46
+0
+2
+Atom new-axiom@1()
+NegatedAtom new-axiom@1()
+end_variable
+18
+begin_mutex_group
+9
+35 0
+36 0
+37 0
+38 0
+39 0
+40 0
+41 0
+42 0
+27 0
+end_mutex_group
+begin_mutex_group
+9
+35 1
+36 1
+37 1
+38 1
+39 1
+40 1
+41 1
+42 1
+24 0
+end_mutex_group
+begin_mutex_group
+9
+35 2
+36 2
+37 2
+38 2
+39 2
+40 2
+41 2
+42 2
+26 0
+end_mutex_group
+begin_mutex_group
+9
+35 3
+36 3
+37 3
+38 3
+39 3
+40 3
+41 3
+42 3
+23 0
+end_mutex_group
+begin_mutex_group
+9
+35 4
+36 4
+37 4
+38 4
+39 4
+40 4
+41 4
+42 4
+20 0
+end_mutex_group
+begin_mutex_group
+9
+35 5
+36 5
+37 5
+38 5
+39 5
+40 5
+41 5
+42 5
+7 0
+end_mutex_group
+begin_mutex_group
+9
+35 6
+36 6
+37 6
+38 6
+39 6
+40 6
+41 6
+42 6
+21 0
+end_mutex_group
+begin_mutex_group
+9
+35 7
+36 7
+37 7
+38 7
+39 7
+40 7
+41 7
+42 7
+8 0
+end_mutex_group
+begin_mutex_group
+9
+35 8
+36 8
+37 8
+38 8
+39 8
+40 8
+41 8
+42 8
+22 0
+end_mutex_group
+begin_mutex_group
+9
+35 9
+36 9
+37 9
+38 9
+39 9
+40 9
+41 9
+42 9
+9 0
+end_mutex_group
+begin_mutex_group
+9
+35 10
+36 10
+37 10
+38 10
+39 10
+40 10
+41 10
+42 10
+28 0
+end_mutex_group
+begin_mutex_group
+9
+35 11
+36 11
+37 11
+38 11
+39 11
+40 11
+41 11
+42 11
+30 0
+end_mutex_group
+begin_mutex_group
+9
+35 12
+36 12
+37 12
+38 12
+39 12
+40 12
+41 12
+42 12
+32 0
+end_mutex_group
+begin_mutex_group
+9
+35 13
+36 13
+37 13
+38 13
+39 13
+40 13
+41 13
+42 13
+34 0
+end_mutex_group
+begin_mutex_group
+9
+35 14
+36 14
+37 14
+38 14
+39 14
+40 14
+41 14
+42 14
+33 0
+end_mutex_group
+begin_mutex_group
+9
+35 15
+36 15
+37 15
+38 15
+39 15
+40 15
+41 15
+42 15
+31 0
+end_mutex_group
+begin_mutex_group
+9
+35 16
+36 16
+37 16
+38 16
+39 16
+40 16
+41 16
+42 16
+29 0
+end_mutex_group
+begin_mutex_group
+9
+35 17
+36 17
+37 17
+38 17
+39 17
+40 17
+41 17
+42 17
+25 0
+end_mutex_group
+begin_state
+0
+1
+1
+1
+1
+1
+1
+0
+0
+0
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+0
+0
+0
+0
+0
+1
+0
+0
+1
+1
+1
+1
+1
+1
+1
+13
+15
+14
+11
+10
+17
+16
+12
+0
+0
+0
+0
+0
+end_state
+begin_goal
+10
+35 17
+36 12
+37 15
+38 10
+39 13
+40 11
+41 14
+42 16
+46 1
+47 1
+end_goal
+398
+begin_operator
+move train1 t0 t1 track1
+1
+1 1
+4
+0 35 0 1
+0 27 -1 0
+0 24 0 1
+0 12 -1 0
+1
+end_operator
+begin_operator
+move train1 t0 t3 track2
+1
+1 1
+4
+0 35 0 3
+0 27 -1 0
+0 23 0 1
+0 12 -1 0
+1
+end_operator
+begin_operator
+move train1 t1 t0 track0
+1
+1 1
+4
+0 35 1 0
+0 27 0 1
+0 24 -1 0
+0 12 -1 0
+1
+end_operator
+begin_operator
+move train1 t1 t2 track1
+1
+1 1
+4
+0 35 1 2
+0 24 -1 0
+0 26 0 1
+0 12 -1 0
+1
+end_operator
+begin_operator
+move train1 t2 t1 track1
+1
+1 1
+4
+0 35 2 1
+0 24 0 1
+0 26 -1 0
+0 12 -1 0
+1
+end_operator
+begin_operator
+move train1 t2 t6 track4
+1
+1 1
+4
+0 35 2 6
+0 26 -1 0
+0 21 0 1
+0 12 -1 0
+1
+end_operator
+begin_operator
+move train1 t2 t8 track5
+1
+1 1
+4
+0 35 2 8
+0 26 -1 0
+0 22 0 1
+0 12 -1 0
+1
+end_operator
+begin_operator
+move train1 t3 t0 track0
+1
+1 1
+4
+0 35 3 0
+0 27 0 1
+0 23 -1 0
+0 12 -1 0
+1
+end_operator
+begin_operator
+move train1 t3 t4 track2
+1
+1 1
+4
+0 35 3 4
+0 23 -1 0
+0 20 0 1
+0 12 -1 0
+1
+end_operator
+begin_operator
+move train1 t4 t3 track2
+1
+1 1
+4
+0 35 4 3
+0 23 0 1
+0 20 -1 0
+0 12 -1 0
+1
+end_operator
+begin_operator
+move train1 t4 t5 track3
+1
+1 1
+4
+0 35 4 5
+0 20 -1 0
+0 7 0 1
+0 12 -1 0
+1
+end_operator
+begin_operator
+move train1 t5 t4 track2
+1
+1 1
+4
+0 35 5 4
+0 20 0 1
+0 7 -1 0
+0 12 -1 0
+1
+end_operator
+begin_operator
+move train1 t6 t2 track1
+1
+1 1
+4
+0 35 6 2
+0 26 0 1
+0 21 -1 0
+0 12 -1 0
+1
+end_operator
+begin_operator
+move train1 t6 t7 track4
+1
+1 1
+4
+0 35 6 7
+0 21 -1 0
+0 8 0 1
+0 12 -1 0
+1
+end_operator
+begin_operator
+move train1 t7 t6 track4
+1
+1 1
+4
+0 35 7 6
+0 21 0 1
+0 8 -1 0
+0 12 -1 0
+1
+end_operator
+begin_operator
+move train1 t8 t2 track1
+1
+1 1
+4
+0 35 8 2
+0 26 0 1
+0 22 -1 0
+0 12 -1 0
+1
+end_operator
+begin_operator
+move train1 t8 t9 track5
+1
+1 1
+4
+0 35 8 9
+0 22 -1 0
+0 9 0 1
+0 12 -1 0
+1
+end_operator
+begin_operator
+move train1 t9 t8 track5
+1
+1 1
+4
+0 35 9 8
+0 22 0 1
+0 9 -1 0
+0 12 -1 0
+1
+end_operator
+begin_operator
+move train1 v1 t0 track0
+1
+1 1
+4
+0 35 10 0
+0 27 0 1
+0 28 -1 0
+0 12 -1 0
+1
+end_operator
+begin_operator
+move train2 t0 t1 track1
+1
+2 1
+4
+0 36 0 1
+0 27 -1 0
+0 24 0 1
+0 13 -1 0
+1
+end_operator
+begin_operator
+move train2 t0 t3 track2
+1
+2 1
+4
+0 36 0 3
+0 27 -1 0
+0 23 0 1
+0 13 -1 0
+1
+end_operator
+begin_operator
+move train2 t1 t0 track0
+1
+2 1
+4
+0 36 1 0
+0 27 0 1
+0 24 -1 0
+0 13 -1 0
+1
+end_operator
+begin_operator
+move train2 t1 t2 track1
+1
+2 1
+4
+0 36 1 2
+0 24 -1 0
+0 26 0 1
+0 13 -1 0
+1
+end_operator
+begin_operator
+move train2 t2 t1 track1
+1
+2 1
+4
+0 36 2 1
+0 24 0 1
+0 26 -1 0
+0 13 -1 0
+1
+end_operator
+begin_operator
+move train2 t2 t6 track4
+1
+2 1
+4
+0 36 2 6
+0 26 -1 0
+0 21 0 1
+0 13 -1 0
+1
+end_operator
+begin_operator
+move train2 t2 t8 track5
+1
+2 1
+4
+0 36 2 8
+0 26 -1 0
+0 22 0 1
+0 13 -1 0
+1
+end_operator
+begin_operator
+move train2 t3 t0 track0
+1
+2 1
+4
+0 36 3 0
+0 27 0 1
+0 23 -1 0
+0 13 -1 0
+1
+end_operator
+begin_operator
+move train2 t3 t4 track2
+1
+2 1
+4
+0 36 3 4
+0 23 -1 0
+0 20 0 1
+0 13 -1 0
+1
+end_operator
+begin_operator
+move train2 t4 t3 track2
+1
+2 1
+4
+0 36 4 3
+0 23 0 1
+0 20 -1 0
+0 13 -1 0
+1
+end_operator
+begin_operator
+move train2 t4 t5 track3
+1
+2 1
+4
+0 36 4 5
+0 20 -1 0
+0 7 0 1
+0 13 -1 0
+1
+end_operator
+begin_operator
+move train2 t5 t4 track2
+1
+2 1
+4
+0 36 5 4
+0 20 0 1
+0 7 -1 0
+0 13 -1 0
+1
+end_operator
+begin_operator
+move train2 t6 t2 track1
+1
+2 1
+4
+0 36 6 2
+0 26 0 1
+0 21 -1 0
+0 13 -1 0
+1
+end_operator
+begin_operator
+move train2 t6 t7 track4
+1
+2 1
+4
+0 36 6 7
+0 21 -1 0
+0 8 0 1
+0 13 -1 0
+1
+end_operator
+begin_operator
+move train2 t7 t6 track4
+1
+2 1
+4
+0 36 7 6
+0 21 0 1
+0 8 -1 0
+0 13 -1 0
+1
+end_operator
+begin_operator
+move train2 t8 t2 track1
+1
+2 1
+4
+0 36 8 2
+0 26 0 1
+0 22 -1 0
+0 13 -1 0
+1
+end_operator
+begin_operator
+move train2 t8 t9 track5
+1
+2 1
+4
+0 36 8 9
+0 22 -1 0
+0 9 0 1
+0 13 -1 0
+1
+end_operator
+begin_operator
+move train2 t9 t8 track5
+1
+2 1
+4
+0 36 9 8
+0 22 0 1
+0 9 -1 0
+0 13 -1 0
+1
+end_operator
+begin_operator
+move train2 v1 t0 track0
+1
+2 1
+4
+0 36 10 0
+0 27 0 1
+0 28 -1 0
+0 13 -1 0
+1
+end_operator
+begin_operator
+move train3 t0 t1 track1
+1
+3 1
+4
+0 37 0 1
+0 27 -1 0
+0 24 0 1
+0 14 -1 0
+1
+end_operator
+begin_operator
+move train3 t0 t3 track2
+1
+3 1
+4
+0 37 0 3
+0 27 -1 0
+0 23 0 1
+0 14 -1 0
+1
+end_operator
+begin_operator
+move train3 t1 t0 track0
+1
+3 1
+4
+0 37 1 0
+0 27 0 1
+0 24 -1 0
+0 14 -1 0
+1
+end_operator
+begin_operator
+move train3 t1 t2 track1
+1
+3 1
+4
+0 37 1 2
+0 24 -1 0
+0 26 0 1
+0 14 -1 0
+1
+end_operator
+begin_operator
+move train3 t2 t1 track1
+1
+3 1
+4
+0 37 2 1
+0 24 0 1
+0 26 -1 0
+0 14 -1 0
+1
+end_operator
+begin_operator
+move train3 t2 t6 track4
+1
+3 1
+4
+0 37 2 6
+0 26 -1 0
+0 21 0 1
+0 14 -1 0
+1
+end_operator
+begin_operator
+move train3 t2 t8 track5
+1
+3 1
+4
+0 37 2 8
+0 26 -1 0
+0 22 0 1
+0 14 -1 0
+1
+end_operator
+begin_operator
+move train3 t3 t0 track0
+1
+3 1
+4
+0 37 3 0
+0 27 0 1
+0 23 -1 0
+0 14 -1 0
+1
+end_operator
+begin_operator
+move train3 t3 t4 track2
+1
+3 1
+4
+0 37 3 4
+0 23 -1 0
+0 20 0 1
+0 14 -1 0
+1
+end_operator
+begin_operator
+move train3 t4 t3 track2
+1
+3 1
+4
+0 37 4 3
+0 23 0 1
+0 20 -1 0
+0 14 -1 0
+1
+end_operator
+begin_operator
+move train3 t4 t5 track3
+1
+3 1
+4
+0 37 4 5
+0 20 -1 0
+0 7 0 1
+0 14 -1 0
+1
+end_operator
+begin_operator
+move train3 t5 t4 track2
+1
+3 1
+4
+0 37 5 4
+0 20 0 1
+0 7 -1 0
+0 14 -1 0
+1
+end_operator
+begin_operator
+move train3 t6 t2 track1
+1
+3 1
+4
+0 37 6 2
+0 26 0 1
+0 21 -1 0
+0 14 -1 0
+1
+end_operator
+begin_operator
+move train3 t6 t7 track4
+1
+3 1
+4
+0 37 6 7
+0 21 -1 0
+0 8 0 1
+0 14 -1 0
+1
+end_operator
+begin_operator
+move train3 t7 t6 track4
+1
+3 1
+4
+0 37 7 6
+0 21 0 1
+0 8 -1 0
+0 14 -1 0
+1
+end_operator
+begin_operator
+move train3 t8 t2 track1
+1
+3 1
+4
+0 37 8 2
+0 26 0 1
+0 22 -1 0
+0 14 -1 0
+1
+end_operator
+begin_operator
+move train3 t8 t9 track5
+1
+3 1
+4
+0 37 8 9
+0 22 -1 0
+0 9 0 1
+0 14 -1 0
+1
+end_operator
+begin_operator
+move train3 t9 t8 track5
+1
+3 1
+4
+0 37 9 8
+0 22 0 1
+0 9 -1 0
+0 14 -1 0
+1
+end_operator
+begin_operator
+move train3 v1 t0 track0
+1
+3 1
+4
+0 37 10 0
+0 27 0 1
+0 28 -1 0
+0 14 -1 0
+1
+end_operator
+begin_operator
+move train4 t0 t1 track1
+1
+4 1
+4
+0 38 0 1
+0 27 -1 0
+0 24 0 1
+0 15 -1 0
+1
+end_operator
+begin_operator
+move train4 t0 t3 track2
+1
+4 1
+4
+0 38 0 3
+0 27 -1 0
+0 23 0 1
+0 15 -1 0
+1
+end_operator
+begin_operator
+move train4 t1 t0 track0
+1
+4 1
+4
+0 38 1 0
+0 27 0 1
+0 24 -1 0
+0 15 -1 0
+1
+end_operator
+begin_operator
+move train4 t1 t2 track1
+1
+4 1
+4
+0 38 1 2
+0 24 -1 0
+0 26 0 1
+0 15 -1 0
+1
+end_operator
+begin_operator
+move train4 t2 t1 track1
+1
+4 1
+4
+0 38 2 1
+0 24 0 1
+0 26 -1 0
+0 15 -1 0
+1
+end_operator
+begin_operator
+move train4 t2 t6 track4
+1
+4 1
+4
+0 38 2 6
+0 26 -1 0
+0 21 0 1
+0 15 -1 0
+1
+end_operator
+begin_operator
+move train4 t2 t8 track5
+1
+4 1
+4
+0 38 2 8
+0 26 -1 0
+0 22 0 1
+0 15 -1 0
+1
+end_operator
+begin_operator
+move train4 t3 t0 track0
+1
+4 1
+4
+0 38 3 0
+0 27 0 1
+0 23 -1 0
+0 15 -1 0
+1
+end_operator
+begin_operator
+move train4 t3 t4 track2
+1
+4 1
+4
+0 38 3 4
+0 23 -1 0
+0 20 0 1
+0 15 -1 0
+1
+end_operator
+begin_operator
+move train4 t4 t3 track2
+1
+4 1
+4
+0 38 4 3
+0 23 0 1
+0 20 -1 0
+0 15 -1 0
+1
+end_operator
+begin_operator
+move train4 t4 t5 track3
+1
+4 1
+4
+0 38 4 5
+0 20 -1 0
+0 7 0 1
+0 15 -1 0
+1
+end_operator
+begin_operator
+move train4 t5 t4 track2
+1
+4 1
+4
+0 38 5 4
+0 20 0 1
+0 7 -1 0
+0 15 -1 0
+1
+end_operator
+begin_operator
+move train4 t6 t2 track1
+1
+4 1
+4
+0 38 6 2
+0 26 0 1
+0 21 -1 0
+0 15 -1 0
+1
+end_operator
+begin_operator
+move train4 t6 t7 track4
+1
+4 1
+4
+0 38 6 7
+0 21 -1 0
+0 8 0 1
+0 15 -1 0
+1
+end_operator
+begin_operator
+move train4 t7 t6 track4
+1
+4 1
+4
+0 38 7 6
+0 21 0 1
+0 8 -1 0
+0 15 -1 0
+1
+end_operator
+begin_operator
+move train4 t8 t2 track1
+1
+4 1
+4
+0 38 8 2
+0 26 0 1
+0 22 -1 0
+0 15 -1 0
+1
+end_operator
+begin_operator
+move train4 t8 t9 track5
+1
+4 1
+4
+0 38 8 9
+0 22 -1 0
+0 9 0 1
+0 15 -1 0
+1
+end_operator
+begin_operator
+move train4 t9 t8 track5
+1
+4 1
+4
+0 38 9 8
+0 22 0 1
+0 9 -1 0
+0 15 -1 0
+1
+end_operator
+begin_operator
+move train4 v1 t0 track0
+1
+4 1
+4
+0 38 10 0
+0 27 0 1
+0 28 -1 0
+0 15 -1 0
+1
+end_operator
+begin_operator
+move train5 t0 t1 track1
+1
+5 1
+4
+0 39 0 1
+0 27 -1 0
+0 24 0 1
+0 16 -1 0
+1
+end_operator
+begin_operator
+move train5 t0 t3 track2
+1
+5 1
+4
+0 39 0 3
+0 27 -1 0
+0 23 0 1
+0 16 -1 0
+1
+end_operator
+begin_operator
+move train5 t1 t0 track0
+1
+5 1
+4
+0 39 1 0
+0 27 0 1
+0 24 -1 0
+0 16 -1 0
+1
+end_operator
+begin_operator
+move train5 t1 t2 track1
+1
+5 1
+4
+0 39 1 2
+0 24 -1 0
+0 26 0 1
+0 16 -1 0
+1
+end_operator
+begin_operator
+move train5 t2 t1 track1
+1
+5 1
+4
+0 39 2 1
+0 24 0 1
+0 26 -1 0
+0 16 -1 0
+1
+end_operator
+begin_operator
+move train5 t2 t6 track4
+1
+5 1
+4
+0 39 2 6
+0 26 -1 0
+0 21 0 1
+0 16 -1 0
+1
+end_operator
+begin_operator
+move train5 t2 t8 track5
+1
+5 1
+4
+0 39 2 8
+0 26 -1 0
+0 22 0 1
+0 16 -1 0
+1
+end_operator
+begin_operator
+move train5 t3 t0 track0
+1
+5 1
+4
+0 39 3 0
+0 27 0 1
+0 23 -1 0
+0 16 -1 0
+1
+end_operator
+begin_operator
+move train5 t3 t4 track2
+1
+5 1
+4
+0 39 3 4
+0 23 -1 0
+0 20 0 1
+0 16 -1 0
+1
+end_operator
+begin_operator
+move train5 t4 t3 track2
+1
+5 1
+4
+0 39 4 3
+0 23 0 1
+0 20 -1 0
+0 16 -1 0
+1
+end_operator
+begin_operator
+move train5 t4 t5 track3
+1
+5 1
+4
+0 39 4 5
+0 20 -1 0
+0 7 0 1
+0 16 -1 0
+1
+end_operator
+begin_operator
+move train5 t5 t4 track2
+1
+5 1
+4
+0 39 5 4
+0 20 0 1
+0 7 -1 0
+0 16 -1 0
+1
+end_operator
+begin_operator
+move train5 t6 t2 track1
+1
+5 1
+4
+0 39 6 2
+0 26 0 1
+0 21 -1 0
+0 16 -1 0
+1
+end_operator
+begin_operator
+move train5 t6 t7 track4
+1
+5 1
+4
+0 39 6 7
+0 21 -1 0
+0 8 0 1
+0 16 -1 0
+1
+end_operator
+begin_operator
+move train5 t7 t6 track4
+1
+5 1
+4
+0 39 7 6
+0 21 0 1
+0 8 -1 0
+0 16 -1 0
+1
+end_operator
+begin_operator
+move train5 t8 t2 track1
+1
+5 1
+4
+0 39 8 2
+0 26 0 1
+0 22 -1 0
+0 16 -1 0
+1
+end_operator
+begin_operator
+move train5 t8 t9 track5
+1
+5 1
+4
+0 39 8 9
+0 22 -1 0
+0 9 0 1
+0 16 -1 0
+1
+end_operator
+begin_operator
+move train5 t9 t8 track5
+1
+5 1
+4
+0 39 9 8
+0 22 0 1
+0 9 -1 0
+0 16 -1 0
+1
+end_operator
+begin_operator
+move train5 v1 t0 track0
+1
+5 1
+4
+0 39 10 0
+0 27 0 1
+0 28 -1 0
+0 16 -1 0
+1
+end_operator
+begin_operator
+move train6 t0 t1 track1
+1
+6 1
+4
+0 40 0 1
+0 27 -1 0
+0 24 0 1
+0 17 -1 0
+1
+end_operator
+begin_operator
+move train6 t0 t3 track2
+1
+6 1
+4
+0 40 0 3
+0 27 -1 0
+0 23 0 1
+0 17 -1 0
+1
+end_operator
+begin_operator
+move train6 t1 t0 track0
+1
+6 1
+4
+0 40 1 0
+0 27 0 1
+0 24 -1 0
+0 17 -1 0
+1
+end_operator
+begin_operator
+move train6 t1 t2 track1
+1
+6 1
+4
+0 40 1 2
+0 24 -1 0
+0 26 0 1
+0 17 -1 0
+1
+end_operator
+begin_operator
+move train6 t2 t1 track1
+1
+6 1
+4
+0 40 2 1
+0 24 0 1
+0 26 -1 0
+0 17 -1 0
+1
+end_operator
+begin_operator
+move train6 t2 t6 track4
+1
+6 1
+4
+0 40 2 6
+0 26 -1 0
+0 21 0 1
+0 17 -1 0
+1
+end_operator
+begin_operator
+move train6 t2 t8 track5
+1
+6 1
+4
+0 40 2 8
+0 26 -1 0
+0 22 0 1
+0 17 -1 0
+1
+end_operator
+begin_operator
+move train6 t3 t0 track0
+1
+6 1
+4
+0 40 3 0
+0 27 0 1
+0 23 -1 0
+0 17 -1 0
+1
+end_operator
+begin_operator
+move train6 t3 t4 track2
+1
+6 1
+4
+0 40 3 4
+0 23 -1 0
+0 20 0 1
+0 17 -1 0
+1
+end_operator
+begin_operator
+move train6 t4 t3 track2
+1
+6 1
+4
+0 40 4 3
+0 23 0 1
+0 20 -1 0
+0 17 -1 0
+1
+end_operator
+begin_operator
+move train6 t4 t5 track3
+1
+6 1
+4
+0 40 4 5
+0 20 -1 0
+0 7 0 1
+0 17 -1 0
+1
+end_operator
+begin_operator
+move train6 t5 t4 track2
+1
+6 1
+4
+0 40 5 4
+0 20 0 1
+0 7 -1 0
+0 17 -1 0
+1
+end_operator
+begin_operator
+move train6 t6 t2 track1
+1
+6 1
+4
+0 40 6 2
+0 26 0 1
+0 21 -1 0
+0 17 -1 0
+1
+end_operator
+begin_operator
+move train6 t6 t7 track4
+1
+6 1
+4
+0 40 6 7
+0 21 -1 0
+0 8 0 1
+0 17 -1 0
+1
+end_operator
+begin_operator
+move train6 t7 t6 track4
+1
+6 1
+4
+0 40 7 6
+0 21 0 1
+0 8 -1 0
+0 17 -1 0
+1
+end_operator
+begin_operator
+move train6 t8 t2 track1
+1
+6 1
+4
+0 40 8 2
+0 26 0 1
+0 22 -1 0
+0 17 -1 0
+1
+end_operator
+begin_operator
+move train6 t8 t9 track5
+1
+6 1
+4
+0 40 8 9
+0 22 -1 0
+0 9 0 1
+0 17 -1 0
+1
+end_operator
+begin_operator
+move train6 t9 t8 track5
+1
+6 1
+4
+0 40 9 8
+0 22 0 1
+0 9 -1 0
+0 17 -1 0
+1
+end_operator
+begin_operator
+move train6 v1 t0 track0
+1
+6 1
+4
+0 40 10 0
+0 27 0 1
+0 28 -1 0
+0 17 -1 0
+1
+end_operator
+begin_operator
+move train7 t0 t1 track1
+1
+10 1
+4
+0 41 0 1
+0 27 -1 0
+0 24 0 1
+0 18 -1 0
+1
+end_operator
+begin_operator
+move train7 t0 t3 track2
+1
+10 1
+4
+0 41 0 3
+0 27 -1 0
+0 23 0 1
+0 18 -1 0
+1
+end_operator
+begin_operator
+move train7 t1 t0 track0
+1
+10 1
+4
+0 41 1 0
+0 27 0 1
+0 24 -1 0
+0 18 -1 0
+1
+end_operator
+begin_operator
+move train7 t1 t2 track1
+1
+10 1
+4
+0 41 1 2
+0 24 -1 0
+0 26 0 1
+0 18 -1 0
+1
+end_operator
+begin_operator
+move train7 t2 t1 track1
+1
+10 1
+4
+0 41 2 1
+0 24 0 1
+0 26 -1 0
+0 18 -1 0
+1
+end_operator
+begin_operator
+move train7 t2 t6 track4
+1
+10 1
+4
+0 41 2 6
+0 26 -1 0
+0 21 0 1
+0 18 -1 0
+1
+end_operator
+begin_operator
+move train7 t2 t8 track5
+1
+10 1
+4
+0 41 2 8
+0 26 -1 0
+0 22 0 1
+0 18 -1 0
+1
+end_operator
+begin_operator
+move train7 t3 t0 track0
+1
+10 1
+4
+0 41 3 0
+0 27 0 1
+0 23 -1 0
+0 18 -1 0
+1
+end_operator
+begin_operator
+move train7 t3 t4 track2
+1
+10 1
+4
+0 41 3 4
+0 23 -1 0
+0 20 0 1
+0 18 -1 0
+1
+end_operator
+begin_operator
+move train7 t4 t3 track2
+1
+10 1
+4
+0 41 4 3
+0 23 0 1
+0 20 -1 0
+0 18 -1 0
+1
+end_operator
+begin_operator
+move train7 t4 t5 track3
+1
+10 1
+4
+0 41 4 5
+0 20 -1 0
+0 7 0 1
+0 18 -1 0
+1
+end_operator
+begin_operator
+move train7 t5 t4 track2
+1
+10 1
+4
+0 41 5 4
+0 20 0 1
+0 7 -1 0
+0 18 -1 0
+1
+end_operator
+begin_operator
+move train7 t6 t2 track1
+1
+10 1
+4
+0 41 6 2
+0 26 0 1
+0 21 -1 0
+0 18 -1 0
+1
+end_operator
+begin_operator
+move train7 t6 t7 track4
+1
+10 1
+4
+0 41 6 7
+0 21 -1 0
+0 8 0 1
+0 18 -1 0
+1
+end_operator
+begin_operator
+move train7 t7 t6 track4
+1
+10 1
+4
+0 41 7 6
+0 21 0 1
+0 8 -1 0
+0 18 -1 0
+1
+end_operator
+begin_operator
+move train7 t8 t2 track1
+1
+10 1
+4
+0 41 8 2
+0 26 0 1
+0 22 -1 0
+0 18 -1 0
+1
+end_operator
+begin_operator
+move train7 t8 t9 track5
+1
+10 1
+4
+0 41 8 9
+0 22 -1 0
+0 9 0 1
+0 18 -1 0
+1
+end_operator
+begin_operator
+move train7 t9 t8 track5
+1
+10 1
+4
+0 41 9 8
+0 22 0 1
+0 9 -1 0
+0 18 -1 0
+1
+end_operator
+begin_operator
+move train7 v1 t0 track0
+1
+10 1
+4
+0 41 10 0
+0 27 0 1
+0 28 -1 0
+0 18 -1 0
+1
+end_operator
+begin_operator
+move train8 t0 t1 track1
+1
+11 1
+4
+0 42 0 1
+0 27 -1 0
+0 24 0 1
+0 19 -1 0
+1
+end_operator
+begin_operator
+move train8 t0 t3 track2
+1
+11 1
+4
+0 42 0 3
+0 27 -1 0
+0 23 0 1
+0 19 -1 0
+1
+end_operator
+begin_operator
+move train8 t1 t0 track0
+1
+11 1
+4
+0 42 1 0
+0 27 0 1
+0 24 -1 0
+0 19 -1 0
+1
+end_operator
+begin_operator
+move train8 t1 t2 track1
+1
+11 1
+4
+0 42 1 2
+0 24 -1 0
+0 26 0 1
+0 19 -1 0
+1
+end_operator
+begin_operator
+move train8 t2 t1 track1
+1
+11 1
+4
+0 42 2 1
+0 24 0 1
+0 26 -1 0
+0 19 -1 0
+1
+end_operator
+begin_operator
+move train8 t2 t6 track4
+1
+11 1
+4
+0 42 2 6
+0 26 -1 0
+0 21 0 1
+0 19 -1 0
+1
+end_operator
+begin_operator
+move train8 t2 t8 track5
+1
+11 1
+4
+0 42 2 8
+0 26 -1 0
+0 22 0 1
+0 19 -1 0
+1
+end_operator
+begin_operator
+move train8 t3 t0 track0
+1
+11 1
+4
+0 42 3 0
+0 27 0 1
+0 23 -1 0
+0 19 -1 0
+1
+end_operator
+begin_operator
+move train8 t3 t4 track2
+1
+11 1
+4
+0 42 3 4
+0 23 -1 0
+0 20 0 1
+0 19 -1 0
+1
+end_operator
+begin_operator
+move train8 t4 t3 track2
+1
+11 1
+4
+0 42 4 3
+0 23 0 1
+0 20 -1 0
+0 19 -1 0
+1
+end_operator
+begin_operator
+move train8 t4 t5 track3
+1
+11 1
+4
+0 42 4 5
+0 20 -1 0
+0 7 0 1
+0 19 -1 0
+1
+end_operator
+begin_operator
+move train8 t5 t4 track2
+1
+11 1
+4
+0 42 5 4
+0 20 0 1
+0 7 -1 0
+0 19 -1 0
+1
+end_operator
+begin_operator
+move train8 t6 t2 track1
+1
+11 1
+4
+0 42 6 2
+0 26 0 1
+0 21 -1 0
+0 19 -1 0
+1
+end_operator
+begin_operator
+move train8 t6 t7 track4
+1
+11 1
+4
+0 42 6 7
+0 21 -1 0
+0 8 0 1
+0 19 -1 0
+1
+end_operator
+begin_operator
+move train8 t7 t6 track4
+1
+11 1
+4
+0 42 7 6
+0 21 0 1
+0 8 -1 0
+0 19 -1 0
+1
+end_operator
+begin_operator
+move train8 t8 t2 track1
+1
+11 1
+4
+0 42 8 2
+0 26 0 1
+0 22 -1 0
+0 19 -1 0
+1
+end_operator
+begin_operator
+move train8 t8 t9 track5
+1
+11 1
+4
+0 42 8 9
+0 22 -1 0
+0 9 0 1
+0 19 -1 0
+1
+end_operator
+begin_operator
+move train8 t9 t8 track5
+1
+11 1
+4
+0 42 9 8
+0 22 0 1
+0 9 -1 0
+0 19 -1 0
+1
+end_operator
+begin_operator
+move train8 v1 t0 track0
+1
+11 1
+4
+0 42 10 0
+0 27 0 1
+0 28 -1 0
+0 19 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train1 v1 t0
+2
+12 1
+1 1
+3
+0 35 10 0
+0 27 0 1
+0 28 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train1 v1 v2
+2
+12 1
+1 1
+3
+0 35 10 11
+0 28 -1 0
+0 30 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train1 v2 v1
+2
+12 1
+1 1
+3
+0 35 11 10
+0 28 0 1
+0 30 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train1 v2 v3
+2
+12 1
+1 1
+3
+0 35 11 12
+0 30 -1 0
+0 32 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train1 v3 v2
+2
+12 1
+1 1
+3
+0 35 12 11
+0 30 0 1
+0 32 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train1 v3 v4
+2
+12 1
+1 1
+3
+0 35 12 13
+0 32 -1 0
+0 34 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train1 v4 v3
+2
+12 1
+1 1
+3
+0 35 13 12
+0 32 0 1
+0 34 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train1 v4 v5
+2
+12 1
+1 1
+3
+0 35 13 14
+0 34 -1 0
+0 33 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train1 v5 v4
+2
+12 1
+1 1
+3
+0 35 14 13
+0 34 0 1
+0 33 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train1 v5 v6
+2
+12 1
+1 1
+3
+0 35 14 15
+0 33 -1 0
+0 31 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train1 v6 v5
+2
+12 1
+1 1
+3
+0 35 15 14
+0 33 0 1
+0 31 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train1 v6 v7
+2
+12 1
+1 1
+3
+0 35 15 16
+0 31 -1 0
+0 29 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train1 v7 v6
+2
+12 1
+1 1
+3
+0 35 16 15
+0 31 0 1
+0 29 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train1 v7 v8
+2
+12 1
+1 1
+3
+0 35 16 17
+0 29 -1 0
+0 25 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train1 v8 v7
+2
+12 1
+1 1
+3
+0 35 17 16
+0 29 0 1
+0 25 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train2 v1 t0
+2
+13 1
+2 1
+3
+0 36 10 0
+0 27 0 1
+0 28 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train2 v1 v2
+2
+13 1
+2 1
+3
+0 36 10 11
+0 28 -1 0
+0 30 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train2 v2 v1
+2
+13 1
+2 1
+3
+0 36 11 10
+0 28 0 1
+0 30 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train2 v2 v3
+2
+13 1
+2 1
+3
+0 36 11 12
+0 30 -1 0
+0 32 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train2 v3 v2
+2
+13 1
+2 1
+3
+0 36 12 11
+0 30 0 1
+0 32 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train2 v3 v4
+2
+13 1
+2 1
+3
+0 36 12 13
+0 32 -1 0
+0 34 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train2 v4 v3
+2
+13 1
+2 1
+3
+0 36 13 12
+0 32 0 1
+0 34 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train2 v4 v5
+2
+13 1
+2 1
+3
+0 36 13 14
+0 34 -1 0
+0 33 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train2 v5 v4
+2
+13 1
+2 1
+3
+0 36 14 13
+0 34 0 1
+0 33 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train2 v5 v6
+2
+13 1
+2 1
+3
+0 36 14 15
+0 33 -1 0
+0 31 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train2 v6 v5
+2
+13 1
+2 1
+3
+0 36 15 14
+0 33 0 1
+0 31 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train2 v6 v7
+2
+13 1
+2 1
+3
+0 36 15 16
+0 31 -1 0
+0 29 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train2 v7 v6
+2
+13 1
+2 1
+3
+0 36 16 15
+0 31 0 1
+0 29 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train2 v7 v8
+2
+13 1
+2 1
+3
+0 36 16 17
+0 29 -1 0
+0 25 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train2 v8 v7
+2
+13 1
+2 1
+3
+0 36 17 16
+0 29 0 1
+0 25 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train3 v1 t0
+2
+14 1
+3 1
+3
+0 37 10 0
+0 27 0 1
+0 28 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train3 v1 v2
+2
+14 1
+3 1
+3
+0 37 10 11
+0 28 -1 0
+0 30 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train3 v2 v1
+2
+14 1
+3 1
+3
+0 37 11 10
+0 28 0 1
+0 30 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train3 v2 v3
+2
+14 1
+3 1
+3
+0 37 11 12
+0 30 -1 0
+0 32 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train3 v3 v2
+2
+14 1
+3 1
+3
+0 37 12 11
+0 30 0 1
+0 32 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train3 v3 v4
+2
+14 1
+3 1
+3
+0 37 12 13
+0 32 -1 0
+0 34 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train3 v4 v3
+2
+14 1
+3 1
+3
+0 37 13 12
+0 32 0 1
+0 34 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train3 v4 v5
+2
+14 1
+3 1
+3
+0 37 13 14
+0 34 -1 0
+0 33 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train3 v5 v4
+2
+14 1
+3 1
+3
+0 37 14 13
+0 34 0 1
+0 33 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train3 v5 v6
+2
+14 1
+3 1
+3
+0 37 14 15
+0 33 -1 0
+0 31 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train3 v6 v5
+2
+14 1
+3 1
+3
+0 37 15 14
+0 33 0 1
+0 31 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train3 v6 v7
+2
+14 1
+3 1
+3
+0 37 15 16
+0 31 -1 0
+0 29 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train3 v7 v6
+2
+14 1
+3 1
+3
+0 37 16 15
+0 31 0 1
+0 29 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train3 v7 v8
+2
+14 1
+3 1
+3
+0 37 16 17
+0 29 -1 0
+0 25 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train3 v8 v7
+2
+14 1
+3 1
+3
+0 37 17 16
+0 29 0 1
+0 25 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train4 v1 t0
+2
+15 1
+4 1
+3
+0 38 10 0
+0 27 0 1
+0 28 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train4 v1 v2
+2
+15 1
+4 1
+3
+0 38 10 11
+0 28 -1 0
+0 30 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train4 v2 v1
+2
+15 1
+4 1
+3
+0 38 11 10
+0 28 0 1
+0 30 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train4 v2 v3
+2
+15 1
+4 1
+3
+0 38 11 12
+0 30 -1 0
+0 32 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train4 v3 v2
+2
+15 1
+4 1
+3
+0 38 12 11
+0 30 0 1
+0 32 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train4 v3 v4
+2
+15 1
+4 1
+3
+0 38 12 13
+0 32 -1 0
+0 34 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train4 v4 v3
+2
+15 1
+4 1
+3
+0 38 13 12
+0 32 0 1
+0 34 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train4 v4 v5
+2
+15 1
+4 1
+3
+0 38 13 14
+0 34 -1 0
+0 33 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train4 v5 v4
+2
+15 1
+4 1
+3
+0 38 14 13
+0 34 0 1
+0 33 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train4 v5 v6
+2
+15 1
+4 1
+3
+0 38 14 15
+0 33 -1 0
+0 31 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train4 v6 v5
+2
+15 1
+4 1
+3
+0 38 15 14
+0 33 0 1
+0 31 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train4 v6 v7
+2
+15 1
+4 1
+3
+0 38 15 16
+0 31 -1 0
+0 29 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train4 v7 v6
+2
+15 1
+4 1
+3
+0 38 16 15
+0 31 0 1
+0 29 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train4 v7 v8
+2
+15 1
+4 1
+3
+0 38 16 17
+0 29 -1 0
+0 25 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train4 v8 v7
+2
+15 1
+4 1
+3
+0 38 17 16
+0 29 0 1
+0 25 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train5 v1 t0
+2
+16 1
+5 1
+3
+0 39 10 0
+0 27 0 1
+0 28 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train5 v1 v2
+2
+16 1
+5 1
+3
+0 39 10 11
+0 28 -1 0
+0 30 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train5 v2 v1
+2
+16 1
+5 1
+3
+0 39 11 10
+0 28 0 1
+0 30 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train5 v2 v3
+2
+16 1
+5 1
+3
+0 39 11 12
+0 30 -1 0
+0 32 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train5 v3 v2
+2
+16 1
+5 1
+3
+0 39 12 11
+0 30 0 1
+0 32 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train5 v3 v4
+2
+16 1
+5 1
+3
+0 39 12 13
+0 32 -1 0
+0 34 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train5 v4 v3
+2
+16 1
+5 1
+3
+0 39 13 12
+0 32 0 1
+0 34 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train5 v4 v5
+2
+16 1
+5 1
+3
+0 39 13 14
+0 34 -1 0
+0 33 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train5 v5 v4
+2
+16 1
+5 1
+3
+0 39 14 13
+0 34 0 1
+0 33 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train5 v5 v6
+2
+16 1
+5 1
+3
+0 39 14 15
+0 33 -1 0
+0 31 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train5 v6 v5
+2
+16 1
+5 1
+3
+0 39 15 14
+0 33 0 1
+0 31 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train5 v6 v7
+2
+16 1
+5 1
+3
+0 39 15 16
+0 31 -1 0
+0 29 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train5 v7 v6
+2
+16 1
+5 1
+3
+0 39 16 15
+0 31 0 1
+0 29 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train5 v7 v8
+2
+16 1
+5 1
+3
+0 39 16 17
+0 29 -1 0
+0 25 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train5 v8 v7
+2
+16 1
+5 1
+3
+0 39 17 16
+0 29 0 1
+0 25 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train6 v1 t0
+2
+17 1
+6 1
+3
+0 40 10 0
+0 27 0 1
+0 28 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train6 v1 v2
+2
+17 1
+6 1
+3
+0 40 10 11
+0 28 -1 0
+0 30 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train6 v2 v1
+2
+17 1
+6 1
+3
+0 40 11 10
+0 28 0 1
+0 30 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train6 v2 v3
+2
+17 1
+6 1
+3
+0 40 11 12
+0 30 -1 0
+0 32 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train6 v3 v2
+2
+17 1
+6 1
+3
+0 40 12 11
+0 30 0 1
+0 32 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train6 v3 v4
+2
+17 1
+6 1
+3
+0 40 12 13
+0 32 -1 0
+0 34 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train6 v4 v3
+2
+17 1
+6 1
+3
+0 40 13 12
+0 32 0 1
+0 34 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train6 v4 v5
+2
+17 1
+6 1
+3
+0 40 13 14
+0 34 -1 0
+0 33 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train6 v5 v4
+2
+17 1
+6 1
+3
+0 40 14 13
+0 34 0 1
+0 33 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train6 v5 v6
+2
+17 1
+6 1
+3
+0 40 14 15
+0 33 -1 0
+0 31 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train6 v6 v5
+2
+17 1
+6 1
+3
+0 40 15 14
+0 33 0 1
+0 31 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train6 v6 v7
+2
+17 1
+6 1
+3
+0 40 15 16
+0 31 -1 0
+0 29 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train6 v7 v6
+2
+17 1
+6 1
+3
+0 40 16 15
+0 31 0 1
+0 29 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train6 v7 v8
+2
+17 1
+6 1
+3
+0 40 16 17
+0 29 -1 0
+0 25 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train6 v8 v7
+2
+17 1
+6 1
+3
+0 40 17 16
+0 29 0 1
+0 25 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train7 v1 t0
+2
+18 1
+10 1
+3
+0 41 10 0
+0 27 0 1
+0 28 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train7 v1 v2
+2
+18 1
+10 1
+3
+0 41 10 11
+0 28 -1 0
+0 30 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train7 v2 v1
+2
+18 1
+10 1
+3
+0 41 11 10
+0 28 0 1
+0 30 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train7 v2 v3
+2
+18 1
+10 1
+3
+0 41 11 12
+0 30 -1 0
+0 32 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train7 v3 v2
+2
+18 1
+10 1
+3
+0 41 12 11
+0 30 0 1
+0 32 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train7 v3 v4
+2
+18 1
+10 1
+3
+0 41 12 13
+0 32 -1 0
+0 34 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train7 v4 v3
+2
+18 1
+10 1
+3
+0 41 13 12
+0 32 0 1
+0 34 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train7 v4 v5
+2
+18 1
+10 1
+3
+0 41 13 14
+0 34 -1 0
+0 33 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train7 v5 v4
+2
+18 1
+10 1
+3
+0 41 14 13
+0 34 0 1
+0 33 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train7 v5 v6
+2
+18 1
+10 1
+3
+0 41 14 15
+0 33 -1 0
+0 31 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train7 v6 v5
+2
+18 1
+10 1
+3
+0 41 15 14
+0 33 0 1
+0 31 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train7 v6 v7
+2
+18 1
+10 1
+3
+0 41 15 16
+0 31 -1 0
+0 29 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train7 v7 v6
+2
+18 1
+10 1
+3
+0 41 16 15
+0 31 0 1
+0 29 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train7 v7 v8
+2
+18 1
+10 1
+3
+0 41 16 17
+0 29 -1 0
+0 25 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train7 v8 v7
+2
+18 1
+10 1
+3
+0 41 17 16
+0 29 0 1
+0 25 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train8 v1 t0
+2
+19 1
+11 1
+3
+0 42 10 0
+0 27 0 1
+0 28 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train8 v1 v2
+2
+19 1
+11 1
+3
+0 42 10 11
+0 28 -1 0
+0 30 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train8 v2 v1
+2
+19 1
+11 1
+3
+0 42 11 10
+0 28 0 1
+0 30 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train8 v2 v3
+2
+19 1
+11 1
+3
+0 42 11 12
+0 30 -1 0
+0 32 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train8 v3 v2
+2
+19 1
+11 1
+3
+0 42 12 11
+0 30 0 1
+0 32 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train8 v3 v4
+2
+19 1
+11 1
+3
+0 42 12 13
+0 32 -1 0
+0 34 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train8 v4 v3
+2
+19 1
+11 1
+3
+0 42 13 12
+0 32 0 1
+0 34 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train8 v4 v5
+2
+19 1
+11 1
+3
+0 42 13 14
+0 34 -1 0
+0 33 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train8 v5 v4
+2
+19 1
+11 1
+3
+0 42 14 13
+0 34 0 1
+0 33 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train8 v5 v6
+2
+19 1
+11 1
+3
+0 42 14 15
+0 33 -1 0
+0 31 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train8 v6 v5
+2
+19 1
+11 1
+3
+0 42 15 14
+0 33 0 1
+0 31 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train8 v6 v7
+2
+19 1
+11 1
+3
+0 42 15 16
+0 31 -1 0
+0 29 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train8 v7 v6
+2
+19 1
+11 1
+3
+0 42 16 15
+0 31 0 1
+0 29 -1 0
+1
+end_operator
+begin_operator
+move-on-arrival train8 v7 v8
+2
+19 1
+11 1
+3
+0 42 16 17
+0 29 -1 0
+0 25 0 1
+1
+end_operator
+begin_operator
+move-on-arrival train8 v8 v7
+2
+19 1
+11 1
+3
+0 42 17 16
+0 29 0 1
+0 25 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train1 t0 v1
+1
+0 1
+4
+0 35 0 10
+0 27 -1 0
+0 28 0 1
+0 1 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train1 v1 v2
+1
+0 1
+4
+0 35 10 11
+0 28 -1 0
+0 30 0 1
+0 1 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train1 v2 v1
+1
+0 1
+4
+0 35 11 10
+0 28 0 1
+0 30 -1 0
+0 1 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train1 v2 v3
+1
+0 1
+4
+0 35 11 12
+0 30 -1 0
+0 32 0 1
+0 1 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train1 v3 v2
+1
+0 1
+4
+0 35 12 11
+0 30 0 1
+0 32 -1 0
+0 1 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train1 v3 v4
+1
+0 1
+4
+0 35 12 13
+0 32 -1 0
+0 34 0 1
+0 1 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train1 v4 v3
+1
+0 1
+4
+0 35 13 12
+0 32 0 1
+0 34 -1 0
+0 1 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train1 v4 v5
+1
+0 1
+4
+0 35 13 14
+0 34 -1 0
+0 33 0 1
+0 1 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train1 v5 v4
+1
+0 1
+4
+0 35 14 13
+0 34 0 1
+0 33 -1 0
+0 1 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train1 v5 v6
+1
+0 1
+4
+0 35 14 15
+0 33 -1 0
+0 31 0 1
+0 1 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train1 v6 v5
+1
+0 1
+4
+0 35 15 14
+0 33 0 1
+0 31 -1 0
+0 1 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train1 v6 v7
+1
+0 1
+4
+0 35 15 16
+0 31 -1 0
+0 29 0 1
+0 1 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train1 v7 v6
+1
+0 1
+4
+0 35 16 15
+0 31 0 1
+0 29 -1 0
+0 1 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train1 v7 v8
+1
+0 1
+4
+0 35 16 17
+0 29 -1 0
+0 25 0 1
+0 1 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train1 v8 v7
+1
+0 1
+4
+0 35 17 16
+0 29 0 1
+0 25 -1 0
+0 1 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train2 t0 v1
+1
+0 1
+4
+0 36 0 10
+0 27 -1 0
+0 28 0 1
+0 2 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train2 v1 v2
+1
+0 1
+4
+0 36 10 11
+0 28 -1 0
+0 30 0 1
+0 2 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train2 v2 v1
+1
+0 1
+4
+0 36 11 10
+0 28 0 1
+0 30 -1 0
+0 2 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train2 v2 v3
+1
+0 1
+4
+0 36 11 12
+0 30 -1 0
+0 32 0 1
+0 2 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train2 v3 v2
+1
+0 1
+4
+0 36 12 11
+0 30 0 1
+0 32 -1 0
+0 2 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train2 v3 v4
+1
+0 1
+4
+0 36 12 13
+0 32 -1 0
+0 34 0 1
+0 2 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train2 v4 v3
+1
+0 1
+4
+0 36 13 12
+0 32 0 1
+0 34 -1 0
+0 2 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train2 v4 v5
+1
+0 1
+4
+0 36 13 14
+0 34 -1 0
+0 33 0 1
+0 2 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train2 v5 v4
+1
+0 1
+4
+0 36 14 13
+0 34 0 1
+0 33 -1 0
+0 2 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train2 v5 v6
+1
+0 1
+4
+0 36 14 15
+0 33 -1 0
+0 31 0 1
+0 2 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train2 v6 v5
+1
+0 1
+4
+0 36 15 14
+0 33 0 1
+0 31 -1 0
+0 2 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train2 v6 v7
+1
+0 1
+4
+0 36 15 16
+0 31 -1 0
+0 29 0 1
+0 2 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train2 v7 v6
+1
+0 1
+4
+0 36 16 15
+0 31 0 1
+0 29 -1 0
+0 2 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train2 v7 v8
+1
+0 1
+4
+0 36 16 17
+0 29 -1 0
+0 25 0 1
+0 2 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train2 v8 v7
+1
+0 1
+4
+0 36 17 16
+0 29 0 1
+0 25 -1 0
+0 2 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train3 t0 v1
+1
+0 1
+4
+0 37 0 10
+0 27 -1 0
+0 28 0 1
+0 3 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train3 v1 v2
+1
+0 1
+4
+0 37 10 11
+0 28 -1 0
+0 30 0 1
+0 3 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train3 v2 v1
+1
+0 1
+4
+0 37 11 10
+0 28 0 1
+0 30 -1 0
+0 3 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train3 v2 v3
+1
+0 1
+4
+0 37 11 12
+0 30 -1 0
+0 32 0 1
+0 3 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train3 v3 v2
+1
+0 1
+4
+0 37 12 11
+0 30 0 1
+0 32 -1 0
+0 3 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train3 v3 v4
+1
+0 1
+4
+0 37 12 13
+0 32 -1 0
+0 34 0 1
+0 3 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train3 v4 v3
+1
+0 1
+4
+0 37 13 12
+0 32 0 1
+0 34 -1 0
+0 3 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train3 v4 v5
+1
+0 1
+4
+0 37 13 14
+0 34 -1 0
+0 33 0 1
+0 3 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train3 v5 v4
+1
+0 1
+4
+0 37 14 13
+0 34 0 1
+0 33 -1 0
+0 3 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train3 v5 v6
+1
+0 1
+4
+0 37 14 15
+0 33 -1 0
+0 31 0 1
+0 3 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train3 v6 v5
+1
+0 1
+4
+0 37 15 14
+0 33 0 1
+0 31 -1 0
+0 3 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train3 v6 v7
+1
+0 1
+4
+0 37 15 16
+0 31 -1 0
+0 29 0 1
+0 3 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train3 v7 v6
+1
+0 1
+4
+0 37 16 15
+0 31 0 1
+0 29 -1 0
+0 3 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train3 v7 v8
+1
+0 1
+4
+0 37 16 17
+0 29 -1 0
+0 25 0 1
+0 3 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train3 v8 v7
+1
+0 1
+4
+0 37 17 16
+0 29 0 1
+0 25 -1 0
+0 3 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train4 t0 v1
+1
+0 1
+4
+0 38 0 10
+0 27 -1 0
+0 28 0 1
+0 4 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train4 v1 v2
+1
+0 1
+4
+0 38 10 11
+0 28 -1 0
+0 30 0 1
+0 4 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train4 v2 v1
+1
+0 1
+4
+0 38 11 10
+0 28 0 1
+0 30 -1 0
+0 4 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train4 v2 v3
+1
+0 1
+4
+0 38 11 12
+0 30 -1 0
+0 32 0 1
+0 4 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train4 v3 v2
+1
+0 1
+4
+0 38 12 11
+0 30 0 1
+0 32 -1 0
+0 4 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train4 v3 v4
+1
+0 1
+4
+0 38 12 13
+0 32 -1 0
+0 34 0 1
+0 4 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train4 v4 v3
+1
+0 1
+4
+0 38 13 12
+0 32 0 1
+0 34 -1 0
+0 4 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train4 v4 v5
+1
+0 1
+4
+0 38 13 14
+0 34 -1 0
+0 33 0 1
+0 4 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train4 v5 v4
+1
+0 1
+4
+0 38 14 13
+0 34 0 1
+0 33 -1 0
+0 4 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train4 v5 v6
+1
+0 1
+4
+0 38 14 15
+0 33 -1 0
+0 31 0 1
+0 4 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train4 v6 v5
+1
+0 1
+4
+0 38 15 14
+0 33 0 1
+0 31 -1 0
+0 4 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train4 v6 v7
+1
+0 1
+4
+0 38 15 16
+0 31 -1 0
+0 29 0 1
+0 4 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train4 v7 v6
+1
+0 1
+4
+0 38 16 15
+0 31 0 1
+0 29 -1 0
+0 4 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train4 v7 v8
+1
+0 1
+4
+0 38 16 17
+0 29 -1 0
+0 25 0 1
+0 4 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train4 v8 v7
+1
+0 1
+4
+0 38 17 16
+0 29 0 1
+0 25 -1 0
+0 4 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train5 t0 v1
+1
+0 1
+4
+0 39 0 10
+0 27 -1 0
+0 28 0 1
+0 5 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train5 v1 v2
+1
+0 1
+4
+0 39 10 11
+0 28 -1 0
+0 30 0 1
+0 5 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train5 v2 v1
+1
+0 1
+4
+0 39 11 10
+0 28 0 1
+0 30 -1 0
+0 5 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train5 v2 v3
+1
+0 1
+4
+0 39 11 12
+0 30 -1 0
+0 32 0 1
+0 5 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train5 v3 v2
+1
+0 1
+4
+0 39 12 11
+0 30 0 1
+0 32 -1 0
+0 5 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train5 v3 v4
+1
+0 1
+4
+0 39 12 13
+0 32 -1 0
+0 34 0 1
+0 5 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train5 v4 v3
+1
+0 1
+4
+0 39 13 12
+0 32 0 1
+0 34 -1 0
+0 5 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train5 v4 v5
+1
+0 1
+4
+0 39 13 14
+0 34 -1 0
+0 33 0 1
+0 5 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train5 v5 v4
+1
+0 1
+4
+0 39 14 13
+0 34 0 1
+0 33 -1 0
+0 5 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train5 v5 v6
+1
+0 1
+4
+0 39 14 15
+0 33 -1 0
+0 31 0 1
+0 5 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train5 v6 v5
+1
+0 1
+4
+0 39 15 14
+0 33 0 1
+0 31 -1 0
+0 5 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train5 v6 v7
+1
+0 1
+4
+0 39 15 16
+0 31 -1 0
+0 29 0 1
+0 5 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train5 v7 v6
+1
+0 1
+4
+0 39 16 15
+0 31 0 1
+0 29 -1 0
+0 5 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train5 v7 v8
+1
+0 1
+4
+0 39 16 17
+0 29 -1 0
+0 25 0 1
+0 5 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train5 v8 v7
+1
+0 1
+4
+0 39 17 16
+0 29 0 1
+0 25 -1 0
+0 5 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train6 t0 v1
+1
+0 1
+4
+0 40 0 10
+0 27 -1 0
+0 28 0 1
+0 6 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train6 v1 v2
+1
+0 1
+4
+0 40 10 11
+0 28 -1 0
+0 30 0 1
+0 6 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train6 v2 v1
+1
+0 1
+4
+0 40 11 10
+0 28 0 1
+0 30 -1 0
+0 6 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train6 v2 v3
+1
+0 1
+4
+0 40 11 12
+0 30 -1 0
+0 32 0 1
+0 6 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train6 v3 v2
+1
+0 1
+4
+0 40 12 11
+0 30 0 1
+0 32 -1 0
+0 6 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train6 v3 v4
+1
+0 1
+4
+0 40 12 13
+0 32 -1 0
+0 34 0 1
+0 6 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train6 v4 v3
+1
+0 1
+4
+0 40 13 12
+0 32 0 1
+0 34 -1 0
+0 6 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train6 v4 v5
+1
+0 1
+4
+0 40 13 14
+0 34 -1 0
+0 33 0 1
+0 6 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train6 v5 v4
+1
+0 1
+4
+0 40 14 13
+0 34 0 1
+0 33 -1 0
+0 6 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train6 v5 v6
+1
+0 1
+4
+0 40 14 15
+0 33 -1 0
+0 31 0 1
+0 6 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train6 v6 v5
+1
+0 1
+4
+0 40 15 14
+0 33 0 1
+0 31 -1 0
+0 6 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train6 v6 v7
+1
+0 1
+4
+0 40 15 16
+0 31 -1 0
+0 29 0 1
+0 6 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train6 v7 v6
+1
+0 1
+4
+0 40 16 15
+0 31 0 1
+0 29 -1 0
+0 6 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train6 v7 v8
+1
+0 1
+4
+0 40 16 17
+0 29 -1 0
+0 25 0 1
+0 6 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train6 v8 v7
+1
+0 1
+4
+0 40 17 16
+0 29 0 1
+0 25 -1 0
+0 6 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train7 t0 v1
+1
+0 1
+4
+0 41 0 10
+0 27 -1 0
+0 28 0 1
+0 10 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train7 v1 v2
+1
+0 1
+4
+0 41 10 11
+0 28 -1 0
+0 30 0 1
+0 10 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train7 v2 v1
+1
+0 1
+4
+0 41 11 10
+0 28 0 1
+0 30 -1 0
+0 10 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train7 v2 v3
+1
+0 1
+4
+0 41 11 12
+0 30 -1 0
+0 32 0 1
+0 10 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train7 v3 v2
+1
+0 1
+4
+0 41 12 11
+0 30 0 1
+0 32 -1 0
+0 10 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train7 v3 v4
+1
+0 1
+4
+0 41 12 13
+0 32 -1 0
+0 34 0 1
+0 10 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train7 v4 v3
+1
+0 1
+4
+0 41 13 12
+0 32 0 1
+0 34 -1 0
+0 10 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train7 v4 v5
+1
+0 1
+4
+0 41 13 14
+0 34 -1 0
+0 33 0 1
+0 10 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train7 v5 v4
+1
+0 1
+4
+0 41 14 13
+0 34 0 1
+0 33 -1 0
+0 10 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train7 v5 v6
+1
+0 1
+4
+0 41 14 15
+0 33 -1 0
+0 31 0 1
+0 10 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train7 v6 v5
+1
+0 1
+4
+0 41 15 14
+0 33 0 1
+0 31 -1 0
+0 10 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train7 v6 v7
+1
+0 1
+4
+0 41 15 16
+0 31 -1 0
+0 29 0 1
+0 10 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train7 v7 v6
+1
+0 1
+4
+0 41 16 15
+0 31 0 1
+0 29 -1 0
+0 10 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train7 v7 v8
+1
+0 1
+4
+0 41 16 17
+0 29 -1 0
+0 25 0 1
+0 10 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train7 v8 v7
+1
+0 1
+4
+0 41 17 16
+0 29 0 1
+0 25 -1 0
+0 10 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train8 t0 v1
+1
+0 1
+4
+0 42 0 10
+0 27 -1 0
+0 28 0 1
+0 11 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train8 v1 v2
+1
+0 1
+4
+0 42 10 11
+0 28 -1 0
+0 30 0 1
+0 11 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train8 v2 v1
+1
+0 1
+4
+0 42 11 10
+0 28 0 1
+0 30 -1 0
+0 11 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train8 v2 v3
+1
+0 1
+4
+0 42 11 12
+0 30 -1 0
+0 32 0 1
+0 11 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train8 v3 v2
+1
+0 1
+4
+0 42 12 11
+0 30 0 1
+0 32 -1 0
+0 11 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train8 v3 v4
+1
+0 1
+4
+0 42 12 13
+0 32 -1 0
+0 34 0 1
+0 11 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train8 v4 v3
+1
+0 1
+4
+0 42 13 12
+0 32 0 1
+0 34 -1 0
+0 11 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train8 v4 v5
+1
+0 1
+4
+0 42 13 14
+0 34 -1 0
+0 33 0 1
+0 11 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train8 v5 v4
+1
+0 1
+4
+0 42 14 13
+0 34 0 1
+0 33 -1 0
+0 11 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train8 v5 v6
+1
+0 1
+4
+0 42 14 15
+0 33 -1 0
+0 31 0 1
+0 11 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train8 v6 v5
+1
+0 1
+4
+0 42 15 14
+0 33 0 1
+0 31 -1 0
+0 11 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train8 v6 v7
+1
+0 1
+4
+0 42 15 16
+0 31 -1 0
+0 29 0 1
+0 11 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train8 v7 v6
+1
+0 1
+4
+0 42 16 15
+0 31 0 1
+0 29 -1 0
+0 11 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train8 v7 v8
+1
+0 1
+4
+0 42 16 17
+0 29 -1 0
+0 25 0 1
+0 11 -1 0
+1
+end_operator
+begin_operator
+move-to-departure train8 v8 v7
+1
+0 1
+4
+0 42 17 16
+0 29 0 1
+0 25 -1 0
+0 11 -1 0
+1
+end_operator
+begin_operator
+service-train train3 t3 track2 cleaning
+2
+37 3
+3 1
+1
+0 45 0 1
+1
+end_operator
+begin_operator
+service-train train3 t4 track2 cleaning
+2
+37 4
+3 1
+1
+0 45 0 1
+1
+end_operator
+begin_operator
+service-train train5 t3 track2 cleaning
+2
+39 3
+5 1
+1
+0 44 0 1
+1
+end_operator
+begin_operator
+service-train train5 t4 track2 cleaning
+2
+39 4
+5 1
+1
+0 44 0 1
+1
+end_operator
+begin_operator
+service-train train8 t3 track2 cleaning
+2
+42 3
+11 1
+1
+0 43 0 1
+1
+end_operator
+begin_operator
+service-train train8 t4 track2 cleaning
+2
+42 4
+11 1
+1
+0 43 0 1
+1
+end_operator
+3
+begin_rule
+8
+12 0
+13 0
+14 0
+15 0
+16 0
+17 0
+18 0
+19 0
+0 0 1
+end_rule
+begin_rule
+16
+12 0
+13 0
+14 0
+15 0
+16 0
+17 0
+18 0
+19 0
+1 0
+2 0
+3 0
+4 0
+5 0
+6 0
+10 0
+11 0
+47 0 1
+end_rule
+begin_rule
+3
+45 1
+44 1
+43 1
+46 0 1
+end_rule

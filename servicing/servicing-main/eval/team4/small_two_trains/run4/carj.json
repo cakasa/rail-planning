@@ -1,0 +1,77 @@
+{
+    "carj": [
+        {
+            "storeOverhead": 0.00272873206995428
+        }
+    ],
+    "incplan": {
+        "parameters": {
+            "allSolutions": 0,
+            "cleanLitearl": false,
+            "exhaustMakeSpan": 2,
+            "exponentialStepBasis": 0.0,
+            "exponentialStepOffset": 0.0,
+            "frozen": false,
+            "icaps2017": false,
+            "inputFile": "/tmp/177428.output.cnf",
+            "intermediateSolveStep": false,
+            "learnMakeSpan": 2,
+            "linearStepSize": 1,
+            "loose": false,
+            "maxSizeLearnedClause": 2,
+            "nonIncrementalSolving": false,
+            "outputSolverLike": true,
+            "pathSearchPrefix": [],
+            "ratio": 0.5,
+            "reEncode": false,
+            "seed": -2,
+            "singleEnded": false,
+            "timeout": 2.0,
+            "transformLearned": false,
+            "unitInGoal2Assume": false,
+            "useAddLearned": false,
+            "usePDR": false
+        },
+        "result": {
+            "finalMakeSpan": 8,
+            "solves": [
+                {
+                    "makespan": 0,
+                    "time": 6.98799995006993e-05
+                },
+                {
+                    "makespan": 1,
+                    "time": 2.00680005946197e-05
+                },
+                {
+                    "makespan": 2,
+                    "time": 2.16000007640105e-05
+                },
+                {
+                    "makespan": 3,
+                    "time": 2.23620008910075e-05
+                },
+                {
+                    "makespan": 4,
+                    "time": 2.26219999603927e-05
+                },
+                {
+                    "makespan": 5,
+                    "time": 3.55570009560324e-05
+                },
+                {
+                    "makespan": 6,
+                    "time": 2.79020005109487e-05
+                },
+                {
+                    "makespan": 7,
+                    "time": 2.630900053191e-05
+                },
+                {
+                    "makespan": 8,
+                    "time": 0.0384548678994179
+                }
+            ]
+        }
+    }
+}

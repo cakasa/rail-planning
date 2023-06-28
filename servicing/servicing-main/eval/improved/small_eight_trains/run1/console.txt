@@ -1,0 +1,36 @@
+/planner/plan.sh: 1: /planner/plan.sh: !/bin/bash: not found
+Madagascar 0.99999 18/06/2023 14:35:35 amd64 1-core (no VSIDS)
+Options: file:./../../../../servicing-simple.pddl file:./../../../../small_eight_trains.pddl -b /tmp/1057439.output
+Domain: servicing-simple
+Problem: small_eight_trains
+Parser: 408 ground actions and 239 state variables
+Invariants: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  0.04 secs
+Goal: conjunctive
+Simplified: 376 ground actions and 181 state variables
+Actions: STRIPS
+Plan type: E-step
+Separated DIMACS output
+Writing /tmp/1057439.output.cnf
+total time 0.05 preprocess 0.05 
+total size 58.000 MB
+max. learned clause length 0
+./../../../../servicing-simple.pddl ./../../../../small_eight_trains.pddl /tmp/1057439 38 lol
+Madagascar 0.99999 18/06/2023 14:35:35 amd64 1-core (no VSIDS)
+Options: file:./../../../../servicing-simple.pddl file:./../../../../small_eight_trains.pddl -s /tmp/1057439.solution.txt -T 38 -o ./re.out
+Domain: servicing-simple
+Problem: small_eight_trains
+Parser: 408 ground actions and 239 state variables
+Invariants: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  0.04 secs
+Goal: conjunctive
+Simplified: 376 ground actions and 181 state variables
+Actions: STRIPS
+Plan type: E-step
+133 actions in the plan.
+Plan is VALID
+total time 0.05 preprocess 0.04 
+total size 136.000 MB
+max. learned clause length 0
+
+real	0m12.349s
+user	0m12.061s
+sys	0m0.246s
