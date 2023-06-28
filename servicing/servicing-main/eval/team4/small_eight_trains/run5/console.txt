@@ -1,0 +1,36 @@
+Madagascar 0.99999 06/03/2023 11:56:29 amd64 1-core (no VSIDS)
+Options: file:./../../../../servicing-simple.pddl file:./../../../../small_eight_trains.pddl -b /tmp/180644.output
+Domain: servicing-simple
+Problem: small_eight_trains
+Parser: 408 ground actions and 239 state variables
+Invariants: 0 1 2 3 4 5 6 7 8 9 10 11 12 13  0.03 secs
+Goal: conjunctive
+Simplified: 398 ground actions and 181 state variables
+Actions: STRIPS
+Disabling graph %: 10 20 30 40 50 60 70 80 90 100 0.00 secs (max SCC size 2)
+Plan type: E-step
+Separated DIMACS output
+Writing /tmp/180644.output.cnf
+total time 0.04 preprocess 0.03 
+total size 58.000 MB
+max. learned clause length 0
+Madagascar 0.99999 06/03/2023 11:56:29 amd64 1-core (no VSIDS)
+Options: file:./../../../../servicing-simple.pddl file:./../../../../small_eight_trains.pddl -s /tmp/180644.solution.txt -T 38 -o ./re.out
+Domain: servicing-simple
+Problem: small_eight_trains
+Parser: 408 ground actions and 239 state variables
+Invariants: 0 1 2 3 4 5 6 7 8 9 10 11 12 13  0.03 secs
+Goal: conjunctive
+Simplified: 398 ground actions and 181 state variables
+Actions: STRIPS
+Disabling graph %: 10 20 30 40 50 60 70 80 90 100 0.00 secs (max SCC size 2)
+Plan type: E-step
+135 actions in the plan.
+Plan is VALID
+total time 0.05 preprocess 0.04 
+total size 136.000 MB
+max. learned clause length 0
+
+real	0m16.194s
+user	0m15.926s
+sys	0m0.255s

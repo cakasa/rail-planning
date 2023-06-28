@@ -1,0 +1,36 @@
+/planner/plan.sh: 1: /planner/plan.sh: !/bin/bash: not found
+Madagascar 0.99999 18/06/2023 14:35:35 amd64 1-core (no VSIDS)
+Options: file:./../../../../servicing-simple.pddl file:./../../../../medium_five_trains.pddl -b /tmp/1056096.output
+Domain: servicing-simple
+Problem: medium_five_trains
+Parser: 370 ground actions and 291 state variables
+Invariants: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14  0.03 secs
+Goal: conjunctive
+Simplified: 332 ground actions and 193 state variables
+Actions: STRIPS
+Plan type: E-step
+Separated DIMACS output
+Writing /tmp/1056096.output.cnf
+total time 0.03 preprocess 0.03 
+total size 57.000 MB
+max. learned clause length 0
+./../../../../servicing-simple.pddl ./../../../../medium_five_trains.pddl /tmp/1056096 32 lol
+Madagascar 0.99999 18/06/2023 14:35:35 amd64 1-core (no VSIDS)
+Options: file:./../../../../servicing-simple.pddl file:./../../../../medium_five_trains.pddl -s /tmp/1056096.solution.txt -T 32 -o ./re.out
+Domain: servicing-simple
+Problem: medium_five_trains
+Parser: 370 ground actions and 291 state variables
+Invariants: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14  0.03 secs
+Goal: conjunctive
+Simplified: 332 ground actions and 193 state variables
+Actions: STRIPS
+Plan type: E-step
+113 actions in the plan.
+Plan is VALID
+total time 0.04 preprocess 0.03 
+total size 135.000 MB
+max. learned clause length 0
+
+real	0m1.004s
+user	0m0.476s
+sys	0m0.240s

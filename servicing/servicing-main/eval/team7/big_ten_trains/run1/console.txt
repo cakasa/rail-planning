@@ -1,0 +1,221 @@
+INFO     Running translator.
+INFO     translator inputs: ['./../../../../servicing-simple.pddl', './../../../../big_ten_trains.pddl']
+INFO     translator arguments: []
+Parsing...
+Parsing: [0.020s CPU, 0.020s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.003s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.007s wall-clock]
+Preparing model... [0.010s CPU, 0.009s wall-clock]
+Generated 44 rules.
+Computing model... [0.160s CPU, 0.169s wall-clock]
+3214 relevant atoms
+5986 auxiliary atoms
+9200 final queue length
+13780 total queue pushes
+Completing instantiation... [0.190s CPU, 0.185s wall-clock]
+Instantiating: [0.370s CPU, 0.376s wall-clock]
+Computing fact groups...
+Finding invariants...
+12 initial candidates
+Finding invariants: [0.010s CPU, 0.007s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.001s wall-clock]
+Instantiating groups... [0.030s CPU, 0.026s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.001s wall-clock]
+Choosing groups...
+93 uncovered facts
+Choosing groups: [0.010s CPU, 0.007s wall-clock]
+Building translation key... [0.000s CPU, 0.003s wall-clock]
+Computing fact groups: [0.060s CPU, 0.061s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.001s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.002s wall-clock]
+Building mutex information...
+Building mutex information: [0.010s CPU, 0.004s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.010s CPU, 0.014s wall-clock]
+Translating task: [0.220s CPU, 0.223s wall-clock]
+1820 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+10 propositions removed
+Detecting unreachable propositions: [0.090s CPU, 0.094s wall-clock]
+Translator variables: 103
+Translator derived variables: 3
+Translator facts: 856
+Translator goal facts: 12
+Translator mutex groups: 77
+Translator total mutex groups size: 1407
+Translator operators: 1820
+Translator axioms: 3
+Translator task size: 16944
+Translator peak memory: 60652 KB
+Writing output... [0.050s CPU, 0.044s wall-clock]
+Done! [0.830s CPU, 0.836s wall-clock]
+INFO     Running preprocessor.
+INFO     preprocessor input: output.sas
+INFO     preprocessor arguments: ['--h2_time_limit', '30']
+Building causal graph...
+The causal graph is not acyclic.
+103 variables of 103 necessary
+67 of 77 mutex groups necessary.
+1820 of 1820 operators necessary.
+3 of 3 axiom rules necessary.
+Disabling h2 analysis because it does not currently support axioms
+Preprocessor variables: 103
+Preprocessor facts: 856
+Preprocessor derived variables: 3
+Preprocessor operators: 1820
+Preprocessor mutex groups: 67
+Preprocessor task size: 16274
+Writing output...
+done
+INFO     Running search.
+INFO     search input: output
+INFO     search portfolio: /planner/driver/portfolios/seq_sat_saarplan.py
+External time limits: -1, -1
+Internal time limit: 1800
+External memory limits: -1, -1
+Internal memory limit: 8000000000
+remaining time at start: 1798.83
+remaining time: 1798.83
+config 0: relative time 100, remaining 1800
+g bound: infinity
+next plan number: 1
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'fork(search_type=sat, pruning=cost_frontier(irrelevance=TRANSITIONS), max_leaf_size=1000000)', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=infinity)', '--internal-previous-portfolio-plans', '0', '--internal-plan-file', './re.out']
+timeout: 99.94 -> (100, 101)
+using frontier pruning method
+performing irrelevance analysis in leaf factors
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using fork factoring profile
+reading input... [t=0.00470571s]
+done reading input! [t=0.0193624s]
+Heuristic does not support axioms!
+Terminating.
+Tried to use unsupported feature.
+Peak memory: 4804 KB
+returncode: 3
+
+remaining time: 1798.77
+config 1: relative time 600, remaining 1700
+g bound: infinity
+next plan number: 1
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=infinity, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '0', '--internal-plan-file', './re.out']
+timeout: 634.86 -> (635, 636)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0s]
+done reading input! [t=0.0159982s]
+Variables: 103
+Bytes per state: 24
+Building successor generator...done! [t=0.0159982s]
+peak memory difference for root successor generator creation: 296 KB
+time for root successor generation creation: 0s
+done! [t=0.0159982s]
+done initalizing global data [t=0.0159982s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 2147483647
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 7063 unary operators... done! [7033 unary operators]
+Best heuristic value: 108 [g=0, 1 evaluated, 0 expanded, t=0.027998s, 7664 KB]
+Best heuristic value: 107 [g=1, 2 evaluated, 1 expanded, t=0.027998s, 7664 KB]
+Best heuristic value: 106 [g=5, 15 evaluated, 14 expanded, t=0.0319991s, 7664 KB]
+Best heuristic value: 104 [g=8, 37 evaluated, 36 expanded, t=0.0359961s, 7664 KB]
+Best heuristic value: 103 [g=15, 279 evaluated, 278 expanded, t=0.103927s, 7664 KB]
+Best heuristic value: 102 [g=17, 290 evaluated, 289 expanded, t=0.103927s, 7664 KB]
+Best heuristic value: 101 [g=19, 306 evaluated, 305 expanded, t=0.107927s, 7664 KB]
+Best heuristic value: 100 [g=22, 320 evaluated, 319 expanded, t=0.111927s, 7664 KB]
+Best heuristic value: 99 [g=25, 332 evaluated, 331 expanded, t=0.115928s, 7664 KB]
+Best heuristic value: 98 [g=28, 356 evaluated, 355 expanded, t=0.123927s, 7664 KB]
+Best heuristic value: 97 [g=31, 379 evaluated, 378 expanded, t=0.127927s, 7664 KB]
+Best heuristic value: 96 [g=34, 394 evaluated, 393 expanded, t=0.131928s, 7664 KB]
+Best heuristic value: 95 [g=37, 424 evaluated, 423 expanded, t=0.139927s, 7664 KB]
+Best heuristic value: 94 [g=39, 434 evaluated, 433 expanded, t=0.143928s, 7664 KB]
+Best heuristic value: 93 [g=46, 1485 evaluated, 1484 expanded, t=0.431903s, 7664 KB]
+Best heuristic value: 92 [g=47, 1491 evaluated, 1490 expanded, t=0.431903s, 7664 KB]
+Best heuristic value: 91 [g=48, 1497 evaluated, 1496 expanded, t=0.431903s, 7664 KB]
+Best heuristic value: 90 [g=49, 1503 evaluated, 1502 expanded, t=0.435904s, 7664 KB]
+Best heuristic value: 89 [g=50, 1509 evaluated, 1508 expanded, t=0.435904s, 7664 KB]
+Best heuristic value: 88 [g=51, 1515 evaluated, 1514 expanded, t=0.439906s, 7664 KB]
+Best heuristic value: 87 [g=52, 1521 evaluated, 1520 expanded, t=0.439906s, 7664 KB]
+Best heuristic value: 86 [g=54, 1531 evaluated, 1530 expanded, t=0.443905s, 7664 KB]
+Best heuristic value: 85 [g=74, 2064 evaluated, 2063 expanded, t=0.587906s, 7664 KB]
+Best heuristic value: 84 [g=75, 2067 evaluated, 2066 expanded, t=0.587906s, 7664 KB]
+Best heuristic value: 83 [g=76, 2070 evaluated, 2069 expanded, t=0.587906s, 7664 KB]
+Best heuristic value: 81 [g=78, 2077 evaluated, 2076 expanded, t=0.591907s, 7664 KB]
+Best heuristic value: 79 [g=80, 2089 evaluated, 2088 expanded, t=0.595905s, 7664 KB]
+Best heuristic value: 78 [g=81, 2092 evaluated, 2091 expanded, t=0.595905s, 7664 KB]
+Peak memory: 1341192 KB
+caught signal 24 -- exiting
+returncode: -24
+
+remaining time: 1163.68
+config 2: relative time 1100, remaining 1100
+g bound: infinity
+next plan number: 1
+args: ['/planner/driver/../fast-downward-conjunctions/builds/release64clangpgonative/bin/downward', '--if-unit-cost', '--heuristic', 'hcff_normalcost=cff(seed=42, cache_estimates=false, cost_type=PLUSONE)', '--heuristic', 'hn_normalcost=novelty(cache_estimates=false)', '--heuristic', 'tmp_normalcost=novelty_linker(hcff_normalcost, [hn_normalcost])', '--heuristic', 'hlm_normalcost=lmcount(lm_rhw(reasonable_orders=true))', '--search', 'ipc18_iterated([grey_initial_state_search(grey_painting=all_prefer_inv, cost_type=PLUSONE),                            ehc_cn(hcff_normalcost, preferred=hcff_normalcost, novelty=hn_normalcost, seed=42, max_growth=8, max_time=500),                            lazy_iterated_weights_c([hcff_normalcost, hlm_normalcost], preferred=[hcff_normalcost], conjunctions_heuristic=hcff_normalcost,                                                    strategy=maintain_fixed_size_probabilistic(initial_removal_mode=UNTIL_BOUND, base_probability=0.02, target_growth_ratio=1.50))                           ], delete_after_phase_heuristics=[hn_normalcost, tmp_normalcost], delete_after_phase_phases=[1, 1], continue_on_fail=true, bound=infinity)', '--if-non-unit-cost', '--heuristic', 'hcff=cff(seed=42, cache_estimates=false, cost_type=ONE)', '--heuristic', 'hn=novelty(cache_estimates=false)', '--heuristic', 'tmp=novelty_linker(hcff, [hn])', '--heuristic', 'hcff_normalcost=cff(seed=42, cache_estimates=false, cost_type=PLUSONE)', '--heuristic', 'hn_normalcost=novelty(cache_estimates=false)', '--heuristic', 'tmp_normalcost=novelty_linker(hcff_normalcost, [hn_normalcost])', '--heuristic', 'hlm=lmcount(lm_rhw(reasonable_orders=true, lm_cost_type=ONE), cost_type=ONE)', '--heuristic', 'hlm_normalcost=lmcount(lm_rhw(reasonable_orders=true))', '--search', 'ipc18_iterated([grey_initial_state_search(grey_painting=all_prefer_inv, cost_type=ONE),                            ehc_cn(hcff, preferred=hcff, novelty=hn, seed=42, cost_type=ONE, max_growth=8, max_time=500),                            lazy_greedy_c([hcff, hlm], preferred=[hcff], conjunctions_heuristic=hcff,                                          strategy=maintain_fixed_size_probabilistic(initial_removal_mode=UNTIL_BOUND, base_probability=0.02, target_growth_ratio=1.50), cost_type=ONE),                            ehc_cn(hcff_normalcost, preferred=hcff_normalcost, novelty=hn_normalcost, seed=42, max_growth=8, max_time=100),                            lazy_iterated_weights_c([hcff_normalcost, hlm_normalcost], preferred=[hcff_normalcost], conjunctions_heuristic=hcff_normalcost,                                                    strategy=maintain_fixed_size_probabilistic(generate_initially=true, initial_removal_mode=UNTIL_BOUND, base_probability=0.02, target_growth_ratio=1.50))                           ], decision_point=1, skip_if_solved=[2], skip_if_failed=[3],                           delete_after_phase_heuristics=[hn, tmp, hcff, hlm, hn_normalcost, tmp_normalcost],                           delete_after_phase_phases=[1, 1, 2, 2, 3, 3], continue_on_fail=true, bound=infinity)', '--always', '--internal-previous-portfolio-plans', '0', '--internal-plan-file', './re.out']
+timeout: 1163.68 -> (1164, 1165)
+reading input... [t=0.00168055s]
+done reading input! [t=0.0185384s]
+packing state variables...done! [t=0.0185384s]
+Variables: 103
+FactPairs: 856
+Bytes per state: 24
+Building successor generator...done! [t=0.0225377s]
+done initalizing global data [t=0.0225377s]
+cross context: 1
+best supporter function: h^Cadd
+no relaxed plan extraction: 0
+tie breaking: RANDOM
+WARNING: task has axioms that are being ignored by the heuristic!
+Initializing CFF heuristic...
+The original task would have 7030 counters.
+Finished hcff initialization, t = 0.00800207s
+Initializing novelty heuristic...
+Linking novelty heuristics to the conjunctions heuristic...
+Initializing Exploration...
+Initializing landmarks count heuristic...
+Generating landmarks using the RPG/SAS+ approach
+approx. reasonable orders
+approx. obedient reasonable orders
+Removed 0 reasonable or obedient reasonable orders
+Landmarks generation time: 0.127887s
+Discovered 162 landmarks, of which 15 are disjunctive and 0 are conjunctive 
+2150 edges
+Starting search: grey_initial_state_search(grey_painting = all_prefer_inv, cost_type = plusone)
+Simplifying 7063 unary operators... done! [7033 unary operators]
+Initializing additive heuristic...
+Initializing Red-Black Relaxation heuristic...
+Heuristic does not support axioms!
+Terminating.
+Tried to use unsupported feature.
+Peak memory: 12272 KB
+returncode: 3
+
+Exit codes: [3, -24, 3]
+Error: Unexpected exit codes: [3]
+Command '['run-portfolio', '/planner/driver/portfolios/seq_sat_saarplan.py']' returned non-zero exit status 3
+
+real	10m40.818s
+user	10m34.564s
+sys	0m2.332s

@@ -1,0 +1,339 @@
+INFO     Running translator.
+INFO     translator inputs: ['./../../../../servicing-simple.pddl', './../../../../big_thirty_trains.pddl']
+INFO     translator arguments: []
+Parsing...
+Parsing: [0.010s CPU, 0.020s wall-clock]
+Normalizing task... [0.010s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.005s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.007s wall-clock]
+Preparing model... [0.020s CPU, 0.013s wall-clock]
+Generated 44 rules.
+Computing model... [0.640s CPU, 0.648s wall-clock]
+11520 relevant atoms
+20442 auxiliary atoms
+31962 final queue length
+51107 total queue pushes
+Completing instantiation... [0.890s CPU, 0.887s wall-clock]
+Instantiating: [1.560s CPU, 1.573s wall-clock]
+Computing fact groups...
+Finding invariants...
+12 initial candidates
+Finding invariants: [0.020s CPU, 0.011s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.002s wall-clock]
+Instantiating groups... [0.050s CPU, 0.053s wall-clock]
+Collecting mutex groups... [0.010s CPU, 0.005s wall-clock]
+Choosing groups...
+158 uncovered facts
+Choosing groups: [0.090s CPU, 0.089s wall-clock]
+Building translation key... [0.010s CPU, 0.007s wall-clock]
+Computing fact groups: [0.230s CPU, 0.220s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.003s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.006s wall-clock]
+Building mutex information...
+Building mutex information: [0.010s CPU, 0.010s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.060s CPU, 0.052s wall-clock]
+Translating task: [0.730s CPU, 0.728s wall-clock]
+7856 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+30 propositions removed
+Detecting unreachable propositions: [0.320s CPU, 0.311s wall-clock]
+Translator variables: 188
+Translator derived variables: 3
+Translator facts: 2926
+Translator goal facts: 32
+Translator mutex groups: 117
+Translator total mutex groups size: 5307
+Translator operators: 7856
+Translator axioms: 3
+Translator task size: 71324
+Translator peak memory: 115360 KB
+Writing output... [0.090s CPU, 0.099s wall-clock]
+Done! [2.990s CPU, 3.004s wall-clock]
+INFO     Running preprocessor.
+INFO     preprocessor input: output.sas
+INFO     preprocessor arguments: ['--h2_time_limit', '30']
+Building causal graph...
+The causal graph is not acyclic.
+188 variables of 188 necessary
+87 of 117 mutex groups necessary.
+7856 of 7856 operators necessary.
+3 of 3 axiom rules necessary.
+Disabling h2 analysis because it does not currently support axioms
+Preprocessor variables: 188
+Preprocessor facts: 2926
+Preprocessor derived variables: 3
+Preprocessor operators: 7856
+Preprocessor mutex groups: 87
+Preprocessor task size: 68714
+Writing output...
+done
+INFO     Running search.
+INFO     search input: output
+INFO     search portfolio: /planner/driver/portfolios/seq_sat_saarplan.py
+External time limits: -1, -1
+Internal time limit: 1800
+External memory limits: -1, -1
+Internal memory limit: 8000000000
+remaining time at start: 1796.39
+remaining time: 1796.39
+config 0: relative time 100, remaining 1800
+g bound: infinity
+next plan number: 1
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'fork(search_type=sat, pruning=cost_frontier(irrelevance=TRANSITIONS), max_leaf_size=1000000)', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=infinity)', '--internal-previous-portfolio-plans', '0', '--internal-plan-file', './re.out']
+timeout: 99.80 -> (100, 101)
+using frontier pruning method
+performing irrelevance analysis in leaf factors
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using fork factoring profile
+reading input... [t=0.00342867s]
+done reading input! [t=0.082054s]
+Heuristic does not support axioms!
+Terminating.
+Tried to use unsupported feature.
+Peak memory: 11164 KB
+returncode: 3
+
+remaining time: 1796.27
+config 1: relative time 600, remaining 1700
+g bound: infinity
+next plan number: 1
+args: ['/planner/driver/../fast-downward-decoupled/search/downward-release', '--decoupling', 'portfolio(fallback_on_abstain=true, overwrite_options=true, choose_max_leaves=true,          factorings=[fork(search_type=sat, max_leaf_size=1000000), ifork(search_type=sat, max_leaf_size=1000000), incarcs(search_type=sat, max_leaf_size=100000)])', '--heuristic', 'hff=ff(cost_type=one)', '--search', 'lazy_greedy(hff, preferred=hff, cost_type=one, bound=infinity, symmetry=symmetry_state_pruning(lex_prices=false, lex_num_states=false, lex_goal_cost=false))', '--internal-previous-portfolio-plans', '0', '--internal-plan-file', './re.out']
+timeout: 633.98 -> (634, 635)
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 1000000
+using default pruning method: BasicPruning
+using inverted-fork factoring profile
+performing decoupled satisficing search
+maximum leaf factor size 100000
+using default pruning method: BasicPruning
+using incident-arcs factoring profile
+performing Star Decoupled A* search
+using default pruning method: BasicPruning
+using factoring portfolio
+reading input... [t=0s]
+done reading input! [t=0.0706719s]
+Variables: 188
+Bytes per state: 48
+Building successor generator...done! [t=0.0786732s]
+peak memory difference for root successor generator creation: 1508 KB
+time for root successor generation creation: 0.00400011s
+done! [t=0.0786732s]
+done initalizing global data [t=0.0786732s]
+Creating symmetry graph stabilizing goal only and using orbit search.
+Conducting lazy best first search, (real) bound = 2147483647
+Initializing FF heuristic...
+Initializing additive heuristic...
+Simplifying 29579 unary operators... done! [29489 unary operators]
+Best heuristic value: 751 [g=0, 1 evaluated, 0 expanded, t=0.134674s, 22536 KB]
+Best heuristic value: 746 [g=7, 23 evaluated, 22 expanded, t=0.166674s, 22536 KB]
+Best heuristic value: 745 [g=23, 154 evaluated, 153 expanded, t=0.342677s, 22536 KB]
+Best heuristic value: 744 [g=26, 169 evaluated, 168 expanded, t=0.362678s, 22536 KB]
+Best heuristic value: 743 [g=32, 345 evaluated, 344 expanded, t=0.602144s, 22536 KB]
+Best heuristic value: 742 [g=38, 521 evaluated, 520 expanded, t=0.83397s, 22536 KB]
+Best heuristic value: 741 [g=40, 538 evaluated, 537 expanded, t=0.857971s, 22536 KB]
+Best heuristic value: 740 [g=42, 546 evaluated, 545 expanded, t=0.86997s, 22536 KB]
+Best heuristic value: 739 [g=45, 575 evaluated, 574 expanded, t=0.90997s, 22536 KB]
+Best heuristic value: 738 [g=48, 622 evaluated, 621 expanded, t=0.969971s, 22536 KB]
+Best heuristic value: 737 [g=50, 633 evaluated, 632 expanded, t=0.985973s, 22536 KB]
+Best heuristic value: 736 [g=52, 641 evaluated, 640 expanded, t=0.997974s, 22536 KB]
+Best heuristic value: 735 [g=53, 643 evaluated, 642 expanded, t=0.997974s, 22536 KB]
+Best heuristic value: 734 [g=55, 654 evaluated, 653 expanded, t=1.01397s, 22536 KB]
+Best heuristic value: 733 [g=57, 661 evaluated, 660 expanded, t=1.02197s, 22536 KB]
+Best heuristic value: 732 [g=59, 672 evaluated, 671 expanded, t=1.03797s, 22536 KB]
+Best heuristic value: 731 [g=63, 733 evaluated, 732 expanded, t=1.11783s, 22536 KB]
+Best heuristic value: 730 [g=64, 738 evaluated, 737 expanded, t=1.12583s, 22536 KB]
+Best heuristic value: 729 [g=66, 746 evaluated, 745 expanded, t=1.13783s, 22536 KB]
+Best heuristic value: 728 [g=67, 749 evaluated, 748 expanded, t=1.14174s, 22536 KB]
+Best heuristic value: 727 [g=69, 759 evaluated, 758 expanded, t=1.15374s, 22536 KB]
+Best heuristic value: 726 [g=74, 784 evaluated, 783 expanded, t=1.18974s, 22536 KB]
+Best heuristic value: 725 [g=75, 786 evaluated, 785 expanded, t=1.18974s, 22536 KB]
+Best heuristic value: 723 [g=77, 792 evaluated, 791 expanded, t=1.19757s, 22536 KB]
+Best heuristic value: 722 [g=80, 803 evaluated, 802 expanded, t=1.21358s, 22536 KB]
+Best heuristic value: 721 [g=81, 804 evaluated, 803 expanded, t=1.21758s, 22536 KB]
+Best heuristic value: 720 [g=82, 806 evaluated, 805 expanded, t=1.21758s, 22536 KB]
+Best heuristic value: 719 [g=85, 816 evaluated, 815 expanded, t=1.23358s, 22536 KB]
+Best heuristic value: 718 [g=87, 823 evaluated, 822 expanded, t=1.24158s, 22536 KB]
+Best heuristic value: 717 [g=88, 826 evaluated, 825 expanded, t=1.24558s, 22536 KB]
+Best heuristic value: 716 [g=90, 833 evaluated, 832 expanded, t=1.25358s, 22536 KB]
+Best heuristic value: 715 [g=95, 849 evaluated, 848 expanded, t=1.27758s, 22536 KB]
+Best heuristic value: 714 [g=97, 855 evaluated, 854 expanded, t=1.28558s, 22536 KB]
+Best heuristic value: 713 [g=102, 873 evaluated, 872 expanded, t=1.30958s, 22536 KB]
+Best heuristic value: 712 [g=104, 879 evaluated, 878 expanded, t=1.31758s, 22536 KB]
+Best heuristic value: 710 [g=107, 888 evaluated, 887 expanded, t=1.32958s, 22536 KB]
+Best heuristic value: 709 [g=108, 890 evaluated, 889 expanded, t=1.32958s, 22536 KB]
+Best heuristic value: 708 [g=110, 895 evaluated, 894 expanded, t=1.33758s, 22536 KB]
+Best heuristic value: 707 [g=111, 897 evaluated, 896 expanded, t=1.34158s, 22536 KB]
+Best heuristic value: 706 [g=116, 935 evaluated, 934 expanded, t=1.38958s, 22536 KB]
+Best heuristic value: 705 [g=119, 946 evaluated, 945 expanded, t=1.40549s, 22536 KB]
+Best heuristic value: 703 [g=120, 948 evaluated, 947 expanded, t=1.40949s, 22536 KB]
+Best heuristic value: 702 [g=126, 987 evaluated, 986 expanded, t=1.4615s, 22536 KB]
+Best heuristic value: 700 [g=127, 988 evaluated, 987 expanded, t=1.4615s, 22536 KB]
+Best heuristic value: 699 [g=131, 1026 evaluated, 1025 expanded, t=1.5134s, 22536 KB]
+Best heuristic value: 698 [g=143, 1120 evaluated, 1119 expanded, t=1.63733s, 22536 KB]
+Best heuristic value: 697 [g=144, 1126 evaluated, 1125 expanded, t=1.64525s, 22536 KB]
+Best heuristic value: 696 [g=145, 1129 evaluated, 1128 expanded, t=1.64924s, 22536 KB]
+Best heuristic value: 695 [g=149, 1146 evaluated, 1145 expanded, t=1.66925s, 22536 KB]
+Best heuristic value: 694 [g=150, 1152 evaluated, 1151 expanded, t=1.67718s, 22536 KB]
+Best heuristic value: 693 [g=153, 1162 evaluated, 1161 expanded, t=1.68918s, 22536 KB]
+Best heuristic value: 691 [g=156, 1185 evaluated, 1184 expanded, t=1.71313s, 22536 KB]
+Best heuristic value: 690 [g=158, 1194 evaluated, 1193 expanded, t=1.72513s, 22536 KB]
+Best heuristic value: 689 [g=160, 1204 evaluated, 1203 expanded, t=1.73711s, 22536 KB]
+Best heuristic value: 688 [g=161, 1207 evaluated, 1206 expanded, t=1.74111s, 22536 KB]
+Best heuristic value: 687 [g=162, 1209 evaluated, 1208 expanded, t=1.74111s, 22536 KB]
+Best heuristic value: 686 [g=163, 1215 evaluated, 1214 expanded, t=1.74911s, 22536 KB]
+Best heuristic value: 685 [g=170, 1298 evaluated, 1297 expanded, t=1.849s, 22536 KB]
+Best heuristic value: 684 [g=171, 1302 evaluated, 1301 expanded, t=1.853s, 22536 KB]
+Best heuristic value: 683 [g=173, 1310 evaluated, 1309 expanded, t=1.861s, 22536 KB]
+Best heuristic value: 682 [g=174, 1312 evaluated, 1311 expanded, t=1.865s, 22536 KB]
+Best heuristic value: 681 [g=175, 1313 evaluated, 1312 expanded, t=1.865s, 22536 KB]
+Best heuristic value: 680 [g=176, 1317 evaluated, 1316 expanded, t=1.869s, 22536 KB]
+Best heuristic value: 679 [g=178, 1331 evaluated, 1330 expanded, t=1.885s, 22536 KB]
+Best heuristic value: 678 [g=181, 1356 evaluated, 1355 expanded, t=1.913s, 22536 KB]
+Best heuristic value: 677 [g=182, 1371 evaluated, 1370 expanded, t=1.929s, 22536 KB]
+Best heuristic value: 676 [g=184, 1385 evaluated, 1384 expanded, t=1.94498s, 22536 KB]
+Best heuristic value: 675 [g=186, 1408 evaluated, 1407 expanded, t=1.96898s, 22536 KB]
+Best heuristic value: 674 [g=187, 1414 evaluated, 1413 expanded, t=1.97298s, 22536 KB]
+Best heuristic value: 673 [g=197, 1585 evaluated, 1584 expanded, t=2.14888s, 22536 KB]
+Best heuristic value: 672 [g=198, 1588 evaluated, 1587 expanded, t=2.15288s, 22536 KB]
+Best heuristic value: 671 [g=199, 1591 evaluated, 1590 expanded, t=2.15688s, 22536 KB]
+Best heuristic value: 670 [g=200, 1595 evaluated, 1594 expanded, t=2.15688s, 22536 KB]
+Best heuristic value: 669 [g=206, 1658 evaluated, 1657 expanded, t=2.21288s, 22536 KB]
+Best heuristic value: 668 [g=207, 1660 evaluated, 1659 expanded, t=2.21688s, 22536 KB]
+Best heuristic value: 667 [g=208, 1665 evaluated, 1664 expanded, t=2.22088s, 22536 KB]
+Best heuristic value: 665 [g=209, 1669 evaluated, 1668 expanded, t=2.22488s, 22536 KB]
+Best heuristic value: 664 [g=211, 1681 evaluated, 1680 expanded, t=2.23288s, 22536 KB]
+Best heuristic value: 663 [g=212, 1685 evaluated, 1684 expanded, t=2.23688s, 22536 KB]
+Best heuristic value: 662 [g=214, 1698 evaluated, 1697 expanded, t=2.24888s, 22536 KB]
+Best heuristic value: 660 [g=215, 1700 evaluated, 1699 expanded, t=2.25288s, 22536 KB]
+Best heuristic value: 659 [g=222, 1830 evaluated, 1829 expanded, t=2.36473s, 22536 KB]
+Best heuristic value: 658 [g=228, 1865 evaluated, 1864 expanded, t=2.39665s, 22536 KB]
+Best heuristic value: 657 [g=229, 1868 evaluated, 1867 expanded, t=2.39665s, 22536 KB]
+Best heuristic value: 656 [g=230, 1869 evaluated, 1868 expanded, t=2.40065s, 22536 KB]
+Best heuristic value: 655 [g=231, 1871 evaluated, 1870 expanded, t=2.40065s, 22536 KB]
+Best heuristic value: 654 [g=232, 1872 evaluated, 1871 expanded, t=2.40065s, 22536 KB]
+Best heuristic value: 653 [g=234, 1883 evaluated, 1882 expanded, t=2.41265s, 22536 KB]
+Best heuristic value: 652 [g=236, 1892 evaluated, 1891 expanded, t=2.42065s, 22536 KB]
+Best heuristic value: 651 [g=239, 1907 evaluated, 1906 expanded, t=2.43266s, 22536 KB]
+Best heuristic value: 650 [g=241, 1920 evaluated, 1919 expanded, t=2.44465s, 22536 KB]
+Best heuristic value: 649 [g=244, 1937 evaluated, 1936 expanded, t=2.45665s, 22536 KB]
+Best heuristic value: 648 [g=247, 1951 evaluated, 1950 expanded, t=2.46865s, 22536 KB]
+Best heuristic value: 647 [g=252, 1982 evaluated, 1981 expanded, t=2.49111s, 22536 KB]
+Best heuristic value: 646 [g=254, 1992 evaluated, 1991 expanded, t=2.49631s, 22536 KB]
+Best heuristic value: 645 [g=256, 2001 evaluated, 2000 expanded, t=2.50431s, 22536 KB]
+Best heuristic value: 644 [g=257, 2005 evaluated, 2004 expanded, t=2.50431s, 22536 KB]
+Best heuristic value: 643 [g=259, 2016 evaluated, 2015 expanded, t=2.51231s, 22536 KB]
+Best heuristic value: 642 [g=260, 2020 evaluated, 2019 expanded, t=2.51631s, 22536 KB]
+Best heuristic value: 641 [g=265, 2052 evaluated, 2051 expanded, t=2.54031s, 22536 KB]
+Best heuristic value: 640 [g=274, 2259 evaluated, 2258 expanded, t=2.68431s, 22536 KB]
+Best heuristic value: 639 [g=276, 2281 evaluated, 2280 expanded, t=2.70025s, 22536 KB]
+Best heuristic value: 638 [g=277, 2288 evaluated, 2287 expanded, t=2.70426s, 22536 KB]
+Best heuristic value: 637 [g=278, 2295 evaluated, 2294 expanded, t=2.71221s, 22536 KB]
+Best heuristic value: 636 [g=282, 2324 evaluated, 2323 expanded, t=2.7321s, 22536 KB]
+Best heuristic value: 635 [g=283, 2355 evaluated, 2354 expanded, t=2.7521s, 22536 KB]
+Best heuristic value: 634 [g=285, 2363 evaluated, 2362 expanded, t=2.7601s, 22536 KB]
+Best heuristic value: 633 [g=286, 2365 evaluated, 2364 expanded, t=2.7601s, 22536 KB]
+Best heuristic value: 632 [g=287, 2369 evaluated, 2368 expanded, t=2.7641s, 22536 KB]
+Best heuristic value: 631 [g=288, 2373 evaluated, 2372 expanded, t=2.7641s, 22536 KB]
+Best heuristic value: 630 [g=289, 2377 evaluated, 2376 expanded, t=2.7681s, 22536 KB]
+Best heuristic value: 629 [g=294, 2395 evaluated, 2394 expanded, t=2.7801s, 22536 KB]
+Best heuristic value: 628 [g=301, 2472 evaluated, 2471 expanded, t=2.83604s, 22536 KB]
+Best heuristic value: 626 [g=308, 2843 evaluated, 2842 expanded, t=3.10004s, 22536 KB]
+Best heuristic value: 624 [g=310, 2854 evaluated, 2853 expanded, t=3.10804s, 22536 KB]
+Best heuristic value: 623 [g=312, 2864 evaluated, 2863 expanded, t=3.11604s, 22536 KB]
+Best heuristic value: 622 [g=313, 2869 evaluated, 2868 expanded, t=3.12004s, 22536 KB]
+Best heuristic value: 621 [g=320, 3119 evaluated, 3118 expanded, t=3.29579s, 22536 KB]
+Best heuristic value: 619 [g=328, 3179 evaluated, 3178 expanded, t=3.33579s, 22536 KB]
+Best heuristic value: 618 [g=330, 3190 evaluated, 3189 expanded, t=3.34379s, 22536 KB]
+Best heuristic value: 617 [g=339, 3421 evaluated, 3420 expanded, t=3.50757s, 22536 KB]
+Best heuristic value: 615 [g=340, 3423 evaluated, 3422 expanded, t=3.50757s, 22536 KB]
+Best heuristic value: 613 [g=342, 3432 evaluated, 3431 expanded, t=3.51557s, 22536 KB]
+Best heuristic value: 612 [g=344, 3440 evaluated, 3439 expanded, t=3.51957s, 22536 KB]
+Best heuristic value: 611 [g=345, 3441 evaluated, 3440 expanded, t=3.51957s, 22536 KB]
+Best heuristic value: 610 [g=349, 3502 evaluated, 3501 expanded, t=3.56357s, 22536 KB]
+Best heuristic value: 609 [g=359, 3717 evaluated, 3716 expanded, t=3.71544s, 22536 KB]
+Best heuristic value: 608 [g=361, 3726 evaluated, 3725 expanded, t=3.72342s, 22536 KB]
+Best heuristic value: 607 [g=362, 3727 evaluated, 3726 expanded, t=3.72342s, 22536 KB]
+Best heuristic value: 606 [g=363, 3731 evaluated, 3730 expanded, t=3.72742s, 22536 KB]
+Best heuristic value: 605 [g=365, 3738 evaluated, 3737 expanded, t=3.73142s, 22536 KB]
+Best heuristic value: 604 [g=370, 3766 evaluated, 3765 expanded, t=3.75142s, 22536 KB]
+Best heuristic value: 603 [g=371, 3772 evaluated, 3771 expanded, t=3.75542s, 22536 KB]
+Best heuristic value: 602 [g=373, 3784 evaluated, 3783 expanded, t=3.76342s, 22536 KB]
+Best heuristic value: 601 [g=374, 3790 evaluated, 3789 expanded, t=3.76742s, 22536 KB]
+Best heuristic value: 600 [g=393, 4092 evaluated, 4091 expanded, t=3.97931s, 22536 KB]
+Best heuristic value: 599 [g=394, 4093 evaluated, 4092 expanded, t=3.98331s, 22536 KB]
+Best heuristic value: 598 [g=399, 4120 evaluated, 4119 expanded, t=3.99931s, 22536 KB]
+Best heuristic value: 597 [g=402, 4141 evaluated, 4140 expanded, t=4.01533s, 22536 KB]
+Best heuristic value: 596 [g=403, 4142 evaluated, 4141 expanded, t=4.01533s, 22536 KB]
+Best heuristic value: 595 [g=404, 4147 evaluated, 4146 expanded, t=4.01931s, 22536 KB]
+Best heuristic value: 594 [g=405, 4153 evaluated, 4152 expanded, t=4.02332s, 22536 KB]
+Best heuristic value: 593 [g=429, 4859 evaluated, 4858 expanded, t=4.52275s, 22536 KB]
+Best heuristic value: 592 [g=431, 4870 evaluated, 4869 expanded, t=4.53075s, 22536 KB]
+Best heuristic value: 591 [g=433, 4881 evaluated, 4880 expanded, t=4.53875s, 22536 KB]
+Best heuristic value: 590 [g=442, 5229 evaluated, 5228 expanded, t=4.78263s, 22536 KB]
+Peak memory: 434072 KB
+caught signal 24 -- exiting
+returncode: -24
+
+remaining time: 1162.35
+config 2: relative time 1100, remaining 1100
+g bound: infinity
+next plan number: 1
+args: ['/planner/driver/../fast-downward-conjunctions/builds/release64clangpgonative/bin/downward', '--if-unit-cost', '--heuristic', 'hcff_normalcost=cff(seed=42, cache_estimates=false, cost_type=PLUSONE)', '--heuristic', 'hn_normalcost=novelty(cache_estimates=false)', '--heuristic', 'tmp_normalcost=novelty_linker(hcff_normalcost, [hn_normalcost])', '--heuristic', 'hlm_normalcost=lmcount(lm_rhw(reasonable_orders=true))', '--search', 'ipc18_iterated([grey_initial_state_search(grey_painting=all_prefer_inv, cost_type=PLUSONE),                            ehc_cn(hcff_normalcost, preferred=hcff_normalcost, novelty=hn_normalcost, seed=42, max_growth=8, max_time=500),                            lazy_iterated_weights_c([hcff_normalcost, hlm_normalcost], preferred=[hcff_normalcost], conjunctions_heuristic=hcff_normalcost,                                                    strategy=maintain_fixed_size_probabilistic(initial_removal_mode=UNTIL_BOUND, base_probability=0.02, target_growth_ratio=1.50))                           ], delete_after_phase_heuristics=[hn_normalcost, tmp_normalcost], delete_after_phase_phases=[1, 1], continue_on_fail=true, bound=infinity)', '--if-non-unit-cost', '--heuristic', 'hcff=cff(seed=42, cache_estimates=false, cost_type=ONE)', '--heuristic', 'hn=novelty(cache_estimates=false)', '--heuristic', 'tmp=novelty_linker(hcff, [hn])', '--heuristic', 'hcff_normalcost=cff(seed=42, cache_estimates=false, cost_type=PLUSONE)', '--heuristic', 'hn_normalcost=novelty(cache_estimates=false)', '--heuristic', 'tmp_normalcost=novelty_linker(hcff_normalcost, [hn_normalcost])', '--heuristic', 'hlm=lmcount(lm_rhw(reasonable_orders=true, lm_cost_type=ONE), cost_type=ONE)', '--heuristic', 'hlm_normalcost=lmcount(lm_rhw(reasonable_orders=true))', '--search', 'ipc18_iterated([grey_initial_state_search(grey_painting=all_prefer_inv, cost_type=ONE),                            ehc_cn(hcff, preferred=hcff, novelty=hn, seed=42, cost_type=ONE, max_growth=8, max_time=500),                            lazy_greedy_c([hcff, hlm], preferred=[hcff], conjunctions_heuristic=hcff,                                          strategy=maintain_fixed_size_probabilistic(initial_removal_mode=UNTIL_BOUND, base_probability=0.02, target_growth_ratio=1.50), cost_type=ONE),                            ehc_cn(hcff_normalcost, preferred=hcff_normalcost, novelty=hn_normalcost, seed=42, max_growth=8, max_time=100),                            lazy_iterated_weights_c([hcff_normalcost, hlm_normalcost], preferred=[hcff_normalcost], conjunctions_heuristic=hcff_normalcost,                                                    strategy=maintain_fixed_size_probabilistic(generate_initially=true, initial_removal_mode=UNTIL_BOUND, base_probability=0.02, target_growth_ratio=1.50))                           ], decision_point=1, skip_if_solved=[2], skip_if_failed=[3],                           delete_after_phase_heuristics=[hn, tmp, hcff, hlm, hn_normalcost, tmp_normalcost],                           delete_after_phase_phases=[1, 1, 2, 2, 3, 3], continue_on_fail=true, bound=infinity)', '--always', '--internal-previous-portfolio-plans', '0', '--internal-plan-file', './re.out']
+timeout: 1162.35 -> (1163, 1164)
+reading input... [t=0.00209983s]
+done reading input! [t=0.081956s]
+packing state variables...done! [t=0.081956s]
+Variables: 188
+FactPairs: 2926
+Bytes per state: 48
+Building successor generator...done! [t=0.0899577s]
+done initalizing global data [t=0.0899577s]
+cross context: 1
+best supporter function: h^Cadd
+no relaxed plan extraction: 0
+tie breaking: RANDOM
+WARNING: task has axioms that are being ignored by the heuristic!
+Initializing CFF heuristic...
+The original task would have 29486 counters.
+Finished hcff initialization, t = 0.0479966s
+Initializing novelty heuristic...
+Linking novelty heuristics to the conjunctions heuristic...
+Initializing Exploration...
+Initializing landmarks count heuristic...
+Generating landmarks using the RPG/SAS+ approach
+approx. reasonable orders
+approx. obedient reasonable orders
+Removed 0 reasonable or obedient reasonable orders
+Landmarks generation time: 2.93599s
+Discovered 893 landmarks, of which 54 are disjunctive and 0 are conjunctive 
+45900 edges
+Starting search: grey_initial_state_search(grey_painting = all_prefer_inv, cost_type = plusone)
+Simplifying 29579 unary operators... done! [29489 unary operators]
+Initializing additive heuristic...
+Initializing Red-Black Relaxation heuristic...
+Heuristic does not support axioms!
+Terminating.
+Tried to use unsupported feature.
+Peak memory: 39084 KB
+returncode: 3
+
+Exit codes: [3, -24, 3]
+Error: Unexpected exit codes: [3]
+Command '['run-portfolio', '/planner/driver/portfolios/seq_sat_saarplan.py']' returned non-zero exit status 3
+
+real	10m41.553s
+user	10m39.924s
+sys	0m1.139s
